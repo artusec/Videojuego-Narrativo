@@ -2,14 +2,11 @@
 -- BBDD: Videojuego_Narrativo
 ---------------------------------------------------------------------
 
-
-
-
-DROP TABLE Mensajes;
-DROP TABLE Estado_Partida;
-DROP TABLE Objetos;
-DROP TABLE Partidas;
-DROP TABLE Usuarios;
+DROP TABLE IF EXISTS Mensajes;
+DROP TABLE IF EXISTS Estado_Partida;
+DROP TABLE IF EXISTS Objetos;
+DROP TABLE IF EXISTS Partidas;
+DROP TABLE IF EXISTS Usuarios;
 
 -- Usuarios de todo el juego, asumo que para jugar hay que registrarse
 -- y que además es necesario conectarse al servidor para poder jugar.
