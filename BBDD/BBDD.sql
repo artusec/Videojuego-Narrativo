@@ -12,24 +12,19 @@ DROP TABLE IF EXISTS Usuarios;
 -- y que además es necesario conectarse al servidor para poder jugar.
 -- El usuario con id 1 y todo NULL es especial, es el usuario comodin
 -- por así decirlo.
--- Invidente es un booleano por si se pudiera poner el juego en el modo
--- narrador directamente o algo así. Aunque es posible que a las personas
--- ciegas no les guste rellenar el formulario de registro diciendo
--- que son ciegos.
--- La contraseña se guardará hasheada y depende del algoritmo serán siempre
--- o 32 bits o 64 bits.
+-- La contraseña se guardará hasheada y con una SALT y depende del
+-- algoritmo serán 32 bits o 64 bits.
 CREATE TABLE Usuarios(
 	id int AUTO_INCREMENT,
 	username varchar(15) NOT NULL,
 	email varchar(50) NOT NULL,
 	pass varchar(32) NOT NULL,
-	invidente tinyint(1) NOT NULL,
 
 	PRIMARY KEY (id, username)
 );
 
-INSERT INTO Usuarios(username, email, pass, invidente)
-VALUES ("NULL", "NULL@NULL.NULL", "NULL", 1);
+INSERT INTO Usuarios(username, email, pass)
+VALUES ("NULL", "NULL@NULL.NULL", "NULL");
 
 
 -- Partidas que se crean. Aquí es donde se usa el usuario comodín porque
@@ -52,7 +47,7 @@ CREATE TABLE Partidas(
 CREATE TABLE Objetos(
 	id int AUTO_INCREMENT,
 	nombre varchar(20),
-	descripción text,
+	descripcion text,
 	sala int,
 
 	PRIMARY KEY (id)
