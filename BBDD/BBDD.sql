@@ -2,88 +2,88 @@
 -- BBDD: Videojuego_Narrativo
 ---------------------------------------------------------------------
 
-DROP TABLE IF EXISTS Mensajes;
-DROP TABLE IF EXISTS Estado_Partida;
-DROP TABLE IF EXISTS Objetos;
-DROP TABLE IF EXISTS Partidas;
-DROP TABLE IF EXISTS Usuarios;
+DROP TABLE IF EXISTS Messages;
+DROP TABLE IF EXISTS State_Game;
+DROP TABLE IF EXISTS Objects;
+DROP TABLE IF EXISTS Games;
+DROP TABLE IF EXISTS Users;
 
--- Usuarios de todo el juego, asumo que para jugar hay que registrarse
+-- Users de todo el juego, asumo que para jugar hay que registrarse
 -- y que además es necesario conectarse al servidor para poder jugar.
--- El usuario con id 1 y todo NULL es especial, es el usuario comodin
+-- El user con id 1 y todo NULL es especial, es el user comodin
 -- por así decirlo.
 -- La contraseña se guardará hasheada y con una SALT y depende del
 -- algoritmo serán 32 bits o 64 bits.
-CREATE TABLE Usuarios(
+CREATE TABLE Users(
 	id int AUTO_INCREMENT,
 	username varchar(15) NOT NULL,
 	email varchar(50) NOT NULL,
-	pass varchar(32) NOT NULL,
+	password varchar(32) NOT NULL,
 
 	PRIMARY KEY (id, username)
 );
 
-INSERT INTO Usuarios(username, email, pass)
+INSERT INTO Users(username, email, password)
 VALUES ("NULL", "NULL@NULL.NULL", "NULL");
 
 
--- Partidas que se crean. Aquí es donde se usa el usuario comodín porque
--- si juegas individual el usuario 2 no puede referenciarse a "nada" ya
+-- Games que se crean. Aquí es donde se usa el user comodín porque
+-- si juegas individual el user 2 no puede referenciarse a "nada" ya
 -- que es una clave foránea así que esto es lo que se me ha ocurrido. Por
--- defecto el usuario2 es 1 a no ser que se especifique algo.
-CREATE TABLE Partidas(
+-- defecto el user2 es 1 a no ser que se especifique algo.
+CREATE TABLE Games(
 	id int AUTO_INCREMENT,
-	usuario1 int NOT NULL,
-	usuario2 int DEFAULT 1,
-	sala int NOT NULL,
+	user1 int NOT NULL,
+	user2 int DEFAULT 1,
+	room int NOT NULL,
 
 	PRIMARY KEY (id),
-	FOREIGN KEY (usuario1) REFERENCES Usuarios(id),
-	FOREIGN KEY (usuario2) REFERENCES Usuarios(id)
+	FOREIGN KEY (user1) REFERENCES Users(id),
+	FOREIGN KEY (user2) REFERENCES Users(id)
 );
 
 
--- Tabla con los objetos de las salas. Información básica.
-CREATE TABLE Objetos(
+-- Tabla con los Objects de las rooms. Información básica.
+CREATE TABLE Objects(
 	id int AUTO_INCREMENT,
-	nombre varchar(20),
-	descripcion text,
-	sala int,
+	name varchar(20),
+	description text,
+	room int,
 
 	PRIMARY KEY (id)
 );
 
 
 -- Tabla donde se almacena la información de las partidas. Como hay
--- que almacenar el estado de cada objeto de la sala he pensado en una
--- codificación del estilo 1=No cogido (es decir sigue oculto en la sala),
+-- que almacenar el estado de cada objeto de la room he pensado en una
+-- codificación del estilo 1=No cogido (es decir sigue oculto en la room),
 -- 2=En las manos del jugador (es decir lo ha encontrado y cogido pero
 -- no ha hecho nada con el aun, sigue en su inventario), 3=Usado/consumido
 -- (esto seria si ya lo has usado para desbloquear algo y entraria también)
--- si se lo has pasado a tu compañero de la otra sala. No esta ni en tu sala
+-- si se lo has pasado a tu compañero de la otra room. No esta ni en tu room
 -- ni en tu inventario).
--- Se almacenaría una fila por cada partida-usuario-objeto. Creo que es la
--- mejor forma porque no podemos saber de antemano cuántos objetos habrá.
-CREATE TABLE Estado_Partida(
-	id_partida int,
-	id_usuario int,
-	id_objeto int,
-	estado_objeto int,
+-- Se almacenaría una fila por cada partida-user-objeto. Creo que es la
+-- mejor forma porque no podemos saber de antemano cuántos Objects habrá.
+CREATE TABLE State_Game(
+	id_game int,
+	id_user int,
+	id_object int,
+	state_object int,
 
-	PRIMARY KEY (id_partida, id_usuario),
-	FOREIGN KEY (id_usuario) REFERENCES Usuarios(id),
-	FOREIGN KEY (id_objeto) REFERENCES Objetos(id)
+	PRIMARY KEY (id_game, id_user),
+	FOREIGN KEY (id_user) REFERENCES Users(id),
+	FOREIGN KEY (id_object) REFERENCES Objects(id)
 );
 
 
--- Tabla con los mensajes, muy simple emisor, receptor y texto.
-CREATE TABLE Mensajes(
+-- Tabla con los Mensajes, muy simple emisor, receptor y texto.
+CREATE TABLE Messages(
 	id int AUTO_INCREMENT,
-	id_emisor int,
-	id_receptor int,
-	texto text,
+	id_sender int,
+	id_receiver int,
+	message text,
 
 	PRIMARY KEY (id),
-	FOREIGN KEY (id_emisor) REFERENCES Usuarios(id),
-	FOREIGN KEY (id_receptor) REFERENCES Usuarios(id)
+	FOREIGN KEY (id_sender) REFERENCES Users(id),
+	FOREIGN KEY (id_receiver) REFERENCES Users(id)
 );
