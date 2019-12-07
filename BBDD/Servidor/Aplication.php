@@ -89,7 +89,7 @@ class Aplication
 	private function compruebaInstanciaInicializada()
 	{
 	    if (! $this->inicializada ) {
-	        echo "Aplicacion no inicializa";
+	        echo "Aplicacion no inicializada";
 	        exit();
 	    }
 	}

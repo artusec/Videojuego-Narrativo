@@ -29,11 +29,11 @@ class User
     }
 
 
-    public static function find_user_by_username($username)
+    public static function find_by_username($username)
     {
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
-        $query = sprintf("SELECT * FROM Usuarios U WHERE U.username = '%s'", $conn->real_escape_string($username));
+        $query = sprintf("SELECT * FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
         $rs = $conn->query($query);
         $result = false;
         if ($rs) {
@@ -52,11 +52,11 @@ class User
     }
 
 
-    public static function find_user_by_id($id)
+    public static function find_by_id($id)
     {
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
-        $query = sprintf("SELECT * FROM usuario U WHERE U.id = '%d'", $conn->real_escape_string($id));
+        $query = sprintf("SELECT * FROM Users U WHERE U.id = '%d'", $conn->real_escape_string($id));
         $rs = $conn->query($query);
         $result = false;
         if ($rs) {
@@ -72,6 +72,25 @@ class User
             exit();
         }
         return $result;
+    }
+
+
+    public static function insert_user($username, $email, $pass)
+    {
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+        $query = sprintf("INSERT INTO Users (username, email, password) VALUES ('%s', '%s', '%s')",
+            $conn->real_escape_string($username),
+            $conn->real_escape_string($email),
+            self::hashPassword($pass)
+            );
+        if ( $conn->query($query) ) {
+            $user->id = $conn->insert_id;
+        } else {
+            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+        return $user;
     }
     
 

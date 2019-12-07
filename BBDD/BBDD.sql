@@ -12,13 +12,13 @@ DROP TABLE IF EXISTS Users;
 -- y que además es necesario conectarse al servidor para poder jugar.
 -- El user con id 1 y todo NULL es especial, es el user comodin
 -- por así decirlo.
--- La contraseña se guardará hasheada y con una SALT y depende del
--- algoritmo serán 32 bits o 64 bits.
+-- La contraseña se guardará hasheada. Segun el manual de php recomiendan
+-- 255 caracteres
 CREATE TABLE Users(
 	id int AUTO_INCREMENT,
 	username varchar(15) NOT NULL,
 	email varchar(50) NOT NULL,
-	password varchar(32) NOT NULL,
+	password varchar(255) NOT NULL,
 
 	PRIMARY KEY (id, username)
 );
