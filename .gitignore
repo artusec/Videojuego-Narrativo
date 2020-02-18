@@ -1,15 +1,26 @@
 # Ignore everything.  We'll whitelist what we want to pull in.
-/*
-/*/
 
 # Git meta files
 !.gitignore
 !.gitattributes
 !README.md
 
-# Whitelisted directories/files
-!/ProjectSettings/
-!/Assets/
-!/BBDD/
+# Ignore directories/files
+/TFG_Unity/.vs
+/TFG_Unity/Builds/*
+/TFG_Unity/Library
+/TFG_Unity/Logs
+/TFG_Unity/obj
+/TFG_Unity/Packages
+/TFG_Unity/Assembly-CSharp.csproj
+/TFG_Unity/License
+/TFG_Unity/TFG Pruebas.csproj
+/TFG_Unity/TFG Pruebas.sln
+/TFG_Unity/TFG.sln
+/TFG_Unity/Unity.Analytics.DataPrivacy.csproj
+/TFG_Unity/Unity.CollabProxy.Editor.csproj
+/TFG_Unity/Unity.TextMeshPro.csproj
+/TFG_Unity/Unity.TextMeshPro.Editor.csproj
+
 # Any modules kept in their own git repo.
 Assets/_modules/fps/
