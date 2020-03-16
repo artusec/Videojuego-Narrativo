@@ -14,6 +14,8 @@ public class Ganzua : MonoBehaviour
     AudioSource src;
     public AudioClip clip;
     public AudioClip clipFound;
+    public AudioClip openSound;
+    public AudioClip closeSound;
     float lastAngle = 0;
     public float angleSeparation = 10;
 
@@ -75,10 +77,20 @@ public class Ganzua : MonoBehaviour
         }
         if(Input.GetMouseButtonUp(0))
         {
-            if(!canClick)
+            if (!canClick)
             {
-                print("abierto");
+                open();
+            }
+            else
+            {
+                src.PlayOneShot(closeSound);
             }
         }
+    }
+
+    void open()
+    {
+        print("abierto");
+        src.PlayOneShot(openSound);
     }
 }
