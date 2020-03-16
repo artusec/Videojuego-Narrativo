@@ -87,3 +87,18 @@ CREATE TABLE Messages(
 	FOREIGN KEY (id_sender) REFERENCES Users(id),
 	FOREIGN KEY (id_receiver) REFERENCES Users(id)
 );
+
+-- Tabla con las estadísticas del usuario. Se pueden guardar los tiempos de
+-- la misma sala muchas veces, de esta forma se puede sacar alguna media o
+-- algo así. A través del id_game accedemos a la room y tambíen si hace
+-- falta al state_game,
+CREATE TABLE Statistics(
+	id int AUTO_INCREMENT,
+	id_user int,
+	id_game int,
+	timed int
+
+	PRIMARY KEY (id),
+	FOREIGN KEY (id_user) REFERENCES Users(id),
+	FOREIGN KEY (id_game) REFERENCES Games(id)
+);

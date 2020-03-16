@@ -46,3 +46,13 @@ CREATE TABLE Messages(
 	FOREIGN KEY (id_sender) REFERENCES Users(id),
 	FOREIGN KEY (id_receiver) REFERENCES Users(id)
 );
+CREATE TABLE Statistics(
+	id int AUTO_INCREMENT,
+	id_user int,
+	id_game int,
+	timed int,
+
+	PRIMARY KEY (id),
+	FOREIGN KEY (id_user) REFERENCES Users(id),
+	FOREIGN KEY (id_game) REFERENCES Games(id)
+);
