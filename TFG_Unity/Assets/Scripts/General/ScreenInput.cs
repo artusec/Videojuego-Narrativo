@@ -10,9 +10,6 @@ public class ScreenInput : MonoBehaviour
     Camera cam;
     move lastInput;
 
-    //TEST
-    public Text textTest;
-
     Vector2 initPos;
     Vector2 endPos;
     float moveTime = 0;
@@ -112,7 +109,7 @@ public class ScreenInput : MonoBehaviour
         else if(Input.GetMouseButton(0))
         {
             moveTime += Time.deltaTime;
-            print("pressing");
+         //   print("pressing");
             return move.pressing;
         }
         //NO HACE NADA
