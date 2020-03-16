@@ -7,11 +7,17 @@ public class Intro : MonoBehaviour
     public ScreenInput input;
     move mov;
 
-    public float [] normalSteps;
+    float auxTime = 0;
+    public float normalStepsDuration = 5;
     public AudioClip normalStep;
     public AudioClip grassStep;
+    public int grassSteps = 4;
+    public AudioClip woodStep;
+    public int woodSteps = 5;
     AudioSource src;
+    int actualSteps = 0;
 
+    int phase = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,17 +32,43 @@ public class Intro : MonoBehaviour
     void Update()
     {
         mov = input.getInput();
-        if (mov == move.pressing)
+        if (phase == 0)
+        {
+            if (mov == move.pressing)
+            {
+                auxTime += Time.deltaTime;
+                src.UnPause();
+            }
+            else src.Pause();
+
+            if (auxTime >= normalStepsDuration)
+            {
+                src.clip = grassStep;
+                src.Play();
+                src.Pause();
+                phase = 1;
+            }
+        }
+        else if(mov == move.pressing)
         {
             src.UnPause();
-        }
-        else src.Pause();
-
-        if (!src.isPlaying)
-        {
-            src.clip = grassStep;
-            src.Play();
-            src.Pause();
+            if(phase != 3 && !src.isPlaying)
+            {
+                actualSteps++;
+                src.Play();
+            }
+            if(phase == 1 && actualSteps > grassSteps)
+            {
+                src.clip = woodStep;
+                src.Play();
+                src.Pause();
+                phase = 2;
+            }
+            if (phase == 2 && actualSteps > woodSteps + grassSteps)
+            {
+                phase = 3;
+                src.Stop();
+            }
         }
     }
 }

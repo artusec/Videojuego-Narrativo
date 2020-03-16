@@ -503,9 +503,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 173910731}
-  normalSteps: []
+  normalStepsDuration: 5
   normalStep: {fileID: 8300000, guid: ddb6f74be9cfa364a8d785573318b710, type: 3}
   grassStep: {fileID: 8300000, guid: 18cd9cd26a1f9064a8de23430b8f5a30, type: 3}
+  grassSteps: 4
+  woodStep: {fileID: 8300000, guid: bd70a83c961e13f4a9c96ff02fe2e198, type: 3}
+  woodSteps: 5
 --- !u!4 &1955464082
 Transform:
   m_ObjectHideFlags: 0
