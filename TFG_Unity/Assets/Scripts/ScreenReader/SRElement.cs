@@ -34,7 +34,6 @@ public class SRElement : MonoBehaviour
     {
         if (actBehaviour != null)
         {
-            Debug.Log(textLabel + " does something");
             actBehaviour.Act();
         }
         else Debug.Log(textLabel + " is useless");
