@@ -9,6 +9,11 @@ public class SRList : MonoBehaviour
     public SRList prevList;
     public int currentFocus;
 
+    public SRElement GetCurrentFocus()
+    {
+        return sreList[currentFocus];
+    }
+
     public void ActOnFocus()
     {
         sreList[currentFocus].ElementAct();
@@ -23,6 +28,24 @@ public class SRList : MonoBehaviour
     {
         sreList.RemoveAt(index);
         if (index <= currentFocus) GoTo(currentFocus - 1);
+        else ReadFocus();
+    }
+
+    public void Remove(SRElement element)
+    {
+        int index = sreList.IndexOf(element);
+        sreList.Remove(element);
+        if (index < currentFocus || (index == currentFocus && index == sreList.Count))
+            GoTo(currentFocus - 1);
+        else ReadFocus();
+    }
+
+
+    public void Insert(int index, SRElement element)
+    {
+        sreList.Insert(index, element);
+        if (index <= currentFocus) GoTo(currentFocus + 1);
+        else ReadFocus();
     }
 
     public void Advance()

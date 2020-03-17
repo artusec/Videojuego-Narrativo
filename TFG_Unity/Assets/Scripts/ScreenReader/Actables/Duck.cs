@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Duck : MonoBehaviour
+public class Duck : Actable
 {
 
-    public void Act()
+    public override void Act()
     {
         Debug.Log("Quack");
     }

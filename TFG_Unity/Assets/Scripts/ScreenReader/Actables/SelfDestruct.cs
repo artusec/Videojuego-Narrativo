@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SRListChanger : Actable
+public class SelfDestruct : Actable
 {
-    public SRList list;
 
     public override void Act()
     {
         SRManager srm = GameObject.FindGameObjectWithTag("SRManager").GetComponent<SRManager>();
-        srm.SetList(list);
+        srm.currentList.Remove(gameObject.GetComponent<SRElement>());
+        Destroy(this.gameObject);
     }
 }

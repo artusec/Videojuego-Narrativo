@@ -5,6 +5,7 @@ using UnityEngine;
 public class SRManager : MonoBehaviour
 {
     public SRList currentList;
+    private SRList prevList;
     public ScreenInput sInput;
     private move gesture;
 
@@ -22,8 +23,15 @@ public class SRManager : MonoBehaviour
 
     public void SetList(SRList srl)
     {
+        prevList = currentList;
         currentList = srl;
         currentList.ReadFocus();
+    }
+
+    public void GoToPreviousList()
+    {
+        if (prevList != null) SetList(prevList);
+        else Debug.Log("There is no previous list yet.");
     }
 
 

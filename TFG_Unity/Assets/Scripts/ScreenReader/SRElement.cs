@@ -6,7 +6,7 @@ public class SRElement : MonoBehaviour
 {
     public AudioClip audioLabel;
     public string textLabel;
-    public Component actBehaviour;
+    public Actable actBehaviour;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class SRElement : MonoBehaviour
         if (actBehaviour != null)
         {
             Debug.Log(textLabel + " does something");
-            actBehaviour.SendMessage("Act");
+            actBehaviour.Act();
         }
         else Debug.Log(textLabel + " is useless");
     }
