@@ -19,8 +19,9 @@ public class AddItemToInventory : Actable
            inventory = srm.currentList;
         }
         inventory.Insert(inventory.sreList.Count, Instantiate(item, 
-            inventory.gameObject.GetComponentInChildren<GridLayoutGroup>().transform).GetComponent<SRElement>());
+           inventory.transform).GetComponent<SRElement>());
 
+        RemoveFromList();
         Destroy(gameObject);
     }
 

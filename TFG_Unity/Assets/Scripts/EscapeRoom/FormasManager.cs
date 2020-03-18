@@ -33,6 +33,7 @@ public class FormasManager : MonoBehaviour
     public Text option1Text,
         option2Text,
         option3Text;
+    public SRElement sre1, sre2, sre3;
 
     private void OnValidate()
     {
@@ -79,9 +80,9 @@ public class FormasManager : MonoBehaviour
             formas[i].SetActive(false);
         formas[nLevel].SetActive(true);
 
-        option1Text.text = textos[level].text1;
-        option2Text.text = textos[level].text2;
-        option3Text.text = textos[level].text3;
+        option1Text.text = sre1.textLabel = textos[level].text1;
+        option2Text.text = sre2.textLabel = textos[level].text2;
+        option3Text.text = sre3.textLabel = textos[level].text3;
     }
 
     public void addLevel(int nLevel)
