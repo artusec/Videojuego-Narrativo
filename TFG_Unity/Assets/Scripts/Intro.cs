@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
@@ -29,9 +30,12 @@ public class Intro : MonoBehaviour
 
     //CINTA
     public AudioClip rasgado;
+    public AudioClip doorOpen;
     int cintaPhase = 0;
     public Animator []cintas;
     int numQuitadas = 0;
+    public float closingTime = 1;
+    float auxClosing = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +55,8 @@ public class Intro : MonoBehaviour
             steps();
         else if (genPhase == 3)
             cinta();
+        else if (genPhase == 4)
+            doorOpening();
     }
 
     //Fade-In inicial
@@ -142,12 +148,38 @@ public class Intro : MonoBehaviour
             cintas[numQuitadas].Play("Quita");
             numQuitadas++;
         }
-        if(numQuitadas >= cintas.Length)
+        if(cintaPhase == 1 && numQuitadas >= cintas.Length)
         {
             cintaPhase = 2;
-            //Sale
-            anim.enabled = true;
-            anim.Play("Enter");
+            Invoke("doorOpened", 1);
         }
+    }
+    void changePhase(int phase)
+    {
+        genPhase = phase;
+    }
+    void doorOpened()
+    {
+        anim.enabled = true;
+        anim.Play("Enter");
+        src.PlayOneShot(doorOpen);
+        genPhase = 4;
+    }
+    void doorOpening()
+    {
+        if (auxClosing < closingTime)
+        {
+            auxClosing += Time.deltaTime;
+            srcIntro.volume = (1-(auxClosing / closingTime))*0.9f;
+        }
+        else
+        {
+            //CAMBIO DE ESCENA
+            Invoke("changeScene", 1);
+        }
+    }
+    void changeScene()
+    {
+        SceneManager.LoadScene("Ganzua");
     }
 }

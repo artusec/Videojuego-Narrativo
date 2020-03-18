@@ -161,7 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8ba5e5eb1b5b24c84b97a12fdf36d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textTest: {fileID: 0}
   minDistClick: 0.05
   doubleClickTime: 0.3
 --- !u!4 &173910732
@@ -971,7 +970,7 @@ GameObject:
   - component: {fileID: 1955464081}
   - component: {fileID: 1955464080}
   m_Layer: 0
-  m_Name: Steps
+  m_Name: Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1108,10 +1107,12 @@ MonoBehaviour:
   srcIntro: {fileID: 416929024}
   fondo: {fileID: 1517591806}
   rasgado: {fileID: 8300000, guid: 5acbb64cfdc114746af264e5477c5e4e, type: 3}
+  doorOpen: {fileID: 8300000, guid: 762d95a197404494eb25ceb6a37170a5, type: 3}
   cintas:
   - {fileID: 99708831}
   - {fileID: 1239028096}
   - {fileID: 956731583}
+  closingTime: 3
 --- !u!4 &1955464082
 Transform:
   m_ObjectHideFlags: 0
