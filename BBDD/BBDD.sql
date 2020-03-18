@@ -70,11 +70,10 @@ CREATE TABLE State_Game(
 	id_object int,
 	state_object int,
 
-	PRIMARY KEY (id_game, id_user),
+	PRIMARY KEY (id_game, id_user, id_object),
 	FOREIGN KEY (id_user) REFERENCES Users(id),
 	FOREIGN KEY (id_object) REFERENCES Objects(id)
 );
-
 
 -- Tabla con los Mensajes, muy simple emisor, receptor y texto.
 CREATE TABLE Messages(

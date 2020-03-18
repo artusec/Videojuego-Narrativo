@@ -13,6 +13,7 @@ public class register : MonoBehaviour
     public InputField pass;
     public InputField pass2;
     public void entrar()
+    
     {
         StartCoroutine(Upload());
     }
