@@ -10,9 +10,6 @@ public class ScreenInput : MonoBehaviour
     Camera cam;
     move lastInput;
 
-    //TEST
-    public Text textTest;
-
     Vector2 initPos;
     Vector2 endPos;
     float moveTime = 0;
