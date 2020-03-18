@@ -42,7 +42,7 @@ public class ScreenInput : MonoBehaviour
     move swipeScreen()
     {
         //Presiona con el dedo
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             moveTime = 0;
             initPos = cam.ScreenToViewportPoint(Input.mousePosition);
@@ -56,36 +56,36 @@ public class ScreenInput : MonoBehaviour
             float angleSwipe2 = Vector2.Angle(Vector2.down, endPos - initPos);
 
             //Si el recorrido del dedo es mayor que un mínimo
-            if (Vector2.Distance(endPos, initPos)> minDistClick)
+            if (Vector2.Distance(endPos, initPos) > minDistClick)
             {
                 //UP
                 if (angleSwipe2 > 135)
                 {
-                    print("up");
+                    //print("up");
                     return move.up;
                 }
                 //RIGHT
                 else if (angleSwipe < 45)
                 {
-                    print("right");
+                    //print("right");
                     return move.right;
                 }
                 //DOWN
                 else if (angleSwipe2 < 45)
                 {
-                    print("down");
+                    //print("down");
                     return move.down;
                 }
                 //LEFT
                 else if (angleSwipe > 135)
                 {
-                    print("left");
+                    //print("left");
                     return move.left;
                 }
                 //JUST IN CASE
                 else
                 {
-                    print("nullMov");
+                    //print("nullMov");
                     return move.nullMov;
                 }
             }
@@ -95,24 +95,24 @@ public class ScreenInput : MonoBehaviour
                 //DOBLE CLICK
                 if (lastClick < doubleClickTime)
                 {
-                    print("doubleClick");
+                    //print("doubleClick");
                     lastClick = 0;
                     return move.doubleClick;
                 }
                 //CLICK NORMAL
                 else
                 {
-                    print("click");
+                    //print("click");
                     lastClick = 0;
                     return move.click;
                 }
             }
         }
         //IS PRESSING
-        else if(Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0))
         {
             moveTime += Time.deltaTime;
-            print("pressing");
+            //print("pressing");
             return move.pressing;
         }
         //NO HACE NADA

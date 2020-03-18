@@ -6,7 +6,6 @@ public class FingerMove : MonoBehaviour
 {
     Vector2 moveInit;
     Vector2 moveEnd;
-    int touchPhase = 0;
     public Switchable[] allSwitchs;
     Switchable actual;
     // Start is called before the first frame update
@@ -34,7 +33,6 @@ public class FingerMove : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             moveInit = getMousePos();
-            touchPhase = 1;
         }
     }
     void release()
@@ -42,7 +40,6 @@ public class FingerMove : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             moveEnd = getMousePos();
-            touchPhase = 0;
             checkMove();
         }
     }

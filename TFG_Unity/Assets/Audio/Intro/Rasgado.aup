@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Rasgado_data" version="1.3.0" audacityversion="2.3.0" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="235.0157814541" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="YEAR" value="2008-09-06"/>
+		<tag name="Software" value="Sony Sound Forge 9.0"/>
+	</tags>
+	<wavetrack name="Rasgado" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="30727">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808d49.au" len="6943" min="-0.379246" max="0.194077" rms="0.037311"/>
+				</waveblock>
+				<waveblock start="6943">
+					<simpleblockfile filename="e0808d43.au" len="23784" min="-0.958944" max="0.652754" rms="0.034926"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="8">
+				<controlpoint t="0.000000000000" val="0.436619699001"/>
+				<controlpoint t="0.157436235861" val="0.448665147682"/>
+				<controlpoint t="0.157436235861" val="0.456319771469"/>
+				<controlpoint t="0.170201336066" val="0.457327781383"/>
+				<controlpoint t="0.170201336066" val="0.479370468014"/>
+				<controlpoint t="0.331892605328" val="0.492957770824"/>
+				<controlpoint t="0.480818774386" val="1.000000000000"/>
+				<controlpoint t="0.696761719519" val="0.084507048130"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Rasgado" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="30727">
+				<waveblock start="0">
+					<simpleblockfile filename="e08085e7.au" len="6943" min="-0.372854" max="0.270551" rms="0.036045"/>
+				</waveblock>
+				<waveblock start="6943">
+					<simpleblockfile filename="e08082b5.au" len="23784" min="-1.0" max="0.811135" rms="0.037029"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="8">
+				<controlpoint t="0.000000000000" val="0.436619699001"/>
+				<controlpoint t="0.157436235861" val="0.448665147682"/>
+				<controlpoint t="0.157436235861" val="0.456319771469"/>
+				<controlpoint t="0.170201336066" val="0.457327781383"/>
+				<controlpoint t="0.170201336066" val="0.479370468014"/>
+				<controlpoint t="0.331892605328" val="0.492957770824"/>
+				<controlpoint t="0.480818774386" val="1.000000000000"/>
+				<controlpoint t="0.696761719519" val="0.084507048130"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+</project>
