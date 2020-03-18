@@ -21,11 +21,21 @@ public class Intro : MonoBehaviour
 
     int phase = 0;
 
+    //FIRE
+    public SpriteRenderer fireSprite;
+    public float fireStart = 2;
+    public float fireInt = 2;
+    public float fireEnd = 2;
+    float actualFire = 0;
+    Vector3 initPos;
+    Color naranja;
+
     //INTRO
-    int genPhase = 1;
+    int genPhase = 0;
     public float introTime = 2;
     float auxIntro = 0;
     public AudioSource srcIntro;
+    public AudioClip ambientClip;
     public SpriteRenderer fondo;
 
     //CINTA
@@ -44,12 +54,15 @@ public class Intro : MonoBehaviour
         src.clip = normalSteps[0];
         src.Play();
         src.Pause();
+        initPos = fireSprite.transform.position;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (genPhase == 1)
+        if (genPhase == 0)
+            fire();
+        else if (genPhase == 1)
             intro();
         else if (genPhase == 2)
             steps();
@@ -57,6 +70,35 @@ public class Intro : MonoBehaviour
             cinta();
         else if (genPhase == 4)
             doorOpening();
+    }
+    //Fire
+    void fire()
+    {
+        actualFire += Time.deltaTime;
+        fireSprite.transform.position = initPos + new Vector3(0.0f, Mathf.Sin(Time.time*2)/5, 0.0f);
+        if (actualFire < fireStart)
+        {
+            float valueA = actualFire / fireStart;
+            fireSprite.color = new Color(valueA, valueA/2, 0);
+            naranja = fireSprite.color;
+        }
+        else if(actualFire < fireStart+fireInt)
+        {
+            fireSprite.color = Color.Lerp(naranja, Color.red, (actualFire-fireStart)/(fireInt));
+        }
+        else if(actualFire < fireStart+fireInt+fireEnd)
+        {
+            float valueA = (actualFire-fireInt-fireStart )/ fireEnd;
+            fireSprite.color = new Color(1, 0, 0, 1-valueA);
+        }
+        else
+        {
+            genPhase = 1;
+            srcIntro.clip = ambientClip;
+            srcIntro.loop = true;
+            srcIntro.Play();
+            srcIntro.volume = 0;
+        }
     }
 
     //Fade-In inicial
