@@ -9,6 +9,14 @@ public class SRList : MonoBehaviour
     public SRList prevList;
     public int currentFocus;
 
+    void Start()
+    {
+        foreach (SRElement e in sreList)
+        {
+            e.parentList = this;
+        }    
+    }
+
     public SRElement GetCurrentFocus()
     {
         return sreList[currentFocus];

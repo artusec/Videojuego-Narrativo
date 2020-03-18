@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SelfDestruct : Actable
+public class ActivateButton : Actable
 {
+    public Button button;
 
     public override void Act()
     {
-        RemoveFromList();
-        Destroy(this.gameObject);
+        button.onClick.Invoke();
     }
 }

@@ -7,6 +7,7 @@ public class SRElement : MonoBehaviour
     public AudioClip audioLabel;
     public string textLabel;
     public Actable actBehaviour;
+    public SRList parentList;
 
     // Start is called before the first frame update
     void Start()
