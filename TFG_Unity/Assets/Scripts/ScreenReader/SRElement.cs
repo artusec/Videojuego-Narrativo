@@ -12,7 +12,6 @@ public class SRElement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -25,10 +24,13 @@ public class SRElement : MonoBehaviour
     {
         if (audioLabel != null)
         {
-            Debug.Log("Audio label");
+            TTS.instance.PlayClip(audioLabel);
         }
 
-        else Debug.Log("tts label: " + textLabel);
+        else {
+            StartCoroutine(TTS.instance.PlayTTS(textLabel));
+            Debug.Log("tts label: " + textLabel);
+        }
     }
 
     public void ElementAct()

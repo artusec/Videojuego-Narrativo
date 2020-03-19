@@ -47,7 +47,7 @@ public class SRManager : MonoBehaviour
                 currentList.Advance();
                 break;
             case move.click:
-                currentList.ReadFocus();
+              //  currentList.ReadFocus();
                 break;
             case move.doubleClick:
                 currentList.ActOnFocus();

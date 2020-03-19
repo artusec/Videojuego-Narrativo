@@ -35,6 +35,9 @@ public class FormasManager : MonoBehaviour
         option3Text;
     public SRElement sre1, sre2, sre3;
 
+    public SRManager srm = null;
+    public ScreenInput input = null;
+
     private void OnValidate()
     {
         //controla que el array de textos de selección siempre tenga el mismo tamaño que el array de formas a reconocer (no se puede reiniciar 
@@ -63,12 +66,19 @@ public class FormasManager : MonoBehaviour
     void Start()
     {
         //activamos la primera forma a reconocer
+        StartCoroutine(TTS.instance.PlayTTS("Trata de reconocer las formas con la vibracion, despues abre la selección con doble tap y seleccionala."));
         setLevel(level);
     }
 
     void Update()
     {
+        // con doble click activamos la seleccion de forma
+        if(input.getInput() == move.doubleClick)
+        {
+            srm.enabled = !srm.enabled;
+        }
         //manejo de cambio de estado entre reconocimiento y seleccion
+
     }
 
     public void setLevel(int nLevel)
@@ -90,6 +100,7 @@ public class FormasManager : MonoBehaviour
         //válido para nLevel negativo y seguro para no pasarse del límite del array
         //level = Mathf.Max(0, Mathf.Min(formas.Count-1, level + nLevel));
         level = (level + nLevel) % formas.Count;
+        srm.enabled = false;
         setLevel(level);
     }
 
@@ -117,7 +128,13 @@ public class FormasManager : MonoBehaviour
                 break;
         }
         if (aux == textos[level].solution)
+        {
+            StartCoroutine(TTS.instance.PlayTTS("Acierto"));
             addLevel(1);
-        else print("fallo de selección");
+        }
+        else {
+            StartCoroutine(TTS.instance.PlayTTS("Fallo"));
+            print("fallo de selección");
+        }
     }
 }
