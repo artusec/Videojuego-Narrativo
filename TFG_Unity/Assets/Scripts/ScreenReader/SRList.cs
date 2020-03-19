@@ -78,8 +78,7 @@ public class SRList : MonoBehaviour
 
     public void GoToPreviousList()
     {
-        SRManager srm = GameObject.FindGameObjectWithTag("SRManager").GetComponent<SRManager>();
-        srm.SetList(prevList);
+        SRManager.instance.SetList(prevList);
     }
 
     private void GoTo(int index)
