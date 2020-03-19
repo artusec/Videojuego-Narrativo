@@ -2,21 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct SonarRadios
-{
-    public float cerca,
-                medio,
-                lejos;
-}
-
-public enum SonarZones
-{
-    fuera,
-    lejos,
-    medio,
-    cerca
-}
+//------------------------------------
+//              AVISO
+//    ESTE SCRIPT NO SE USA, SE HA
+//  VISTO REEMPLAZADO POR EL MANAGER
+//       SonarPuzzleManager.cs
+//------------------------------------
 
 public class SonarItem : MonoBehaviour
 {
