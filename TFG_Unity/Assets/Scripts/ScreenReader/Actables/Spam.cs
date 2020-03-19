@@ -9,8 +9,6 @@ public class Spam : Actable
 
     public override void Act()
     {
-
-        SRManager srm = GameObject.FindGameObjectWithTag("SRManager").GetComponent<SRManager>();
-        srm.currentList.Insert(position, Instantiate(prefab, this.transform.parent).GetComponent<SRElement>());
+        SRManager.instance.currentList.Insert(position, Instantiate(prefab, this.transform.parent).GetComponent<SRElement>());
     }
 }

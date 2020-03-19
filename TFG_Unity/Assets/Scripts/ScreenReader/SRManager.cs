@@ -9,8 +9,25 @@ public class SRManager : MonoBehaviour
     public ScreenInput sInput;
     private move gesture;
 
+    // Instancia de la clase (patron singleton)
+    public static SRManager instance;
+
+
+    // Gestion del singleton, y se comprueba que tenga audiosource
+    void Awake()
+    {
+        if (instance != null) GameObject.Destroy(instance);
+        else instance = this;
+
+        DontDestroyOnLoad(this);
+    }
+
     // Start is called before the first frame update
     void Start()
+    {
+    }
+
+    private void OnEnable()
     {
         currentList.ReadFocus();
     }

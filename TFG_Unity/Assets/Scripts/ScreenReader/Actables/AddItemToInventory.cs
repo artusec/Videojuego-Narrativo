@@ -12,11 +12,10 @@ public class AddItemToInventory : Actable
 
     public override void Act()
     {
-        SRManager srm = GameObject.FindGameObjectWithTag("SRManager").GetComponent<SRManager>();
 
         if (inventory == null)
         {
-           inventory = srm.currentList;
+           inventory = SRManager.instance.currentList;
         }
         inventory.Insert(inventory.sreList.Count, Instantiate(item, 
            inventory.transform).GetComponent<SRElement>());

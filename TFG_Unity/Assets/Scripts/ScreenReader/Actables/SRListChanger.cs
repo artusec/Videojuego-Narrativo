@@ -8,7 +8,6 @@ public class SRListChanger : Actable
 
     public override void Act()
     {
-        SRManager srm = GameObject.FindGameObjectWithTag("SRManager").GetComponent<SRManager>();
-        srm.SetList(list);
+        SRManager.instance.SetList(list);
     }
 }

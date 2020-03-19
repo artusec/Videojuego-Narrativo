@@ -77,6 +77,10 @@ public class FormasManager : MonoBehaviour
         {
             srm.enabled = !srm.enabled;
         }
+        else if(srm.enabled && input.getInput() == move.down)
+        {
+            srm.enabled = false;
+        }
         //manejo de cambio de estado entre reconocimiento y seleccion
 
     }
@@ -100,7 +104,6 @@ public class FormasManager : MonoBehaviour
         //válido para nLevel negativo y seguro para no pasarse del límite del array
         //level = Mathf.Max(0, Mathf.Min(formas.Count-1, level + nLevel));
         level = (level + nLevel) % formas.Count;
-        srm.enabled = false;
         setLevel(level);
     }
 

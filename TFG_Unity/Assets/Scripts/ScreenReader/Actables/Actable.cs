@@ -11,7 +11,6 @@ public class Actable : MonoBehaviour
 
     public void RemoveFromList()
     {
-        SRManager srm = GameObject.FindGameObjectWithTag("SRManager").GetComponent<SRManager>();
-        srm.currentList.Remove(gameObject.GetComponent<SRElement>());
+        SRManager.instance.currentList.Remove(gameObject.GetComponent<SRElement>());
     }
 }
