@@ -1,3 +1,9 @@
+DROP TABLE IF EXISTS Messages;
+DROP TABLE IF EXISTS State_Game;
+DROP TABLE IF EXISTS Objects;
+DROP TABLE IF EXISTS Games;
+DROP TABLE IF EXISTS Users;
+
 CREATE TABLE Users(
 	id int AUTO_INCREMENT,
 	username varchar(15) NOT NULL,
@@ -6,8 +12,10 @@ CREATE TABLE Users(
 
 	PRIMARY KEY (id, username)
 );
+
 INSERT INTO Users(username, email, password)
 VALUES ("NULL", "NULL@NULL.NULL", "NULL");
+
 CREATE TABLE Games(
 	id int AUTO_INCREMENT,
 	user1 int NOT NULL,
@@ -18,6 +26,8 @@ CREATE TABLE Games(
 	FOREIGN KEY (user1) REFERENCES Users(id),
 	FOREIGN KEY (user2) REFERENCES Users(id)
 );
+
+
 CREATE TABLE Objects(
 	id int AUTO_INCREMENT,
 	name varchar(20),
@@ -26,16 +36,18 @@ CREATE TABLE Objects(
 
 	PRIMARY KEY (id)
 );
+
 CREATE TABLE State_Game(
 	id_game int,
 	id_user int,
 	id_object int,
 	state_object int,
 
-	PRIMARY KEY (id_game, id_user),
+	PRIMARY KEY (id_game, id_user, id_object),
 	FOREIGN KEY (id_user) REFERENCES Users(id),
 	FOREIGN KEY (id_object) REFERENCES Objects(id)
 );
+
 CREATE TABLE Messages(
 	id int AUTO_INCREMENT,
 	id_sender int,
@@ -46,11 +58,12 @@ CREATE TABLE Messages(
 	FOREIGN KEY (id_sender) REFERENCES Users(id),
 	FOREIGN KEY (id_receiver) REFERENCES Users(id)
 );
+
 CREATE TABLE Statistics(
 	id int AUTO_INCREMENT,
 	id_user int,
 	id_game int,
-	timed int,
+	timed int
 
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_user) REFERENCES Users(id),
