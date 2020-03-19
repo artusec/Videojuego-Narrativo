@@ -66,7 +66,7 @@ public class FormasManager : MonoBehaviour
     void Start()
     {
         //activamos la primera forma a reconocer
-        StartCoroutine(TTS.instance.PlayTTS("Trata de reconocer las formas con la vibracion, despues abre la selección con doble tap y seleccionala."));
+        TTS.instance.PlayTTS("Trata de reconocer las formas con la vibracion, despues abre la selección con doble tap y seleccionala.");
         setLevel(level);
     }
 
@@ -129,11 +129,11 @@ public class FormasManager : MonoBehaviour
         }
         if (aux == textos[level].solution)
         {
-            StartCoroutine(TTS.instance.PlayTTS("Acierto"));
+            TTS.instance.PlayTTS("Acierto");
             addLevel(1);
         }
         else {
-            StartCoroutine(TTS.instance.PlayTTS("Fallo"));
+            TTS.instance.PlayTTS("Fallo");
             print("fallo de selección");
         }
     }

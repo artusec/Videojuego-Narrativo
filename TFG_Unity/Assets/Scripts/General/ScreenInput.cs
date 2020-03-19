@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public enum move {nullMov, up, right, down, left, pressed, pressing, click, doubleClick};
 public class ScreenInput : MonoBehaviour
 {
+    public static ScreenInput instance;
     Camera cam;
     move lastInput;
 
@@ -21,6 +22,7 @@ public class ScreenInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         cam = Camera.main;
     }
 
@@ -28,9 +30,6 @@ public class ScreenInput : MonoBehaviour
     void Update()
     {
         lastInput = swipeScreen();
-
-        //Borrar
-        //if (lastInput != move.nullMov)textTest.text = "Gesture: "+lastInput;
     }
     public move getInput()
     {

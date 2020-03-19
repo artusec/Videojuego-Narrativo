@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
-    public ScreenInput input;
+    ScreenInput input;
     move mov;
 
 
@@ -50,6 +50,7 @@ public class Intro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        input = ScreenInput.instance;
         src = GetComponent<AudioSource>();
         src.clip = normalSteps[0];
         src.Play();
@@ -109,12 +110,13 @@ public class Intro : MonoBehaviour
             auxIntro += Time.deltaTime;
             float valueA = auxIntro / introTime;
             fondo.color = new Color(0,0,0, 1-valueA);
-            srcIntro.volume = valueA*0.9f;
+            srcIntro.volume = valueA*0.3f;
         }
         else
         {
             genPhase = 2;
             anim.Play("Idle");
+            TTS.instance.PlayTTS("Mantén pulsado para avanzar");
         }
     }
 

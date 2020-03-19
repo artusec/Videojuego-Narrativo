@@ -36,13 +36,17 @@ public class TTS : MonoBehaviour
         source.Play();
     }
 
+    public void PlayTTS(string s)
+    {
+        StartCoroutine("TTSPlay", s);
+    }
     /// <summary>
     /// Obtiene y reproduce el TTS correspondiente al string recibido, con corrutinas, para no pausar la ejecución
     /// aunque esto conlleva una pequeña espera
     /// </summary>
     /// <param name="s"></param>
     /// <returns></returns>
-    public IEnumerator PlayTTS(string s)
+    IEnumerator TTSPlay(string s)
     {
         // Mandamos la request y esperamos a recibir el audio
         using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(baseUrl + s, AudioType.WAV))

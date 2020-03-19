@@ -28,7 +28,7 @@ public class SRElement : MonoBehaviour
         }
 
         else {
-            StartCoroutine(TTS.instance.PlayTTS(textLabel));
+            TTS.instance.PlayTTS(textLabel);
             Debug.Log("tts label: " + textLabel);
         }
     }
