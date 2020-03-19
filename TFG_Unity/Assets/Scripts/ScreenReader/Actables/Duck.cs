@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Duck : Actable
 {
+    public AudioClip quack;
 
     public override void Act()
     {
-        Debug.Log("Quack");
+        TTS.instance.PlayClip(quack);
     }
 
 }

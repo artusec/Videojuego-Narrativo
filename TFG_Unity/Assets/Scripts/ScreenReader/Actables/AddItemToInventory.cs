@@ -20,6 +20,14 @@ public class AddItemToInventory : Actable
         inventory.Insert(inventory.sreList.Count, Instantiate(item, 
            inventory.transform).GetComponent<SRElement>());
 
+        TTS.instance.PlayTTS("Obtienes " + item.name);
+
+        Invoke("SelfDestruct", 2);
+
+    }
+
+    private void SelfDestruct()
+    {
         RemoveFromList();
         Destroy(gameObject);
     }
