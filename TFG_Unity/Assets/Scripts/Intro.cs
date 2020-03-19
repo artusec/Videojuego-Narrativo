@@ -132,7 +132,10 @@ public class Intro : MonoBehaviour
         {
             anim.enabled = false;
             if (actualSteps >= normalSteps.Length + grassSteps + woodSteps.Length)
+            {
                 genPhase = 3;
+                TTS.instance.PlayTTS("Desliza en cualquier dirección para romper las bandas policiales");
+            }
         }
         if (mov == move.pressing)
         {
@@ -224,6 +227,6 @@ public class Intro : MonoBehaviour
     }
     void changeScene()
     {
-        SceneManager.LoadScene("Ganzua");
+        GameManager.instance.changeScene("SRTest");
     }
 }

@@ -8,6 +8,7 @@ public class SRElement : MonoBehaviour
     public string textLabel;
     public Actable actBehaviour;
     public SRList parentList;
+    int state = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,15 @@ public class SRElement : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void setState(int stat)
+    {
+        state = stat;
+    }
+    public int getState()
+    {
+        return state;
     }
 
     public void ReadLabel()

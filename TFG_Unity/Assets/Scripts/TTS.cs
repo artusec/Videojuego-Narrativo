@@ -17,13 +17,14 @@ public class TTS : MonoBehaviour
     private string baseUrl = "http://api.voicerss.org/?key=fed840ae6af4495d8aab93e3cded0c38&hl=es-Es&c=wav&f=8khz_8bit_mono&src=";
 
     // AudioSource que reproduce los audios
-    public AudioSource source = null;
+    AudioSource source;
 
     // Gestion del singleton, y se comprueba que tenga audiosource
     void Awake()
     {
-        if(source == null) source = gameObject.AddComponent<AudioSource>();
-        if (instance != null) GameObject.Destroy(instance);
+        if (GetComponent<AudioSource>() == null) source = gameObject.AddComponent<AudioSource>();
+        else source = GetComponent<AudioSource>();
+        if (instance != null) Destroy(gameObject);
         else instance = this;
 
         DontDestroyOnLoad(this);
