@@ -6,22 +6,40 @@ public class Lock : Actable
 {
     public SRList inventory;
     public string keyRequired;
-    public int sceneToLoad = 0;
+    public string sceneToLoad;
     public string failString;
     public string successString;
+    public string usedString;
 
     public override void Act()
     {
-        bool found = false;
-        foreach(SRElement e in inventory.sreList)
+        if (GetComponent<SRElement>().getState() != 1)
         {
-            if (e.textLabel == keyRequired) found = true;
+            bool found = false;
+            foreach (SRElement e in inventory.sreList)
+            {
+                if (e.activeLabel == keyRequired)
+                {
+                    found = true;
+                    e.setState(2);
+                }
+            }
+            if (found)
+            {
+                GetComponent<SRElement>().setState(1);
+                TTS.instance.PlayTTS(successString);
+                //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
+                Invoke("change", 1);
+            }
+            else TTS.instance.PlayTTS(failString);
         }
-        if (found)
-        {
-            TTS.instance.PlayTTS(successString);
-            //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
-        }
-        else TTS.instance.PlayTTS(failString);
+        else TTS.instance.PlayTTS(usedString);
+    }
+
+    void change()
+    {
+        GameManager.instance.saveState(inventory, GameObject.Find("EscenaElements").GetComponent<SRList>());
+        GameManager.instance.levelPassed = 2;
+        GameManager.instance.changeScene(sceneToLoad);
     }
 }

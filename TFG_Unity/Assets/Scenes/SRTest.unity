@@ -153,7 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  textLabel: Puerta
+  audioUsedLabel: {fileID: 0}
+  activeLabel: Puerta
+  usedLabel: Puerta Abierta
   actBehaviour: {fileID: 126313412}
   parentList: {fileID: 0}
 --- !u!114 &126313412
@@ -170,9 +172,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 225929081}
   keyRequired: Llave oxidada
-  sceneToLoad: 0
+  sceneToLoad: Busqueda
   failString: La puerta esta cerrada por una cerradura robusta.
   successString: Abres la puerta con la llave oxidada.
+  usedString: 
 --- !u!114 &126313413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +348,9 @@ MonoBehaviour:
   - {fileID: 1286158436}
   prevList: {fileID: 1660612465}
   currentFocus: 0
+  baseObj: 0
+  inventory: 1
+  key: {fileID: 3956148274195466372, guid: 3d06cc1f15ffaf7478101a8b06e7aefe, type: 3}
 --- !u!1 &309350690
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +497,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  textLabel: "Caja de cart\xF3n"
+  audioUsedLabel: {fileID: 0}
+  activeLabel: Caja
+  usedLabel: Caja
   actBehaviour: {fileID: 338205211}
   parentList: {fileID: 0}
 --- !u!212 &338205214
@@ -543,6 +551,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &416064878
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4817786954649803766, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.8358443
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1308752
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.0536337
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb3d01be81baed249a5c052c3fd53b71, type: 3}
 --- !u!1 &676755086
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +692,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  textLabel: Caja Cerrada
+  audioUsedLabel: {fileID: 0}
+  activeLabel: Caja Cerrada
+  usedLabel: Caja Abierta
   actBehaviour: {fileID: 676755091}
   parentList: {fileID: 0}
 --- !u!212 &676755090
@@ -681,9 +760,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 225929081}
   keyRequired: Ganzua
-  sceneToLoad: 0
+  sceneToLoad: Ganzua
   failString: La caja esta cerrada con un candado de aspecto endeble.
   successString: Intentas forzar el candado con la ganzua.
+  usedString: "La caja est\xE1 vac\xEDa"
 --- !u!1 &834156482
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +816,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  textLabel: Pato
+  audioUsedLabel: {fileID: 0}
+  activeLabel: Pato
+  usedLabel: 
   actBehaviour: {fileID: 834156486}
   parentList: {fileID: 0}
 --- !u!212 &834156485
@@ -854,7 +936,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  textLabel: Spam
+  audioUsedLabel: {fileID: 0}
+  activeLabel: Spam
+  usedLabel: 
   actBehaviour: {fileID: 844299180}
   parentList: {fileID: 0}
 --- !u!114 &844299180
@@ -992,7 +1076,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  textLabel: Inventory
+  audioUsedLabel: {fileID: 0}
+  activeLabel: Inventario
+  usedLabel: 
   actBehaviour: {fileID: 898127339}
   parentList: {fileID: 0}
 --- !u!212 &898127337
@@ -1155,6 +1241,9 @@ MonoBehaviour:
   - {fileID: 126313411}
   prevList: {fileID: 1660612465}
   currentFocus: 0
+  baseObj: 0
+  inventory: 0
+  key: {fileID: 0}
 --- !u!114 &951459235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1525,7 +1614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  textLabel: Escena
+  audioUsedLabel: {fileID: 0}
+  activeLabel: Escena
+  usedLabel: 
   actBehaviour: {fileID: 1455440220}
   parentList: {fileID: 0}
 --- !u!212 &1455440217
@@ -1665,6 +1756,9 @@ MonoBehaviour:
   - {fileID: 1455440216}
   prevList: {fileID: 1660612465}
   currentFocus: 0
+  baseObj: 1
+  inventory: 0
+  key: {fileID: 0}
 --- !u!114 &1660612466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,7 +1957,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  textLabel: Roca
+  audioUsedLabel: {fileID: 0}
+  activeLabel: Roca
+  usedLabel: 
   actBehaviour: {fileID: 0}
   parentList: {fileID: 0}
 --- !u!212 &1818880202

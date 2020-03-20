@@ -101,8 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  textLabel: Bomb
+  audioUsedLabel: {fileID: 0}
+  activeLabel: Bomb
+  usedLabel: Bomba Usada
   actBehaviour: {fileID: 3999211803344183308}
+  parentList: {fileID: 0}
 --- !u!114 &7969217039855327699
 MonoBehaviour:
   m_ObjectHideFlags: 0

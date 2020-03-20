@@ -5,7 +5,9 @@ using UnityEngine;
 public class SRElement : MonoBehaviour
 {
     public AudioClip audioLabel;
-    public string textLabel;
+    public AudioClip audioUsedLabel;
+    public string activeLabel;
+    public string usedLabel;
     public Actable actBehaviour;
     public SRList parentList;
     int state = 0;
@@ -32,14 +34,31 @@ public class SRElement : MonoBehaviour
 
     public void ReadLabel()
     {
-        if (audioLabel != null)
+        if (state == 0)
         {
-            TTS.instance.PlayClip(audioLabel);
-        }
+            if (audioLabel != null)
+            {
+                TTS.instance.PlayClip(audioLabel);
+            }
 
-        else {
-            TTS.instance.PlayTTS(textLabel);
-            Debug.Log("tts label: " + textLabel);
+            else
+            {
+                TTS.instance.PlayTTS(activeLabel);
+                Debug.Log("tts label: " + activeLabel);
+            }
+        }
+        else
+        {
+            if (audioUsedLabel != null)
+            {
+                TTS.instance.PlayClip(audioUsedLabel);
+            }
+
+            else
+            {
+                TTS.instance.PlayTTS(usedLabel);
+                Debug.Log("tts label: " + usedLabel);
+            }
         }
     }
 
@@ -49,6 +68,6 @@ public class SRElement : MonoBehaviour
         {
             actBehaviour.Act();
         }
-        else Debug.Log(textLabel + " is useless");
+        else Debug.Log(activeLabel + " is useless");
     }
 }

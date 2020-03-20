@@ -92,5 +92,10 @@ public class Ganzua : MonoBehaviour
     {
         print("abierto");
         src.PlayOneShot(openSound);
+        Invoke("change", 1);
+    }
+    void change()
+    {
+        GameManager.instance.changeScene("SRTest");
     }
 }

@@ -8,13 +8,41 @@ public class SRList : MonoBehaviour
     public List<SRElement> sreList;
     public SRList prevList;
     public int currentFocus;
+    public bool baseObj = false;
+    public bool inventory = false;
+    public GameObject key;
 
     void Start()
     {
         foreach (SRElement e in sreList)
         {
             e.parentList = this;
-        }    
+        }
+        if (GameManager.instance.levelPassed >= 2 && !baseObj)
+        {
+            int count = 0;
+            if (inventory)
+            {
+                foreach (SRElement el in sreList)
+                {
+                    el.setState(GameManager.instance.loadInventoryObj(count));
+                    count++;
+                    sreList.Insert(sreList.Count, Instantiate(key, transform).GetComponent<SRElement>());
+                }
+            }
+            else
+            {
+                foreach (SRElement el in sreList)
+                {
+                    el.setState(GameManager.instance.loadSceneObj(count));
+                    count++;
+                }
+            }
+        }
+    }
+    public void setObjects()
+    {
+
     }
 
     public SRElement GetCurrentFocus()

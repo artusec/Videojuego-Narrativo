@@ -16,10 +16,7 @@ public class SRManager : MonoBehaviour
     // Gestion del singleton, y se comprueba que tenga audiosource
     void Awake()
     {
-        if (instance != null) GameObject.Destroy(instance);
-        else instance = this;
-
-        DontDestroyOnLoad(this);
+            instance = this;
     }
 
     // Start is called before the first frame update

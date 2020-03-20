@@ -28,8 +28,8 @@ public class AddItemToInventory : Actable
 
     private void SelfDestruct()
     {
-        RemoveFromList();
-        Destroy(gameObject);
+        //RemoveFromList();
+        //Destroy(gameObject);
     }
 
 

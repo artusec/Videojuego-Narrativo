@@ -94,9 +94,9 @@ public class FormasManager : MonoBehaviour
             formas[i].SetActive(false);
         formas[nLevel].SetActive(true);
 
-        option1Text.text = sre1.textLabel = textos[level].text1;
-        option2Text.text = sre2.textLabel = textos[level].text2;
-        option3Text.text = sre3.textLabel = textos[level].text3;
+        option1Text.text = sre1.activeLabel = textos[level].text1;
+        option2Text.text = sre2.activeLabel = textos[level].text2;
+        option3Text.text = sre3.activeLabel = textos[level].text3;
     }
 
     public void addLevel(int nLevel)
