@@ -8,9 +8,11 @@ public struct SonarRadios
     public float cerca,
                 medio,
                 lejos;
+    public AudioClip clickSound;
     public void setCerca(float nCerca) { cerca = nCerca; }
     public void setMedio(float nMedio) { medio = nMedio; }
     public void setLejos(float nLejos) { lejos = nLejos; }
+    public void setAudio(AudioClip nAudio) { clickSound = nAudio; }
 }
 
 public enum SonarZones
@@ -38,8 +40,12 @@ public class SonarPuzzleManager : MonoBehaviour
     [SerializeField]
     public List<SonarRadios> radios;
 
+    //controla si el raton esta pulsado o no
     private bool click = false;
+    //auxiliar que detecta los cambios de zona para evitar repetir llamadas a funciones
     private SonarZones lastZone = SonarZones.fuera;
+    //su propio componente para reproducir sonidos
+    private AudioSource src;
 
     private void OnValidate()
     {
@@ -73,6 +79,13 @@ public class SonarPuzzleManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        src = GetComponent<AudioSource>();
+        if (src == null)
+            throw new System.Exception("No se encontró el componente Audio Source para reproducir sonido");
+    }
+
     //para ver los radios desde el editor
     private void OnDrawGizmos()
     {
@@ -91,11 +104,16 @@ public class SonarPuzzleManager : MonoBehaviour
     {
         click = Input.GetMouseButton(0);
         if (click)
-            ProcessClick();
+            ProcessMouse(move.pressing);
         else Vibration.Cancel();
+
+        if(ScreenInput.instance.getInput() == move.click)
+        {
+            ProcessMouse(move.click);
+        }
     }
 
-    void ProcessClick()
+    void ProcessMouse(move m)
     {
         Vector2 auxPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -116,14 +134,30 @@ public class SonarPuzzleManager : MonoBehaviour
                 index = i;
             }
         }
-        CalculateVibration(index, minDist);
+        if (m == move.pressing)
+            CalculateVibration(index, minDist);
+        else if (m == move.click)
+            ProcessClick(index, minDist);
+
     }
+
+    //procesa un click desde el centro cIndex más cercano, y si se ha hecho el click en el centro (determinado por dist)
+    //  pasa a generar el sonido correspondiente
+    void ProcessClick(int cIndex, float dist)
+    {
+        if (dist <= radios[cIndex].cerca)
+        {
+            print("clickado");
+            src.PlayOneShot(radios[cIndex].clickSound);
+        }
+    }
+
     //calcula la vibración correspondiente dada la distancia dist al centro con indice cIndex dentro de la lista de centros
     void CalculateVibration(int cIndex, float dist)
     {
         if(dist <= radios[cIndex].cerca)
         {
-            if(lastZone != SonarZones.cerca)
+            if (lastZone != SonarZones.cerca)
             {
                 print("cerca");
                 lastZone = SonarZones.cerca;
@@ -160,4 +194,5 @@ public class SonarPuzzleManager : MonoBehaviour
             }
         }
     }
+
 }
