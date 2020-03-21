@@ -9,6 +9,7 @@ public class SRManager : MonoBehaviour
     public ScreenInput sInput;
     private move gesture;
 
+
     // Instancia de la clase (patron singleton)
     public static SRManager instance;
 

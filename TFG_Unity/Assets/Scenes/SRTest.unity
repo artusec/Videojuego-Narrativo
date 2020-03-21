@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5599c5e3b4f1274db696e931f59b760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: {fileID: 0}
   inventory: {fileID: 225929081}
   keyRequired: Llave oxidada
   sceneToLoad: Busqueda
@@ -462,6 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485938a3fa7f4845a2fa34d6ea73140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: {fileID: 0}
   inventory: {fileID: 225929081}
   item: {fileID: 377044337595007849, guid: 340cefd30082b1a45a716cb52c3788d3, type: 3}
 --- !u!114 &338205212
@@ -758,6 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5599c5e3b4f1274db696e931f59b760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: {fileID: 0}
   inventory: {fileID: 225929081}
   keyRequired: Ganzua
   sceneToLoad: Ganzua
@@ -882,6 +885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad71147d5c178c4bafe85eaf4251d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: {fileID: 0}
   quack: {fileID: 8300000, guid: b5b1c51eae7cc2e41b5dafff93927930, type: 3}
 --- !u!114 &834156487
 MonoBehaviour:
@@ -953,6 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b61666158948bc428807e88d209590d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: {fileID: 0}
   prefab: {fileID: 8956972680011802315, guid: 63d5d251bc54f6447bf97ab5d1d29ea5, type: 3}
   position: 3
 --- !u!114 &844299181
@@ -1162,6 +1167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1157284a8ba0c8045bf4369803c83b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: {fileID: 0}
   list: {fileID: 225929081}
 --- !u!114 &898127340
 MonoBehaviour:
@@ -1720,6 +1726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1157284a8ba0c8045bf4369803c83b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: {fileID: 0}
   list: {fileID: 951459234}
 --- !u!1 &1660612464
 GameObject:

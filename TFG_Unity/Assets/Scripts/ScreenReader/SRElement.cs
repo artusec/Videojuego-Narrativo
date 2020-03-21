@@ -9,12 +9,17 @@ public class SRElement : MonoBehaviour
     public string activeLabel;
     public string usedLabel;
     public Actable actBehaviour;
+    [HideInInspector]
     public SRList parentList;
     int state = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (actBehaviour != null)
+        {
+            SetElementToActable();
+        }
     }
 
     // Update is called once per frame
@@ -30,6 +35,11 @@ public class SRElement : MonoBehaviour
     public int getState()
     {
         return state;
+    }
+
+    public void SetElementToActable()
+    {
+        actBehaviour.element = this;
     }
 
     public void ReadLabel()

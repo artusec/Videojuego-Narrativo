@@ -45,6 +45,12 @@ public class SRList : MonoBehaviour
 
     }
 
+    public void SetList(List<SRElement> list)
+    {
+        sreList = list;
+        GoToBeginning();
+    }
+
     public SRElement GetCurrentFocus()
     {
         return sreList[currentFocus];
