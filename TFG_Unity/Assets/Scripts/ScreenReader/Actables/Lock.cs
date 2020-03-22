@@ -13,20 +13,20 @@ public class Lock : Actable
 
     public override void Act()
     {
-        if (GetComponent<SRElement>().getState() != 1)
+        if (element.getState() != objectState.DEFAULT)
         {
             bool found = false;
             foreach (SRElement e in inventory.sreList)
             {
-                if (e.activeLabel == keyRequired)
+                if (e.label== keyRequired)
                 {
                     found = true;
-                    e.setState(2);
+                    e.setState(objectState.DEFAULT);
                 }
             }
             if (found)
             {
-                GetComponent<SRElement>().setState(1);
+                GetComponent<SRElement>().setState(objectState.DEFAULT);
                 TTS.instance.PlayTTS(successString);
                 //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
                 Invoke("change", 1);
@@ -38,7 +38,7 @@ public class Lock : Actable
 
     void change()
     {
-        GameManager.instance.saveState(inventory, GameObject.Find("EscenaElements").GetComponent<SRList>());
+        //GameManager.instance.saveState(inventory, GameObject.Find("EscenaElements").GetComponent<SRList>());
         GameManager.instance.levelPassed = 2;
         GameManager.instance.changeScene(sceneToLoad);
     }

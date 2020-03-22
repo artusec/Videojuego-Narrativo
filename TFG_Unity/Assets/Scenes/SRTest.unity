@@ -383,7 +383,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentList: {fileID: 1660612465}
-  sInput: {fileID: 309350693}
 --- !u!4 &309350692
 Transform:
   m_ObjectHideFlags: 0
@@ -2176,5 +2175,6 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 1733321492}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7930917128310300597, guid: a1d4346e86f65664b8cd95fff923dba8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1d4346e86f65664b8cd95fff923dba8, type: 3}

@@ -10,6 +10,9 @@ public class SRManager : MonoBehaviour
 
     ScreenInput screenInput = null;
 
+    public SRList inventory;
+    public SRList scene;
+
 
     // Instancia de la clase (patron singleton)
     public static SRManager instance;
