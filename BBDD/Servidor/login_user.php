@@ -15,9 +15,5 @@ if ($user == false) {
 	exit();
 }
 
-session_name($username);
-session_start();
-$_SESSION[$_POST["username"] = $username;
-
-echo "Hola!";
+print "Hola!";
 exit();

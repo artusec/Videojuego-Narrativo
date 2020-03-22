@@ -1,9 +1,3 @@
-DROP TABLE IF EXISTS Messages;
-DROP TABLE IF EXISTS State_Game;
-DROP TABLE IF EXISTS Objects;
-DROP TABLE IF EXISTS Games;
-DROP TABLE IF EXISTS Users;
-
 CREATE TABLE Users(
 	id int AUTO_INCREMENT,
 	username varchar(15) NOT NULL,
@@ -63,7 +57,7 @@ CREATE TABLE Statistics(
 	id int AUTO_INCREMENT,
 	id_user int,
 	id_game int,
-	timed int
+	timed int,
 
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_user) REFERENCES Users(id),

@@ -95,7 +95,7 @@ CREATE TABLE Statistics(
 	id int AUTO_INCREMENT,
 	id_user int,
 	id_game int,
-	timed int
+	timed int,
 
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_user) REFERENCES Users(id),
