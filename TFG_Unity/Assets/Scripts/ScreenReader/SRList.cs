@@ -63,7 +63,8 @@ public class SRList : MonoBehaviour
 
     public void ReadFocus()
     {
-        sreList[currentFocus].ReadLabel();
+        if (sreList.Count == 0) Debug.Log("Lista vacia");
+        else sreList[currentFocus].ReadLabel();
     }
 
     public void Remove(int index)

@@ -14,7 +14,7 @@ public class TTS : MonoBehaviour
     public static TTS instance;
 
     // Url de la pagina que genera los audios
-    private string baseUrl = "http://api.voicerss.org/?key=fed840ae6af4495d8aab93e3cded0c38&hl=es-Es&c=wav&f=8khz_8bit_mono&src=";
+    private string baseUrl = "http://api.voicerss.org/?key=2a6b11f65029455eadb5ab59fb9c05ef&hl=es-Es&c=wav&f=8khz_8bit_mono&src=";
 
     // AudioSource que reproduce los audios
     AudioSource source;
@@ -28,6 +28,7 @@ public class TTS : MonoBehaviour
         else instance = this;
 
         DontDestroyOnLoad(this);
+
     }
 
     // Reproduce el clip asociado

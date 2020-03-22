@@ -6,8 +6,9 @@ public class SRManager : MonoBehaviour
 {
     public SRList currentList;
     private SRList prevList;
-    public ScreenInput sInput;
     private move gesture;
+
+    ScreenInput screenInput = null;
 
 
     // Instancia de la clase (patron singleton)
@@ -23,17 +24,19 @@ public class SRManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        screenInput = ScreenInput.instance;
+        currentList.ReadFocus();
     }
 
     private void OnEnable()
     {
-        currentList.ReadFocus();
+      //  currentList.ReadFocus();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ProcessGesture(sInput.getInput());
+        ProcessGesture(screenInput.getInput());
     }
 
     public void SetList(SRList srl)
