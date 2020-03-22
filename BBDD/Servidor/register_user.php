@@ -14,10 +14,10 @@ header("Content-type: text/html");
 if (User::find_by_username($username) == false){
 	if($pass == $pass2){
 			$app = User::insert_user($username, $email, $pass);
-			echo "Registro realizado con exito!";
+			print("Registro realizado con exitoooo!");
 			exit();
 	}
-	echo "Las contraseñas no coinciden";
+	print("Las contraseñas no coinciden");
 	exit();
 }
-echo "Ya existe un usuario con ese nombre, prueba con otro";
+print("Ya existe un usuario con ese nombre, prueba con otro");
