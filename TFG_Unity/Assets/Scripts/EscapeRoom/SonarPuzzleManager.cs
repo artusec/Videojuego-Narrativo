@@ -32,6 +32,12 @@ public class SonarPuzzleManager : MonoBehaviour
 
     [Space(10)]
 
+    //si en vez de querer buscar un solo item se quiere buscar varios objetos o similiar 
+    //  se puede cambiar este atributo por una lista de índices
+    [Header("Índice solución")]
+    [Tooltip("El índice dentro del array de centros el cual es solución al minijuego")]
+    public int solutionIndex = 0;
+
     [Tooltip("Los centros de los distintos focos de vibración")]
     [SerializeField]
     public List<Transform> centros;
@@ -77,6 +83,12 @@ public class SonarPuzzleManager : MonoBehaviour
             if (radios[i].lejos < 0)
                 radios[i].setLejos(0);
         }
+
+        //nos aseguramos que la solución es un índice válido
+        if (solutionIndex < 0)
+            solutionIndex = 0;
+        else if (solutionIndex >= centros.Count)
+            solutionIndex = centros.Count - 1;
     }
 
     private void Start()
@@ -111,8 +123,14 @@ public class SonarPuzzleManager : MonoBehaviour
         {
             ProcessMouse(move.click);
         }
+        else if(ScreenInput.instance.getInput() == move.doubleClick)
+        {
+            ProcessMouse(move.doubleClick);
+        }
     }
 
+    //calcula cual es el centro a menor distancia desde la posición del ratón y actúa en consecuencia
+    //  según el move m que se le pase
     void ProcessMouse(move m)
     {
         Vector2 auxPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -134,11 +152,21 @@ public class SonarPuzzleManager : MonoBehaviour
                 index = i;
             }
         }
-        if (m == move.pressing)
-            CalculateVibration(index, minDist);
-        else if (m == move.click)
-            ProcessClick(index, minDist);
 
+        switch (m)
+        {
+            case move.pressing:
+                CalculateVibration(index, minDist);
+                break;
+            case move.click:
+                ProcessClick(index, minDist);
+                break;
+            case move.doubleClick:
+                ProcessDoubleClick(index, minDist);
+                break;
+            default:
+                break;
+        }
     }
 
     //procesa un click desde el centro cIndex más cercano, y si se ha hecho el click en el centro (determinado por dist)
@@ -147,8 +175,22 @@ public class SonarPuzzleManager : MonoBehaviour
     {
         if (dist <= radios[cIndex].cerca)
         {
-            print("clickado");
+            print("centro clickado, reproduciendo sonido asociado al índice: "+ cIndex.ToString() );
             src.PlayOneShot(radios[cIndex].clickSound);
+        }
+    }
+
+    void ProcessDoubleClick(int cIndex, float dist)
+    {
+        //si el centro más cercano es la solución y se cumple la condición de distancia
+        if(cIndex == solutionIndex && dist <= radios[cIndex].cerca)
+        {
+            src.Stop();
+            //indicamos que hemos ganado / conseguido el objeto
+            print("VICTORIA");
+            //-------------------------------------------------
+            // Hacer lo que sea necesario para seguir el juego
+            //-------------------------------------------------
         }
     }
 
@@ -194,5 +236,4 @@ public class SonarPuzzleManager : MonoBehaviour
             }
         }
     }
-
 }
