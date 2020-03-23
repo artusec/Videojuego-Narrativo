@@ -95,8 +95,11 @@ class Game
     }
 
 
-    // No probada
+    // Funciona
     public function cargar_partida_individual($user1) {
+
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
 
         # Recuperamos el id de la partida individual
         $query = sprintf("SELECT id_object, state_object FROM Games G join State_Game S on G.user1 = S.id_user where S.id_user = '%d'", $conn->real_escape_string($user1));
@@ -116,9 +119,24 @@ class Game
 
     }
 
-
-    public function guardar_partida_individual($datos) {
+    // Funciona
+    public function guardar_partida_individual($user, $datos) {
         
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+        foreach($datos as $clave=>$valor) {
+            echo $clave;
+            echo $valor;
+            $query = sprintf("UPDATE state_game SET state_object = '%d' WHERE (id_object = '%d' and id_user = '%d')",
+                    $conn->real_escape_string($valor),
+                    $conn->real_escape_string($clave),
+                    $conn->real_escape_string($user));
+            $rs = $conn->query($query);
+            if (!$rs) {
+                echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+                return false;
+            }
+        }
     }
 
 

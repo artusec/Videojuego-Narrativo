@@ -21,7 +21,6 @@ CREATE TABLE Games(
 	FOREIGN KEY (user2) REFERENCES Users(id)
 );
 
-
 CREATE TABLE Objects(
 	id int AUTO_INCREMENT,
 	name varchar(20),

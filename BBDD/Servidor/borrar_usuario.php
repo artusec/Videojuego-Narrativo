@@ -1,11 +1,13 @@
 <?php
 require_once __DIR__ . '/DB_data.php';
-require_once __DIR__ . '/Game.php';
+require_once __DIR__ . '/User.php';
 
 $uri = $_SERVER["REQUEST_URI"];
-$user = $_POST["username"];
+$id_user = $_POST["id_user"];
+
 header("Content-type: text/html");
-if (Game::inicia_nuevo_juego_individual(2)){
+
+if (User::borrar_usuario($id_user)){
 	print("Hecho!");
 	exit();
 }

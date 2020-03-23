@@ -4,9 +4,16 @@ require_once __DIR__ . '/Game.php';
 
 $uri = $_SERVER["REQUEST_URI"];
 $user = $_POST["username"];
+
+$datos = array();
 header("Content-type: text/html");
-if (Game::inicia_nuevo_juego_individual(2)){
+$datos = array();
+if ($datos = Game::cargar_partida_individual($user)){
 	print("Hecho!");
+	echo "<br>";
+	foreach($datos as $clave=>$valor) {
+		echo $clave.":".$valor."<br>";
+	}
 	exit();
 }
 print("Algo ha fallado");
