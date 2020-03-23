@@ -18,27 +18,6 @@ public class SRList : MonoBehaviour
         {
             e.parentList = this;
         }
-        if (GameManager.instance.levelPassed >= 2 && !baseObj)
-        {
-            int count = 0;
-            if (inventory)
-            {
-                foreach (SRElement el in sreList)
-                {
-                    el.setState(GameManager.instance.loadInventoryObj(count));
-                    count++;
-                    sreList.Insert(sreList.Count, Instantiate(key, transform).GetComponent<SRElement>());
-                }
-            }
-            else
-            {
-                foreach (SRElement el in sreList)
-                {
-                    el.setState(GameManager.instance.loadSceneObj(count));
-                    count++;
-                }
-            }
-        }
     }
     public void setObjects()
     {
@@ -63,7 +42,8 @@ public class SRList : MonoBehaviour
 
     public void ReadFocus()
     {
-        sreList[currentFocus].ReadLabel();
+        if (sreList.Count == 0) Debug.Log("Lista vacia");
+        else sreList[currentFocus].ReadLabel();
     }
 
     public void Remove(int index)

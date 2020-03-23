@@ -5,13 +5,11 @@ using UnityEngine;
 public class SRElement : MonoBehaviour
 {
     public AudioClip audioLabel;
-    public AudioClip audioUsedLabel;
-    public string activeLabel;
-    public string usedLabel;
+    public string label;
     public Actable actBehaviour;
     [HideInInspector]
     public SRList parentList;
-    int state = 0;
+    objectState state = objectState.DEFAULT;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +26,11 @@ public class SRElement : MonoBehaviour
         
     }
 
-    public void setState(int stat)
+    public void setState(objectState stat)
     {
         state = stat;
     }
-    public int getState()
+    public objectState getState()
     {
         return state;
     }
@@ -44,31 +42,15 @@ public class SRElement : MonoBehaviour
 
     public void ReadLabel()
     {
-        if (state == 0)
+        if (audioLabel != null)
         {
-            if (audioLabel != null)
-            {
-                TTS.instance.PlayClip(audioLabel);
-            }
-
-            else
-            {
-                TTS.instance.PlayTTS(activeLabel);
-                Debug.Log("tts label: " + activeLabel);
-            }
+            TTS.instance.PlayClip(audioLabel);
         }
+
         else
         {
-            if (audioUsedLabel != null)
-            {
-                TTS.instance.PlayClip(audioUsedLabel);
-            }
-
-            else
-            {
-                TTS.instance.PlayTTS(usedLabel);
-                Debug.Log("tts label: " + usedLabel);
-            }
+            //TTS.instance.PlayTTS(label);
+            Debug.Log("tts label: " + label);
         }
     }
 
@@ -78,6 +60,6 @@ public class SRElement : MonoBehaviour
         {
             actBehaviour.Act();
         }
-        else Debug.Log(activeLabel + " is useless");
+        else Debug.Log(label + " is useless");
     }
 }

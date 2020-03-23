@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum objectState {DESTROYED, DEFAULT, USED};
 public class GameManager : MonoBehaviour
 {
+    [System.Serializable]
+    public struct element
+    {
+        public string prefabName;
+        public objectState state;
+    }
+    
     public static GameManager instance;
     public int levelPassed = 1;
-    int[] objects;
-    int[] sceneObjs;
+    public List<element> invObjects;
+    public List<element> sceneObjs;
 
 
     // Start is called before the first frame update
@@ -43,68 +51,54 @@ public class GameManager : MonoBehaviour
         sceneObjs = scen;
     }
     */
-    public int loadSceneObj(int i)
+    public void loadState()
     {
-        /*List<SRElement> aux = new List<SRElement>();
-        foreach (SRElement elem in objects.sreList)
-        {
-            aux.Add(elem);
-        }
-        return aux;
-        */
-        return sceneObjs[i];
-    }
-    public int loadInventoryObj(int i)
-    {
-        /*List<SRElement> aux = new List<SRElement>();
-        foreach (SRElement elem in sceneObjs.sreList)
-        {
-            aux.Add(elem);
-        }
-        return aux;
-        */
-        return objects[i];
-    }
-    public void saveState(SRList objs, SRList scen)
-    {
-        /*if (objStates.Length <= objects.sreList.Count)
-        {
-            int count = 0;
-            foreach (SRElement elem in objects.sreList)
-            {
-                elem.setState(objStates[count]);
-                count++;
-            }
-        }
-        else print("¡NO COINCIDEN LOS ELEMENTOS!");
-        if (scenStates.Length <= sceneObjs.sreList.Count)
-        {
-            int count = 0;
-            foreach (SRElement elem in sceneObjs.sreList)
-            {
-                elem.setState(scenStates[count]);
-                count++;
-            }
-        }
-        else print("¡NO COINCIDEN LOS ELEMENTOS!");
-        */
-        int[] objStates = new int[objs.sreList.Count];
-        int[] scenStates = new int[scen.sreList.Count];
-
+        GameObject aux;
+        SRElement elAux;
         int count = 0;
-        foreach (SRElement el in objs.sreList)
+        foreach (element el in invObjects)
         {
-            objStates[count] = el.getState();
+            aux = Instantiate((Resources.Load("Pruebas/" + invObjects[count].prefabName)) as GameObject);
+            elAux = aux.GetComponent<SRElement>();
+            elAux.setState(invObjects[count].state);
             count++;
         }
         count = 0;
-        foreach (SRElement el in scen.sreList)
+        foreach (element el in sceneObjs)
         {
-            scenStates[count] = el.getState();
+            aux = Instantiate((Resources.Load("Pruebas/" + sceneObjs[count].prefabName)) as GameObject);
+            elAux = aux.GetComponent<SRElement>();
+            elAux.setState(sceneObjs[count].state);
+            count++;
+        }
+    }
+    public void saveState()
+    {
+        List<SRElement> objs = SRManager.instance.inventory.sreList;
+        List<SRElement> scen = SRManager.instance.scene.sreList;
+
+        List<element> objStates = new List<element>();
+        List<element> scenStates = new List<element>();
+
+        int count = 0;
+        element aux;
+        foreach (SRElement el in objs)
+        {
+            aux.prefabName = el.gameObject.name;
+            aux.state = el.getState();
+            objStates.Add(aux);
+            count++;
+        }
+        count = 0;
+        foreach (SRElement el in scen)
+        {
+            aux.prefabName = el.gameObject.name;
+            aux.state = el.getState();
+            scenStates.Add(aux);
             count++;
         }
 
-        objects = objStates;
+        invObjects = objStates;
         sceneObjs = scenStates;
     }
 }
