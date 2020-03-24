@@ -28,12 +28,12 @@ public class LaberynthController : MonoBehaviour
     private void FixedUpdate()
     {
         //lanzamos un raycast y miramos si hemos chocado con un muro
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, visionLenght);
-        if (hit.collider != null && hit.collider.CompareTag("LabPoint"))
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up.normalized , visionLenght);
+        if (hit.collider != null && hit.collider.CompareTag("LabWall"))
         {
             print("cuidado");
         }
-        Debug.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y) + Vector2.up * visionLenght) ;
+        Debug.DrawLine(transform.position, (Vector2)transform.position + (Vector2)(transform.up) * visionLenght);
     }
 
     private void LateUpdate()
@@ -61,7 +61,7 @@ public class LaberynthController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider coll)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "LabWall" && tag != "LabForesight")
         {
