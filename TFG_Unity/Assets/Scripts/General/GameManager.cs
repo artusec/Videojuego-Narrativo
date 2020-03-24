@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
     {
         public string prefabName;
         public objectState state;
+        public element(string s, objectState o) { prefabName = s; state = o; }
+        public element(string s, int o) { prefabName = s; state = (objectState)o; }
     }
-    
+
     public static GameManager instance;
     public int levelPassed = 1;
     public List<element> invObjects;
@@ -31,10 +33,14 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Start()
+    {
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void changeScene(string sceneName)
@@ -100,5 +106,33 @@ public class GameManager : MonoBehaviour
 
         invObjects = objStates;
         sceneObjs = scenStates;
+    }
+
+    /// <summary>
+    /// Carga la habitacion desde el archivo txt, rellena sceneObjs con los objetos en el archivo
+    /// </summary>
+    /// <param name="roomN"></param>
+    private void loadRoomFromFile(int roomN)
+    {
+        string filePath = "Rooms"; //ruta archivo
+
+        string[] roomFileLines = Resources.Load<TextAsset>(filePath).text.Split('\n');
+        bool found = false;
+        int lineIndex = 0;
+        // Buscamos el index del nivel
+        while (!found && lineIndex < roomFileLines.Length) // No hemos encontrado y no es el final
+        {
+            var aux = roomFileLines[lineIndex].Split(':');
+            if (aux[0] == roomN.ToString())
+            {
+                sceneObjs.Clear();
+                foreach(string o in aux[1].Split(','))
+                {
+                    sceneObjs.Add(new element(o, 1));
+                }
+                found = true;
+            }
+            lineIndex++;
+        }
     }
 }
