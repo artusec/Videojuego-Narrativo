@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - SRManager
+  - LabWall
+  - LabPoint
+  - LabForesight
   layers:
   - Default
   - TransparentFX

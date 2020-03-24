@@ -35,10 +35,14 @@ public class LaberynthManager : MonoBehaviour
 
     private void Start()
     {
-        actIndex = 0;
-        src.transform.position = path[actIndex].pos.position;
-        src.clip = path[actIndex].audio;
-        src.loop = true;
+        changeToPoint(0);
+    }
+
+    public void Loose()
+    {
+        src.Stop();
+        looseAudio.Play();
+        Invoke("ResetScene", 2.5f);
     }
 
     //comprueba si una posicion dada pos está dentro del radio de acción elegido del audioSource
@@ -47,33 +51,14 @@ public class LaberynthManager : MonoBehaviour
         return Vector2.Distance(pos, src.transform.position) <= actionRadius;
     }
 
-    //mira si se ha tomado el giro en la dirección correcta y hace los cambios necesarios
-    //  bool left indica el giro tomado, true si es hacia la izquierda y false hacia la derecha
-    public void ProcessTurn(bool left, Transform playerTransform)
-    {
-        //si coincide con la solución
-        if(left == path[actIndex].solutionLeft)
-        {
-            print("giro adecuado");
-            //paramos el audio
-            src.Stop();
-            //ajustamos el player
-            playerTransform.position = path[actIndex].pos.position;
-            //y aumentamos el indice
-            changeToPoint(actIndex + 1);
-        }
-        else
-        {
-            src.Stop();
-            print("derrota por camino equivocado, se reiniciará la escena en 2 segundos");
-            looseAudio.Play();
-            Invoke("ResetScene", 2);
-        }
-    }
-
     private void ResetScene()
     {
         SceneManager.LoadScene("Laberinto");
+    }
+
+    public void NextPoint()
+    {
+        changeToPoint(actIndex + 1);
     }
 
     //cambia el audioSource para que se ajuste al punto con índice index dentro de la lista
@@ -95,5 +80,9 @@ public class LaberynthManager : MonoBehaviour
     {
         if(src != null)
             Gizmos.DrawWireSphere(src.transform.position, actionRadius);
+        foreach(LaberynthPoints lp in path)
+        {
+            Gizmos.DrawWireSphere(lp.pos.position, 0.2f);
+        }
     }
 }
