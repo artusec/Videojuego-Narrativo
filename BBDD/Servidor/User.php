@@ -151,6 +151,28 @@ class User
         return 1;
     }
 
+
+    public function guardar_estadisticas($id_game, $id_user, $timed){
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+        $query = sprintf("INSERT INTO Statistics (id_user, id_game, timed) VALUES ('%s', '%s', '%s')",
+            $conn->real_escape_string($id_game),
+            $conn->real_escape_string($id_user),
+            $conn->real_escape_string($timed)
+            );
+        if ( $conn->query($query) ) {
+            $user->id = $conn->insert_id;
+        } else {
+            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+        return $user;
+    }
+
+
+
+    /* Utils ---------------------------------------------------------------------------------*/
+
     private static function hashPassword($password)
     {
         return password_hash($password, PASSWORD_DEFAULT);
