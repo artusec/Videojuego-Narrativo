@@ -53,7 +53,7 @@ public class LaberynthManager : MonoBehaviour
 
     private void ResetScene()
     {
-        SceneManager.LoadScene("Laberinto");
+        SceneManager.LoadScene("PruebaLaberinto");
     }
 
     public void NextPoint()
