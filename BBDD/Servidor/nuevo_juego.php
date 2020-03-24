@@ -5,7 +5,7 @@ require_once __DIR__ . '/Game.php';
 $uri = $_SERVER["REQUEST_URI"];
 $user = $_POST["username"];
 header("Content-type: text/html");
-if (Game::inicia_nuevo_juego_individual(2)){
+if (Game::inicia_nuevo_juego_individual($user)){
 	print("Hecho!");
 	exit();
 }
