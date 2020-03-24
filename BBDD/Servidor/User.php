@@ -92,6 +92,64 @@ class User
         return $user;
     }
     
+    // Funciona
+    public function borrar_usuario($id_user){
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+
+        $query = sprintf("DELETE FROM Statistics WHERE id_user = '%d'",
+            $conn->real_escape_string($id_user)
+            );
+        if (! $conn->query($query) ) {
+            $user->id = $conn->insert_id;
+            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+
+
+        $query = sprintf("DELETE FROM Messages WHERE (id_sender = '%d' or id_receiver = '%d')",
+            $conn->real_escape_string($id_user),
+            $conn->real_escape_string($id_user)
+            );
+        if (! $conn->query($query) ) {
+            $user->id = $conn->insert_id;
+            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+
+
+
+        $query = sprintf("DELETE FROM State_Game WHERE id_user = '%d'",
+            $conn->real_escape_string($id_user)
+            );
+        if (! $conn->query($query) ) {
+            $user->id = $conn->insert_id;
+            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+
+        $query = sprintf("DELETE FROM Games WHERE (user1 = '%d' or user2 = '%d')",
+        $conn->real_escape_string($id_user),
+        $conn->real_escape_string($id_user)
+            );
+        if (! $conn->query($query) ) {
+            $user->id = $conn->insert_id;
+            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+
+
+        $query = sprintf("DELETE FROM Users WHERE id = '%d'",
+            $conn->real_escape_string($id_user)
+            );
+        if (! $conn->query($query) ) {
+            $user->id = $conn->insert_id;
+            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+
+        return 1;
+    }
 
     private static function hashPassword($password)
     {
