@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
         foreach (element el in invObjects)
         {
             aux = Instantiate((Resources.Load("Pruebas/" + invObjects[count].prefabName)) as GameObject);
+            aux.name = deleteCloneText(aux.name);
             elAux = aux.GetComponent<SRElement>();
             elAux.setState(invObjects[count].state);
             count++;
@@ -73,10 +74,21 @@ public class GameManager : MonoBehaviour
         foreach (element el in sceneObjs)
         {
             aux = Instantiate((Resources.Load("Pruebas/" + sceneObjs[count].prefabName)) as GameObject);
+            aux.name = deleteCloneText(aux.name);
             elAux = aux.GetComponent<SRElement>();
             elAux.setState(sceneObjs[count].state);
             count++;
         }
+    }
+
+    //Delete (Clone) name for instanced objects
+    string deleteCloneText(string objectText)
+    {
+        if (objectText[objectText.Length - 1] == ')')
+        {
+            objectText = objectText.Substring(0, objectText.Length-7);
+        }
+        return objectText;
     }
     public void saveState()
     {
