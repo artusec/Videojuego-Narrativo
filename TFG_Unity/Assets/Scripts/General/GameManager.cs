@@ -16,9 +16,9 @@ public class GameManager : MonoBehaviour
     }
 
     public static GameManager instance;
-    public int levelPassed = 1;
     public List<element> invObjects;
     public List<element> sceneObjs;
+    public int room = 1;
 
 
     // Start is called before the first frame update
@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        loadRoomFromFile(1);
+        instantiateRoom();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     public void changeScene(string sceneName)
     {
+        saveState();
         SceneManager.LoadScene(sceneName);
     }
     /*public SRList getObjects()
@@ -57,27 +60,93 @@ public class GameManager : MonoBehaviour
         sceneObjs = scen;
     }
     */
-    public void loadState()
+
+    /// <summary>
+    /// Añade objeto a inventario en default
+    /// </summary>
+    /// <param name="s"></param>
+    public void addItemToInv(string s)
     {
-        GameObject aux;
-        SRElement elAux;
-        int count = 0;
-        foreach (element el in invObjects)
+        addItemToInv(s, 1);
+    }
+
+    /// <summary>
+    /// Añade objeto a inventario en estado i
+    /// </summary>
+    /// <param name="s"></param>
+    public void addItemToInv(string s, int i)
+    {
+        invObjects.Add(new element(s, i));
+        SRManager srm = SRManager.instance;
+        if (srm != null)
         {
-            aux = Instantiate((Resources.Load("Pruebas/" + invObjects[count].prefabName)) as GameObject);
+            SRElement aux = Instantiate((Resources.Load("Objects/" + s)) as GameObject, srm.inventory.transform).GetComponent<SRElement>();
             aux.name = deleteCloneText(aux.name);
-            elAux = aux.GetComponent<SRElement>();
-            elAux.setState(invObjects[count].state);
-            count++;
+            aux.setState((objectState)i);
+            srm.inventory.Push(aux);
         }
-        count = 0;
-        foreach (element el in sceneObjs)
+    }
+
+    /// <summary>
+    /// Añade objeto a escena en default
+    /// </summary>
+    /// <param name="s"></param>
+    public void addItemToScene(string s)
+    {
+        addItemToScene(s, 1);
+    }
+
+    /// <summary>
+    /// Añade objeto a inventario en estado i
+    /// </summary>
+    /// <param name="s"></param>
+    public void addItemToScene(string s, int i)
+    {
+        sceneObjs.Add(new element(s, i));
+        SRManager srm = SRManager.instance;
+        if (srm != null)
         {
-            aux = Instantiate((Resources.Load("Pruebas/" + sceneObjs[count].prefabName)) as GameObject);
+            SRElement aux = Instantiate((Resources.Load("Objects/" + s)) as GameObject, srm.scene.transform).GetComponent<SRElement>();
             aux.name = deleteCloneText(aux.name);
-            elAux = aux.GetComponent<SRElement>();
-            elAux.setState(sceneObjs[count].state);
-            count++;
+            aux.setState((objectState)i);
+            srm.scene.Push(aux);
+        }
+    }
+
+    public void instantiateRoom()
+    {
+        SRManager srm = SRManager.instance;
+        if (srm == null) Debug.Log("No se puede crear escena sin SRManager");
+
+        else
+        {
+            GameObject aux;
+            SRElement elAux;
+            List<SRElement> invList = new List<SRElement>();
+            int count = 0;
+            foreach (element el in invObjects)
+            {
+                aux = Instantiate((Resources.Load("Objects/" + invObjects[count].prefabName)) as GameObject, srm.inventory.transform);
+                aux.name = deleteCloneText(aux.name);
+                elAux = aux.GetComponent<SRElement>();
+                elAux.setState(invObjects[count].state);
+                invList.Add(elAux);
+                count++;
+            }
+            SRManager.instance.inventory.sreList = invList;
+
+            List<SRElement> sceneList = new List<SRElement>();
+            count = 0;
+            foreach (element el in sceneObjs)
+            {
+                aux = Instantiate((Resources.Load("Objects/" + sceneObjs[count].prefabName)) as GameObject, srm.scene.transform);
+                aux.name = deleteCloneText(aux.name);
+                elAux = aux.GetComponent<SRElement>();
+                elAux.setState(sceneObjs[count].state);
+                sceneList.Add(elAux);
+                count++;
+            }
+            SRManager.instance.scene.sreList = sceneList;
         }
     }
 
@@ -92,32 +161,37 @@ public class GameManager : MonoBehaviour
     }
     public void saveState()
     {
-        List<SRElement> objs = SRManager.instance.inventory.sreList;
-        List<SRElement> scen = SRManager.instance.scene.sreList;
-
-        List<element> objStates = new List<element>();
-        List<element> scenStates = new List<element>();
-
-        int count = 0;
-        element aux;
-        foreach (SRElement el in objs)
+        SRManager srm = SRManager.instance;
+        if (srm == null) Debug.Log("no hay srm de la que guardar");
+        else
         {
-            aux.prefabName = el.gameObject.name;
-            aux.state = el.getState();
-            objStates.Add(aux);
-            count++;
-        }
-        count = 0;
-        foreach (SRElement el in scen)
-        {
-            aux.prefabName = el.gameObject.name;
-            aux.state = el.getState();
-            scenStates.Add(aux);
-            count++;
-        }
+            List<SRElement> objs = srm.inventory.sreList;
+            List<SRElement> scen = srm.scene.sreList;
 
-        invObjects = objStates;
-        sceneObjs = scenStates;
+            List<element> objStates = new List<element>();
+            List<element> scenStates = new List<element>();
+
+            int count = 0;
+            element aux;
+            foreach (SRElement el in objs)
+            {
+                aux.prefabName = el.gameObject.name;
+                aux.state = el.getState();
+                objStates.Add(aux);
+                count++;
+            }
+            count = 0;
+            foreach (SRElement el in scen)
+            {
+                aux.prefabName = el.gameObject.name;
+                aux.state = el.getState();
+                scenStates.Add(aux);
+                count++;
+            }
+
+            invObjects = objStates;
+            sceneObjs = scenStates;
+        }
     }
 
     /// <summary>
@@ -140,7 +214,7 @@ public class GameManager : MonoBehaviour
                 sceneObjs.Clear();
                 foreach(string o in aux[1].Split(','))
                 {
-                    sceneObjs.Add(new element(o, 1));
+                    sceneObjs.Add(new element(o.Replace('\r'.ToString(), ""), 1));
                 }
                 found = true;
             }

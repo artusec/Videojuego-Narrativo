@@ -8,25 +8,48 @@ public class SRList : MonoBehaviour
     public List<SRElement> sreList;
     public SRList prevList;
     public int currentFocus;
-    public bool baseObj = false;
-    public bool inventory = false;
-    public GameObject key;
 
     void Start()
     {
-        foreach (SRElement e in sreList)
-        {
-            e.parentList = this;
-        }
+        SetListToChildren();
     }
     public void setObjects()
     {
 
     }
 
+    private void SetListToChildren()
+    {
+        foreach (SRElement e in sreList)
+        {
+            e.parentList = this;
+        }
+    }
+
+    public bool ContainsObjectByName(string name)
+    {
+        bool found = false;
+        foreach(SRElement se in sreList)
+        {
+            if (se.name == name) { found = true; break; }
+        }
+        return found;
+    }
+
+    public SRElement SearchObjectByName(string name)
+    {
+        SRElement element = null;
+        foreach (SRElement se in sreList)
+        {
+            if (se.name == name) { element = se; break; }
+        }
+        return element;
+    }
+
     public void SetList(List<SRElement> list)
     {
         sreList = list;
+        SetListToChildren();
         GoToBeginning();
     }
 
@@ -70,6 +93,11 @@ public class SRList : MonoBehaviour
         else ReadFocus();
     }
 
+    public void Push(SRElement element)
+    {
+        Insert(sreList.Count, element);
+    }
+
     public void Advance()
     {
         GoTo(currentFocus + 1);
@@ -97,10 +125,13 @@ public class SRList : MonoBehaviour
 
     private void GoTo(int index)
     {
-        currentFocus = index;
-        // no out of bounds
-        if (currentFocus < 0) currentFocus = 0;
-        else if (currentFocus >= sreList.Count) currentFocus = sreList.Count-1;
-        sreList[currentFocus].ReadLabel();
+        if (sreList.Count > 0)
+        {
+            currentFocus = index;
+            // no out of bounds
+            if (currentFocus < 0) currentFocus = 0;
+            else if (currentFocus >= sreList.Count) currentFocus = sreList.Count - 1;
+            sreList[currentFocus].ReadLabel();
+        }
     }
 }

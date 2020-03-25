@@ -20,6 +20,9 @@ public class Ganzua : MonoBehaviour
     public float angleSeparation = 10;
 
     bool canClick = false;
+
+    private string sceneToLoad = "DemoEnd";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,10 +95,28 @@ public class Ganzua : MonoBehaviour
     {
         print("abierto");
         src.PlayOneShot(openSound);
-        Invoke("change", 1);
+        Invoke("onOpen",2);
+    }
+
+    void onOpen()
+    {
+        int progress = GameManager.instance.room;
+        switch (progress)
+        {
+            case 1:
+                GameManager.instance.addItemToInv("LlaveOxidada1");
+                sceneToLoad = "Room1";
+                Invoke("change", 1);
+                break;
+            default:
+                sceneToLoad = "DemoEnd";
+                Invoke("change", 1);
+                break;
+
+        }
     }
     void change()
     {
-        GameManager.instance.changeScene("SRTest");
+        GameManager.instance.changeScene(sceneToLoad);
     }
 }

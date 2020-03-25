@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7755430628152336992
+--- !u!1 &7126698711708841052
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7755430628152336999}
-  - component: {fileID: 7755430628152336997}
-  - component: {fileID: 7755430628152336998}
+  - component: {fileID: 7126698711708841053}
+  - component: {fileID: 7126698711708841027}
+  - component: {fileID: 7126698711708841026}
+  - component: {fileID: -132261295968380531}
   m_Layer: 0
-  m_Name: Llave oxidada
+  m_Name: CajaLlave1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7755430628152336999
-RectTransform:
+--- !u!4 &7126698711708841053
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755430628152336992}
+  m_GameObject: {fileID: 7126698711708841052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5019531}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.8105664, y: 3.2541385, z: -0.5019531}
+  m_LocalScale: {x: 0.64826995, y: 0.64826995, z: 0.64826995}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1.2505665, y: -2.1258616}
-  m_SizeDelta: {x: 4, y: 4}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!212 &7755430628152336997
+--- !u!114 &7126698711708841027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7126698711708841052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLabel: {fileID: 0}
+  label: Caja
+  actBehaviour: {fileID: -132261295968380531}
+  parentList: {fileID: 0}
+--- !u!212 &7126698711708841026
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755430628152336992}
+  m_GameObject: {fileID: 7126698711708841052}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,30 +87,30 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5e09b4685e9fb984d8e25b77bb0b5f80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 022ddb3667502f94a836fda0924f3a72, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.2, y: 3.2}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7755430628152336998
+--- !u!114 &-132261295968380531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755430628152336992}
+  m_GameObject: {fileID: 7126698711708841052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
+  m_Script: {fileID: 11500000, guid: 5485938a3fa7f4845a2fa34d6ea73140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
-  label: 
-  actBehaviour: {fileID: 0}
-  parentList: {fileID: 0}
+  element: {fileID: 0}
+  item: Ganzua1
+  pickUpLine: "Encuentras una ganz\xFAa en la caja"
+  emptyLine: "La caja est\xE1 vac\xEDa"
