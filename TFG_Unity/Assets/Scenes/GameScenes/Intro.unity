@@ -244,7 +244,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5977621018428929109, guid: a1d4346e86f65664b8cd95fff923dba8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1d4346e86f65664b8cd95fff923dba8, type: 3}
 --- !u!1001 &333188980
 PrefabInstance:
@@ -755,6 +756,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4d0d56547aa9f4bb98a73af4e67cc6, type: 3}
+--- !u!82 &665760660 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7930917128310300597, guid: a1d4346e86f65664b8cd95fff923dba8,
+    type: 3}
+  m_PrefabInstance: {fileID: 329039385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &809040074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1233,6 +1240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812ebdbc96312534b9d847bb66bd8827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ttsSource: {fileID: 665760660}
+  ttss:
+  - {fileID: 8300000, guid: 16e6df5c9cbae394bb514f3284142456, type: 3}
+  - {fileID: 8300000, guid: e0e2e2fa23a81764e8255cc412669e80, type: 3}
   anim: {fileID: 505800361}
   normalStepsDuration: 5
   normalSteps:

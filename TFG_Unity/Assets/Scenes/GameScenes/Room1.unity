@@ -120,6 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &269965876 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7930917128310300597, guid: a1d4346e86f65664b8cd95fff923dba8,
+    type: 3}
+  m_PrefabInstance: {fileID: 373830739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &299642504
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +293,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5977621018428929109, guid: a1d4346e86f65664b8cd95fff923dba8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1d4346e86f65664b8cd95fff923dba8, type: 3}
 --- !u!1 &387965424
 GameObject:
@@ -1702,5 +1709,10 @@ PrefabInstance:
       propertyPath: scene
       value: 
       objectReference: {fileID: 1140360429}
+    - target: {fileID: 8367185539000389734, guid: 797f55c75d82ead46b0256eb43dbb812,
+        type: 3}
+      propertyPath: ttsSource
+      value: 
+      objectReference: {fileID: 269965876}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 797f55c75d82ead46b0256eb43dbb812, type: 3}

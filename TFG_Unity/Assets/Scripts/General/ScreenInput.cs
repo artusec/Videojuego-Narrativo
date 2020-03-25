@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public enum move {nullMov, up, right, down, left, pressed, pressing, click, doubleClick};
+public enum move {nullMov, up, right, down, left, pressed, pressing, click, doubleClick, help};
 public class ScreenInput : MonoBehaviour
 {
     public static ScreenInput instance;
@@ -19,6 +19,8 @@ public class ScreenInput : MonoBehaviour
     public float doubleClickTime = 0.25f;
     float lastClick = 0;
 
+    public float helpTime = 2;
+
     private void Awake()
     {
         instance = this;
@@ -29,6 +31,10 @@ public class ScreenInput : MonoBehaviour
     void Update()
     {
         lastInput = swipeScreen();
+    }
+    void help()
+    {
+
     }
     public move getInput()
     {
@@ -107,6 +113,10 @@ public class ScreenInput : MonoBehaviour
         else if (Input.GetMouseButton(0))
         {
             moveTime += Time.deltaTime;
+            if(moveTime >= helpTime && (Vector2.Distance(cam.ScreenToViewportPoint(Input.mousePosition), initPos) <= minDistClick))
+            {
+                return move.help;
+            }
             //print("pressing");
             return move.pressing;
         }

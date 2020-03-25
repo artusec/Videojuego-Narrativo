@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: e29720a2f89b33a4689c6a3cf8d12ef1, type: 3}
   label: Puerta
   actBehaviour: {fileID: 0}
   parentList: {fileID: 0}

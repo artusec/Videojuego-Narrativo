@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
+    public AudioSource ttsSource;
+    public AudioClip[] ttss;
     ScreenInput input;
     move mov;
 
@@ -57,7 +59,16 @@ public class Intro : MonoBehaviour
         src.Pause();
         initPos = fireSprite.transform.position;
     }
-
+    private void Update()
+    {
+        /*
+        if(mov == move.help)
+        {
+            if(ttsSource.clip != null)
+                ttsSource.Play();
+        }
+        */
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -71,6 +82,10 @@ public class Intro : MonoBehaviour
             cinta();
         else if (genPhase == 4)
             doorOpening();
+    }
+    void playSound(int ttsType)
+    {
+        ttsSource.PlayOneShot(ttss[ttsType]);
     }
     //Fire
     void fire()
@@ -116,7 +131,8 @@ public class Intro : MonoBehaviour
         {
             genPhase = 2;
             anim.Play("Idle");
-            TTS.instance.PlayTTS("Mantén pulsado para avanzar");
+            playSound(0);
+            //TTS.instance.PlayTTS("Mantén pulsado para avanzar");
         }
     }
 
@@ -134,7 +150,8 @@ public class Intro : MonoBehaviour
             if (actualSteps >= normalSteps.Length + grassSteps + woodSteps.Length)
             {
                 genPhase = 3;
-                TTS.instance.PlayTTS("Desliza en cualquier dirección para romper las bandas policiales");
+                playSound(1);
+                //TTS.instance.PlayTTS("Desliza en cualquier dirección para romper las bandas policiales");
             }
         }
         if (mov == move.pressing)

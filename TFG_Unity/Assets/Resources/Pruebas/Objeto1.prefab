@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: bcfee1aabbed8164a916ecdf72ec16e5, type: 3}
   label: Caja fuerte
   actBehaviour: {fileID: 0}
   parentList: {fileID: 0}

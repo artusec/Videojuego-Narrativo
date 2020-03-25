@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SRManager : MonoBehaviour
 {
+    public AudioSource ttsSource;
+
     public SRList currentList;
     private SRList prevList;
     private move gesture;
@@ -42,6 +44,12 @@ public class SRManager : MonoBehaviour
         ProcessGesture(screenInput.getInput());
     }
 
+    //Reproduce un audio "clip" en el canal de "TTS"
+    public void playTTS(AudioClip clip)
+    {
+        ttsSource.clip = clip;
+        ttsSource.Play();
+    }
     public void SetList(SRList srl)
     {
         prevList = currentList;
