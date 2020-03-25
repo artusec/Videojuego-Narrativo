@@ -30,7 +30,9 @@ public class SRManager : MonoBehaviour
     void Start()
     {
         screenInput = ScreenInput.instance;
-      //  currentList.ReadFocus();
+        GameManager.instance.loadRoomFromFile(1);
+        GameManager.instance.instantiateRoom();
+        //  currentList.ReadFocus();
     }
 
     private void OnEnable()

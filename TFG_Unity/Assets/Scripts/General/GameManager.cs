@@ -35,8 +35,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        loadRoomFromFile(1);
-        instantiateRoom();
     }
 
     // Update is called once per frame
@@ -198,7 +196,7 @@ public class GameManager : MonoBehaviour
     /// Carga la habitacion desde el archivo txt, rellena sceneObjs con los objetos en el archivo
     /// </summary>
     /// <param name="roomN"></param>
-    private void loadRoomFromFile(int roomN)
+    public void loadRoomFromFile(int roomN)
     {
         string filePath = "Rooms"; //ruta archivo
 

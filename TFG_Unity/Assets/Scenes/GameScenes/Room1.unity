@@ -1491,6 +1491,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1843571702946516993, guid: 797f55c75d82ead46b0256eb43dbb812,
+        type: 3}
+      propertyPath: currentFocus
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8927530324948823996, guid: 797f55c75d82ead46b0256eb43dbb812,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1560,7 +1565,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scene
       value: 
-      objectReference: {fileID: 1140360429}
+      objectReference: {fileID: 1713374891}
     - target: {fileID: 8367185539000389734, guid: 797f55c75d82ead46b0256eb43dbb812,
         type: 3}
       propertyPath: ttsSource

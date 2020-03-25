@@ -154,7 +154,7 @@ public class Intro : MonoBehaviour
                 //TTS.instance.PlayTTS("Desliza en cualquier dirección para romper las bandas policiales");
             }
         }
-        if (mov == move.pressing)
+        if (mov == move.pressing || mov == move.help)
         {
             if (phase == 0 && !src.isPlaying)
             {
@@ -244,6 +244,6 @@ public class Intro : MonoBehaviour
     }
     void changeScene()
     {
-        GameManager.instance.changeScene("SRTest");
+        GameManager.instance.changeScene("Room1");
     }
 }

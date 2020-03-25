@@ -44,7 +44,7 @@ public class SRElement : MonoBehaviour
     {
         if (audioLabel != null)
         {
-            TTS.instance.PlayClip(audioLabel);
+            SRManager.instance.playTTS(audioLabel);
         }
 
         else
