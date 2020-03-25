@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct LabyrinthEvento
@@ -41,6 +43,17 @@ public class LabyrithnManager : MonoBehaviour
     private int lastCollider;
     //indica si el player actúa de manera correcta durante el evento
     private bool playerCorrect;
+    //maneja el número de eventos por los que se ha pasado para saber si se ha ganado o no el juego
+    //  también se podría hacer controlando si una colisión se hace con el último elemento de la lista
+    //  pero dependeríamos de que el diseñador colocase bien los elementos de juego
+    private int numCollisions;
+
+    [Space(10)]
+
+    [Header("Elementos de interfaz")]
+    public Text winText;
+    public Text looseText;
+    public GameObject resetContainer;
 
     private void Awake()
     {
@@ -51,10 +64,13 @@ public class LabyrithnManager : MonoBehaviour
     void Update()
     {
         EventContainer.transform.Translate(Vector3.down * Time.deltaTime * vel);
+        src.transform.Translate(Vector3.down * Time.deltaTime * vel);
     }
 
     //comprueba si el movimiento introducido del player durante el trigger es el correcto
-    public void checkPlayerInput(move m)
+    //  devuelve true si se hizo el giro correcto y false en caso contrario, con el fin de que
+    //  el player actúe en consecuencia también
+    public bool checkPlayerInput(move m)
     {
         //si el player ya introdujo el input correcto no hace falta volver a comprobarlo
         if (!playerCorrect)
@@ -65,13 +81,17 @@ public class LabyrithnManager : MonoBehaviour
             {
                 playerCorrect = true;
                 src.Stop();
+                return true;
             }
             //si no, quitamos una vida
             else
             {
                 AddLife(-1);
+                return false;
             }
         }
+        //si playerCorrect está a true es que ya se introdujo el giro correcto
+        else return true;
     }
 
     //el player, al chocar con un trigger, llamará a este método, que identifica el trigger en cuestión y actúa en consecuencia
@@ -92,6 +112,7 @@ public class LabyrithnManager : MonoBehaviour
             src.Play();
             //marcamos
             lastCollider = i;
+            numCollisions++;
         }
     }
 
@@ -108,16 +129,36 @@ public class LabyrithnManager : MonoBehaviour
             AddLife(-1);
         }
 
-        //por último, preparamos playerCorrect para el siguiente trigger
-        playerCorrect = false;
+        if(numCollisions < events.Count)
+            //Preparamos playerCorrect para el siguiente trigger
+            playerCorrect = false;
+        //condición de victoria del juego
+        else
+        {
+            src.Stop();
+            resetContainer.SetActive(true);
+            looseText.gameObject.SetActive(false);
+            winText.gameObject.SetActive(true);
+            print("VICTORIA");  
+        }
     }
 
     public void AddLife(int nLife)
     {
         lifes += nLife;
-        if (lifes <= 0)
-            print("derrota");
         print("vidas: " + lifes.ToString());
+        if (lifes <= 0)
+        {
+            src.Stop();
+            resetContainer.SetActive(true);
+            looseText.gameObject.SetActive(true);
+            winText.gameObject.SetActive(false);
+        }
+    }
+
+    public int GetLifes()
+    {
+        return lifes;
     }
 
     //para ver los triggers desde el editor
@@ -128,5 +169,10 @@ public class LabyrithnManager : MonoBehaviour
             //cuidado, solo funciona con BoxCollider2D
             Gizmos.DrawWireCube(lb.trigger.transform.position + (Vector3)lb.trigger.offset, ((BoxCollider2D)lb.trigger).size);
         }
+    }
+
+    public void ResetScene()
+    {
+        SceneManager.LoadScene("Persecución");
     }
 }
