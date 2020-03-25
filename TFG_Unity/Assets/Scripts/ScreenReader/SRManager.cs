@@ -30,7 +30,7 @@ public class SRManager : MonoBehaviour
     void Start()
     {
         screenInput = ScreenInput.instance;
-        currentList.ReadFocus();
+      //  currentList.ReadFocus();
     }
 
     private void OnEnable()

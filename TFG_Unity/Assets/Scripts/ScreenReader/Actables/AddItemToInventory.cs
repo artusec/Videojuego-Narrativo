@@ -6,31 +6,26 @@ using UnityEngine.UI;
 
 public class AddItemToInventory : Actable
 {
-    public SRList inventory;
-    public GameObject item;
-
+    public string item;
+    public string pickUpLine;
+    public string emptyLine;
 
     public override void Act()
     {
-
-        if (inventory == null)
+        objectState state = element.getState();
+        if (state == objectState.DEFAULT)
         {
-           inventory = SRManager.instance.currentList;
+            GameManager.instance.addItemToInv(item);
+            Debug.Log(pickUpLine);
+            element.setState(objectState.USED);
         }
-        inventory.Insert(inventory.sreList.Count, Instantiate(item, 
-           inventory.transform).GetComponent<SRElement>());
-
-        TTS.instance.PlayTTS("Obtienes " + item.name);
-
-        Invoke("SelfDestruct", 2);
+        else if (state == objectState.USED)
+        {
+            Debug.Log(emptyLine);
+        }
 
     }
 
-    private void SelfDestruct()
-    {
-        //RemoveFromList();
-        //Destroy(gameObject);
-    }
 
 
 }
