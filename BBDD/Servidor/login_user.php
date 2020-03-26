@@ -15,5 +15,5 @@ if ($user == false) {
 	exit();
 }
 
-print "Hola!";
+print "Hola ".$username."!";
 exit();

@@ -7,14 +7,11 @@ class User
     private $id;
     private $username;
     private $pass;
-    private $email;
-
 
     private function __construct($array)
     {
         $this->username= $array['username'];
-        $this->pass = $array['pass'];
-        $this->email = $array['email'];
+        $this->pass = $array['password']; # Porque en la bd se llama password
     }
 
 
@@ -23,13 +20,13 @@ class User
         $user = self::find_user_by_username($username);
 
         if ($user && $user->compruebaPassword($password)) {
-            return $user;
+            return true;
         }
         return false;
     }
 
 
-    public static function find_by_username($username)
+    public static function find_user_by_username($username)
     {
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();

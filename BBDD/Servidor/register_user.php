@@ -11,10 +11,10 @@ $pass2 = $_POST["pass2"];
 
 header("Content-type: text/html");
 
-if (User::find_by_username($username) == false){
+if (User::find_user_by_username($username) == false){
 	if($pass == $pass2){
 			$app = User::insert_user($username, $email, $pass);
-			print("Registro realizado con exitoooo!");
+			print("Registro realizado con exito!");
 			exit();
 	}
 	print("Las contraseñas no coinciden");

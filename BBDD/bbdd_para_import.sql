@@ -48,6 +48,7 @@ CREATE TABLE State_Game(
 	FOREIGN KEY (id_object) REFERENCES Objects(id)
 );
 
+
 CREATE TABLE Messages(
 	id int AUTO_INCREMENT,
 	id_sender int,
