@@ -105,11 +105,13 @@ public class Ganzua : MonoBehaviour
         {
             case 1:
                 GameManager.instance.addItemToInv("LlaveOxidada1");
+                GameManager.instance.setScenState("CajaCandado1", 2);
+                GameManager.instance.saveToTXT();
                 sceneToLoad = "Room1";
                 Invoke("change", 1);
                 break;
             default:
-                sceneToLoad = "DemoEnd";
+                sceneToLoad = "End";
                 Invoke("change", 1);
                 break;
 
@@ -117,6 +119,6 @@ public class Ganzua : MonoBehaviour
     }
     void change()
     {
-        GameManager.instance.changeScene(sceneToLoad);
+        GameManager.instance.changeScene(sceneToLoad, false);
     }
 }

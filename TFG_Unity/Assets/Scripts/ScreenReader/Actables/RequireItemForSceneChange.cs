@@ -17,7 +17,7 @@ public class RequireItemForSceneChange : Actable
         {
             if (SRManager.instance.inventory.ContainsObjectByName(itemRequired))
             {
-                element.setState(objectState.USED);
+                //element.setState(objectState.USED);
                 Debug.Log(successString);
                 //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
                 Invoke("change", 1);
@@ -32,7 +32,7 @@ public class RequireItemForSceneChange : Actable
 
     void change()
     {
-        //GameManager.instance.saveState(inventory, GameObject.Find("EscenaElements").GetComponent<SRList>());
-        GameManager.instance.changeScene(sceneToLoad);
+        GameManager.instance.saveToTXT();
+        GameManager.instance.changeScene(sceneToLoad, false);
     }
 }

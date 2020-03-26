@@ -18,6 +18,8 @@ public class AddItemToInventory : Actable
             GameManager.instance.addItemToInv(item);
             Debug.Log(pickUpLine);
             element.setState(objectState.USED);
+            GameManager.instance.saveToGMFromSRM();
+            GameManager.instance.saveToTXT();
         }
         else if (state == objectState.USED)
         {

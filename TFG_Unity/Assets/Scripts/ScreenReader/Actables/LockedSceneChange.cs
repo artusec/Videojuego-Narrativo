@@ -16,6 +16,8 @@ public class LockedSceneChange : Actable
             if (SRManager.instance.inventory.ContainsObjectByName(keyRequired)){
                 element.setState(objectState.USED);
                 Debug.Log(successString);
+                //CAMBIAR
+                GameManager.instance.room++;
                 //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
                 Invoke("change", 1);
             }
@@ -26,6 +28,6 @@ public class LockedSceneChange : Actable
     void change()
     {
         //GameManager.instance.saveState(inventory, GameObject.Find("EscenaElements").GetComponent<SRList>());
-        GameManager.instance.changeScene(sceneToLoad);
+        GameManager.instance.changeScene(sceneToLoad, true);
     }
 }

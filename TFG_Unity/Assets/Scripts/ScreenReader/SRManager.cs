@@ -30,8 +30,23 @@ public class SRManager : MonoBehaviour
     void Start()
     {
         screenInput = ScreenInput.instance;
-        GameManager.instance.loadRoomFromFile(1);
+        if(GameManager.instance.isSceneNew())
+            GameManager.instance.loadRoomFromFile(1);
+
+        else
+        {
+            if(false) //MIRA SI HAY DATOS EN LA NUBE
+            {
+                print("Datos en la nube");
+            }
+            else //MIRA DATOS LOCALES
+            {
+                print("Datos locales");
+                GameManager.instance.loadLocalData();
+            }
+        }
         GameManager.instance.instantiateRoom();
+        GameManager.instance.setNewScene(false);
         //  currentList.ReadFocus();
     }
 

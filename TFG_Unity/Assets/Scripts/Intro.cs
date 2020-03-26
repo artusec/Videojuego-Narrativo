@@ -244,6 +244,6 @@ public class Intro : MonoBehaviour
     }
     void changeScene()
     {
-        GameManager.instance.changeScene("Room1");
+        GameManager.instance.changeScene("Room1", true);
     }
 }
