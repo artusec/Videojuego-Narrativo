@@ -2,45 +2,60 @@
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using System.Net;
+using System.Text;
+using System.IO;
+using System;
 
-public class login : MonoBehaviour
+public class register : MonoBehaviour
 {
-    // laslomasiii.serveftp.net:4398 -> 192.168.1.57:80
-    public string url = "http://localhost/login_user.php";
+    public string url = "http://laslomasiii.serveftp.net:4398/login_user.php";
 
     public InputField username;
     public InputField pass;
 
-
     public void entrar()
     {
-        StartCoroutine(Upload());
+        Upload();
     }
+
     void Start()
     {
 
     }
 
-    IEnumerator Upload()
+    void Upload()
     {
-        WWWForm form = new WWWForm();
-        form.AddField("username", username.text);
-        form.AddField("pass", pass.text);
+        HttpWebRequest httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
+        httpRequest.Method = "POST";
+        httpRequest.ProtocolVersion = HttpVersion.Version11;
+        string parameters ="username=" + username.text  + "&pass=" + pass.text;
+        httpRequest.ContentLength = Encoding.ASCII.GetByteCount(parameters);
+        httpRequest.ContentType = "application/x-www-form-urlencoded";
+
+        byte[] byteArray = Encoding.UTF8.GetBytes(parameters);
+        // Get the request stream.  
+        Stream dataStream = httpRequest.GetRequestStream();
+        // Write the data to the request stream.  
+        dataStream.Write(byteArray, 0, byteArray.Length);
+        // Close the Stream object.  
+        dataStream.Close();
+
+        // Get the response.  
+        WebResponse response = httpRequest.GetResponse();
+        // Display the status. OK = todo bien  
+        Debug.Log("-------" + ((HttpWebResponse)response).StatusDescription);
 
 
-        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
+        using (dataStream = response.GetResponseStream())
         {
-            yield return www.SendWebRequest();
-
-            if (www.isNetworkError || www.isHttpError)
-            {
-                Debug.Log(www.error);
-            }
-            else
-            {
-                Debug.Log("Form upload complete!");
-                Debug.Log(www.responseCode);
-            }
+            // Open the stream using a StreamReader for easy access.  
+            StreamReader reader = new StreamReader(dataStream);
+            // Read the content.  
+            string responseFromServer = reader.ReadToEnd();
+            // Display the content.  
+            Debug.Log(responseFromServer);
         }
+        WebResponse httpResponse = httpRequest.GetResponse();
     }
 }
