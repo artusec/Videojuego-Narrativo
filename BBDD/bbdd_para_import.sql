@@ -24,11 +24,18 @@ CREATE TABLE Games(
 CREATE TABLE Objects(
 	id int AUTO_INCREMENT,
 	name varchar(20),
+	type boolean,
 	description text,
 	room int,
 
 	PRIMARY KEY (id)
 );
+
+INSERT INTO Objects(name, type, description, room)
+VALUES ("Llave", 0, "Llave que abre la caja fuerte", 0);
+
+INSERT INTO Objects(name, type, description, room)
+VALUES ("Caja fuerte", 1, "Caja fuerte que se abre con la llave", 0);
 
 CREATE TABLE State_Game(
 	id_game int,
