@@ -54,7 +54,14 @@ public class GameManager : MonoBehaviour
     {
         newRoom = newScen;
     }
-    public void changeScene(string sceneName, bool newScen)
+
+    public void changeScene(string sceneName)
+    {
+        //saveToTXT();
+        SceneManager.LoadScene(sceneName);
+    }
+
+        public void changeScene(string sceneName, bool newScen)
     {
         //saveToTXT();
         newRoom = newScen;

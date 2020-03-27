@@ -120,7 +120,10 @@ public class SRList : MonoBehaviour
 
     public void GoToPreviousList()
     {
-        SRManager.instance.SetList(prevList);
+        if (prevList != null)
+        {
+            SRManager.instance.SetList(prevList);
+        }
     }
 
     private void GoTo(int index)
