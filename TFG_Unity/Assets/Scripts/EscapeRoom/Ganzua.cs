@@ -12,6 +12,8 @@ public class Ganzua : MonoBehaviour
 
 
     AudioSource src;
+    public AudioClip infoClip;
+    public AudioClip endClip;
     public AudioClip clip;
     public AudioClip clipFound;
     public AudioClip openSound;
@@ -19,7 +21,7 @@ public class Ganzua : MonoBehaviour
     float lastAngle = 0;
     public float angleSeparation = 10;
 
-    bool canClick = false;
+    bool canClick = true;
 
     private string sceneToLoad = "DemoEnd";
 
@@ -29,7 +31,7 @@ public class Ganzua : MonoBehaviour
         ganzObj = transform.GetChild(0).gameObject;
         src = GetComponent<AudioSource>();
         randUnlockPosition();
-
+        SRManager.instance.playTTS(infoClip);
     }
 
 
@@ -94,10 +96,15 @@ public class Ganzua : MonoBehaviour
     void open()
     {
         print("abierto");
+        src.volume = 0.5f;
         src.PlayOneShot(openSound);
-        Invoke("onOpen",2);
+        Invoke("soundFound", 2);
     }
-
+    void soundFound()
+    {
+        SRManager.instance.playTTS(endClip);
+        Invoke("onOpen", 3);
+    }
     void onOpen()
     {
         int progress = GameManager.instance.room;

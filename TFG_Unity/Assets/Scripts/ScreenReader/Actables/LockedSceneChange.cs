@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class LockedSceneChange : Actable
 {
+    AudioSource src;
     public string keyRequired;
     public string sceneToLoad;
-    public string failString;
-    public string successString;
+    public AudioClip failAudio;
+    public AudioClip successAudio;
+    public AudioClip doorOpen;
 
     public override void Act()
     {
         if (element.getState() == objectState.DEFAULT)
         {
-            if (SRManager.instance.inventory.ContainsObjectByName(keyRequired)){
+            if (SRManager.instance.inventory.ContainsObjectByName(keyRequired))
+            {
                 element.setState(objectState.USED);
-                Debug.Log(successString);
+                SRManager.instance.playTTS(doorOpen);
                 //CAMBIAR
                 GameManager.instance.room++;
                 //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
-                Invoke("change", 1);
+                Invoke("change", 4.5f);
             }
-            else Debug.Log(failString);
+            else
+            {
+                SRManager.instance.playTTS(failAudio);
+            }
         }
     }
 

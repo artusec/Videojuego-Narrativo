@@ -99,10 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
-  audioUsedLabel: {fileID: 0}
-  activeLabel: Ganzua
-  usedLabel: Ganzua Usada
+  audioLabel: {fileID: 8300000, guid: fa43a1869c020fe47a130bd3644d1a3a, type: 3}
+  label: 
   actBehaviour: {fileID: 0}
   parentList: {fileID: 0}
 --- !u!114 &377044337595007853

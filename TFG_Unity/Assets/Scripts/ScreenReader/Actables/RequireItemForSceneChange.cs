@@ -6,9 +6,10 @@ public class RequireItemForSceneChange : Actable
 {
     public string itemRequired;
     public string sceneToLoad;
-    public string failString;
-    public string successString;
-    public string usedString;
+    public AudioClip failString;
+    public AudioClip successString;
+    public AudioClip effect;
+    public AudioClip usedString;
 
     public override void Act()
     {
@@ -18,18 +19,29 @@ public class RequireItemForSceneChange : Actable
             if (SRManager.instance.inventory.ContainsObjectByName(itemRequired))
             {
                 //element.setState(objectState.USED);
-                Debug.Log(successString);
+                SRManager.instance.playTTS(successString);
                 //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
-                Invoke("change", 1);
+                Invoke("effectSound", 2.5f);
             }
-            else Debug.Log(failString);
+            else
+            {
+                SRManager.instance.playTTS(failString);
+            }
         }
         else if(state == objectState.USED)
         {
-            Debug.Log(usedString);
+            SRManager.instance.playTTS(usedString);
         }
     }
-
+    void effectSound()
+    {
+        if (effect != null)
+        {
+            SRManager.instance.playTTS(effect);
+            Invoke("change", 3.25f);
+        }
+        else change();
+    }
     void change()
     {
         GameManager.instance.saveToTXT();

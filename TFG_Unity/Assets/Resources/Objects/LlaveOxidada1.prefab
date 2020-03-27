@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7755430628152336997}
   - component: {fileID: 7755430628152336998}
   m_Layer: 0
-  m_Name: Llave oxidada
+  m_Name: LlaveOxidada1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 86e7b1e6fa64a764d9fb81dcc1fa1cb3, type: 3}
   label: LLave oxidada
   actBehaviour: {fileID: 0}
   parentList: {fileID: 0}

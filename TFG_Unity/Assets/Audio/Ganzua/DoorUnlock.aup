@@ -1,0 +1,53 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="DoorUnlock_data" version="1.3.0" audacityversion="2.3.0" sel0="0.0000000000" sel1="0.0000000000" vpos="48" h="1.7898164605" zoom="321.8207077159" rate="48000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="YEAR" value="2020-01-14T10:43"/>
+	</tags>
+	<wavetrack name="Unlock" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="36055">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808581.au" len="36055" min="-0.487732" max="0.340485" rms="0.025001"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="2">
+				<controlpoint t="0.316946664880" val="1.000000000000"/>
+				<controlpoint t="0.335590586344" val="0.436619699001"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Unlock" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="36055">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808b76.au" len="36055" min="-0.501678" max="0.470398" rms="0.027153"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="2">
+				<controlpoint t="0.316946664880" val="1.000000000000"/>
+				<controlpoint t="0.335590586344" val="0.436619699001"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="DoorGood" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.75114583" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="187872">
+				<waveblock start="0">
+					<simpleblockfile filename="e08088cc.au" len="187872" min="-0.414001" max="0.440674" rms="0.032785"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="DoorGood" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.75114583" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="187872">
+				<waveblock start="0">
+					<simpleblockfile filename="e08083a5.au" len="187872" min="-0.417847" max="0.441956" rms="0.036356"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

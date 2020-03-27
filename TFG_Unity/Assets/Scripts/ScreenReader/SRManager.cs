@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SRType { Default, Room};
+public enum SRType { Default, Room, NoInput};
 
 public class SRManager : MonoBehaviour
 {
@@ -34,7 +34,8 @@ public class SRManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        screenInput = ScreenInput.instance;
+        if(type != SRType.NoInput)
+            screenInput = ScreenInput.instance;
         if (type == SRType.Room)
         {
             if (GameManager.instance.isSceneNew())
@@ -66,7 +67,8 @@ public class SRManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessGesture(screenInput.getInput());
+        if(type != SRType.NoInput)
+            ProcessGesture(screenInput.getInput());
     }
 
     //Reproduce un audio "clip" en el canal de "TTS"

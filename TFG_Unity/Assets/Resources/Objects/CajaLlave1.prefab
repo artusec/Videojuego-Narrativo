@@ -112,5 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: {fileID: 0}
   item: Ganzua1
-  pickUpLine: "Encuentras una ganz\xFAa en la caja"
-  emptyLine: "La caja est\xE1 vac\xEDa"
+  pickUpLine: {fileID: 8300000, guid: 1bc78a78eb809df49a84eaa500d06922, type: 3}
+  emptyLine: {fileID: 8300000, guid: 91d0f9f39e61dea4f9e46dba2cce1165, type: 3}

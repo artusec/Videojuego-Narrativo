@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class AddItemToInventory : Actable
 {
     public string item;
-    public string pickUpLine;
-    public string emptyLine;
+    public AudioClip pickUpLine;
+    public AudioClip emptyLine;
 
     public override void Act()
     {
@@ -16,14 +16,14 @@ public class AddItemToInventory : Actable
         if (state == objectState.DEFAULT)
         {
             GameManager.instance.addItemToInv(item);
-            Debug.Log(pickUpLine);
+            SRManager.instance.playTTS(pickUpLine);
             element.setState(objectState.USED);
             GameManager.instance.saveToGMFromSRM();
             GameManager.instance.saveToTXT();
         }
         else if (state == objectState.USED)
         {
-            Debug.Log(emptyLine);
+            SRManager.instance.playTTS(emptyLine);
         }
 
     }

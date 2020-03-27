@@ -99,10 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
-  audioUsedLabel: {fileID: 0}
-  activeLabel: Llave oxidada
-  usedLabel: Llave oxidada
+  audioLabel: {fileID: 8300000, guid: 86e7b1e6fa64a764d9fb81dcc1fa1cb3, type: 3}
+  label: 
   actBehaviour: {fileID: 0}
   parentList: {fileID: 0}
 --- !u!114 &3956148274195466368
