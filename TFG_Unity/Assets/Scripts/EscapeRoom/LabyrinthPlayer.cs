@@ -13,6 +13,11 @@ public class LabyrinthPlayer : MonoBehaviour
 
     private AudioSource bump;
 
+    public AudioClip footSlip;
+    public AudioClip[] pasos;
+    int randPaso = 0;
+    public float walkSpeed = 1;
+    float auxWalk = 0;
     private void Start()
     {
         bump = GetComponent<AudioSource>();
@@ -24,15 +29,32 @@ public class LabyrinthPlayer : MonoBehaviour
     void Update()
     {
         getInput();
+        pasosSound();
     }
 
+    void pasosSound()
+    {
+        if (auxWalk < walkSpeed) auxWalk += Time.deltaTime;
+        else
+        {
+            auxWalk = 0;
+            randPaso = Random.Range(0, pasos.Length);
+            feet.clip = pasos[randPaso];
+            feet.Play();
+        }
+
+    }
     void getInput()
     {
         if (inCollision)
         {
             if (ScreenInput.instance.getInput() == move.right)
             {
+                transform.eulerAngles = new Vector3(0, 0, 90);
                 print("intento girar derecha");
+                bump.clip = footSlip;
+                bump.Play();
+                auxWalk = 0;
                 //si fallamos el giro
                 if (!LabyrithnManager.instance.checkPlayerInput(move.right))
                 {
@@ -46,6 +68,10 @@ public class LabyrinthPlayer : MonoBehaviour
             }
             else if (ScreenInput.instance.getInput() == move.left)
             {
+                transform.eulerAngles = new Vector3(0, 0, -90);
+                bump.clip = footSlip;
+                bump.Play();
+                auxWalk = 0;
                 print("intento girar izquierda");
                 if (!LabyrithnManager.instance.checkPlayerInput(move.left))
                 {

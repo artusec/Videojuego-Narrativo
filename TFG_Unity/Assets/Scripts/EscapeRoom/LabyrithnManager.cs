@@ -18,6 +18,7 @@ public struct LabyrinthEvento
 public class LabyrithnManager : MonoBehaviour
 {
     public static LabyrithnManager instance;
+    public LabyrinthPlayer player;
 
     [Tooltip("El AudioSource desde el cual se reproducirán los sonidos de los eventos")]
     public AudioSource src;
@@ -80,7 +81,7 @@ public class LabyrithnManager : MonoBehaviour
                 (!events[lastCollider].leftSound && m == move.right))
             {
                 playerCorrect = true;
-                src.Stop();
+                //src.Stop();
                 return true;
             }
             //si no, quitamos una vida
@@ -121,6 +122,7 @@ public class LabyrithnManager : MonoBehaviour
     {
         //paramos audio
         src.Stop();
+        player.transform.eulerAngles = new Vector3(0, 0, 0);
 
         //si el player no introdujo el input correcto
         if (!playerCorrect)
