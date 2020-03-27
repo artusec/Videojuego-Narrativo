@@ -21,6 +21,7 @@
 /TFG_Unity/Unity.CollabProxy.Editor.csproj
 /TFG_Unity/Unity.TextMeshPro.csproj
 /TFG_Unity/Unity.TextMeshPro.Editor.csproj
+/TFG_Unity/Temp
 
 # Any modules kept in their own git repo.
 Assets/_modules/fps/
