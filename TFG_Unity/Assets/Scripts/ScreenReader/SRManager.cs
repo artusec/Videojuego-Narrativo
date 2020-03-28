@@ -12,6 +12,7 @@ public class SRManager : MonoBehaviour
     public SRType type = SRType.Default;
 
     public SRList currentList;
+    public bool readOnStart = false;
     private SRList prevList;
     private move gesture;
 
@@ -56,7 +57,7 @@ public class SRManager : MonoBehaviour
             GameManager.instance.instantiateRoom();
             GameManager.instance.setNewScene(false);
         }
-        //  currentList.ReadFocus();
+        if(readOnStart) currentList.ReadFocus();
     }
 
     private void OnEnable()

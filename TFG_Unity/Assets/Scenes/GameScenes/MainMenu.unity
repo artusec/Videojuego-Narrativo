@@ -285,6 +285,7 @@ MonoBehaviour:
   ttsSource: {fileID: 495061883}
   type: 0
   currentList: {fileID: 832188702}
+  readOnStart: 1
   inventory: {fileID: 0}
   scene: {fileID: 0}
 --- !u!4 &495061882
