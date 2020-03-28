@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 0dd2bc8914e2c57418829f4fcb7d4e05, type: 3}
   label: "Iniciar Sesi\xF3n"
   actBehaviour: {fileID: 177970700}
   parentList: {fileID: 0}
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  sceneToLoad: Login
+  sceneToLoad: Register
   successString: Pasando a login
 --- !u!1 &495061880
 GameObject:
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 988c1b8139e290548a47c0be8b7d47c6, type: 3}
   label: Salir
   actBehaviour: {fileID: 514855479}
   parentList: {fileID: 0}
@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 566814609}
   - component: {fileID: 566814608}
   - component: {fileID: 566814607}
+  - component: {fileID: 566814610}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -543,6 +544,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &566814610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566814606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8b48a1929bd42fc8a74e9281c1f25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CamTransform: {fileID: 566814609}
+  CameraSpeedMultiplier: 0.1
+  Color: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  Size: 10
+  HorizontalSpeed: 0
+  VerticalSpeed: 0
+  Density: 0.15
+  Shader: {fileID: 4800000, guid: 00e888b8dfe2842c1a10e04b2d083b64, type: 3}
 --- !u!1001 &696950639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -723,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 9712db8e9c889024f9220ed9a0398e06, type: 3}
   label: "Jugar sin conexi\xF3n"
   actBehaviour: {fileID: 1910494806}
   parentList: {fileID: 0}

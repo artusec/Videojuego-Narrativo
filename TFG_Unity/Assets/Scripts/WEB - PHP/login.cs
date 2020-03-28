@@ -55,6 +55,7 @@ public class login : MonoBehaviour
             string responseFromServer = reader.ReadToEnd();
             // Display the content.  
             Debug.Log(responseFromServer);
+            GameManager.instance.changeScene("Intro");
         }
         WebResponse httpResponse = httpRequest.GetResponse();
     }
