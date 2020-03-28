@@ -107,7 +107,7 @@ public class LabyrithnManager : MonoBehaviour
         {
             //ajustamos el audio
             src.Stop();
-            src.loop = true;
+            //src.loop = true;
             src.clip = events[i].audio;
             src.transform.position = events[i].leftSound ?  leftPoint.transform.position : rightPoint.transform.position;
             src.Play();
@@ -121,8 +121,8 @@ public class LabyrithnManager : MonoBehaviour
     public void ExitCollision(Collider2D coll)
     {
         //paramos audio
-        src.Stop();
-        player.transform.eulerAngles = new Vector3(0, 0, 0);
+        //src.Stop();
+        player.reinit();
 
         //si el player no introdujo el input correcto
         if (!playerCorrect)

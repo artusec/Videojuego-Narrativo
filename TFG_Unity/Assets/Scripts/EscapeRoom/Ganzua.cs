@@ -118,7 +118,7 @@ public class Ganzua : MonoBehaviour
                 Invoke("change", 1);
                 break;
             default:
-                sceneToLoad = "End";
+                sceneToLoad = "Chase";
                 Invoke("change", 1);
                 break;
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="HeyListen_data" version="1.3.0" audacityversion="2.3.0" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="90.4709126298" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="major_brand" value="isom"/>
+		<tag name="Software" value="Lavf57.56.101"/>
+		<tag name="YEAR" value="20141208"/>
+		<tag name="minor_version" value="512"/>
+		<tag name="compatible_brands" value="isomiso2mp41"/>
+		<tag name="ARTIST" value="Doctor9 Raccoon"/>
+		<tag name="purl" value="https://www.youtube.com/watch?v=wOFVrjL-XBM"/>
+		<tag name="comment" value="sms signal tip : 1, Download video with a youtube downloader 2, Cut with http://mp3cut.net (online cutter) verry good tool 3, Transfer to phone"/>
+		<tag name="description" value="sms signal tip : 1, Download video with a youtube downloader 2, Cut with http://mp3cut.net (online cutter) verry good tool 3, Transfer to phone"/>
+		<tag name="TITLE" value="Navi &quot;Hey listen&quot; all sounds"/>
+	</tags>
+	<wavetrack name="HeyListen" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="61540">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808a28.au" len="61540" min="-1.031989" max="1.165212" rms="0.174114"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="1.39546485" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="66150">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808cae.au" len="66150" min="-0.257821" max="0.294102" rms="0.036178"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="HeyListen" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="61540">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808535.au" len="61540" min="-1.031989" max="1.165212" rms="0.174114"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="1.39546485" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="66150">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808d39.au" len="66150" min="-0.257821" max="0.294102" rms="0.036178"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

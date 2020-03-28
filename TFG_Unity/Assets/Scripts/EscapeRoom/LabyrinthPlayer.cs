@@ -18,6 +18,13 @@ public class LabyrinthPlayer : MonoBehaviour
     int randPaso = 0;
     public float walkSpeed = 1;
     float auxWalk = 0;
+
+
+    public float turnTime = 0.5f;
+    float auxTurn = 0;
+    Vector3 initTurn;
+    bool turning = false;
+    Vector3 angleObj;
     private void Start()
     {
         bump = GetComponent<AudioSource>();
@@ -30,8 +37,23 @@ public class LabyrinthPlayer : MonoBehaviour
     {
         getInput();
         pasosSound();
+        turn();
     }
 
+    public void reinit()
+    {
+        initTurn = Vector3.zero;
+        transform.eulerAngles = Vector3.zero;
+    }
+    void turn()
+    {
+        if (auxTurn < turnTime)
+        {
+            auxTurn += Time.deltaTime;
+            transform.eulerAngles = Vector3.Lerp(initTurn, angleObj, auxTurn/turnTime);
+        }
+        else angleObj = transform.eulerAngles;
+    }
     void pasosSound()
     {
         if (auxWalk < walkSpeed) auxWalk += Time.deltaTime;
@@ -50,7 +72,8 @@ public class LabyrinthPlayer : MonoBehaviour
         {
             if (ScreenInput.instance.getInput() == move.right)
             {
-                transform.eulerAngles = new Vector3(0, 0, 90);
+                angleObj = new Vector3(0, 0, -90);
+                auxTurn = 0;
                 print("intento girar derecha");
                 bump.clip = footSlip;
                 bump.Play();
@@ -68,7 +91,8 @@ public class LabyrinthPlayer : MonoBehaviour
             }
             else if (ScreenInput.instance.getInput() == move.left)
             {
-                transform.eulerAngles = new Vector3(0, 0, -90);
+                angleObj = new Vector3(0, 0, 90);
+                auxTurn = 0;
                 bump.clip = footSlip;
                 bump.Play();
                 auxWalk = 0;
