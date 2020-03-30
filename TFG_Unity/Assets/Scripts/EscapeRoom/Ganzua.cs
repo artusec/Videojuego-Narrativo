@@ -126,6 +126,6 @@ public class Ganzua : MonoBehaviour
     }
     void change()
     {
-        GameManager.instance.changeScene(sceneToLoad, false);
+        GameManager.instance.changeScene(sceneToLoad);
     }
 }

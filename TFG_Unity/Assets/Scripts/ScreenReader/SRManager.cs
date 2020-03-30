@@ -11,6 +11,7 @@ public class SRManager : MonoBehaviour
     public AudioSource ttsSource;
     public SRType type = SRType.Default;
 
+    public int roomIndex = -1;
     public SRList currentList;
     public bool readOnStart = false;
     private SRList prevList;
@@ -39,8 +40,8 @@ public class SRManager : MonoBehaviour
             screenInput = ScreenInput.instance;
         if (type == SRType.Room)
         {
-            if (GameManager.instance.isSceneNew())
-                GameManager.instance.loadRoomFromFile(1);
+            if (GameManager.instance.isSceneNew(roomIndex))
+                GameManager.instance.loadRoomFromFile(roomIndex);
 
             else
             {
@@ -55,7 +56,6 @@ public class SRManager : MonoBehaviour
                 }
             }
             GameManager.instance.instantiateRoom();
-            GameManager.instance.setNewScene(false);
         }
         if(readOnStart) currentList.ReadFocus();
     }

@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 
+[System.Serializable]
 public enum objectState {DESTROYED, DEFAULT, USED};
+
 public class GameManager : MonoBehaviour
 {
     [System.Serializable]
@@ -21,7 +23,6 @@ public class GameManager : MonoBehaviour
     public List<element> sceneObjs;
 
     public int room = 1;
-    public bool newRoom = true;
 
 
     // Start is called before the first frame update
@@ -46,13 +47,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public bool isSceneNew()
+    public bool isSceneNew(int roomIndex)
     {
-        return newRoom;
-    }
-    public void setNewScene(bool newScen)
-    {
-        newRoom = newScen;
+        return room < roomIndex;
     }
 
     public void changeScene(string sceneName)
@@ -61,12 +58,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-        public void changeScene(string sceneName, bool newScen)
-    {
-        //saveToTXT();
-        newRoom = newScen;
-        SceneManager.LoadScene(sceneName);
-    }
     public void setInvState(string s, int state)
     {
         int elem = searchInvByName(s);
@@ -152,20 +143,27 @@ public class GameManager : MonoBehaviour
     //Carga datos guardados en local
     public void loadLocalData()
     {
+        // Aqui hay que meter un trycatch con carga default si no se encuentra
         string savePath = Path.Combine(Application.persistentDataPath, "SaveData");
         string [] objectsRead = File.ReadAllText(savePath).Split('\n')[0].Split(',');
         invObjects = new List<element>();
-        for (int i = 0; i < objectsRead.Length; i++)
+        if (objectsRead.Length > 1)
         {
-            element elem = new element(objectsRead[i].Split(':')[0], (objectState)int.Parse(objectsRead[i].Split(':')[1]));
-            invObjects.Add(elem);
+            for (int i = 0; i < objectsRead.Length; i++)
+            {
+                element elem = new element(objectsRead[i].Split(':')[0], (objectState)int.Parse(objectsRead[i].Split(':')[1]));
+                invObjects.Add(elem);
+            }
         }
         string[] sceneRead = File.ReadAllText(savePath).Split('\n')[1].Split(',');
         sceneObjs = new List<element>();
-        for (int i = 0; i < sceneRead.Length; i++)
+        if (sceneRead.Length > 1)
         {
-            element elem = new element(sceneRead[i].Split(':')[0], (objectState)int.Parse(sceneRead[i].Split(':')[1]));
-            sceneObjs.Add(elem);
+            for (int i = 0; i < sceneRead.Length; i++)
+            {
+                element elem = new element(sceneRead[i].Split(':')[0], (objectState)int.Parse(sceneRead[i].Split(':')[1]));
+                sceneObjs.Add(elem);
+            }
         }
 
 
@@ -237,19 +235,25 @@ public class GameManager : MonoBehaviour
     {
         string savePath = Path.Combine(Application.persistentDataPath, "SaveData");
         string roomFileLines = "";
-        foreach (element el in invObjects)
+        if (invObjects.Count > 0)
         {
-            //Guardado en TXT
-            roomFileLines += el.prefabName + ":" + (int)el.state + ",";
+            foreach (element el in invObjects)
+            {
+                //Guardado en TXT
+                roomFileLines += el.prefabName + ":" + (int)el.state + ",";
+            }
+            roomFileLines = roomFileLines.Remove(roomFileLines.Length - 1);
         }
-        roomFileLines = roomFileLines.Remove(roomFileLines.Length - 1);
         roomFileLines += "\n";
-        foreach (element el in sceneObjs)
+        if (sceneObjs.Count > 0)
         {
-            //Guardado en TXT
-            roomFileLines += el.prefabName + ":" + (int)el.state + ",";
+            foreach (element el in sceneObjs)
+            {
+                //Guardado en TXT
+                roomFileLines += el.prefabName + ":" + (int)el.state + ",";
+            }
+            roomFileLines = roomFileLines.Remove(roomFileLines.Length - 1);
         }
-        roomFileLines = roomFileLines.Remove(roomFileLines.Length - 1);
         File.WriteAllText(savePath, roomFileLines);
     }
     public void saveToGMFromSRM()
@@ -278,6 +282,7 @@ public class GameManager : MonoBehaviour
             {
                 aux.prefabName = el.gameObject.name;
                 aux.state = el.getState();
+                Debug.Log(aux.state);
                 scenStates.Add(aux);
                 count++;
             }
@@ -313,5 +318,6 @@ public class GameManager : MonoBehaviour
             }
             lineIndex++;
         }
+        room = roomN;
     }
 }

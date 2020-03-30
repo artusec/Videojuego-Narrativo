@@ -34,6 +34,6 @@ public class LockedSceneChange : Actable
     void change()
     {
         //GameManager.instance.saveState(inventory, GameObject.Find("EscenaElements").GetComponent<SRList>());
-        GameManager.instance.changeScene(sceneToLoad, true);
+        GameManager.instance.changeScene(sceneToLoad);
     }
 }

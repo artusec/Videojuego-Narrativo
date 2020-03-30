@@ -7,9 +7,9 @@ public class SRElement : MonoBehaviour
     public AudioClip audioLabel;
     public string label;
     public Actable actBehaviour;
+    public objectState state = objectState.DEFAULT;
     [HideInInspector]
     public SRList parentList;
-    objectState state = objectState.DEFAULT;
 
     // Start is called before the first frame update
     void Start()
