@@ -120,6 +120,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &117808309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
+    type: 3}
+  m_PrefabInstance: {fileID: 1711097008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e700815665c9cc34a8631d76276ffbe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &269965876 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7930917128310300597, guid: a1d4346e86f65664b8cd95fff923dba8,
@@ -435,8 +447,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
-          type: 3}
+      - m_Target: {fileID: 117808309}
         m_MethodName: saveToGMFromSRM
         m_Mode: 1
         m_Arguments:
@@ -447,8 +458,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
-          type: 3}
+      - m_Target: {fileID: 117808309}
         m_MethodName: saveToTXT
         m_Mode: 1
         m_Arguments:
@@ -458,7 +468,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1362742509
@@ -590,6 +600,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: invObjects.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
         type: 3}
