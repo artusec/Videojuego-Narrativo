@@ -7,11 +7,11 @@ using System.Text;
 using System.IO;
 using System;
 
-public class guardar_juego : MonoBehaviour
+public class cargar_partida : MonoBehaviour
 {
-    public string url = "http://laslomasiii.serveftp.net:4398/guardar_juego.php";
+    public string url = "http://laslomasiii.serveftp.net:4398/cargar_juego.php";
 
-    public void entrar(string usuario, Dictionary<string, string> datos)
+    public void entrar(string usuario)
     {
         Upload(usuario, datos);
     }
@@ -21,28 +21,12 @@ public class guardar_juego : MonoBehaviour
 
     }
 
-    void Upload(string usuario, Dictionary<string, string> datos)
+    void Upload(string usuario)
     {
-
-        /*Dictionary<string, string> openWith = new Dictionary<string, string>();
-
-        openWith.Add("txt", "notepad.exe");
-        openWith.Add("bmp", "paint.exe");
-        openWith.Add("dib", "paint.exe");
-        openWith.Add("rtf", "wordpad.exe");*/
-
-        string peticion = "";
-
-        foreach(var item in datos)
-        {
-            peticion = peticion + "&" + item.Key + "=" + item.Value;
-        }
-
-
         HttpWebRequest httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
         httpRequest.Method = "POST";
         httpRequest.ProtocolVersion = HttpVersion.Version11;
-        string parameters = "username=" + usuario + peticion;
+        string parameters = "username=" + usuario;
         httpRequest.ContentLength = Encoding.ASCII.GetByteCount(parameters);
         httpRequest.ContentType = "application/x-www-form-urlencoded";
 
