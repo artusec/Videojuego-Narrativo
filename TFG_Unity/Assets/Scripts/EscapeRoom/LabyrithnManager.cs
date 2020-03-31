@@ -60,7 +60,10 @@ public class LabyrithnManager : MonoBehaviour
     {
         instance = this;
     }
-
+    private void Start()
+    {
+        ScreenInput.instance.deactivate(1);//Desactivar siendo 1 el clip.Lenght;
+    }
     // Update is called once per frame
     void Update()
     {

@@ -21,6 +21,7 @@ public class ScreenInput : MonoBehaviour
 
     public float helpTime = 2;
 
+    bool activated = true;
     private void Awake()
     {
         instance = this;
@@ -30,11 +31,22 @@ public class ScreenInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lastInput = swipeScreen();
+        if(activated)
+            lastInput = swipeScreen();
     }
     void help()
     {
 
+    }
+    public void deactivate(int time)
+    {
+        activated = false;
+        lastInput = move.nullMov;
+        Invoke("activate", time);
+    }
+    public void activate()
+    {
+        activated = true;
     }
     public move getInput()
     {

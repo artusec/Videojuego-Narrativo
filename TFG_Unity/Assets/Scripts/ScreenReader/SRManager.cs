@@ -9,6 +9,7 @@ public class SRManager : MonoBehaviour
 
 
     public AudioSource ttsSource;
+    public AudioClip[] intro;
     public SRType type = SRType.Default;
 
     public SRList currentList;
@@ -20,7 +21,6 @@ public class SRManager : MonoBehaviour
 
     public SRList inventory;
     public SRList scene;
-
 
     // Instancia de la clase (patron singleton)
     public static SRManager instance;
@@ -57,9 +57,18 @@ public class SRManager : MonoBehaviour
             GameManager.instance.instantiateRoom();
             GameManager.instance.setNewScene(false);
         }
-        if(readOnStart) currentList.ReadFocus();
+        if(intro != null && intro.Length != 0)
+        {
+            playTTS(intro[0]);
+            deactivate(intro[0].length);
+            Invoke("readFocus", intro[0].length);
+        }
+        else readFocus();
     }
-
+    private void readFocus()
+    {
+        if (readOnStart) currentList.ReadFocus();
+    }
     private void OnEnable()
     {
       //  currentList.ReadFocus();
@@ -72,6 +81,15 @@ public class SRManager : MonoBehaviour
             ProcessGesture(screenInput.getInput());
     }
 
+    public void deactivate(float time)
+    {
+        type = SRType.NoInput;
+        Invoke("activate", time);
+    }
+    public void activate()
+    {
+        type = SRType.Room;
+    }
     //Reproduce un audio "clip" en el canal de "TTS"
     public void playTTS(AudioClip clip)
     {
