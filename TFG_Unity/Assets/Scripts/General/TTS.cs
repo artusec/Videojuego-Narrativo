@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 
+// CLASE DEPRECADA
+
 /// <summary>
-/// Clse que se encarga de reproducir las etiquetas del ScreenReader,
+/// Clase que se encarga de reproducir las etiquetas del ScreenReader,
 /// también puede usarse para reproducir sonido en base a otros textos
+/// implementacion del tts deprecada basada en api web
 /// </summary>
 public class TTS : MonoBehaviour
 {
