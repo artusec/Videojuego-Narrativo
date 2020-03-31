@@ -186,6 +186,7 @@ public class GameManager : MonoBehaviour
         try
         {
             string savePath = Path.Combine(Application.persistentDataPath, "SaveData");
+            // nota: esta forma de obtener el int solo valdria de 0 a 9, no tenemos tantas habitaciones
             room = (int)char.GetNumericValue(File.ReadAllText(savePath)[0]);
         }
         catch {
@@ -351,5 +352,76 @@ public class GameManager : MonoBehaviour
             lineIndex++;
         }
         room = roomN;
+    }
+
+    /// <summary>
+    /// Devuelve un string con los objetos codificados para enviarlos al servidor
+    /// </summary>
+    /// <returns></returns>
+    public void objectsToWebString()
+    {
+        // Objeto inicial con numero de habitacion
+        string s = "RoomNumber-" + room.ToString() + ":0,";
+
+        if (sceneObjs.Count > 0)
+        {
+            foreach (element e in sceneObjs)
+            {
+                s += e.prefabName + '-' + ((int)e.state).ToString() + ':' + '0' + ',';
+            }
+        }
+
+        if (invObjects.Count > 0)
+        {
+            foreach (element e in invObjects)
+            {
+                s += e.prefabName + '-' + ((int)e.state).ToString() + ':' + '1' + ',';
+            }
+        }
+
+        s = s.Remove(s.Length-1);
+
+        Debug.Log(s);
+    }
+
+    public void updateGMFromWebString()
+    {
+        string test = "RoomNumber-2:0,LlaveOxidada1-1:0,Bomb-2:0,LlaveOxidada1-2:0,Bomb-0:1";
+
+        sceneObjs = new List<element>();
+        invObjects = new List<element>();
+
+        //Separamos por objetos
+        foreach(string s in test.Split(','))
+        {
+            // string[] con {Name-State,Type}
+            string[] aux1 = s.Split(':');
+            // string[] con {Name,State}
+            string[] aux2 = aux1[0].Split('-');
+
+            string name = aux2[0];
+            int state = (int)char.GetNumericValue(aux2[1][0]);
+
+            // Escena
+            if (aux1[1] == "0")
+            {
+                // Número de habitacion
+                if (name=="RoomNumber")
+                {
+                    room = state;
+                }
+                // Objeto de escena
+                else
+                {
+                    sceneObjs.Add(new element(name, state));
+                }
+                
+            }
+            // Inventario
+            else
+            {
+                invObjects.Add(new element(name, state));
+            }
+        }
     }
 }
