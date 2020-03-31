@@ -1,0 +1,3 @@
+rootProject.name='nativetts'
+include ':app'
+include ':ttslib'
