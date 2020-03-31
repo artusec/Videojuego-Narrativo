@@ -90,9 +90,15 @@ class User
     }
     
     // Funciona
-    public function borrar_usuario($id_user){
+    public function borrar_usuario($username){
+
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
+
+        $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
+        $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_user = $fila["id"];
 
         $query = sprintf("DELETE FROM Statistics WHERE id_user = '%d'",
             $conn->real_escape_string($id_user)
@@ -103,7 +109,6 @@ class User
             exit();
         }
 
-
         $query = sprintf("DELETE FROM Messages WHERE (id_sender = '%d' or id_receiver = '%d')",
             $conn->real_escape_string($id_user),
             $conn->real_escape_string($id_user)
@@ -113,8 +118,6 @@ class User
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             exit();
         }
-
-
 
         $query = sprintf("DELETE FROM State_Game WHERE id_user = '%d'",
             $conn->real_escape_string($id_user)

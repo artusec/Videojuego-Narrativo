@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 
+[System.Serializable]
 public enum objectState {DESTROYED, DEFAULT, USED};
+
 public class GameManager : MonoBehaviour
 {
     [System.Serializable]
@@ -20,8 +22,7 @@ public class GameManager : MonoBehaviour
     public List<element> invObjects;
     public List<element> sceneObjs;
 
-    public int room = 1;
-    public bool newRoom = true;
+    public int room = 0;
 
 
     // Start is called before the first frame update
@@ -46,13 +47,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public bool isSceneNew()
+    public bool isSceneNew(int roomIndex)
     {
-        return newRoom;
-    }
-    public void setNewScene(bool newScen)
-    {
-        newRoom = newScen;
+        return room != roomIndex;
     }
 
     public void changeScene(string sceneName)
@@ -61,12 +58,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-        public void changeScene(string sceneName, bool newScen)
-    {
-        //saveToTXT();
-        newRoom = newScen;
-        SceneManager.LoadScene(sceneName);
-    }
     public void setInvState(string s, int state)
     {
         int elem = searchInvByName(s);
@@ -152,24 +143,56 @@ public class GameManager : MonoBehaviour
     //Carga datos guardados en local
     public void loadLocalData()
     {
-        string savePath = Path.Combine(Application.persistentDataPath, "SaveData");
-        string [] objectsRead = File.ReadAllText(savePath).Split('\n')[0].Split(',');
-        invObjects = new List<element>();
-        for (int i = 0; i < objectsRead.Length; i++)
+        // Aqui hay que meter un trycatch con carga default si no se encuentra
+        try
         {
-            element elem = new element(objectsRead[i].Split(':')[0], (objectState)int.Parse(objectsRead[i].Split(':')[1]));
-            invObjects.Add(elem);
+            string savePath = Path.Combine(Application.persistentDataPath, "SaveData");
+            // Obtenemos las lineas separadas por fin de linea
+            string[] lines = File.ReadAllText(savePath).Split('\n');
+            /*// Guardamos numero de habitacion
+            room = lines[0][0];*/
+            string[] objectsRead = lines[1].Split(',');
+            invObjects = new List<element>();
+            if (objectsRead.Length > 1)
+            {
+                for (int i = 0; i < objectsRead.Length; i++)
+                {
+                    element elem = new element(objectsRead[i].Split(':')[0], (objectState)int.Parse(objectsRead[i].Split(':')[1]));
+                    invObjects.Add(elem);
+                }
+            }
+            string[] sceneRead = lines[2].Split(',');
+            sceneObjs = new List<element>();
+            if (sceneRead.Length > 1)
+            {
+                for (int i = 0; i < sceneRead.Length; i++)
+                {
+                    element elem = new element(sceneRead[i].Split(':')[0], (objectState)int.Parse(sceneRead[i].Split(':')[1]));
+                    sceneObjs.Add(elem);
+                }
+            }
         }
-        string[] sceneRead = File.ReadAllText(savePath).Split('\n')[1].Split(',');
-        sceneObjs = new List<element>();
-        for (int i = 0; i < sceneRead.Length; i++)
-        {
-            element elem = new element(sceneRead[i].Split(':')[0], (objectState)int.Parse(sceneRead[i].Split(':')[1]));
-            sceneObjs.Add(elem);
-        }
-
-
+        catch { loadRoomFromFile(room); }
     }
+
+    public void loadRoomNumber()
+    {
+        if (false) { Debug.Log("load online"); }
+        else loadLocalRoomNumber();
+    }
+
+    public void loadLocalRoomNumber()
+    {
+        try
+        {
+            string savePath = Path.Combine(Application.persistentDataPath, "SaveData");
+            room = (int)char.GetNumericValue(File.ReadAllText(savePath)[0]);
+        }
+        catch {
+            room = 1;
+        }
+    }
+
     /// <summary>
     /// Añade objeto a inventario en estado i
     /// </summary>
@@ -235,21 +258,35 @@ public class GameManager : MonoBehaviour
     }
     public void saveToTXT()
     {
+        // Abrimos el archivo o lo cremos si no existe
         string savePath = Path.Combine(Application.persistentDataPath, "SaveData");
+        // String que contiene todo el texto
         string roomFileLines = "";
-        foreach (element el in invObjects)
-        {
-            //Guardado en TXT
-            roomFileLines += el.prefabName + ":" + (int)el.state + ",";
-        }
-        roomFileLines = roomFileLines.Remove(roomFileLines.Length - 1);
+        // Guardamos número de habitación
+        roomFileLines += room;
         roomFileLines += "\n";
-        foreach (element el in sceneObjs)
+        // Guardamos objetos de inventario si los hay
+        if (invObjects.Count > 0)
         {
-            //Guardado en TXT
-            roomFileLines += el.prefabName + ":" + (int)el.state + ",";
+            foreach (element el in invObjects)
+            {
+                //Guardado en TXT
+                roomFileLines += el.prefabName + ":" + (int)el.state + ",";
+            }
+            roomFileLines = roomFileLines.Remove(roomFileLines.Length - 1);
         }
-        roomFileLines = roomFileLines.Remove(roomFileLines.Length - 1);
+        roomFileLines += "\n";
+        // Guardamos objetos de escena si los hay
+        if (sceneObjs.Count > 0)
+        {
+            foreach (element el in sceneObjs)
+            {
+                //Guardado en TXT
+                roomFileLines += el.prefabName + ":" + (int)el.state + ",";
+            }
+            roomFileLines = roomFileLines.Remove(roomFileLines.Length - 1);
+        }
+        // Escribimos en el archivo
         File.WriteAllText(savePath, roomFileLines);
     }
     public void saveToGMFromSRM()
@@ -313,5 +350,6 @@ public class GameManager : MonoBehaviour
             }
             lineIndex++;
         }
+        room = roomN;
     }
 }

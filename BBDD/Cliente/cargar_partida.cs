@@ -7,18 +7,13 @@ using System.Text;
 using System.IO;
 using System;
 
-public class nuevo_juego : MonoBehaviour
+public class cargar_partida : MonoBehaviour
 {
-    public string url = "http://laslomasiii.serveftp.net:4398/nuevo_juego.php";
-
-    public InputField username;
-    public InputField email;
-    public InputField pass;
-    public InputField pass2;
+    public string url = "http://laslomasiii.serveftp.net:4398/cargar_juego.php";
 
     public void entrar(string usuario)
     {
-        Upload(usuario);
+        Upload(usuario, datos);
     }
 
     void Start()
@@ -28,14 +23,6 @@ public class nuevo_juego : MonoBehaviour
 
     void Upload(string usuario)
     {
-
-        /*Dictionary<string, string> openWith = new Dictionary<string, string>();
-
-        openWith.Add("txt", "notepad.exe");
-        openWith.Add("bmp", "paint.exe");
-        openWith.Add("dib", "paint.exe");
-        openWith.Add("rtf", "wordpad.exe");*/
-
         HttpWebRequest httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
         httpRequest.Method = "POST";
         httpRequest.ProtocolVersion = HttpVersion.Version11;

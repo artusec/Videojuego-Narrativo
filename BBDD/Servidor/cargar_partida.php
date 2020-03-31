@@ -12,7 +12,7 @@ if ($datos = Game::cargar_partida_individual($user)){
 	print("Hecho!");
 	echo "<br>";
 	foreach($datos as $clave=>$valor) {
-		echo $clave.":".$valor."<br>";
+		echo $clave.$valor."<br>";
 	}
 	exit();
 }

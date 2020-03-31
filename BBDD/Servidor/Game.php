@@ -20,13 +20,23 @@ class Game
     // Funciona
     public function inicia_nuevo_juego_individual($user1)
     {
-        $room = 0;
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
 
+        $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($user1));
+        $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_usuario = $fila["id"];
+
+        if ( ! $id_usuario) {
+            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+        }
+
         # Recuperamos el id de la partida individual que tiene user1 activa si la tiene
-        $query = sprintf("SELECT id FROM Games G WHERE user1 = '%d' and user2=1", $conn->real_escape_string($user1));
-        $id_game = $conn->query($query);
+        $query = sprintf("SELECT id FROM Games G WHERE user1 = '%d' and user2=1", $id_usuario);
+        $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_game = $fila["id"];
 
         # Si tenia una partida, borramos de la tabla de estado de la misma
         if($id_game){
@@ -54,89 +64,116 @@ class Game
         }
 
         # Insertamos una nueva partida individual
-        $query = sprintf("INSERT INTO Games (user1, user2, room) VALUES ('%d', '%d', '%d')",
-            $conn->real_escape_string($user1),
-            1,
-            $conn->real_escape_string($room)
+        $query = sprintf("INSERT INTO Games (user1, user2) VALUES ('%d', '%d')",
+           	$id_usuario,
+            1
             );
+
         if ( $conn->query($query) ) {
             $id_new_game = $conn->insert_id;
         } else {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             return false;
         }
-
-        # Inicializamos el estado de la partida cogiendo todos los objetos de la sala 0
-        # y poniendolos en el estado inicial
-       $query = sprintf("SELECT id FROM Objects O WHERE O.room = '%d'", $conn->real_escape_string($room));
-        $rs = $conn->query($query);
-        if ($rs) {
-            $result = array();
-            while ($fila = $rs->fetch_assoc()) {
-                $result[] = $fila["id"];
-            }
-            $rs->free();
-        } else {
-            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-            return false;
-        }
-
-
-        for ($i = 0; $i < sizeof($result); $i++) {
-            $query = sprintf("INSERT INTO State_Game (id_game, id_user, id_object, state_object) VALUES ('%d', '%d', '%d', '%d')",
-                    $conn->real_escape_string($id_new_game),
-                    $conn->real_escape_string($user1),
-                    $conn->real_escape_string($result[$i]),
-                    1
-                );
-            $rs = $conn->query($query);
-        }
         return true;
     }
 
 
+
     // Funciona
-    public function cargar_partida_individual($user1) {
+    public function cargar_partida_individual($username) {
 
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
 
-        # Recuperamos el id de la partida individual
-        $query = sprintf("SELECT id_object, state_object FROM Games G join State_Game S on G.user1 = S.id_user where S.id_user = '%d'", $conn->real_escape_string($user1));
+        $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
         $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_usuario = $fila["id"];
+
+        # Recuperamos el id de la partida individual
+        $query = sprintf("SELECT object, type, state_object FROM  State_Game S where S.id_user = '%d'", $id_usuario);
+        $rs = $conn->query($query);
+
         // Esto nos devuelve todos los objetos del usuario en su partida individual y su estado
         if ($rs) {
             $result = array();
             while ($fila = $rs->fetch_assoc()) {
-                $result[$fila["id_object"]] = $fila["state_object"];
+            	$aux = $fila["type"].":".$fila["state_object"];
+                $result[$fila["object"]] = $aux;
             }
+
             $rs->free();
         } else {
             echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             return false;
         }
         return $result;
-
     }
 
     // Funciona
-    public function guardar_partida_individual($user, $datos) {
+    public function guardar_partida_individual($datos) {
         
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
-        foreach($datos as $clave=>$valor) {
-            echo $clave;
-            echo $valor;
-            $query = sprintf("UPDATE state_game SET state_object = '%d' WHERE (id_object = '%d' and id_user = '%d')",
-                    $conn->real_escape_string($valor),
-                    $conn->real_escape_string($clave),
-                    $conn->real_escape_string($user));
-            $rs = $conn->query($query);
-            if (!$rs) {
-                echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-                return false;
-            }
+
+        $usuario = $datos["username"];
+
+        $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($usuario));
+        $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_usuario = $fila["id"];
+
+        if ( ! $id_usuario) {
+            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+			return false;
         }
+
+        $query = sprintf("SELECT id FROM Games G WHERE G.user1 = '%d'", $id_usuario);
+        $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_game = $fila["id"];
+
+        if ( ! $id_game) {
+            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+			return false;
+        }
+
+        $query = sprintf("DELETE FROM State_Game WHERE id_user = '%d'", $id_usuario);
+		$rs = $conn->query($query);
+		if ( ! $rs) {
+            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            return false;
+		}
+
+		$fila = array();
+
+        foreach($datos as $clave=>$valor) {
+			if($clave == "username"){
+				$username = $valor;
+			}
+			else{
+				$fila = str_split($valor);
+				$objeto = $clave;
+				$tipo = intval($fila[0]);
+				$estado = intval($fila[2]);
+
+				$query = sprintf("INSERT INTO State_Game (id_game, id_user, object, type, state_object) VALUES ('%d', '%d', '%s', '%d', '%d')",
+				$id_game,
+				$id_usuario,
+		        $conn->real_escape_string($objeto),
+		        $tipo,
+		        $estado
+		        );
+
+		        if (! $conn->query($query) ) {
+					echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+		            return false;
+		        }
+			}
+		}
+
+		return true;
     }
 
 

@@ -3,30 +3,28 @@ require_once __DIR__ . '/DB_data.php';
 require_once __DIR__ . '/Game.php';
 
 $uri = $_SERVER["REQUEST_URI"];
-$user = $_POST["username"];
 
 $datos = array();
 
-# En POST debe ser un diccionario con una entrada llamada "username"
-# y lo demas informacion del estado de los objetos; 1 -> 2
-# objeto 1, estado 2.
-foreach($_POST as $clave=>$valor) {
-	if($clave == "username"){
-		$username = $valor;
-	}
-	else{
-		$datos[$clave] = $valor;
-	}
-}
+# Pisar la lista entera de objetos con los que nos pasan
+
+# "username" -> <username>
+# "nombre_objeto" -> <tipo>:<estado>
+
+
 
 header("Content-type: text/html");
 
-#$array = array(
-#    1 => 2,
-#    2 => 2,
-#);
+# $peticion = "username=paco&llave=1:1&caja=2:2&puerta=2:3";
 
-if (Game::guardar_partida_individual($username, $array)){
+/*$peticion = array(
+    "username" => "paco",
+    "llave" => "1:1",
+    "caja" => "2:3",
+    "tabla" => "1:5",
+);*/
+
+if (Game::guardar_partida_individual($_POST)){
 	print("Hecho!");
 	exit();
 }
