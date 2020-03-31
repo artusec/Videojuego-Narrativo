@@ -1,22 +1,13 @@
-﻿////////////////////////////////////////////////////////////////////////////////
-//  
-// @author Benoît Freslon @benoitfreslon
-// https://github.com/BenoitFreslon/Vibration 
-// https://benoitfreslon.com
-//
-////////////////////////////////////////////////////////////////////////////////
+﻿using UnityEngine;
 
-using UnityEngine;
-#if UNITY_IOS && !UNITY_EDITOR
-using System.Collections;
-using System.Runtime.InteropServices;
-#endif
-
+/// <summary>
+/// Clase encargada de producir las vibraciones en dispositivos Android
+/// Clase estática para permitir llamadas desde cualquier lugar sin instancia
+/// </summary>
 public static class Vibration
 {
-    private static int patternTimeUnit = 100;
-
-
+    // Obtenemos las clases de Android que utilizaremos (podemos obtenerlas así por 
+    // ser clases básicas o consideradas ervicios
 #if UNITY_ANDROID && !UNITY_EDITOR
 	public static AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 	public static AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
@@ -24,6 +15,10 @@ public static class Vibration
 	public static AndroidJavaObject context = currentActivity.Call<AndroidJavaObject>("getApplicationContext");
 #endif
 
+    /// <summary>
+    /// Vibración normal de duración milliseconds
+    /// </summary>
+    /// <param name="milliseconds"></param>
 	public static void Vibrate(long milliseconds)
 	{
 		#if UNITY_ANDROID && !UNITY_EDITOR
@@ -31,6 +26,11 @@ public static class Vibration
 		#endif
 	}
 
+    /// <summary>
+    /// Vibración en base a un patron (pausa, tiempo activa, pausa, ...)
+    /// </summary>
+    /// <param name="pattern"></param>
+    /// <param name="repeat"></param>
 	public static void Vibrate(long[] pattern, int repeat)
 	{
 		#if UNITY_ANDROID && !UNITY_EDITOR
@@ -38,6 +38,9 @@ public static class Vibration
 		#endif
 	}
 
+    /// <summary>
+    /// Detiene todas las vibraciones activas y acaba bucles
+    /// </summary>
 	public static void Cancel()
 	{
 		#if UNITY_ANDROID && !UNITY_EDITOR
@@ -45,6 +48,14 @@ public static class Vibration
 		#endif
 	}
 
+    /// <summary>
+    /// Vibracion custom que vibra vibrationDuration y espera maxWait entre vibraciones
+    /// strength sirve para modular la espera, 0 con strength 1 y la maxima con strength 1
+    /// </summary>
+    /// <param name="strength"></param>
+    /// <param name="vibrationDuration"></param>
+    /// <param name="maxWait"></param>
+    /// <param name="loop"></param>
     public static void SonarVibration(float strength, long vibrationDuration, long maxWait, bool loop ) {
         long[] pattern;
         int repeat = loop ? 0 : -1;
@@ -68,30 +79,10 @@ public static class Vibration
         Vibrate(pattern, repeat);
     }
 
-    public static void Vibrate(float strength, int repeat)
-    {
-        long[] pattern;
-        if (strength < 0) strength = 0;
-        else if (strength > 1) strength = 1;
-
-        if (strength == 0) return;
-        else if (strength == 1) pattern = new long[2] { 0, patternTimeUnit};
-
-        else
-        {
-            pattern = new long[4] { 0, patternTimeUnit, (long)(patternTimeUnit*strength), (long)(patternTimeUnit*(1-strength))};
-        }
-
-        string s = "pattern ";
-        foreach(long l in pattern)
-        {
-            s += l.ToString() + " ";
-        }
-        Debug.Log(s);
-
-        Vibrate(pattern, repeat);
-    }
-
+    /// <summary>
+    /// Método que indica si el dispositivo tiene motor de vibración
+    /// </summary>
+    /// <returns></returns>
 	public static bool HasVibrator()
 	{
 #if UNITY_ANDROID && !UNITY_EDITOR
@@ -111,18 +102,13 @@ public static class Vibration
 #endif
 	}
 
+    /// <summary>
+    /// Vibración genérica que sirve para varios tipos de dispositivo movil.
+    /// Vibra durante medio segundo.
+    /// </summary>
 	public static void Vibrate()
 	{
 		Handheld.Vibrate();
 	}
-
-
-
-    public static void SetTimeUnit(int i)
-    {
-        if (i > 0) patternTimeUnit = i;
-        else Debug.Log("TimeUnit must be bigger than 0");
-    }
-
 
 }
