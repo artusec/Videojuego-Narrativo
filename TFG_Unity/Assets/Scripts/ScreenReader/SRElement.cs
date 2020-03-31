@@ -50,8 +50,7 @@ public class SRElement : MonoBehaviour
         else
         {
             //TTS.instance.PlayTTS(label);
-            SRManager.instance.playTTS(audioLabel);
-            Debug.Log("tts label: " + label);
+            TextToSpeech.Speak(label);
         }
     }
 

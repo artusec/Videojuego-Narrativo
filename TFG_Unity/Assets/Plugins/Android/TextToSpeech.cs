@@ -3,36 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class TextToSpeech :MonoBehaviour
+public static class TextToSpeech
 {
-    public static TextToSpeech myInstance;
+    private static AndroidJavaObject TTS = null;
+    private static AndroidJavaObject activityContext = null;
 
-    void Awake()
-    {
-        myInstance = this;
-    }
-    
-    private AndroidJavaObject TTS = null;
-    private AndroidJavaObject activityContext = null;
-
-    private string lang = "ES";
-    private string speed = "Normal";
+    private static string lang = "ES";
+    private static string speed = "Normal";
     //public float Speed { get{return _speed;} set { SetSpeed(value); } }
-  
-    public TextToSpeech()
-    {
-        //Initialize();
 
+    static TextToSpeech()
+    {
+        Initialize();
     }
 
-    public void changeLang(string l)
+    public static void changeLang(string l)
     {
 #if UNITY_ANDROID && !UNITY_EDITOR
         lang = l;
         TTS.Call("changeLang",l);
 #endif
     }
-    public void changeSpeed(string s)
+    public static void changeSpeed(string s)
     {
 #if UNITY_ANDROID && !UNITY_EDITOR
         speed = s;
@@ -40,17 +32,7 @@ public class TextToSpeech :MonoBehaviour
 #endif
     }
 
-    public TextToSpeech(float speed)
-    {
-        //Initialize();
-        //this.Speed = speed;
-        //SetSpeed(this.Speed);
-#if UNITY_ANDROID && !UNITY_EDITOR
-        Initialize();
-#endif
-    }
-
-    public void Speak(string toSay)
+    public static void Speak(string toSay)
     {
 #if UNITY_ANDROID && !UNITY_EDITOR
 
@@ -60,29 +42,29 @@ public class TextToSpeech :MonoBehaviour
         }
 
         TTS.Call("Speak", toSay);
-
+#else
+        Debug.Log(toSay);
+    }
 #endif
 
-    }
-    private void Initialize()
+    private static void Initialize()
     {
-        if (TTS == null)
+        
+#if UNITY_ANDROID && !UNITY_EDITOR
+        using (AndroidJavaClass activityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
         {
-            using (AndroidJavaClass activityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-            {
-                activityContext = activityClass.GetStatic<AndroidJavaObject>("currentActivity");
-            }
+            activityContext = activityClass.GetStatic<AndroidJavaObject>("currentActivity");
+        }
 
-            using (AndroidJavaClass pluginClass = new AndroidJavaClass("com.fer.ttslib.TTS"))
+        using (AndroidJavaClass pluginClass = new AndroidJavaClass("com.fer.ttslib.TTS"))
+        {
+            if (pluginClass != null)
             {
-                if (pluginClass != null)
-                {
-                    TTS = pluginClass.CallStatic<AndroidJavaObject>("getInstance");
-                    TTS.Call("setContext", activityContext);
-                }
+                TTS = pluginClass.CallStatic<AndroidJavaObject>("getInstance");
+                TTS.Call("setContext", activityContext);
             }
         }
 
-
+#endif
     }
 }
