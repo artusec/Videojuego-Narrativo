@@ -24,7 +24,7 @@ public class LabyrithnManager : MonoBehaviour
     public AudioSource src;
     //manejo del audio inicial y que el juego no empiece hasta que termine
     [Tooltip("El audio que sonará al empezar la escena, se sugiere que sea el audio tutorial")]
-    public AudioSource initSound;
+    public AudioClip initSound;
     [HideInInspector]
     public bool initGame = false;
     [Tooltip("El tiempo adicional que pasa desde que termina de sonar initSound hasta que empieza el minijuego")]
@@ -70,11 +70,12 @@ public class LabyrithnManager : MonoBehaviour
     }
     private void Start()
     {
-        ScreenInput.instance.deactivate(1);//Desactivar siendo 1 el clip.Lenght;
         if (initSound != null)
         {
-            initSound.Play();
-            Invoke("startLogic", initSound.clip.length + initWaitTime);
+            ScreenInput.instance.deactivate(initSound.length+initWaitTime);//Desactivar siendo 1 el clip.Lenght;
+            src.clip = initSound;
+            src.Play();
+            Invoke("startLogic", initSound.length + initWaitTime);
         }
         else
         {

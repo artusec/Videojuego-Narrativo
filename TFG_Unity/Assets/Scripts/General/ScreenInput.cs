@@ -34,11 +34,12 @@ public class ScreenInput : MonoBehaviour
         if(activated)
             lastInput = swipeScreen();
     }
-    void help()
+    public bool released(move mov)
     {
-
+        if (mov == move.up || mov == move.right || mov == move.down || mov == move.left || mov == move.click) return true;
+        else return false;
     }
-    public void deactivate(int time)
+    public void deactivate(float time)
     {
         activated = false;
         lastInput = move.nullMov;

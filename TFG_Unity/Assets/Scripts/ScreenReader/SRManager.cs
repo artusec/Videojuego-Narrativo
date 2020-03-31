@@ -41,10 +41,19 @@ public class SRManager : MonoBehaviour
         if (type == SRType.Room)
         {
             if (GameManager.instance.isSceneNew(roomIndex))
+            {
                 GameManager.instance.loadRoomFromFile(roomIndex);
-
+                if (intro != null && intro.Length != 0)
+                {
+                    playTTS(intro[0]);
+                    deactivate(intro[0].length);
+                    Invoke("readFocus", intro[0].length);
+                }
+                else readFocus();
+            }
             else
             {
+                currentList.ReadFocus();
                 if (false) //MIRA SI HAY DATOS EN LA NUBE
                 {
                     print("Datos en la nube");
@@ -57,13 +66,6 @@ public class SRManager : MonoBehaviour
             }
             GameManager.instance.instantiateRoom();
         }
-        if(intro != null && intro.Length != 0)
-        {
-            playTTS(intro[0]);
-            deactivate(intro[0].length);
-            Invoke("readFocus", intro[0].length);
-        }
-        else readFocus();
     }
     private void readFocus()
     {
