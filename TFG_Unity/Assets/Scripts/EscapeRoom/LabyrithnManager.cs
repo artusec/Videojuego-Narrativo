@@ -18,10 +18,17 @@ public struct LabyrinthEvento
 public class LabyrithnManager : MonoBehaviour
 {
     public static LabyrithnManager instance;
-    public LabyrinthPlayer player;
+    //public LabyrinthPlayer player;
 
     [Tooltip("El AudioSource desde el cual se reproducirán los sonidos de los eventos")]
     public AudioSource src;
+    //manejo del audio inicial y que el juego no empiece hasta que termine
+    [Tooltip("El audio que sonará al empezar la escena, se sugiere que sea el audio tutorial")]
+    public AudioSource initSound;
+    [HideInInspector]
+    public bool initGame = false;
+    [Tooltip("El tiempo adicional que pasa desde que termina de sonar initSound hasta que empieza el minijuego")]
+    public float initWaitTime = 1f;
 
     [Tooltip("Cada evento de la persecución")]
     [SerializeField]
@@ -59,16 +66,36 @@ public class LabyrithnManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        initGame = false;
     }
     private void Start()
     {
         ScreenInput.instance.deactivate(1);//Desactivar siendo 1 el clip.Lenght;
+        if (initSound != null)
+        {
+            initSound.Play();
+            Invoke("startLogic", initSound.clip.length + initWaitTime);
+        }
+        else
+        {
+            print("No se encontró audio inicial, se esperará 1 segundo para inicial el juego");
+            Invoke("startLogic", initWaitTime);
+        }
     }
+
+    private void startLogic()
+    {
+        initGame = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        EventContainer.transform.Translate(Vector3.down * Time.deltaTime * vel);
-        src.transform.Translate(Vector3.down * Time.deltaTime * vel);
+        if (initGame)
+        {
+            EventContainer.transform.Translate(Vector3.down * Time.deltaTime * vel);
+            src.transform.Translate(Vector3.down * Time.deltaTime * vel);
+        }
     }
 
     //comprueba si el movimiento introducido del player durante el trigger es el correcto
@@ -125,7 +152,7 @@ public class LabyrithnManager : MonoBehaviour
     {
         //paramos audio
         //src.Stop();
-        player.reinit();
+        //player.reinit();
 
         //si el player no introdujo el input correcto
         if (!playerCorrect)
