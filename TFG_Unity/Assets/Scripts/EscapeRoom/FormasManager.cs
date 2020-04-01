@@ -4,6 +4,14 @@ using UnityEngine;
 
 using UnityEngine.UI;
 
+public enum SelectionOptions
+{
+    Left,
+    Middle,
+    Right,
+    TurnBack
+}
+
 [System.Serializable]
 public struct FormasSelectionOptions
 {
@@ -15,9 +23,10 @@ public struct FormasSelectionOptions
 
 public class FormasManager : MonoBehaviour
 {
-
     //para manejar el flujo del minijuego
     public int level = 0;
+    private SelectionOptions select;
+    private bool selection = false;
 
     [Tooltip("Los diferentes GOs que serán utilizados como formas a reconocer")]
     [SerializeField]
@@ -33,6 +42,9 @@ public class FormasManager : MonoBehaviour
     public Text option1Text,
         option2Text,
         option3Text;
+
+    [Space(10)]
+
     public SRElement sre1, sre2, sre3;
 
     public SRManager srm = null;
@@ -73,16 +85,56 @@ public class FormasManager : MonoBehaviour
     void Update()
     {
         // con doble click activamos la seleccion de forma
-        if(input.getInput() == move.doubleClick)
+        if (input.getInput() == move.doubleClick)
         {
-            srm.enabled = !srm.enabled;
+            if (!srm.enabled)
+            {
+                srm.enabled = true;
+            }
+            else
+            {
+                srm.enabled = false;
+            }
+            if (!selection)
+            {
+                selection = true;
+                print("pasando a fase de seleccion");
+                formas[level].SetActive(false);
+            }
+            else
+            {
+                //seleccion de la forma actual
+                OptionSelected(select);
+            }
+            //srm.enabled = !srm.enabled;
         }
-        else if(srm.enabled && input.getInput() == move.down)
+        else
         {
-            srm.enabled = false;
+            if (srm.enabled && input.getInput() == move.down)
+                srm.enabled = false;
+        }
+        if(selection)
+        {
+            int aux = (int)select;
+            if (ScreenInput.instance.getInput() == move.left)
+            {
+                aux += 1;
+                if (aux >= System.Enum.GetValues(typeof(SelectionOptions)).Length)
+                    aux = 0;
+                //select = (SelectionOptions)(((int)select - 1) % System.Enum.GetValues(typeof(SelectionOptions)).Length);
+                print("girado a la izquierda, " + select.ToString());
+            }
+            else if (ScreenInput.instance.getInput() == move.right)
+            {
+                aux -= 1;
+                if (aux < 0)
+                    aux = System.Enum.GetValues(typeof(SelectionOptions)).Length - 1;
+                //select = (SelectionOptions)(((int)select + 1) % System.Enum.GetValues(typeof(SelectionOptions)).Length);
+                print("girado a la derecha, " + select.ToString());
+            }
+            select = (SelectionOptions)aux;
         }
         //manejo de cambio de estado entre reconocimiento y seleccion
-
     }
 
     public void setLevel(int nLevel)
@@ -102,42 +154,54 @@ public class FormasManager : MonoBehaviour
     public void addLevel(int nLevel)
     {
         //válido para nLevel negativo y seguro para no pasarse del límite del array
-        //level = Mathf.Max(0, Mathf.Min(formas.Count-1, level + nLevel));
         level = (level + nLevel) % formas.Count;
         setLevel(level);
     }
 
-    /*
-     * index == 1 -> botón izquierda
-     * index == 2 -> botón centro
-     * index == 3 -> botón derecha
-     */
-    public void OptionSelected(int index)
+    public void OptionSelected(SelectionOptions index)
     {
         string aux;
         switch (index)
         {
-            case 1:
+            case SelectionOptions.Left:
                 aux = textos[level].text1;
                 break;
-            case 2:
+            case SelectionOptions.Middle:
                 aux = textos[level].text2;
                 break;
-            case 3:
+            case SelectionOptions.Right:
                 aux = textos[level].text3;
+                break;
+            case SelectionOptions.TurnBack:
+                print("volviendo atras");
+                srm.enabled = false;
+                aux = "tb";
                 break;
             default:
                 aux = "";
                 break;
         }
+        //caso de acierto con la forma solución
         if (aux == textos[level].solution)
         {
             TTS.instance.PlayTTS("Acierto");
+            //condición de victoria del puzle
+            if(level == textos.Count - 1)
+            {
+                print("victoria");
+            }
             addLevel(1);
         }
-        else {
+        //caso de fallo de selección
+        else if(aux != "tb"){
             TTS.instance.PlayTTS("Fallo");
             print("fallo de selección");
+        }
+        else
+        {
+            TTS.instance.PlayTTS("Volviendo a la fase de reconocimiento");
+            selection = true;
+            formas[level].SetActive(true);
         }
     }
 }
