@@ -47,7 +47,6 @@ public class FormasManager : MonoBehaviour
 
     public SRElement sre1, sre2, sre3;
 
-    public SRManager srm = null;
     public ScreenInput input = null;
 
     private void OnValidate()
@@ -78,42 +77,27 @@ public class FormasManager : MonoBehaviour
     void Start()
     {
         //activamos la primera forma a reconocer
-        TTS.instance.PlayTTS("Trata de reconocer las formas con la vibracion, despues abre la selección con doble tap y seleccionala.");
+        // reproducir u naudio con el texto TTS.instance.PlayTTS("Trata de reconocer las formas con la vibracion, despues abre la selección con doble tap y seleccionala.");
         setLevel(level);
     }
 
     void Update()
     {
+        SRManager srm = SRManager.instance;
+
         // con doble click activamos la seleccion de forma
         if (input.getInput() == move.doubleClick)
         {
-            if (!srm.enabled)
+            if (srm.type == SRType.NoInput)
             {
-                srm.enabled = true;
-            }
-            else
-            {
-                srm.enabled = false;
-            }
-            if (!selection)
-            {
-                selection = true;
+                srm.type = SRType.Default;
                 print("pasando a fase de seleccion");
                 formas[level].SetActive(false);
             }
-            else
-            {
-                //seleccion de la forma actual
-                OptionSelected(select);
-            }
-            //srm.enabled = !srm.enabled;
+
         }
-        else
-        {
-            if (srm.enabled && input.getInput() == move.down)
-                srm.enabled = false;
-        }
-        if(selection)
+
+        else if(srm.type == SRType.Default)
         {
             int aux = (int)select;
             if (ScreenInput.instance.getInput() == move.left)
@@ -158,6 +142,14 @@ public class FormasManager : MonoBehaviour
         setLevel(level);
     }
 
+    public void setUpFormas()
+    {
+        List<SRElement> list = SRManager.instance.currentList.sreList;
+        list[1].label = "Texto con el nombre";
+        // list[1].audioLabel = "el audio clip que haga falta";
+        ((FormaMinigame)list[1].actBehaviour).name = "Texto con el nombre";
+    }
+
     public void OptionSelected(SelectionOptions index)
     {
         string aux;
@@ -174,7 +166,6 @@ public class FormasManager : MonoBehaviour
                 break;
             case SelectionOptions.TurnBack:
                 print("volviendo atras");
-                srm.enabled = false;
                 aux = "tb";
                 break;
             default:
@@ -194,6 +185,33 @@ public class FormasManager : MonoBehaviour
         }
         //caso de fallo de selección
         else if(aux != "tb"){
+            TTS.instance.PlayTTS("Fallo");
+            print("fallo de selección");
+        }
+        else
+        {
+            TTS.instance.PlayTTS("Volviendo a la fase de reconocimiento");
+            selection = true;
+            formas[level].SetActive(true);
+        }
+    }
+
+    public void ReceiveChoice(string s)
+    {
+        //caso de acierto con la forma solución
+        if (s == textos[level].solution)
+        {
+            TTS.instance.PlayTTS("Acierto");
+            //condición de victoria del puzle
+            if (level == textos.Count - 1)
+            {
+                print("victoria");
+            }
+            addLevel(1);
+        }
+        //caso de fallo de selección
+        else if (s != "tb")
+        {
             TTS.instance.PlayTTS("Fallo");
             print("fallo de selección");
         }
