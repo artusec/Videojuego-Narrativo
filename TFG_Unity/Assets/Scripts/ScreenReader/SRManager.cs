@@ -36,8 +36,7 @@ public class SRManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(type != SRType.NoInput)
-            screenInput = ScreenInput.instance;
+        screenInput = ScreenInput.instance;
         if (type == SRType.Room)
         {
             if (GameManager.instance.isSceneNew(roomIndex))
