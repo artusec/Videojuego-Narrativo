@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  name: Circle
+  form: 0
   frm: {fileID: 806497321}
 --- !u!114 &34857243
 MonoBehaviour:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
   label: Circle
-  actBehaviour: {fileID: 0}
+  actBehaviour: {fileID: 34857242}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &50612378
@@ -1063,25 +1063,20 @@ MonoBehaviour:
   - {fileID: 894775251}
   - {fileID: 379710836}
   textos:
-  - solution: Cuadrado
-    text1: "C\xEDrculo"
-    text2: Cuadrado
-    text3: "Tri\xE1ngulo"
-  - solution: "C\xEDrculo"
-    text1: "C\xEDrculo"
-    text2: Cuadrado
-    text3: Estrella
-  - solution: Estrella
-    text1: "Pent\xE1gono"
-    text2: Rombo
-    text3: Estrella
+  - solution: 0
+    formas: 010000000000000002000000
+  - solution: 1
+    formas: 010000000000000003000000
+  - solution: 3
+    formas: 040000000500000003000000
   selectionContainer: {fileID: 856034864}
-  option1Text: {fileID: 980654328}
-  option2Text: {fileID: 388778189}
-  option3Text: {fileID: 2120740863}
-  sre1: {fileID: 353891859}
-  sre2: {fileID: 864699121}
-  sre3: {fileID: 947779761}
+  formAudios:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   input: {fileID: 806497323}
 --- !u!4 &806497322
 Transform:
@@ -1691,7 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
   label: Circle
-  actBehaviour: {fileID: 0}
+  actBehaviour: {fileID: 1239740380}
   state: 1
   parentList: {fileID: 0}
 --- !u!114 &1239740380
@@ -1707,7 +1702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  name: Circle
+  form: 0
   frm: {fileID: 806497321}
 --- !u!4 &1239740381
 Transform:
@@ -1828,6 +1823,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1500717175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1500717176}
+  - component: {fileID: 1500717178}
+  - component: {fileID: 1500717177}
+  m_Layer: 0
+  m_Name: Retroceder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1500717176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500717175}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8894336, y: 3.2541385, z: -0.5019531}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5166883775375071746}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1500717177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500717175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd8c40a3602f754c910e1a06c0b3323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: {fileID: 0}
+  form: 6
+  frm: {fileID: 806497321}
+--- !u!114 &1500717178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500717175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLabel: {fileID: 0}
+  label: Retroceder
+  actBehaviour: {fileID: 1500717177}
+  state: 1
+  parentList: {fileID: 0}
 --- !u!1 &1616472570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,7 +1962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  name: Circle
+  form: 0
   frm: {fileID: 806497321}
 --- !u!114 &1660471273
 MonoBehaviour:
@@ -1919,7 +1978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
   label: Circle
-  actBehaviour: {fileID: 0}
+  actBehaviour: {fileID: 1660471272}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &2120740861
@@ -2017,6 +2076,7 @@ MonoBehaviour:
   - {fileID: 1660471273}
   - {fileID: 34857243}
   - {fileID: 1239740379}
+  - {fileID: 1500717178}
   prevList: {fileID: 0}
   currentFocus: 0
 --- !u!1 &2917386471542201383
@@ -2146,6 +2206,7 @@ Transform:
   - {fileID: 1660471271}
   - {fileID: 34857241}
   - {fileID: 1239740381}
+  - {fileID: 1500717176}
   m_Father: {fileID: 7365599283425855656}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

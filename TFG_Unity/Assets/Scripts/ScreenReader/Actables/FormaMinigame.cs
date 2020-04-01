@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class FormaMinigame : Actable
 {
-    public string name = "Circle";
+    public Forma form = Forma.Cuadrado;
 
     public FormasManager frm = null;
 
     public override void Act()
     {
-        frm.ReceiveChoice(name);
+        if (form == Forma.Retroceder) frm.ReturnToSelection();
+        else frm.ReceiveChoice(form);
     }
 }
