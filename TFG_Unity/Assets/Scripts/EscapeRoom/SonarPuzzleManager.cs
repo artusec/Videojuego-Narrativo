@@ -52,6 +52,12 @@ public class SonarPuzzleManager : MonoBehaviour
     private SonarZones lastZone = SonarZones.fuera;
     //su propio componente para reproducir sonidos
     private AudioSource src;
+    public AudioSource tapSound;
+    //auxiliar que indica si hay que poner el sonido de ir tapeando
+    private bool tapPlay = true;
+
+    public AudioClip looseSound;
+    public AudioClip winSound;
 
     private void OnValidate()
     {
@@ -115,10 +121,14 @@ public class SonarPuzzleManager : MonoBehaviour
     void Update()
     {
         click = Input.GetMouseButton(0);
+        //move m = ScreenInput.instance.getInput();
         if (click)
             ProcessMouse(move.pressing);
-        else Vibration.Cancel();
-
+        else
+        {
+            Vibration.Cancel();
+            tapSound.Stop();
+        }
         if(ScreenInput.instance.getInput() == move.click)
         {
             ProcessMouse(move.click);
@@ -157,6 +167,11 @@ public class SonarPuzzleManager : MonoBehaviour
         {
             case move.pressing:
                 CalculateVibration(index, minDist);
+                if(!tapSound.isPlaying && tapPlay)
+                {
+                    tapSound.loop = true;
+                    tapSound.Play();
+                }
                 break;
             case move.click:
                 ProcessClick(index, minDist);
@@ -175,23 +190,45 @@ public class SonarPuzzleManager : MonoBehaviour
     {
         if (dist <= radios[cIndex].cerca)
         {
-            print("centro clickado, reproduciendo sonido asociado al índice: "+ cIndex.ToString() );
+            print("centro clickado, reproduciendo sonido asociado al índice: " + cIndex.ToString());
+            tapSoundStopTime(radios[cIndex].clickSound.length);
             src.PlayOneShot(radios[cIndex].clickSound);
         }
     }
 
     void ProcessDoubleClick(int cIndex, float dist)
     {
-        //si el centro más cercano es la solución y se cumple la condición de distancia
-        if(cIndex == solutionIndex && dist <= radios[cIndex].cerca)
-        {
-            src.Stop();
-            //indicamos que hemos ganado / conseguido el objeto
-            print("VICTORIA");
-            //-------------------------------------------------
-            // Hacer lo que sea necesario para seguir el juego
-            //-------------------------------------------------
-            onVictory();
+        //si el centro más cercano cumple la condición de distancia
+        if(dist <= radios[cIndex].cerca) {
+            //es la solución
+            if (cIndex == solutionIndex)
+            {
+                src.Stop();
+                tapSound.Stop();
+                tapPlay = false;
+                src.PlayOneShot(winSound);
+                //src.clip = winSound;
+                //src.Play();
+                //indicamos que hemos ganado / conseguido el objeto
+                print("VICTORIA");
+                //-------------------------------------------------
+                // Hacer lo que sea necesario para seguir el juego
+                //-------------------------------------------------
+                Invoke("onVictory", winSound.length + 0.5f);
+                //onVictory();
+            }
+            //condición de derrota
+            else
+            {
+                print("una vida menos");
+                tapSound.Stop();
+                tapPlay = false;
+                src.Stop();
+                src.PlayOneShot(looseSound);
+                //src.clip =looseSound;
+                //src.Play();
+                ChangeRadius(cIndex, 0, 0, 0);
+            }
         }
     }
 
@@ -208,7 +245,6 @@ public class SonarPuzzleManager : MonoBehaviour
                 break;
             default:
                 break;
-
         }
     }
 
@@ -253,5 +289,24 @@ public class SonarPuzzleManager : MonoBehaviour
                 Vibration.Cancel();
             }
         }
+    }
+
+    private void tapSoundStopTime(float time)
+    {
+        tapSound.Stop();
+        tapPlay = false;
+        Invoke("tapSoundReady", time);
+    }
+
+    private void tapSoundReady()
+    {
+        tapPlay = true;
+    }
+
+    private void ChangeRadius(int index, float nCerca, float nMedio, float nLejos)
+    {
+        radios[index].setCerca(nCerca);
+        radios[index].setMedio(nMedio);
+        radios[index].setLejos(nLejos);
     }
 }
