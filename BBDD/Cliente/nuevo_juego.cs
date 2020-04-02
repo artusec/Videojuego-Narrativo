@@ -28,14 +28,6 @@ public class nuevo_juego : MonoBehaviour
 
     void Upload(string usuario)
     {
-
-        /*Dictionary<string, string> openWith = new Dictionary<string, string>();
-
-        openWith.Add("txt", "notepad.exe");
-        openWith.Add("bmp", "paint.exe");
-        openWith.Add("dib", "paint.exe");
-        openWith.Add("rtf", "wordpad.exe");*/
-
         HttpWebRequest httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
         httpRequest.Method = "POST";
         httpRequest.ProtocolVersion = HttpVersion.Version11;

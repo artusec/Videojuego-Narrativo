@@ -7,7 +7,7 @@ using System.Text;
 using System.IO;
 using System;
 
-public class register : MonoBehaviour
+public class login_user : MonoBehaviour
 {
     public string url = "http://laslomasiii.serveftp.net:4398/login_user.php";
 

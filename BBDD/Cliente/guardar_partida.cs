@@ -9,7 +9,7 @@ using System;
 
 public class guardar_partida : MonoBehaviour
 {
-    public string url = "http://laslomasiii.serveftp.net:4398/guardar_juego.php";
+    public string url = "http://laslomasiii.serveftp.net:4398/guardar_partida.php";
 
     public void entrar(string usuario, Dictionary<string, string> datos)
     {
@@ -24,12 +24,11 @@ public class guardar_partida : MonoBehaviour
     void Upload(string usuario, Dictionary<string, string> datos)
     {
 
-        /*Dictionary<string, string> openWith = new Dictionary<string, string>();
-
-        openWith.Add("txt", "notepad.exe");
-        openWith.Add("bmp", "paint.exe");
-        openWith.Add("dib", "paint.exe");
-        openWith.Add("rtf", "wordpad.exe");*/
+        /*
+        Dictionary<string, string> datos = new Dictionary<string, string>();
+        openWith.Add("llave", "1:2");
+        openWith.Add("caja", "2:2");
+        */
 
         string peticion = "";
 
