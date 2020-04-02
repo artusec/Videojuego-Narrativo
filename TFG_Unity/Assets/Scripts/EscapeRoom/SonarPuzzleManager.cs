@@ -201,7 +201,7 @@ public class SonarPuzzleManager : MonoBehaviour
         switch (progress)
         {
             case 2:
-                GameManager.instance.addItemToInv("LlavePequeña2");
+                GameManager.instance.addItemToInv("LlavePequena2");
                 GameManager.instance.setScenState("Estanteria2", 2);
                 GameManager.instance.saveToTXT();
                 GameManager.instance.changeScene("Room2");

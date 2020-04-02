@@ -97,6 +97,7 @@ public class FormasManager : MonoBehaviour
     private void goToSelection() {
         srm.type = SRType.Default;
         formas[level].SetActive(false);
+        srm.currentList.currentFocus = 0;
         srm.currentList.GoToBeginning();
         selectionPhase = true;
     }
@@ -105,7 +106,6 @@ public class FormasManager : MonoBehaviour
     {
         //srm.type = SRType.NoInput;
         //formas[level].SetActive(true);
-        srm.currentList.GoToBeginning();
         selectionPhase = false;
     }
 
@@ -153,6 +153,7 @@ public class FormasManager : MonoBehaviour
             if (level == textos.Count - 1)
             {
                 print("victoria");
+                OnVictory();
             }
             addLevel(1);
         }
@@ -161,6 +162,23 @@ public class FormasManager : MonoBehaviour
         {
            // Audio TTS.instance.PlayTTS("Fallo");
             print("fallo de selección");
+        }
+    }
+
+    private void OnVictory()
+    {
+        int progress = GameManager.instance.room;
+        switch (progress)
+        {
+            case 2:
+                GameManager.instance.addItemToInv("Pomo2");
+                GameManager.instance.setScenState("Cajon2", 2);
+                GameManager.instance.saveToTXT();
+                GameManager.instance.changeScene("Room2");
+                break;
+            default:
+                break;
+
         }
     }
 

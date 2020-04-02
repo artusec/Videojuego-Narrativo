@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
     {
         invObjects.Add(new element(s, i));
         SRManager srm = SRManager.instance;
-        if (srm != null)
+        if (srm != null && srm.type == SRType.Room)
         {
             SRElement aux = Instantiate((Resources.Load("Objects/" + s)) as GameObject, srm.inventory.transform).GetComponent<SRElement>();
             aux.name = deleteCloneText(aux.name);
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
             room = lines[0][0];*/
             string[] objectsRead = lines[1].Split(',');
             invObjects = new List<element>();
-            if (objectsRead.Length > 1)
+            if (objectsRead.Length > 0)
             {
                 for (int i = 0; i < objectsRead.Length; i++)
                 {
