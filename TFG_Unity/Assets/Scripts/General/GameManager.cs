@@ -18,12 +18,12 @@ public class GameManager : MonoBehaviour
         public element(string s, int o) { prefabName = s; state = (objectState)o; }
     }
 
+    string userName = "";
     public static GameManager instance;
     public List<element> invObjects;
     public List<element> sceneObjs;
 
     public int room = 0;
-
 
     // Start is called before the first frame update
     void Awake()
