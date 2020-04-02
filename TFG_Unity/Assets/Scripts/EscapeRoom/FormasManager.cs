@@ -24,6 +24,8 @@ public struct FormasSelectionOptions
 
 public class FormasManager : MonoBehaviour
 {
+    public AudioClip introTTS;
+
     //para manejar el flujo del minijuego
     public int level = 0;
     private bool selectionPhase = false;
@@ -78,6 +80,9 @@ public class FormasManager : MonoBehaviour
         // reproducir u naudio con el texto TTS.instance.PlayTTS("Trata de reconocer las formas con la vibracion, despues abre la selección con doble tap y seleccionala.");
         srm = SRManager.instance;
         setLevel(level);
+
+        srm.playTTS(introTTS);
+        ScreenInput.instance.deactivate(introTTS.length);
     }
 
     void Update()

@@ -13,10 +13,14 @@ public class SceneChanger : Actable
         if (element.getState() == objectState.DEFAULT)
         {
             element.setState(objectState.USED);
-            SRManager.instance.playTTS(changeClip);
+            if (changeClip != null)
+            {
+                SRManager.instance.playTTS(changeClip);
 
-            //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
-            Invoke("change", 1);
+                //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
+                Invoke("change", changeClip.length);
+            }
+            else Invoke("change", 1);
         }
         else SRManager.instance.playTTS(usedClip);
     }

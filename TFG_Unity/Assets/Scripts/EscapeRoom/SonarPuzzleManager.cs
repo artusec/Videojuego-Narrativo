@@ -59,6 +59,10 @@ public class SonarPuzzleManager : MonoBehaviour
     public AudioClip looseSound;
     public AudioClip winSound;
 
+    public AudioClip introTTS;
+
+    ScreenInput screenInput;
+
     private void OnValidate()
     {
         //nos aseguramos que la lista de radios tiene el mismo tamaño que la de centros
@@ -99,9 +103,14 @@ public class SonarPuzzleManager : MonoBehaviour
 
     private void Start()
     {
+        screenInput = ScreenInput.instance;
         src = GetComponent<AudioSource>();
         if (src == null)
             throw new System.Exception("No se encontró el componente Audio Source para reproducir sonido");
+
+        src.clip = introTTS;
+        src.Play();
+        screenInput.deactivate(introTTS.length);
     }
 
     //para ver los radios desde el editor

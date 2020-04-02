@@ -44,12 +44,11 @@ public static class TextToSpeech
         TTS.Call("Speak", toSay);
 #else
         Debug.Log(toSay);
-    }
 #endif
+    }
 
     private static void Initialize()
     {
-        
 #if UNITY_ANDROID && !UNITY_EDITOR
         using (AndroidJavaClass activityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
         {
@@ -64,7 +63,6 @@ public static class TextToSpeech
                 TTS.Call("setContext", activityContext);
             }
         }
-
 #endif
     }
 }
