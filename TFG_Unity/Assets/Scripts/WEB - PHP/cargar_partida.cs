@@ -7,14 +7,9 @@ using System.Text;
 using System.IO;
 using System;
 
-public class nuevo_juego : MonoBehaviour
+public class cargar_partida : MonoBehaviour
 {
-    public string url = "http://laslomasiii.serveftp.net:4398/nuevo_juego.php";
-
-    public InputField username;
-    public InputField email;
-    public InputField pass;
-    public InputField pass2;
+    public string url = "http://laslomasiii.serveftp.net:4398/cargar_partida.php";
 
     public void entrar(string usuario)
     {
@@ -48,15 +43,16 @@ public class nuevo_juego : MonoBehaviour
         // Display the status. OK = todo bien  
         Debug.Log(((HttpWebResponse)response).StatusDescription);
 
-
         using (dataStream = response.GetResponseStream())
         {
             // Open the stream using a StreamReader for easy access.  
             StreamReader reader = new StreamReader(dataStream);
             // Read the content.  
             string responseFromServer = reader.ReadToEnd();
+            responseFromServer = responseFromServer.Remove(responseFromServer.Length - 1);
             // Display the content.  
             Debug.Log(responseFromServer);
+            GameManager.instance.updateGMFromWebString(responseFromServer);
         }
         WebResponse httpResponse = httpRequest.GetResponse();
     }

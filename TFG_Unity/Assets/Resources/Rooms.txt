@@ -1,2 +1,2 @@
 1:CajaCandado1,Puerta1,CajaLlave1
-2:LlaveOxidada1,Bomb
+2:Cajon2,Puerta2,Estanteria2

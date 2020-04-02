@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.Net;
@@ -7,18 +7,13 @@ using System.Text;
 using System.IO;
 using System;
 
-public class nuevo_juego : MonoBehaviour
+public class guardar_partida : MonoBehaviour
 {
-    public string url = "http://laslomasiii.serveftp.net:4398/nuevo_juego.php";
+    public string url = "http://laslomasiii.serveftp.net:4398/guardar_partida.php";
 
-    public InputField username;
-    public InputField email;
-    public InputField pass;
-    public InputField pass2;
-
-    public void entrar(string usuario)
+    public void entrar(string usuario, Dictionary<string, string> datos)
     {
-        Upload(usuario);
+        Upload(usuario, datos);
     }
 
     void Start()
@@ -26,12 +21,27 @@ public class nuevo_juego : MonoBehaviour
 
     }
 
-    void Upload(string usuario)
+    void Upload(string usuario, Dictionary<string, string> datos)
     {
+
+        /*
+        Dictionary<string, string> datos = new Dictionary<string, string>();
+        openWith.Add("llave", "1:2");
+        openWith.Add("caja", "2:2");
+        */
+
+        string peticion = "";
+
+        foreach(var item in datos)
+        {
+            peticion = peticion + "&" + item.Key + "=" + item.Value;
+        }
+
+
         HttpWebRequest httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;
         httpRequest.Method = "POST";
         httpRequest.ProtocolVersion = HttpVersion.Version11;
-        string parameters = "username=" + usuario;
+        string parameters = "username=" + usuario + peticion;
         httpRequest.ContentLength = Encoding.ASCII.GetByteCount(parameters);
         httpRequest.ContentType = "application/x-www-form-urlencoded";
 

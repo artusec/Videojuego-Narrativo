@@ -1,0 +1,47 @@
+body{
+    background-color: #9932CC;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.container-fluid{
+    height: 15%;
+    background-color: #9932CC;
+    color:#F2F1EF;
+}
+
+.text-center{
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    margin-bottom: 0;
+}
+
+.nav{
+    background-color:#591D77;
+}
+
+a {
+    color:#F2F1EF;
+}
+
+a:link {
+    color:#F2F1EF;
+}
+/* A link that has been visited */
+a:visited {
+    color:#F2F1EF;
+}
+/* A link that is hovered on */
+a:hover {
+    color:red;
+}
+/* A link that is selected */
+a:active {
+    color:#F2F1EF;
+}
+
+img{
+    width: 100%;
+}

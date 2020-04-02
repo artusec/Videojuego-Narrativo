@@ -9,11 +9,11 @@ using System;
 
 public class cargar_partida : MonoBehaviour
 {
-    public string url = "http://laslomasiii.serveftp.net:4398/cargar_juego.php";
+    public string url = "http://laslomasiii.serveftp.net:4398/cargar_partida.php";
 
     public void entrar(string usuario)
     {
-        Upload(usuario, datos);
+        Upload(usuario);
     }
 
     void Start()
