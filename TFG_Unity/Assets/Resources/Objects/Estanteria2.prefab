@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 8300000, guid: bcfee1aabbed8164a916ecdf72ec16e5, type: 3}
+  audioLabel: {fileID: 8300000, guid: da2bbe7bcf3f28242ace1bb28a0d396d, type: 3}
   label: Caja fuerte
   actBehaviour: {fileID: 4278552253507621107}
   state: 1
@@ -113,4 +113,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: {fileID: 0}
   sceneToLoad: Busqueda
-  changeClip: {fileID: 0}
+  changeClip: {fileID: 8300000, guid: 69275ea348b5efd419f73f2fff780fd2, type: 3}
+  usedClip: {fileID: 8300000, guid: d1f9db0f9893cc947bd024f351f45e75, type: 3}

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 8f660a88dd618304d81a96db46adc5fb, type: 3}
   label: Pomo
   actBehaviour: {fileID: 0}
   state: 1

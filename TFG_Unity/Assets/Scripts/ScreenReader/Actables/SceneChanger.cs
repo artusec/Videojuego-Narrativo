@@ -6,6 +6,7 @@ public class SceneChanger : Actable
 {
     public string sceneToLoad;
     public AudioClip changeClip;
+    public AudioClip usedClip;
 
     public override void Act()
     {
@@ -17,6 +18,7 @@ public class SceneChanger : Actable
             //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
             Invoke("change", 1);
         }
+        else SRManager.instance.playTTS(usedClip);
     }
 
     void change()

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 8300000, guid: bcfee1aabbed8164a916ecdf72ec16e5, type: 3}
+  audioLabel: {fileID: 8300000, guid: b5175d1325e5de249b4034294aec0aa5, type: 3}
   label: Caja fuerte
   actBehaviour: {fileID: 2560567978717832732}
   state: 1
@@ -114,7 +114,7 @@ MonoBehaviour:
   element: {fileID: 0}
   itemRequired: LlavePequena2
   sceneToLoad: Formas
-  failString: {fileID: 8300000, guid: 19d4e374cdeed7c40a84e766f15a96dd, type: 3}
-  successString: {fileID: 8300000, guid: 79f564e1aa752e048ab8e72d7be99fbd, type: 3}
+  failString: {fileID: 8300000, guid: d6c8f78155845aa47bdce7009691cf23, type: 3}
+  successString: {fileID: 8300000, guid: 0726a6c1987c988439a001aa29c86a15, type: 3}
   effect: {fileID: 8300000, guid: 1a87bdf09be0617498d67f00e7b1bf52, type: 3}
-  usedString: {fileID: 8300000, guid: 14919200d3ea3d147ae13b780aa59189, type: 3}
+  usedString: {fileID: 8300000, guid: d1f9db0f9893cc947bd024f351f45e75, type: 3}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5379490673708221895}
   - component: {fileID: 5379490673708221892}
   m_Layer: 0
-  m_Name: "LlavePeque\xF1a2"
+  m_Name: LlavePequena2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: fc7ce1e707ec53247b2e5793db3b3f9d, type: 3}
   label: "Llave Peque\xF1a"
   actBehaviour: {fileID: 0}
   state: 1
