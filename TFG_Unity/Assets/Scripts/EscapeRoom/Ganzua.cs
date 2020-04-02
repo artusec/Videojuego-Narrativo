@@ -21,6 +21,9 @@ public class Ganzua : MonoBehaviour
     float lastAngle = 0;
     public float angleSeparation = 10;
 
+    ScreenInput screenInput = null;
+    move mov;
+
     bool canClick = true;
 
     private string sceneToLoad = "DemoEnd";
@@ -32,6 +35,8 @@ public class Ganzua : MonoBehaviour
         src = GetComponent<AudioSource>();
         randUnlockPosition();
         SRManager.instance.playTTS(infoClip);
+        screenInput = ScreenInput.instance;
+        screenInput.deactivate(infoClip.length);
     }
 
 
@@ -42,14 +47,15 @@ public class Ganzua : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        mov = screenInput.getInput();
+        if(mov == move.pressed)
         {
             initPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             ganzObj.transform.parent = null;
             transform.right = initPos;
             ganzObj.transform.parent = transform;
         }
-        if (Input.GetMouseButton(0))
+        if (mov == move.pressing || mov == move.help)
         {
             actualPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.right = actualPos;
@@ -80,7 +86,7 @@ public class Ganzua : MonoBehaviour
                 canClick = false;
             }
         }
-        if(Input.GetMouseButtonUp(0))
+        if(screenInput.released(mov))
         {
             if (!canClick)
             {
@@ -98,12 +104,14 @@ public class Ganzua : MonoBehaviour
         print("abierto");
         src.volume = 0.5f;
         src.PlayOneShot(openSound);
-        Invoke("soundFound", 2);
+        screenInput.deactivate(openSound.length);
+        Invoke("soundFound", openSound.length);
     }
     void soundFound()
     {
         SRManager.instance.playTTS(endClip);
-        Invoke("onOpen", 3);
+        screenInput.deactivate(endClip.length);
+        Invoke("onOpen", endClip.length);
     }
     void onOpen()
     {
@@ -115,10 +123,12 @@ public class Ganzua : MonoBehaviour
                 GameManager.instance.setScenState("CajaCandado1", 2);
                 GameManager.instance.saveToTXT();
                 sceneToLoad = "Room1";
+                screenInput.deactivate(1);
                 Invoke("change", 1);
                 break;
             default:
                 sceneToLoad = "Chase";
+                screenInput.deactivate(1);
                 Invoke("change", 1);
                 break;
 

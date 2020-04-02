@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
 
     public int room = 0;
 
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -186,6 +185,7 @@ public class GameManager : MonoBehaviour
         try
         {
             string savePath = Path.Combine(Application.persistentDataPath, "SaveData");
+            // nota: esta forma de obtener el int solo valdria de 0 a 9, no tenemos tantas habitaciones
             room = (int)char.GetNumericValue(File.ReadAllText(savePath)[0]);
         }
         catch {
@@ -324,6 +324,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void saveToWeb()
+    {
+        Debug.Log("Guardando en web");
+        GameObject.FindObjectOfType<guardar_partida>().entrar("hola", objectsToWebDictionary());
+    }
+
+    public void loadFromWeb()
+    {
+        Debug.Log("Cargando de web");
+        GameObject.FindObjectOfType<cargar_partida>().entrar("hola");
+    }
+
     /// <summary>
     /// Carga la habitacion desde el archivo txt, rellena sceneObjs con los objetos en el archivo
     /// </summary>
@@ -351,5 +363,81 @@ public class GameManager : MonoBehaviour
             lineIndex++;
         }
         room = roomN;
+    }
+
+    /// <summary>
+    /// Devuelve un string con los objetos codificados para enviarlos al servidor
+    /// </summary>
+    /// <returns></returns>
+    public Dictionary<string,string> objectsToWebDictionary()
+    {
+        Dictionary<string, string> gameState = new Dictionary<string, string>();
+
+        // Objeto inicial con numero de habitacion
+        gameState.Add("RoomNumber", "0:" + room.ToString());
+
+        if (sceneObjs.Count > 0)
+        {
+            foreach (element e in sceneObjs)
+            {
+                gameState.Add(e.prefabName, "0" + ":" + (int)e.state);
+            }
+        }
+
+        if (invObjects.Count > 0)
+        {
+            foreach (element e in invObjects)
+            {
+                gameState.Add(e.prefabName, "1" + ":" + (int)e.state);
+            }
+        }
+
+        // Debug
+        foreach(var v in gameState)
+        {
+            Debug.Log(v.Key + " " + v.Value);
+        }
+
+        return gameState;
+    }
+
+    public void updateGMFromWebString(string info)
+    {
+
+        sceneObjs = new List<element>();
+        invObjects = new List<element>();
+
+        //Separamos por objetos
+        foreach(string s in info.Split(','))
+        {
+            // string[] con {Name,Type:State}
+            string[] aux1 = s.Split('-');
+            // string[] con {Type,State}
+            string[] aux2 = aux1[1].Split(':');
+
+            string name = aux1[0];
+            int state = (int)char.GetNumericValue(aux2[1][0]);
+            Debug.Log(name + " " + state.ToString());
+
+            // Escena
+            if (aux2[0] == "0")
+            {
+                // Número de habitacion
+                if (name=="RoomNumber")
+                {
+                    room = state;
+                }
+                // Objeto de escena
+                else
+                {
+                    sceneObjs.Add(new element(name, state));
+                }
+            }
+            // Inventario
+            else
+            {
+                invObjects.Add(new element(name, state));
+            }
+        }
     }
 }

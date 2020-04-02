@@ -191,6 +191,24 @@ public class SonarPuzzleManager : MonoBehaviour
             //-------------------------------------------------
             // Hacer lo que sea necesario para seguir el juego
             //-------------------------------------------------
+            onVictory();
+        }
+    }
+
+    void onVictory()
+    {
+        int progress = GameManager.instance.room;
+        switch (progress)
+        {
+            case 2:
+                GameManager.instance.addItemToInv("LlavePequeña2");
+                GameManager.instance.setScenState("Estanteria2", 2);
+                GameManager.instance.saveToTXT();
+                GameManager.instance.changeScene("Room2");
+                break;
+            default:
+                break;
+
         }
     }
 

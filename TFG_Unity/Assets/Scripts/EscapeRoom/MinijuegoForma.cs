@@ -10,7 +10,7 @@ public class MinijuegoForma : MonoBehaviour
     private void OnMouseOver()
     {
         print("encima");
-        if (Input.GetMouseButton(0))
+        if (ScreenInput.instance.getInput() == move.pressing)
         {
             if (!lastCliked)
             {
