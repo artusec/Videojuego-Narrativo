@@ -26,6 +26,7 @@ public class FormasManager : MonoBehaviour
 {
     //para manejar el flujo del minijuego
     public int level = 0;
+    private bool selectionPhase = false;
 
     [Tooltip("Los diferentes GOs que serán utilizados como formas a reconocer")]
     [SerializeField]
@@ -82,14 +83,13 @@ public class FormasManager : MonoBehaviour
     void Update()
     {
         // con doble click activamos la seleccion de forma
-        if (input.getInput() == move.doubleClick)
+        if (srm.type == SRType.NoInput)
         {
-            if (srm.type == SRType.NoInput)
+            if (input.getInput() == move.doubleClick && !selectionPhase)
             {
                 print("pasando a fase de seleccion");
                 // el invoke es necesario para que no se detecte pulsacion en el mismo frame
                 Invoke("goToSelection", 0.1f);
-
             }
         }
     }
@@ -98,6 +98,15 @@ public class FormasManager : MonoBehaviour
         srm.type = SRType.Default;
         formas[level].SetActive(false);
         srm.currentList.GoToBeginning();
+        selectionPhase = true;
+    }
+
+    private void goToRecognition()
+    {
+        //srm.type = SRType.NoInput;
+        //formas[level].SetActive(true);
+        srm.currentList.GoToBeginning();
+        selectionPhase = false;
     }
 
     public void setLevel(int nLevel)
@@ -117,6 +126,7 @@ public class FormasManager : MonoBehaviour
         //válido para nLevel negativo y seguro para no pasarse del límite del array
         level = (level + nLevel) % formas.Count;
         setLevel(level);
+        ReturnToSelection();
     }
 
     private void setUpForms()
@@ -125,12 +135,11 @@ public class FormasManager : MonoBehaviour
         Forma f;
         for(int i = 0; i < textos.Count; i++)
         {
-            f = textos[i].formas[level];
+            f = textos[level].formas[i];
 
             list[i].label = f.ToString();
             list[i].audioLabel = formAudios[(int)f];
             ((FormaMinigame)list[i].actBehaviour).form = f;
-            i++;
         }
     }
 
@@ -160,5 +169,7 @@ public class FormasManager : MonoBehaviour
         // reproducir audio TTS.instance.PlayTTS("Volviendo a la fase de reconocimiento");
         srm.type = SRType.NoInput;
         formas[level].SetActive(true);
+        //necesario para que no vuelva a contar el doble click para otra razon en el mismo frame
+        Invoke("goToRecognition", 0.1f);
     }
 }
