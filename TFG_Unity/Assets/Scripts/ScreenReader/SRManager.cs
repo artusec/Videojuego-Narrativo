@@ -26,6 +26,7 @@ public class SRManager : MonoBehaviour
     // Instancia de la clase (patron singleton)
     public static SRManager instance;
 
+    private GameManager gm;
 
     // Gestion del singleton, y se comprueba que tenga audiosource
     void Awake()
@@ -36,37 +37,40 @@ public class SRManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameManager.instance;
         screenInput = ScreenInput.instance;
         if (type == SRType.Room)
         {
-            if (GameManager.instance.isSceneNew(roomIndex))
+            if (gm.isSceneNew(roomIndex))
             {
-                GameManager.instance.loadRoomFromFile(roomIndex);
+                gm.loadRoomFromFile(roomIndex);
+                gm.instantiateRoom();
                 if (intro != null && intro.Length != 0)
                 {
                     playTTS(intro[0]);
                     deactivate(intro[0].length);
-                    Invoke("readFocus", intro[0].length);
+                    Invoke("introReadFocus", intro[0].length);
                 }
-                else readFocus();
+                else introReadFocus();
             }
             else
             {
-                currentList.ReadFocus();
                 if (false) //MIRA SI HAY DATOS EN LA NUBE
                 {
-                    print("Datos en la nube");
+                    gm.loadFromWeb();
                 }
                 else //MIRA DATOS LOCALES
                 {
                     print("Datos locales");
-                    GameManager.instance.loadLocalData();
+                    gm.loadLocalData();
                 }
+                gm.instantiateRoom();
+                currentList.ReadFocus();
             }
-            GameManager.instance.instantiateRoom();
         }
     }
-    private void readFocus()
+
+    private void introReadFocus()
     {
         if (readOnStart) currentList.ReadFocus();
     }
