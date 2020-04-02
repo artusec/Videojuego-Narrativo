@@ -5,20 +5,19 @@ using UnityEngine;
 public class SceneChanger : Actable
 {
     public string sceneToLoad;
-    public string successString;
+    public AudioClip changeClip;
 
     public override void Act()
     {
         if (element.getState() == objectState.DEFAULT)
         {
             element.setState(objectState.USED);
-            Debug.Log(successString);
-            //CAMBIAR
+            SRManager.instance.playTTS(changeClip);
+
             //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
             Invoke("change", 1);
         }
     }
-
 
     void change()
     {

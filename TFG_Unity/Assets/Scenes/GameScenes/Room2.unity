@@ -353,6 +353,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857876115}
   m_CullTransparentMesh: 0
+--- !u!1 &924265239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924265241}
+  - component: {fileID: 924265240}
+  m_Layer: 0
+  m_Name: loadObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &924265240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924265239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2451e74555bb4c6428775c361876042a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: http://laslomasiii.serveftp.net:4398/cargar_partida.php
+--- !u!4 &924265241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924265239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.852106, y: -1.9618745, z: -2.0878906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &928162451 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7322511650176377992, guid: 797f55c75d82ead46b0256eb43dbb812,
@@ -459,7 +503,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 117808309}
-        m_MethodName: saveToTXT
+        m_MethodName: saveToWeb
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -509,6 +553,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362742506}
   m_CullTransparentMesh: 0
+--- !u!1 &1458112040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458112041}
+  - component: {fileID: 1458112042}
+  m_Layer: 0
+  m_Name: saveObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1458112041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458112040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.852106, y: -1.9618745, z: -2.0878906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1458112042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458112040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62db9a84d5b0764ead76e5c193d6bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: http://laslomasiii.serveftp.net:4398/guardar_partida.php
 --- !u!1 &1642724524
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +707,7 @@ PrefabInstance:
     - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
         type: 3}
       propertyPath: room
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
         type: 3}
@@ -812,7 +900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1866080172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,7 +1070,7 @@ PrefabInstance:
     - target: {fileID: 1843571702946516993, guid: 797f55c75d82ead46b0256eb43dbb812,
         type: 3}
       propertyPath: currentFocus
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8927530324948823996, guid: 797f55c75d82ead46b0256eb43dbb812,
         type: 3}
