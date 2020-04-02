@@ -63,6 +63,8 @@ public class LabyrithnManager : MonoBehaviour
     public Text looseText;
     public GameObject resetContainer;
 
+    public bool ended = false;
+
     private void Awake()
     {
         instance = this;
@@ -106,6 +108,15 @@ public class LabyrithnManager : MonoBehaviour
         {
             EventContainer.transform.Translate(Vector3.down * Time.deltaTime * vel);
             src.transform.Translate(Vector3.down * Time.deltaTime * vel);
+        }
+        if(ended && !src.isPlaying)
+        {
+            /*resetContainer.SetActive(true);
+            looseText.gameObject.SetActive(false);
+            winText.gameObject.SetActive(true);
+            */
+            print("VICTORIA");
+            GameManager.instance.changeScene("Room2");
         }
     }
 
@@ -178,11 +189,12 @@ public class LabyrithnManager : MonoBehaviour
         //condición de victoria del juego
         else
         {
+
             src.Stop();
-            resetContainer.SetActive(true);
-            looseText.gameObject.SetActive(false);
-            winText.gameObject.SetActive(true);
-            print("VICTORIA");  
+            src.clip = initSound[2];
+            src.Play();
+            src.transform.position = Vector3.zero;
+            ended = true;
         }
     }
 

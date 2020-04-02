@@ -47,6 +47,10 @@ public class LabyrinthPlayer : MonoBehaviour
             pasosSound();
             turn();
         }
+        if(LabyrithnManager.instance.ended)
+        {
+            feet.Stop();
+        }
     }
 
     public void reinit()
