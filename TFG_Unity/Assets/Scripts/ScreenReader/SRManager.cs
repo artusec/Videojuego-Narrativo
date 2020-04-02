@@ -9,6 +9,7 @@ public class SRManager : MonoBehaviour
 
 
     public AudioSource ttsSource;
+    public AudioClip[] intro;
     public SRType type = SRType.Default;
 
     public int roomIndex = -1;
@@ -21,7 +22,6 @@ public class SRManager : MonoBehaviour
 
     public SRList inventory;
     public SRList scene;
-
 
     // Instancia de la clase (patron singleton)
     public static SRManager instance;
@@ -36,15 +36,23 @@ public class SRManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(type != SRType.NoInput)
-            screenInput = ScreenInput.instance;
+        screenInput = ScreenInput.instance;
         if (type == SRType.Room)
         {
             if (GameManager.instance.isSceneNew(roomIndex))
+            {
                 GameManager.instance.loadRoomFromFile(roomIndex);
-
+                if (intro != null && intro.Length != 0)
+                {
+                    playTTS(intro[0]);
+                    deactivate(intro[0].length);
+                    Invoke("readFocus", intro[0].length);
+                }
+                else readFocus();
+            }
             else
             {
+                currentList.ReadFocus();
                 if (false) //MIRA SI HAY DATOS EN LA NUBE
                 {
                     print("Datos en la nube");
@@ -57,9 +65,11 @@ public class SRManager : MonoBehaviour
             }
             GameManager.instance.instantiateRoom();
         }
-        if(readOnStart) currentList.ReadFocus();
     }
-
+    private void readFocus()
+    {
+        if (readOnStart) currentList.ReadFocus();
+    }
     private void OnEnable()
     {
       //  currentList.ReadFocus();
@@ -72,6 +82,15 @@ public class SRManager : MonoBehaviour
             ProcessGesture(screenInput.getInput());
     }
 
+    public void deactivate(float time)
+    {
+        type = SRType.NoInput;
+        Invoke("activate", time);
+    }
+    public void activate()
+    {
+        type = SRType.Room;
+    }
     //Reproduce un audio "clip" en el canal de "TTS"
     public void playTTS(AudioClip clip)
     {

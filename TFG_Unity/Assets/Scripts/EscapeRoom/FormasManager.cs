@@ -5,19 +5,28 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
+public enum Forma {
+    Cuadrado,
+    Círculo,
+    Triángulo,
+    Estrella,
+    Pentágono,
+    Rombo,
+    Retroceder
+}
+
+[System.Serializable]
 public struct FormasSelectionOptions
 {
-    public string solution;
-    public string text1,
-        text2,
-        text3;
+    public Forma solution;
+    public Forma[] formas;
 }
 
 public class FormasManager : MonoBehaviour
 {
-
     //para manejar el flujo del minijuego
     public int level = 0;
+    private bool selectionPhase = false;
 
     [Tooltip("Los diferentes GOs que serán utilizados como formas a reconocer")]
     [SerializeField]
@@ -30,13 +39,13 @@ public class FormasManager : MonoBehaviour
     [Tooltip("El menú de selección, para activarlo o desactivarlo según corresponda ")]
     public GameObject selectionContainer;
 
-    public Text option1Text,
-        option2Text,
-        option3Text;
-    public SRElement sre1, sre2, sre3;
+    [Space(10)]
 
-    public SRManager srm = null;
+    public AudioClip[] formAudios = new AudioClip[(int)Forma.Retroceder];
+
     public ScreenInput input = null;
+
+    private SRManager srm = null;
 
     private void OnValidate()
     {
@@ -66,23 +75,38 @@ public class FormasManager : MonoBehaviour
     void Start()
     {
         //activamos la primera forma a reconocer
-        TTS.instance.PlayTTS("Trata de reconocer las formas con la vibracion, despues abre la selección con doble tap y seleccionala.");
+        // reproducir u naudio con el texto TTS.instance.PlayTTS("Trata de reconocer las formas con la vibracion, despues abre la selección con doble tap y seleccionala.");
+        srm = SRManager.instance;
         setLevel(level);
     }
 
     void Update()
     {
         // con doble click activamos la seleccion de forma
-        if(input.getInput() == move.doubleClick)
+        if (srm.type == SRType.NoInput)
         {
-            srm.enabled = !srm.enabled;
+            if (input.getInput() == move.doubleClick && !selectionPhase)
+            {
+                print("pasando a fase de seleccion");
+                // el invoke es necesario para que no se detecte pulsacion en el mismo frame
+                Invoke("goToSelection", 0.1f);
+            }
         }
-        else if(srm.enabled && input.getInput() == move.down)
-        {
-            srm.enabled = false;
-        }
-        //manejo de cambio de estado entre reconocimiento y seleccion
+    }
 
+    private void goToSelection() {
+        srm.type = SRType.Default;
+        formas[level].SetActive(false);
+        srm.currentList.GoToBeginning();
+        selectionPhase = true;
+    }
+
+    private void goToRecognition()
+    {
+        //srm.type = SRType.NoInput;
+        //formas[level].SetActive(true);
+        srm.currentList.GoToBeginning();
+        selectionPhase = false;
     }
 
     public void setLevel(int nLevel)
@@ -94,50 +118,58 @@ public class FormasManager : MonoBehaviour
             formas[i].SetActive(false);
         formas[nLevel].SetActive(true);
 
-        option1Text.text = sre1.label = textos[level].text1;
-        option2Text.text = sre2.label = textos[level].text2;
-        option3Text.text = sre3.label = textos[level].text3;
+        setUpForms();
     }
 
     public void addLevel(int nLevel)
     {
         //válido para nLevel negativo y seguro para no pasarse del límite del array
-        //level = Mathf.Max(0, Mathf.Min(formas.Count-1, level + nLevel));
         level = (level + nLevel) % formas.Count;
         setLevel(level);
+        ReturnToSelection();
     }
 
-    /*
-     * index == 1 -> botón izquierda
-     * index == 2 -> botón centro
-     * index == 3 -> botón derecha
-     */
-    public void OptionSelected(int index)
+    private void setUpForms()
     {
-        string aux;
-        switch (index)
+        List<SRElement> list = SRManager.instance.currentList.sreList;
+        Forma f;
+        for(int i = 0; i < textos.Count; i++)
         {
-            case 1:
-                aux = textos[level].text1;
-                break;
-            case 2:
-                aux = textos[level].text2;
-                break;
-            case 3:
-                aux = textos[level].text3;
-                break;
-            default:
-                aux = "";
-                break;
+            f = textos[level].formas[i];
+
+            list[i].label = f.ToString();
+            list[i].audioLabel = formAudios[(int)f];
+            ((FormaMinigame)list[i].actBehaviour).form = f;
         }
-        if (aux == textos[level].solution)
+    }
+
+    public void ReceiveChoice(Forma s)
+    {
+        //caso de acierto con la forma solución
+        if (s == textos[level].solution)
         {
-            TTS.instance.PlayTTS("Acierto");
+            //Audio TTS.instance.PlayTTS("Acierto");
+            //condición de victoria del puzle
+            if (level == textos.Count - 1)
+            {
+                print("victoria");
+            }
             addLevel(1);
         }
-        else {
-            TTS.instance.PlayTTS("Fallo");
+        //caso de fallo de selección
+        else
+        {
+           // Audio TTS.instance.PlayTTS("Fallo");
             print("fallo de selección");
         }
+    }
+
+    public void ReturnToSelection()
+    {
+        // reproducir audio TTS.instance.PlayTTS("Volviendo a la fase de reconocimiento");
+        srm.type = SRType.NoInput;
+        formas[level].SetActive(true);
+        //necesario para que no vuelva a contar el doble click para otra razon en el mismo frame
+        Invoke("goToRecognition", 0.1f);
     }
 }

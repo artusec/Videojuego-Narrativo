@@ -240,7 +240,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Users/hecto/UNIVERSIDAD/4º/TFG/Videojuego-Narrativo/TFG_Unity/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Users/Diego/Desktop/uni/Videojuego-Narrativo/TFG_Unity/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.2.0f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -688,6 +688,11 @@
     <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector4EqualityComparer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\R.txt" />
+    <None Include="Assets\Resources\Rooms.txt" />
+    <None Include="Assets\UB\Simple2dWeatherEffects\Standard\D2Fogs.shader" />
+    <None Include="Assets\UB\Simple2dWeatherEffects\Standard\D2FogsNoiseTex.shader" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryCommon.uss" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryDark.uss" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryLight.uss" />

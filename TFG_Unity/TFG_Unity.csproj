@@ -583,6 +583,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="TFG_Unity.Plugins.csproj">
+      <Project>{6BA12FBF-04D3-F5C9-38FB-2C91AAB75A14}</Project>
+      <Name>TFG_Unity.Plugins</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{F37EB8D3-595B-2A8E-9D57-98253E4F534B}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -605,17 +609,60 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scenes\AndroidTTS\Menu.cs" />
     <Compile Include="Assets\Scripts\AudioBeep.cs" />
     <Compile Include="Assets\Scripts\EscapeRoom\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\EscapeRoom\DemoLog.cs" />
     <Compile Include="Assets\Scripts\EscapeRoom\FingerMove.cs" />
+    <Compile Include="Assets\Scripts\EscapeRoom\FormasManager.cs" />
     <Compile Include="Assets\Scripts\EscapeRoom\Ganzua.cs" />
+    <Compile Include="Assets\Scripts\EscapeRoom\LaberynthController.cs" />
+    <Compile Include="Assets\Scripts\EscapeRoom\LaberynthManager.cs" />
+    <Compile Include="Assets\Scripts\EscapeRoom\LabyrinthPlayer.cs" />
+    <Compile Include="Assets\Scripts\EscapeRoom\LabyrithnManager.cs" />
     <Compile Include="Assets\Scripts\EscapeRoom\MinijuegoForma.cs" />
+    <Compile Include="Assets\Scripts\EscapeRoom\SimonSaysManager.cs" />
+    <Compile Include="Assets\Scripts\EscapeRoom\SonarItem.cs" />
+    <Compile Include="Assets\Scripts\EscapeRoom\SonarPuzzleManager.cs" />
     <Compile Include="Assets\Scripts\EscapeRoom\Switchable.cs" />
+    <Compile Include="Assets\Scripts\General\GameManager.cs" />
+    <Compile Include="Assets\Scripts\General\ScreenInput.cs" />
+    <Compile Include="Assets\Scripts\General\TTS.cs" />
+    <Compile Include="Assets\Scripts\General\Vibration.cs" />
     <Compile Include="Assets\Scripts\Guiado.cs" />
-    <Compile Include="Assets\Scripts\Vibration.cs" />
+    <Compile Include="Assets\Scripts\Intro.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\Actable.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\ActivateButton.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\ActivateInputField.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\AddItemToInventory.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\AppCloser.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\Duck.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\LockedSceneChange.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\PrevSRListChanger.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\RequireItemForSceneChange.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\SceneChanger.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\SelfDestruct.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\Spam.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\Actables\SRListChanger.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\FocusTracker.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\ScreenReader.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\SRElement.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\SRList.cs" />
+    <Compile Include="Assets\Scripts\ScreenReader\SRManager.cs" />
     <Compile Include="Assets\Scripts\WASD.cs" />
+    <Compile Include="Assets\Scripts\WEB - PHP\login.cs" />
+    <Compile Include="Assets\Scripts\WEB - PHP\nuevoJuego.cs" />
+    <Compile Include="Assets\Scripts\WEB - PHP\registerLogin.cs" />
+    <Compile Include="Assets\UB\Simple2dWeatherEffects\Standard\D2FogsNoiseTexPE.cs" />
+    <Compile Include="Assets\UB\Simple2dWeatherEffects\Standard\D2FogsPE.cs" />
+    <Compile Include="Assets\UB\Simple2dWeatherEffects\Standard\EffectBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\R.txt" />
+    <None Include="Assets\Resources\Rooms.txt" />
+    <None Include="Assets\UB\Simple2dWeatherEffects\Standard\D2Fogs.shader" />
+    <None Include="Assets\UB\Simple2dWeatherEffects\Standard\D2FogsNoiseTex.shader" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryCommon.uss" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryDark.uss" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryLight.uss" />

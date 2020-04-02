@@ -19,12 +19,15 @@ public class LabyrinthPlayer : MonoBehaviour
     public float walkSpeed = 1;
     float auxWalk = 0;
 
-
     public float turnTime = 0.5f;
     float auxTurn = 0;
     Vector3 initTurn;
     bool turning = false;
     Vector3 angleObj;
+
+    //auxiliar para no estar haciendo llamadas al singleton una vez el juego haya empezado
+    private bool initGame = false;
+
     private void Start()
     {
         bump = GetComponent<AudioSource>();
@@ -35,9 +38,14 @@ public class LabyrinthPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        getInput();
-        pasosSound();
-        turn();
+        if (!initGame)
+            initGame = LabyrithnManager.instance.initGame;
+        else
+        {
+            getInput();
+            pasosSound();
+            turn();
+        }
     }
 
     public void reinit()
@@ -45,6 +53,7 @@ public class LabyrinthPlayer : MonoBehaviour
         initTurn = Vector3.zero;
         transform.eulerAngles = Vector3.zero;
     }
+
     void turn()
     {
         if (auxTurn < turnTime)
@@ -54,6 +63,7 @@ public class LabyrinthPlayer : MonoBehaviour
         }
         else angleObj = transform.eulerAngles;
     }
+
     void pasosSound()
     {
         if (auxWalk < walkSpeed) auxWalk += Time.deltaTime;
@@ -117,6 +127,7 @@ public class LabyrinthPlayer : MonoBehaviour
     private void OnTriggerExit2D(Collider2D coll)
     {
         inCollision = false;
+        reinit();
         LabyrithnManager.instance.ExitCollision(coll);
     }
 

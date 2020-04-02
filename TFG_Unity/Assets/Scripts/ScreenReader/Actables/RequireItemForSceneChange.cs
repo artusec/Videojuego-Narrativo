@@ -20,8 +20,9 @@ public class RequireItemForSceneChange : Actable
             {
                 //element.setState(objectState.USED);
                 SRManager.instance.playTTS(successString);
+                SRManager.instance.deactivate(successString.length);
                 //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
-                Invoke("effectSound", 2.5f);
+                Invoke("effectSound", successString.length);
             }
             else
             {
@@ -38,7 +39,8 @@ public class RequireItemForSceneChange : Actable
         if (effect != null)
         {
             SRManager.instance.playTTS(effect);
-            Invoke("change", 3.25f);
+            SRManager.instance.deactivate(effect.length);
+            Invoke("change", effect.length);
         }
         else change();
     }
