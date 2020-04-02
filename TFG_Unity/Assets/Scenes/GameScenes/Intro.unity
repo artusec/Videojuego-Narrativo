@@ -543,7 +543,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0ec35450c44de7f47b4ad5daa9e4bc7b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ffa5a1305170587409d8bc702faa8f2b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.561
   m_Pitch: 1
@@ -1264,6 +1264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ttsSource: {fileID: 665760660}
   ttss:
+  - {fileID: 8300000, guid: cb04d3c3d4550134c88a64dcfb5b55c5, type: 3}
   - {fileID: 8300000, guid: 16e6df5c9cbae394bb514f3284142456, type: 3}
   - {fileID: 8300000, guid: e0e2e2fa23a81764e8255cc412669e80, type: 3}
   anim: {fileID: 505800361}

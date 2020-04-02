@@ -126,13 +126,17 @@ public class Intro : MonoBehaviour
             float valueA = auxIntro / introTime;
             fondo.color = new Color(0,0,0, 1-valueA);
             srcIntro.volume = valueA*0.3f;
+            if (auxIntro >= introTime) playSound(0);
+        }
+        else if(auxIntro < introTime+ttss[0].length)
+        {
+            auxIntro += Time.deltaTime;
         }
         else
         {
             genPhase = 2;
             anim.Play("Idle");
-            playSound(0);
-            //TTS.instance.PlayTTS("Mantén pulsado para avanzar");
+            playSound(1);
         }
     }
 
@@ -150,7 +154,7 @@ public class Intro : MonoBehaviour
             if (actualSteps >= normalSteps.Length + grassSteps + woodSteps.Length)
             {
                 genPhase = 3;
-                playSound(1);
+                playSound(2);
                 //TTS.instance.PlayTTS("Desliza en cualquier dirección para romper las bandas policiales");
             }
         }

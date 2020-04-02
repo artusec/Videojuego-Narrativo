@@ -30,6 +30,7 @@ public class LabyrinthPlayer : MonoBehaviour
 
     private void Start()
     {
+        auxWalk = walkSpeed;
         bump = GetComponent<AudioSource>();
         if (bump == null)
             throw new System.Exception("No se encontró el componente AudioSource en el player");
@@ -69,12 +70,16 @@ public class LabyrinthPlayer : MonoBehaviour
         if (auxWalk < walkSpeed) auxWalk += Time.deltaTime;
         else
         {
-            auxWalk = 0;
-            randPaso = Random.Range(0, pasos.Length);
-            feet.clip = pasos[randPaso];
-            feet.Play();
+            doStep();
         }
 
+    }
+    public void doStep()
+    {
+        auxWalk = 0;
+        randPaso = Random.Range(0, pasos.Length);
+        feet.clip = pasos[randPaso];
+        feet.Play();
     }
     void getInput()
     {
