@@ -1071,12 +1071,13 @@ MonoBehaviour:
     formas: 040000000500000003000000
   selectionContainer: {fileID: 856034864}
   formAudios:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: d9d38992c8f42c24db0520ec8278cbfb, type: 3}
+  - {fileID: 8300000, guid: 11408e801c86e1841b7dbcb935e8d183, type: 3}
+  - {fileID: 8300000, guid: 7c6652c3d686577428610046735763af, type: 3}
+  - {fileID: 8300000, guid: ddb8742a8e732444e87cc3120c5c6e13, type: 3}
+  - {fileID: 8300000, guid: 203e2424feed8424b9b8fa0c20137dbb, type: 3}
+  - {fileID: 8300000, guid: ab0df0228948e9e4582fd6d1f3bcaed5, type: 3}
+  - {fileID: 8300000, guid: 6c68a98ef56e6fa4eb40590ece132eb6, type: 3}
   input: {fileID: 806497323}
 --- !u!4 &806497322
 Transform:
