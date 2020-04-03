@@ -28,6 +28,7 @@ html{
 
 .nav{
     background-color:#591D77;
+    
 }
 
 a{
@@ -72,9 +73,43 @@ a:active {
 }
 
 .footers{
-    padding-left: 5%;
+    padding-left: 7%;
+    padding-top:7%;
 }
 
 .col-sm-4{
     max-width: 100%;
+}
+
+.list-group-item{
+    background-color: #9932CC;
+    color:#F2F1EF;
+}
+
+.minijuegosOut{
+    padding-left: 10%;
+    
+}
+
+.minijuegosIn{
+    background-color:#F2F1EF;
+    border-radius: 5%;
+    border: 1% solid #591D77;
+    padding: 1%;
+}
+
+.img-minijuegos{
+    width: 100%;
+}
+
+.card{
+    width: 90%;
+    color:#591D77;
+    border-radius: 5%;
+    border: 1% solid #591D77;
+}
+
+.card-img-top{
+    border-radius: 5%;
+    border: 1% solid #591D77;
 }
