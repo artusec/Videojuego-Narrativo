@@ -25,6 +25,9 @@ public struct FormasSelectionOptions
 public class FormasManager : MonoBehaviour
 {
     public AudioClip introTTS;
+    public AudioClip success;
+    public AudioClip wrong;
+    public AudioClip ttsFin;
 
     //para manejar el flujo del minijuego
     public int level = 0;
@@ -153,18 +156,22 @@ public class FormasManager : MonoBehaviour
         //caso de acierto con la forma solución
         if (s == textos[level].solution)
         {
+            SRManager.instance.playTTS(success);
             //Audio TTS.instance.PlayTTS("Acierto");
             //condición de victoria del puzle
             if (level == textos.Count - 1)
             {
                 print("victoria");
-                OnVictory();
+                SRManager.instance.playTTS(ttsFin);
+                ScreenInput.instance.deactivate(ttsFin.length);
+                Invoke("OnVictory", ttsFin.length);
             }
             addLevel(1);
         }
         //caso de fallo de selección
         else
         {
+            SRManager.instance.playTTS(wrong);
            // Audio TTS.instance.PlayTTS("Fallo");
             print("fallo de selección");
         }

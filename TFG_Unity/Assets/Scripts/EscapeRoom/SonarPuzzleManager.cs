@@ -220,10 +220,11 @@ public class SonarPuzzleManager : MonoBehaviour
                 //src.Play();
                 //indicamos que hemos ganado / conseguido el objeto
                 print("VICTORIA");
+                screenInput.deactivate(winSound.length);
                 //-------------------------------------------------
                 // Hacer lo que sea necesario para seguir el juego
                 //-------------------------------------------------
-                Invoke("onVictory", winSound.length + 0.5f);
+                Invoke("onVictory", winSound.length);
                 //onVictory();
             }
             //condición de derrota
