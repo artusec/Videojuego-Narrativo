@@ -1,9 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+}
+
 body{
-    background-color: #9932CC;
+    width:100%;
+    height: 100%;
+    overflow-x: hidden; 
 }
 
 html{
     scroll-behavior: smooth;
+    
 }
 .container-fluid{
     height: 15%;
@@ -22,7 +30,7 @@ html{
     background-color:#591D77;
 }
 
-a {
+a{
     color:#F2F1EF;
 }
 
@@ -35,13 +43,38 @@ a:visited {
 }
 /* A link that is hovered on */
 a:hover {
-    color:red;
+    color:#F2F1EF;
 }
 /* A link that is selected */
 a:active {
     color:#F2F1EF;
 }
 
-img{
+
+.rounded{
     width: 100%;
+}
+.img-container{
+    background-color: black;
+    max-width: 100%;
+}
+#Logo{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+.page-footer{
+    background-color:#591D77;
+    color:#F2F1EF;
+    width: 100%;
+    max-width: 100%;
+}
+
+.footers{
+    padding-left: 5%;
+}
+
+.col-sm-4{
+    max-width: 100%;
 }
