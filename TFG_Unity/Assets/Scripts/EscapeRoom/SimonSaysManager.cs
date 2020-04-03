@@ -19,7 +19,7 @@ public class SimonSaysManager : MonoBehaviour
     [Tooltip("Número de pasos que se generarán si la opción de randomizar el juego se encuentra activa. \n Si la opción se " +
         "encuentra desactivada, este número se fijará automáticamente al tamaño de la lista path")]
     public int pathLenght;
-    //auxiliar
+    //auxiliar que irá desde 0 hasta pathLenght, aumentando en 1 cada nivel
     private int actualSteps;
     [Tooltip("La lista de pasos que recorrerá el simon says")]
     [SerializeField]
@@ -52,6 +52,7 @@ public class SimonSaysManager : MonoBehaviour
     public Text part1Text;
     public Text part2Text;
 
+    //para asegurarnos de valores permitidos
     private void OnValidate()
     {
         //si activamos el randomizador
@@ -100,12 +101,22 @@ public class SimonSaysManager : MonoBehaviour
                 //random entre 0 y el número de opciones dentro del enum SimonPoints
                 path.Add((SimonPoints)Random.Range(0, System.Enum.GetValues(typeof(SimonPoints)).Length));
         }
+        //marcamos que, al iniciar, se empieza con un sólo sonido de la secuencia
         actualSteps = 1;
+
+        //-------------------------
+        //hacer cosos de parro aqui
+        //-------------------------
         Invoke("StartGame", 1);
     }
-
+    //arranca con la logica del juego
     private void StartGame()
     {
+        if (!part1Text.gameObject.activeInHierarchy)
+            part1Text.gameObject.SetActive(true);
+        if (part2Text.gameObject.activeInHierarchy)
+            part2Text.gameObject.SetActive(false);
+
         StartCoroutine(playSimon());
     }
 
@@ -122,28 +133,22 @@ public class SimonSaysManager : MonoBehaviour
             //esperamos el tiempo indicado + la duración del propio audio
             yield return new WaitForSeconds(timeBetweenPoints + src.clip.length);
         }
+        //mostrar audios de explicación aquí o al empezar ¿?
         playerTurn = true;
         playerIndex = 0;
+
+        if (part1Text.gameObject.activeInHierarchy)
+            part1Text.gameObject.SetActive(false);
+        if (!part2Text.gameObject.activeInHierarchy)
+            part2Text.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (playerTurn)
-        {
+            //solo nos interesa recoger el input si estamos en la parte de reproducir la secuencia
             GetPlayerInput();
-            if (part1Text.gameObject.activeInHierarchy)
-                part1Text.gameObject.SetActive(false);
-            if (!part2Text.gameObject.activeInHierarchy)
-                part2Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            if (!part1Text.gameObject.activeInHierarchy)
-                part1Text.gameObject.SetActive(true);
-            if (part2Text.gameObject.activeInHierarchy)
-                part2Text.gameObject.SetActive(false);
-        }
     }
 
     private void GetPlayerInput()
@@ -152,6 +157,8 @@ public class SimonSaysManager : MonoBehaviour
         bool inputRegistered = false;
         switch (ScreenInput.instance.getInput())
         {
+            //si se quiere mostrar por audio el movimiento hecho por el player habría que
+            //  meterlo en cada caso con el movimiento correspondiente
             case move.left:
                 lastRegistered = move.left;
                 inputRegistered = true;
@@ -201,6 +208,7 @@ public class SimonSaysManager : MonoBehaviour
                 else
                 {
                     print("victoria");
+                    OnWin();
                 }
             }
         }
@@ -212,5 +220,12 @@ public class SimonSaysManager : MonoBehaviour
             playerIndex = 0;
             Invoke("StartGame", 0.5f);
         }
+    }
+
+    private void OnWin()
+    {
+        //mas cosas de parro aqui
+        //a este metodo ya se le llama justo desde el metodo de arriba, 
+        //  que posee la condicion de victoria
     }
 }

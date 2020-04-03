@@ -15,7 +15,8 @@ public class MinijuegoForma : MonoBehaviour
             if (!lastCliked)
             {
                 lastCliked = true;
-                Vibration.SonarVibration(1, 1, 0, true);
+                Vibration.SonarVibration(1, 2000, 0, true);
+                //Vibration.SonarVibration(1, 1, 0, true);
                 //llamada a vibrar al maximo
                 print("clickado");
             }

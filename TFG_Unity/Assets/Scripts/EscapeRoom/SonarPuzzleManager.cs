@@ -25,6 +25,9 @@ public enum SonarZones
 
 public class SonarPuzzleManager : MonoBehaviour
 {
+    [Header("La fuera y duración de la vibración")]
+    public float vibrationStrengh = 0.5f;
+    public long vibrationDuration = 333;
     [Header("El tiempo que pasa entre vibraciones en cada zona")]
     public long vibrationRestCerca = 50;
     public long vibrationRestMedio = 333;
@@ -65,6 +68,13 @@ public class SonarPuzzleManager : MonoBehaviour
 
     private void OnValidate()
     {
+        //nos aseguramos de valores de vibracion validos
+        if (vibrationStrengh < 0)
+            vibrationStrengh = 0;
+        else if (vibrationStrengh > 1)
+            vibrationStrengh = 1;
+        if (vibrationDuration < 0)
+            vibrationDuration = 0;
         //nos aseguramos que la lista de radios tiene el mismo tamaño que la de centros
         if(radios.Count != centros.Count)
         {
@@ -268,7 +278,7 @@ public class SonarPuzzleManager : MonoBehaviour
                 print("cerca");
                 lastZone = SonarZones.cerca;
                 Vibration.Cancel();
-                Vibration.SonarVibration(0.5f, 333, vibrationRestCerca, true);
+                Vibration.SonarVibration(vibrationStrengh, vibrationDuration, vibrationRestCerca, true);
             }
         }
         else if(dist <= (radios[cIndex].medio + radios[cIndex].cerca) )
@@ -278,7 +288,7 @@ public class SonarPuzzleManager : MonoBehaviour
                 print("medio");
                 lastZone = SonarZones.medio;
                 Vibration.Cancel();
-                Vibration.SonarVibration(0.5f, 333, vibrationRestMedio, true);
+                Vibration.SonarVibration(vibrationStrengh, vibrationDuration, vibrationRestMedio, true);
             }
         }
         else if(dist <= (radios[cIndex].lejos + radios[cIndex].medio + radios[cIndex].cerca) )
@@ -288,7 +298,7 @@ public class SonarPuzzleManager : MonoBehaviour
                 print("lejos");
                 lastZone = SonarZones.lejos;
                 Vibration.Cancel();
-                Vibration.SonarVibration(0.5f, 333, vibrationRestLejos, true);
+                Vibration.SonarVibration(vibrationStrengh, vibrationDuration, vibrationRestLejos, true);
             }
         }
         else
