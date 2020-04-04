@@ -25,9 +25,12 @@ public class guardar_partida : MonoBehaviour
     {
 
         /*
+
         Dictionary<string, string> datos = new Dictionary<string, string>();
-        openWith.Add("llave", "1:2");
-        openWith.Add("caja", "2:2");
+
+        datos.Add("llave", "1:2");
+        datos.Add("caja", "2:2");
+
         */
 
         string peticion = "";
@@ -65,7 +68,7 @@ public class guardar_partida : MonoBehaviour
             StreamReader reader = new StreamReader(dataStream);
             // Read the content.  
             string responseFromServer = reader.ReadToEnd();
-            // Display the content.  
+            // Display the content.
             Debug.Log(responseFromServer);
         }
         WebResponse httpResponse = httpRequest.GetResponse();

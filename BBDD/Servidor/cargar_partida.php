@@ -9,10 +9,10 @@ $datos = array();
 header("Content-type: text/html");
 $datos = array();
 if ($datos = Game::cargar_partida_individual($user)){
-	print("Hecho!");
+	print("");
 	echo "<br>";
 	foreach($datos as $clave=>$valor) {
-		echo $clave.$valor."<br>";
+		print($clave."-".$valor."<br>");
 	}
 	exit();
 }
