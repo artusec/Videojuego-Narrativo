@@ -113,3 +113,7 @@ a:active {
     border-radius: 5%;
     border: 1% solid #591D77;
 }
+
+#minijuegos-title{
+    font-size: large;
+}
