@@ -20,6 +20,7 @@ public class LockedSceneChange : Actable
                 element.setState(objectState.USED);
                 SRManager.instance.playTTS(doorOpen);
                 SRManager.instance.deactivate(doorOpen.length);
+                GameManager.instance.SaveData();
                 //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
                 Invoke("change", doorOpen.length);
             }

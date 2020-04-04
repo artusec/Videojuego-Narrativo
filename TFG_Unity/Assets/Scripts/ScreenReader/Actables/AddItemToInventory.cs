@@ -18,8 +18,7 @@ public class AddItemToInventory : Actable
             GameManager.instance.addItemToInv(item);
             SRManager.instance.playTTS(pickUpLine);
             element.setState(objectState.USED);
-            GameManager.instance.saveToGMFromSRM();
-            GameManager.instance.saveToTXT();
+            GameManager.instance.SaveData();
         }
         else if (state == objectState.USED)
         {

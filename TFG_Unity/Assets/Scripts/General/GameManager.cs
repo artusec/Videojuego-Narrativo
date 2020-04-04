@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public List<element> sceneObjs;
 
     public int room = 0;
+    public bool onlinePlay = false;
+    public string user = "Paco";
 
     // Start is called before the first frame update
     void Awake()
@@ -37,15 +39,6 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public bool isSceneNew(int roomIndex)
     {
@@ -94,16 +87,6 @@ public class GameManager : MonoBehaviour
         }
         return index;
     }
-    /*public SRList getObjects()
-    {
-        return objects;
-    }
-    public void setObjects(SRList objs, SRList scen)
-    {
-        objects = objs;
-        sceneObjs = scen;
-    }
-    */
 
     /// <summary>
     /// Añade objeto a inventario en default
@@ -177,11 +160,11 @@ public class GameManager : MonoBehaviour
 
     public void loadRoomNumber()
     {
-        if (false) { Debug.Log("load online"); }
+        if (onlinePlay) { loadFromWeb(); }
         else loadLocalRoomNumber();
     }
 
-    public void loadLocalRoomNumber()
+    private void loadLocalRoomNumber()
     {
         try
         {
@@ -189,9 +172,13 @@ public class GameManager : MonoBehaviour
             // nota: esta forma de obtener el int solo valdria de 0 a 9, no tenemos tantas habitaciones
             room = (int)char.GetNumericValue(File.ReadAllText(savePath)[0]);
         }
-        catch {
-            room = 1;
-        }
+        catch { room = 0;}
+    }
+
+    private void loadOnlineRoomNumber()
+    {
+        try {loadFromWeb();}
+        catch {room = 0;}
     }
 
     /// <summary>
@@ -209,6 +196,13 @@ public class GameManager : MonoBehaviour
             aux.setState((objectState)i);
             srm.scene.Push(aux);
         }
+    }
+
+    public void SetUpPlay()
+    {
+        loadRoomNumber();
+        if (room == 0) changeScene("Intro");
+        else changeScene("Room" + room.ToString());
     }
 
     public void instantiateRoom()
@@ -257,6 +251,7 @@ public class GameManager : MonoBehaviour
         }
         return objectText;
     }
+
     public void saveToTXT()
     {
         // Abrimos el archivo o lo cremos si no existe
@@ -290,10 +285,11 @@ public class GameManager : MonoBehaviour
         // Escribimos en el archivo
         File.WriteAllText(savePath, roomFileLines);
     }
+
     public void saveToGMFromSRM()
     {
         SRManager srm = SRManager.instance;
-        if (srm == null) Debug.Log("no hay srm de la que guardar");
+        if (srm == null || srm.type != SRType.Room) Debug.Log("no hay srm de la que guardar");
         else
         {
             List<SRElement> objs = srm.inventory.sreList;
@@ -328,13 +324,20 @@ public class GameManager : MonoBehaviour
     public void saveToWeb()
     {
         Debug.Log("Guardando en web");
-        GameObject.FindObjectOfType<guardar_partida>().entrar("hola", objectsToWebDictionary());
+        interaccion_servidor.guardar_partida(user, objectsToWebDictionary());
     }
 
     public void loadFromWeb()
     {
         Debug.Log("Cargando de web");
-        GameObject.FindObjectOfType<cargar_partida>().entrar("hola");
+        updateGMFromWebString(interaccion_servidor.cargar_partida(user));
+    }
+
+    public void SaveData()
+    {
+        saveToGMFromSRM();
+        saveToTXT();
+        if (onlinePlay) saveToWeb();
     }
 
     /// <summary>
@@ -404,7 +407,6 @@ public class GameManager : MonoBehaviour
 
     public void updateGMFromWebString(string info)
     {
-
         sceneObjs = new List<element>();
         invObjects = new List<element>();
 

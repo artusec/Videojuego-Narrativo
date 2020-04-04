@@ -55,8 +55,9 @@ public class SRManager : MonoBehaviour
             }
             else
             {
-                if (false) //MIRA SI HAY DATOS EN LA NUBE
+                if (gm.onlinePlay) //MIRA SI HAY DATOS EN LA NUBE
                 {
+                    print("Datos online");
                     gm.loadFromWeb();
                 }
                 else //MIRA DATOS LOCALES
@@ -68,6 +69,7 @@ public class SRManager : MonoBehaviour
                 currentList.ReadFocus();
             }
         }
+        else introReadFocus();
     }
 
     private void introReadFocus()

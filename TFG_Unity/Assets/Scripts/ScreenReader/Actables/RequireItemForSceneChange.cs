@@ -46,7 +46,7 @@ public class RequireItemForSceneChange : Actable
     }
     void change()
     {
-        GameManager.instance.saveToTXT();
+        GameManager.instance.SaveData();
         GameManager.instance.changeScene(sceneToLoad);
     }
 }

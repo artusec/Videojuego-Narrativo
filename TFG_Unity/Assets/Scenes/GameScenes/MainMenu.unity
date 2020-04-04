@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: room
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -379,7 +384,7 @@ PrefabInstance:
     - target: {fileID: 1663988167127843381, guid: 607954b0238c0df4da70deae728e0716,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.2999878
+      value: -1.3000488
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 607954b0238c0df4da70deae728e0716, type: 3}
@@ -839,13 +844,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1910494804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2426b317a5fc9194188fd453841dfc07, type: 3}
+  m_Script: {fileID: 11500000, guid: efec44908a0e2a14c9d2106aff6c2366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  sceneToLoad: Intro
-  changeClip: {fileID: 0}
-  usedClip: {fileID: 0}
+  onlinePlay: 0
 --- !u!114 &1910494807
 MonoBehaviour:
   m_ObjectHideFlags: 0
