@@ -7,7 +7,7 @@ $username = $_POST["username"];
 
 header("Content-type: text/html");
 
-if (User::borrar_usuario("paco")){
+if (User::borrar_usuario($username)){
 	print("Hecho!");
 	exit();
 }

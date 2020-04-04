@@ -32,7 +32,7 @@ CREATE TABLE Objects(
 CREATE TABLE State_Game(
 	id_game int,
 	id_user int,
-	object varchar(20),
+	object varchar(50),
 	type int,
 	state_object int,
 
