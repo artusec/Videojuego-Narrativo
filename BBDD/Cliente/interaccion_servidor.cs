@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.Net;
@@ -7,58 +7,64 @@ using System.Text;
 using System.IO;
 using System;
 
-public class interaccion_servidor : MonoBehaviour
+public enum PetitionType { LOGIN, REGISTER, NEW_GAME, LOAD, SAVE, DELETE_USER, NONE};
+
+public static class interaccion_servidor 
 {
-    public string url = "http://laslomasiii.serveftp.net:4398/";
-    public string peticion = "";
+    public static string url = "http://laslomasiii.serveftp.net:4398/";
+    public static string peticion = "";
+    private static PetitionType type = PetitionType.NONE;
 
-    public void login_user(string usuario, string pass)
+    public static string login_user(string usuario, string pass)
     {
-        peticion = peticion + "username=" + usuario + "&pass=" + pass;
-        Upload(peticion, "login_user.php");
+        type = PetitionType.LOGIN;
+        peticion = "username=" + usuario + "&pass=" + pass;
+        return Upload(peticion, "login_user.php");
     }
 
-    public void register_user(string usuario, string email, string pass, string pass2)
+    public static string register_user(string usuario, string email, string pass, string pass2)
     {
-        peticion = "username=" + username + "&email=" + email + "&pass=" + pass + "&pass2=" + pass2;
-        Upload(peticion, "register_user.php");
+        type = PetitionType.REGISTER;
+        peticion = "username=" + usuario + "&email=" + email + "&pass=" + pass + "&pass2=" + pass2;
+        return Upload(peticion, "register_user.php");
     }
 
-    public void nuevo_juego(string usuario)
+    public static string nuevo_juego(string usuario)
     {
-        peticion = "username=" + username;
-        Upload(peticion, "nuevo_juego.php");
+        type = PetitionType.NEW_GAME;
+        peticion = "username=" + usuario;
+        return Upload(peticion, "nuevo_juego.php");
     }
 
-    public void guardar_partida(string usuario, Dictionary<string, string> datos)
+    public static string guardar_partida(string usuario, Dictionary<string, string> datos)
     {
-        peticion = "username=" + username;
+        type = PetitionType.SAVE;
+        peticion = "username=" + usuario;
         foreach(var item in datos)
         {
             peticion = peticion + "&" + item.Key + "=" + item.Value;
         }
-        Upload(peticion, "guardar_partida.php");
+        return Upload(peticion, "guardar_partida.php");
     }
 
-    public void cargar_partida(string usuario)
+    public static string cargar_partida(string usuario)
     {
-        peticion = "username=" + username;
-        Upload(peticion, "cargar_partida.php");
+        type = PetitionType.LOAD;
+        peticion = "username=" + usuario;
+        return Upload(peticion, "cargar_partida.php");
     }
 
-    public void borrar_usuario(string usuario)
+    public static string borrar_usuario(string usuario)
     {
-        peticion = "username=" + username;
-        Upload(peticion, "borrar_usuario.php");
+        type = PetitionType.DELETE_USER;
+        peticion = "username=" + usuario;
+        return Upload(peticion, "borrar_usuario.php");
     }
 
-    void Start()
-    {
 
-    }
-
-    void Upload(string peticion, srting archivo)
+    private static string Upload(string peticion, string archivo)
     {
+        Debug.Log(peticion);
         HttpWebRequest httpRequest = HttpWebRequest.Create(url + archivo) as HttpWebRequest;
         httpRequest.Method = "POST";
         httpRequest.ProtocolVersion = HttpVersion.Version11;
@@ -74,15 +80,33 @@ public class interaccion_servidor : MonoBehaviour
         // Status -> OK = todo bien  
         Debug.Log(((HttpWebResponse)response).StatusDescription);
 
-
+        string responseFromServer;
         using (dataStream = response.GetResponseStream())
         {
             StreamReader reader = new StreamReader(dataStream);
-            string responseFromServer = reader.ReadToEnd();
+            responseFromServer = reader.ReadToEnd();
 
             // Respuesta del servidor 
             Debug.Log(responseFromServer);
         }
         WebResponse httpResponse = httpRequest.GetResponse();
+
+        return OnReceiveResponse(responseFromServer);
+    }
+
+    private static string OnReceiveResponse(string response)
+    {
+        string s = response;
+        switch (type)
+        {
+            case PetitionType.LOAD:
+                if (s != "Algo ha fallado")
+                {
+                    s = s.Remove(s.Length - 1);
+                }
+                break;
+            default: break;
+        }
+        return s;
     }
 }
