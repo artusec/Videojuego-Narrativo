@@ -30,6 +30,9 @@ html{
     background-color:#591D77;
     
 }
+.nav-link:hover,.nav-link:focus{
+    background-color: #9932CC;
+}   
 
 a{
     color:#F2F1EF;
