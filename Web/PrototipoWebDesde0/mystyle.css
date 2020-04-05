@@ -32,6 +32,7 @@ html{
 }
 .nav-link:hover,.nav-link:focus{
     background-color: #9932CC;
+    text-decoration: underline wavy;
 }   
 
 a{
@@ -123,4 +124,8 @@ a:active {
 
 .Title-1{
     text-align: center;
+}
+
+.breadcrumb{
+    background-color: #9932CC;
 }
