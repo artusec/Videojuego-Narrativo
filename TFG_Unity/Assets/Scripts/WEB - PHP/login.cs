@@ -14,6 +14,9 @@ public class login : MonoBehaviour
     public InputField username;
     public InputField pass;
 
+    public void log_in()
+    {
+    }
     public void entrar()
     {
         Upload();

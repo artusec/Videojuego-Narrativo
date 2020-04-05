@@ -128,7 +128,7 @@ public class ScreenInput : MonoBehaviour
             moveTime += Time.deltaTime;
             if(moveTime >= helpTime && (Vector2.Distance(cam.ScreenToViewportPoint(Input.mousePosition), initPos) <= minDistClick))
             {
-                return move.help;
+                //return move.help;
             }
             //print("pressing");
             return move.pressing;
