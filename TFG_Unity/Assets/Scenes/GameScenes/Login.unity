@@ -361,6 +361,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: 9b54b3ea4ac26864b9b20e2bdd103946, type: 3}
   label: Usuario
   actBehaviour: {fileID: 473990505}
+  state: 1
   parentList: {fileID: 0}
 --- !u!114 &473990505
 MonoBehaviour:
@@ -405,10 +406,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 666963738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f132a78435b2645bcdca0c39579b23, type: 3}
+  m_Script: {fileID: 11500000, guid: fb5ae4d3bf26254408f9ac817180030a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: http://laslomasiii.serveftp.net:4398/login_user.php
   username: {fileID: 473990500}
   pass: {fileID: 2070084634}
 --- !u!114 &666963740
@@ -1151,6 +1151,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: room
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3d01be81baed249a5c052c3fd53b71, type: 3}
 --- !u!1 &1962356277
@@ -1238,7 +1243,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 666963739}
-        m_MethodName: entrar
+        m_MethodName: Login
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1300,9 +1305,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 8300000, guid: 55e91e5bc43fe8846b32618cc74d55fa, type: 3}
+  audioLabel: {fileID: 8300000, guid: f65335ea4c727a24b98ed23b3e42e5a7, type: 3}
   label: Confirmar
   actBehaviour: {fileID: 1962356283}
+  state: 1
   parentList: {fileID: 0}
 --- !u!114 &1962356283
 MonoBehaviour:
@@ -1549,6 +1555,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: ebbb23e3e689f414d99d405c23b2df6a, type: 3}
   label: "Contrase\xF1a"
   actBehaviour: {fileID: 2070084639}
+  state: 1
   parentList: {fileID: 0}
 --- !u!114 &2070084639
 MonoBehaviour:
@@ -1785,7 +1792,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ttsSource: {fileID: 5455342458674226178}
+  intro: []
   type: 0
+  roomIndex: -1
   currentList: {fileID: 1108526955}
   readOnStart: 1
   inventory: {fileID: 0}
