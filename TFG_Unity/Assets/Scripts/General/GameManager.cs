@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     }
 
 
+
     public bool isSceneNew(int roomIndex)
     {
         return room != roomIndex;
@@ -330,7 +331,12 @@ public class GameManager : MonoBehaviour
     public void loadFromWeb()
     {
         Debug.Log("Cargando de web");
-        updateGMFromWebString(interaccion_servidor.cargar_partida(user));
+        string respuesta = interaccion_servidor.cargar_partida(user);
+        if (respuesta != "Algo ha fallado")
+        {
+            updateGMFromWebString(respuesta);
+        }
+        else room = 0;
     }
 
     public void SaveData()

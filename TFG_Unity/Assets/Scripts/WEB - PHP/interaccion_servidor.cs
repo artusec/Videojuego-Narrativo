@@ -18,7 +18,7 @@ public static class interaccion_servidor
     public static string login_user(string usuario, string pass)
     {
         type = PetitionType.LOGIN;
-        peticion = peticion + "username=" + usuario + "&pass=" + pass;
+        peticion = "username=" + usuario + "&pass=" + pass;
         return Upload(peticion, "login_user.php");
     }
 
@@ -64,6 +64,7 @@ public static class interaccion_servidor
 
     private static string Upload(string peticion, string archivo)
     {
+        Debug.Log(peticion);
         HttpWebRequest httpRequest = HttpWebRequest.Create(url + archivo) as HttpWebRequest;
         httpRequest.Method = "POST";
         httpRequest.ProtocolVersion = HttpVersion.Version11;
@@ -99,7 +100,10 @@ public static class interaccion_servidor
         switch (type)
         {
             case PetitionType.LOAD:
-                s = s.Remove(s.Length - 1);
+                if (s != "Algo ha fallado")
+                {
+                    s = s.Remove(s.Length - 1);
+                }
                 break;
             default: break;
         }

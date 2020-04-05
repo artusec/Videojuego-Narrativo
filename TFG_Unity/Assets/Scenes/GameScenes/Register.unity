@@ -529,6 +529,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: 55e91e5bc43fe8846b32618cc74d55fa, type: 3}
   label: "Confirmar contrase\xF1a"
   actBehaviour: {fileID: 616513686}
+  state: 1
   parentList: {fileID: 0}
 --- !u!1 &687409227
 GameObject:
@@ -1050,6 +1051,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f635203628e01343b059f1b3aebac29, type: 3}
+--- !u!1001 &1210721589
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4817786954649803766, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.8358443
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1308752
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.0536337
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb3d01be81baed249a5c052c3fd53b71, type: 3}
 --- !u!1 &1313989423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,11 +1152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5eda360edb1c4449699a85070fa0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: http://laslomasiii.serveftp.net:4398/register_user.php
   username: {fileID: 1753679224}
   email: {fileID: 1610580820}
   pass: {fileID: 1574723747}
   pass2: {fileID: 616513682}
+  newGame: 1
 --- !u!114 &1313989425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,7 +1329,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1313989424}
-        m_MethodName: entrar
+        m_MethodName: Register
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1338,6 +1408,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: 833df4a5541b75f42827087817506632, type: 3}
   label: Crear Cuenta
   actBehaviour: {fileID: 1394705005}
+  state: 1
   parentList: {fileID: 0}
 --- !u!1 &1419309045
 GameObject:
@@ -1409,6 +1480,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: f65335ea4c727a24b98ed23b3e42e5a7, type: 3}
   label: Ir a Login
   actBehaviour: {fileID: 1419309047}
+  state: 1
   parentList: {fileID: 0}
 --- !u!114 &1419309049
 MonoBehaviour:
@@ -1760,6 +1832,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: ebbb23e3e689f414d99d405c23b2df6a, type: 3}
   label: "Contrase\xF1a"
   actBehaviour: {fileID: 1574723751}
+  state: 1
   parentList: {fileID: 0}
 --- !u!1 &1610580819
 GameObject:
@@ -1937,6 +2010,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: cc62c4665e7cfc84888cebbcdc0354b3, type: 3}
   label: Email
   actBehaviour: {fileID: 1610580824}
+  state: 1
   parentList: {fileID: 0}
 --- !u!1 &1675049380
 GameObject:
@@ -2193,6 +2267,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: 9b54b3ea4ac26864b9b20e2bdd103946, type: 3}
   label: Nombre de usuario
   actBehaviour: {fileID: 1753679228}
+  state: 1
   parentList: {fileID: 0}
 --- !u!1 &1801750670
 GameObject:
@@ -2525,7 +2600,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ttsSource: {fileID: 6970027790493066744}
+  intro: []
   type: 0
+  roomIndex: -1
   currentList: {fileID: 724282276}
   readOnStart: 1
   inventory: {fileID: 0}
