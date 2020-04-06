@@ -12,6 +12,7 @@ public class SceneChanger : Actable
     {
         if (element.getState() == objectState.DEFAULT)
         {
+            if(GameManager.instance.getUser() != null)
             element.setState(objectState.USED);
             if (changeClip != null)
             {
@@ -20,7 +21,7 @@ public class SceneChanger : Actable
                 //cargar nueva escena (con invoke, para que de tiempo a oir el texto)
                 Invoke("change", changeClip.length);
             }
-            else Invoke("change", 1);
+            else Invoke("change", 0);
         }
         else SRManager.instance.playTTS(usedClip);
     }

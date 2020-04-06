@@ -34,6 +34,8 @@ public class RegisterMenu : MonoBehaviour
                 break;
             default:
                 TextToSpeech.Speak("Se registro el usuario " + user + "correctamente.");
+                GameManager.instance.clearData();
+                GameManager.instance.saveUsername(user);
                 Invoke("OnSuccess", 0.5f);
                 break;
         }
@@ -42,7 +44,7 @@ public class RegisterMenu : MonoBehaviour
     private void OnSuccess()
     {
         interaccion_servidor.nuevo_juego(username.text);
-        GameManager.instance.changeScene("Login");
+        GameManager.instance.changeScene("Intro");
     }
 
     // que respuesta se recibe al crear un usuario?

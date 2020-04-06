@@ -314,7 +314,7 @@ PrefabInstance:
     - target: {fileID: 1663988167127843381, guid: 607954b0238c0df4da70deae728e0716,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.3999939
+      value: 0.4000244
       objectReference: {fileID: 0}
     - target: {fileID: 1663988167127843381, guid: 607954b0238c0df4da70deae728e0716,
         type: 3}
@@ -717,8 +717,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sreList:
   - {fileID: 1910494807}
-  - {fileID: 1853975086}
-  - {fileID: 2011526243}
+  - {fileID: 2036783636}
+  - {fileID: 947251023}
   - {fileID: 514855478}
   prevList: {fileID: 0}
   currentFocus: 0
@@ -734,13 +734,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1910494805}
-  - {fileID: 1853975084}
-  - {fileID: 2011526241}
+  - {fileID: 2036783634}
+  - {fileID: 947251022}
   - {fileID: 514855477}
   m_Father: {fileID: 495061882}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1853975083
+--- !u!1 &947251021
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -748,63 +748,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1853975084}
-  - component: {fileID: 1853975086}
-  - component: {fileID: 1853975085}
+  - component: {fileID: 947251022}
+  - component: {fileID: 947251023}
+  - component: {fileID: 947251024}
   m_Layer: 0
-  m_Name: Register
+  m_Name: Borrar Cuenta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1853975084
+--- !u!4 &947251022
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853975083}
+  m_GameObject: {fileID: 947251021}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 832188703}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1853975085
+--- !u!114 &947251023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853975083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2426b317a5fc9194188fd453841dfc07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  element: {fileID: 0}
-  sceneToLoad: Register
-  changeClip: {fileID: 0}
-  usedClip: {fileID: 0}
---- !u!114 &1853975086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853975083}
+  m_GameObject: {fileID: 947251021}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 8300000, guid: 833df4a5541b75f42827087817506632, type: 3}
-  label: Crear Cuenta
-  actBehaviour: {fileID: 1853975085}
+  audioLabel: {fileID: 0}
+  label: "Cerrar sesi\xF3n"
+  actBehaviour: {fileID: 947251024}
   state: 1
   parentList: {fileID: 0}
+--- !u!114 &947251024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947251021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b54aabda197e64daa9820cbdd54247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: {fileID: 0}
 --- !u!1 &1910494804
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +865,7 @@ MonoBehaviour:
   actBehaviour: {fileID: 1910494806}
   state: 1
   parentList: {fileID: 0}
---- !u!1 &2011526240
+--- !u!1 &2036783633
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -876,60 +873,58 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2011526241}
-  - component: {fileID: 2011526243}
-  - component: {fileID: 2011526242}
+  - component: {fileID: 2036783634}
+  - component: {fileID: 2036783636}
+  - component: {fileID: 2036783635}
   m_Layer: 0
-  m_Name: Login
+  m_Name: PlayOnline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2011526241
+--- !u!4 &2036783634
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011526240}
+  m_GameObject: {fileID: 2036783633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 832188703}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2011526242
+--- !u!114 &2036783635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011526240}
+  m_GameObject: {fileID: 2036783633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2426b317a5fc9194188fd453841dfc07, type: 3}
+  m_Script: {fileID: 11500000, guid: efec44908a0e2a14c9d2106aff6c2366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  sceneToLoad: Login
-  changeClip: {fileID: 0}
-  usedClip: {fileID: 0}
---- !u!114 &2011526243
+  onlinePlay: 1
+--- !u!114 &2036783636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011526240}
+  m_GameObject: {fileID: 2036783633}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 8300000, guid: f65335ea4c727a24b98ed23b3e42e5a7, type: 3}
-  label: "Iniciar Sesi\xF3n"
-  actBehaviour: {fileID: 2011526242}
+  audioLabel: {fileID: 8300000, guid: 0dd2bc8914e2c57418829f4fcb7d4e05, type: 3}
+  label: Jugar Con Conexion
+  actBehaviour: {fileID: 2036783635}
   state: 1
   parentList: {fileID: 0}

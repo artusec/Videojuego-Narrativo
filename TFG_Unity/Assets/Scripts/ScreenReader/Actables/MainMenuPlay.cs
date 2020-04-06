@@ -10,7 +10,11 @@ public class MainMenuPlay : Actable
     {
         GameManager gm = GameManager.instance;
         gm.onlinePlay = onlinePlay;
-        gm.loadRoomNumber();
-        gm.SetUpPlay();
+        if (onlinePlay && gm.getUser() != "")
+        {
+            gm.SetUpPlay();
+        }
+        else if (onlinePlay) gm.changeScene("Online");
+        else gm.SetUpPlay();
     }
 }
