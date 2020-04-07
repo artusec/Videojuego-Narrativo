@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
         public element(string s, int o) { prefabName = s; state = (objectState)o; }
     }
 
-    string userName = "";
     public static GameManager instance;
     public List<element> invObjects;
     public List<element> sceneObjs;
@@ -33,13 +32,25 @@ public class GameManager : MonoBehaviour
         if (GameManager.instance == null)
         {
             instance = this;
+            tryLoadUser();
             DontDestroyOnLoad(gameObject);
         }
 
         else Destroy(gameObject);
     }
 
-
+    void tryLoadUser()
+    {
+        if (PlayerPrefs.HasKey("User"))
+        {
+            user = PlayerPrefs.GetString("User");
+        }
+        else user = "";
+    }
+    public string getUser()
+    {
+        return user;
+    }
 
     public bool isSceneNew(int roomIndex)
     {
@@ -198,7 +209,13 @@ public class GameManager : MonoBehaviour
             srm.scene.Push(aux);
         }
     }
-
+    public void clearData()
+    {
+        string savePath = Path.Combine(Application.persistentDataPath, "SaveData");
+        // String que contiene todo el texto
+        string roomFileLines = "0";
+        File.WriteAllText(savePath, roomFileLines);
+    }
     public void SetUpPlay()
     {
         loadRoomNumber();
@@ -375,6 +392,13 @@ public class GameManager : MonoBehaviour
         room = roomN;
     }
 
+    public void saveUsername(string userN)
+    {
+        user = userN;
+        if (user != "")
+            PlayerPrefs.SetString("User", user);
+        else if (PlayerPrefs.HasKey("User")) PlayerPrefs.DeleteKey("User");
+    }
     /// <summary>
     /// Devuelve un string con los objetos codificados para enviarlos al servidor
     /// </summary>

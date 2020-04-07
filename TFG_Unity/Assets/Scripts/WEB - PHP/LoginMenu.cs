@@ -25,7 +25,8 @@ public class LoginMenu : MonoBehaviour
             TextToSpeech.Speak("Se inicio sesion como " + user);
             // invoke para esperar texto
             TextToSpeech.Speak("Iniciando juego");
-            GameManager.instance.user = user;
+            GameManager.instance.clearData();
+            GameManager.instance.saveUsername(user);
             GameManager.instance.onlinePlay = true;
 
             GameManager.instance.SetUpPlay();
