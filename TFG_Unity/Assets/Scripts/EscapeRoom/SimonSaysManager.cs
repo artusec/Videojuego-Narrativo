@@ -104,9 +104,15 @@ public class SimonSaysManager : MonoBehaviour
         //marcamos que, al iniciar, se empieza con un sólo sonido de la secuencia
         actualSteps = 1;
 
-        //-------------------------
-        //hacer cosos de parro aqui
-        //-------------------------
+        OnStart();
+    }
+
+    private void OnStart()
+    {
+        //hacer cosos de inicio parro aqui 
+        //  a este metodo se le llama al final del metodo Start
+
+        //empieza el juego en el tiempo que le digas
         Invoke("StartGame", 1);
     }
     //arranca con la logica del juego
@@ -218,7 +224,9 @@ public class SimonSaysManager : MonoBehaviour
             print("fallo, vuelve a poner la secuencia completa");
             playerTurn = false;
             playerIndex = 0;
-            Invoke("StartGame", 0.5f);
+            looseAudio.Play();
+            //reseteamos el nivel
+            Invoke("StartGame", 0.5f + looseAudio.clip.length);
         }
     }
 
