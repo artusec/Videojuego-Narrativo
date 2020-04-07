@@ -8,7 +8,11 @@ $username = $_POST["username"];
 header("Content-type: text/html");
 
 if (User::borrar_usuario($username)){
-	print("Hecho!");
+	print(0);
 	exit();
 }
-print("Algo ha fallado");
+print(1);
+exit();
+
+# 0 -> Success
+# 1 -> Failed

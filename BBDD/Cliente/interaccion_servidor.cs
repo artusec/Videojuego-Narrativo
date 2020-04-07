@@ -7,7 +7,7 @@ using System.Text;
 using System.IO;
 using System;
 
-public enum PetitionType { LOGIN, REGISTER, NEW_GAME, LOAD, SAVE, DELETE_USER, NONE};
+public enum PetitionType { LOGIN, REGISTER, NEW_GAME, LOAD, SAVE, DELETE_USER, NONE, STATISTICS};
 
 public static class interaccion_servidor 
 {
@@ -59,6 +59,13 @@ public static class interaccion_servidor
         type = PetitionType.DELETE_USER;
         peticion = "username=" + usuario;
         return Upload(peticion, "borrar_usuario.php");
+    }
+
+    public static string guardar_estadisticas(string usuario, double time)
+    {
+        type = PetitionType.STATISTICS;
+        peticion = "username=" + usuario + "&time=" + time;
+        return Upload(peticion, "guardar_estadisticas.php");
     }
 
 

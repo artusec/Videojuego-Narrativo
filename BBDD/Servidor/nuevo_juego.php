@@ -8,9 +8,13 @@ $username = $_POST["username"];
 header("Content-type: text/html");
 
 if (Game::inicia_nuevo_juego_individual($username)){
-	print("Hecho!");
+	print(0)
 	exit();
 }
 else{
-	print("Algo ha fallado creando el juego");
+	print(1);
 }
+exit();
+
+# 0 -> Success
+# 1 -> Failed

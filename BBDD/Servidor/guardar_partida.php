@@ -12,7 +12,6 @@ $datos = array();
 # "nombre_objeto" -> <tipo>:<estado>
 
 
-
 header("Content-type: text/html");
 
 # $peticion = "username=paco&llave=1:1&caja=2:2&puerta=2:3";
@@ -25,7 +24,11 @@ header("Content-type: text/html");
 );*/
 
 if (Game::guardar_partida_individual($_POST)){
-	print("Hecho!");
+	print(0);
 	exit();
 }
-print("Algo ha fallado");
+print(1);
+exit();
+
+# 0 -> Success
+# 1 -> Failed

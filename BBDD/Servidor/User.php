@@ -11,7 +11,7 @@ class User
     private function __construct($array)
     {
         $this->username= $array['username'];
-        $this->pass = $array['password']; # Porque en la bd se llama password
+        $this->pass = $array['password'];
     }
 
 
@@ -84,6 +84,7 @@ class User
             $user->id = $conn->insert_id;
         } else {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            return false;
             exit();
         }
         return $user;
@@ -152,21 +153,34 @@ class User
     }
 
 
-    public function guardar_estadisticas($id_game, $id_user, $timed){
+    public function guardar_estadisticas($username, $timed){
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
+
+		$query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
+        $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_user = $fila["id"];
+
+		$query = sprintf("SELECT id FROM Games G WHERE user1 = '%d' and user2=1", $id_user);
+        $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_game = $fila["id"];
+
         $query = sprintf("INSERT INTO Statistics (id_user, id_game, timed) VALUES ('%s', '%s', '%s')",
             $conn->real_escape_string($id_game),
             $conn->real_escape_string($id_user),
             $conn->real_escape_string($timed)
             );
+
         if ( $conn->query($query) ) {
             $user->id = $conn->insert_id;
         } else {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            return false;
             exit();
         }
-        return $user;
+        return true;
     }
 
 
