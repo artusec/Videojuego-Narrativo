@@ -32,6 +32,7 @@ public class SimonSaysManager : MonoBehaviour
     [Header("propiedades del audio")]
     [Tooltip("el audio que se reproducirá")]
     public AudioSource src;
+    public AudioClip []simonClips;
     [Tooltip("El sonido cuando el player se equivoca")]
     public AudioSource looseAudio;
     [Tooltip("Las posiciones desde dónde se reproducirá el audio. \n Si se diseña el path manualmente conviene poner los puntos" +
@@ -131,10 +132,11 @@ public class SimonSaysManager : MonoBehaviour
         while(playerIndex < actualSteps)
         {
             //ajustamos el audio y lo reproducimos
-            src.loop = false;
+            //src.loop = false;
             src.transform.position = points[(int)path[playerIndex]].position;
+            src.clip = simonClips[(int)path[playerIndex]];
             src.Play();
-            float algo = src.clip.length;
+            //float algo = src.clip.length;
             playerIndex++;
             //esperamos el tiempo indicado + la duración del propio audio
             yield return new WaitForSeconds(timeBetweenPoints + src.clip.length);
@@ -196,6 +198,9 @@ public class SimonSaysManager : MonoBehaviour
             lastRegistered == move.right && path[playerIndex] == SimonPoints.Right)
         {
             print("Adecuado");
+            src.transform.position = points[(int)path[playerIndex]].position;
+            src.clip = simonClips[(int)path[playerIndex]];
+            src.Play();
             playerIndex++;
             //siguiente nivel
             if(playerIndex >= actualSteps)
@@ -208,13 +213,13 @@ public class SimonSaysManager : MonoBehaviour
                 // menor o igual porque actualSteps empieza en 1 y no en 0
                 if(actualSteps <= path.Count)
                 {
-                    Invoke("StartGame", 0.5f);
+                    Invoke("StartGame", + src.clip.length+ 1f);
                 }
                 //si no, hemos ganado
                 else
                 {
                     print("victoria");
-                    OnWin();
+                    Invoke("OnWin",src.clip.length);
                 }
             }
         }
@@ -235,5 +240,6 @@ public class SimonSaysManager : MonoBehaviour
         //mas cosas de parro aqui
         //a este metodo ya se le llama justo desde el metodo de arriba, 
         //  que posee la condicion de victoria
+        GameManager.instance.changeScene("Ending");
     }
 }

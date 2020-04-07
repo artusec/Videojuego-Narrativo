@@ -836,7 +836,7 @@ MonoBehaviour:
   - {fileID: 2036783634}
   - {fileID: 947251022}
   - {fileID: 514855477}
-  speed: 10
+  speed: 50
 --- !u!4 &1287418757
 Transform:
   m_ObjectHideFlags: 0
