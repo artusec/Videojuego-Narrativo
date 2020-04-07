@@ -7,7 +7,7 @@ $username = $_POST["username"];
 
 header("Content-type: text/html");
 
-if (Game::inicia_nuevo_juego_individual("paco")){
+if (Game::inicia_nuevo_juego_individual($username)){
 	print("Hecho!");
 	exit();
 }
