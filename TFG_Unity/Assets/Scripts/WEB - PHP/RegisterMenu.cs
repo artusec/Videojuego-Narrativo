@@ -13,9 +13,6 @@ public class RegisterMenu : MonoBehaviour
     public InputField email;
     public InputField pass;
     public InputField pass2;
-    private const string failString = "fallo registro";
-    private const string repeatUserString = "Ya existe un usuario con ese nombre, prueba con otro";
-    private const string repeatPassString = "Las contraseñas no coinciden";
 
     public void Register()
     {
@@ -23,20 +20,17 @@ public class RegisterMenu : MonoBehaviour
         string response = interaccion_servidor.register_user(user, email.text, pass.text, pass2.text);
         switch (response)
         {
-            case failString:
-                TextToSpeech.Speak("Fallo registro");
-                break;
-            case repeatUserString:
-                TextToSpeech.Speak(repeatUserString);
-                break;
-            case repeatPassString:
-                TextToSpeech.Speak(repeatPassString);
-                break;
-            default:
+            case "0":
                 TextToSpeech.Speak("Se registro el usuario " + user + "correctamente.");
                 GameManager.instance.clearData();
                 GameManager.instance.saveUsername(user);
                 Invoke("OnSuccess", 0.5f);
+                break;
+            case "1":
+                TextToSpeech.Speak("Ya existe un usuario con ese nombre, prueba con otro");
+                break;
+            case "2":
+                TextToSpeech.Speak("Las contraseñas no coinciden");
                 break;
         }
     }
