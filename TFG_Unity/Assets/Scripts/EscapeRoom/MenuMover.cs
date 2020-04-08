@@ -30,7 +30,12 @@ public class MenuMover : MonoBehaviour
             targetPoint = interestPoints.Count - 1;
     }
 
-    // Start is called before the first frame update
+    //ayuda para ubicar la camara correctamente
+    private Vector3 getCameraTargetPos(Vector3 target)
+    {
+        return  target + (Vector3.back * 10);
+    }
+
     void Start()
     {
         //ajustamos la referencia al sr
@@ -43,7 +48,6 @@ public class MenuMover : MonoBehaviour
         lastPoint = targetPoint;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //comprobación de activar movimiento
@@ -54,11 +58,13 @@ public class MenuMover : MonoBehaviour
             lengthToStart = Vector3.Distance(interestPoints[targetPoint].transform.position, interestPoints[lastPoint].transform.position);
         }
         //condición de movimiento
-        if(Camera.main.transform.position != interestPoints[targetPoint].transform.position)
+        if(Camera.main.transform.position != getCameraTargetPos(interestPoints[targetPoint].transform.position))
         {
             float distCovered = (Time.time - startTime) * speed;
             float fracMovement = distCovered / lengthToStart;
-            Camera.main.transform.position = Vector3.Lerp(interestPoints[lastPoint].transform.position, interestPoints[targetPoint].transform.position, fracMovement);
+            Camera.main.transform.position = Vector3.Lerp(getCameraTargetPos(interestPoints[lastPoint].transform.position), 
+                                                          getCameraTargetPos(interestPoints[targetPoint].transform.position),
+                                                          fracMovement);
         }
         //condición de parar movimiento
         else
