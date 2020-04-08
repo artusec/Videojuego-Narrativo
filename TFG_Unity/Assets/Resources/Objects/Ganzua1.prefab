@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4750434522400889745}
   - component: {fileID: 4750434522400889747}
   - component: {fileID: 4750434522400889744}
+  - component: {fileID: 4610820150450927902}
   m_Layer: 0
   m_Name: Ganzua1
   m_TagString: Untagged
@@ -100,5 +101,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 8300000, guid: fa43a1869c020fe47a130bd3644d1a3a, type: 3}
   label: Ganzua
-  actBehaviour: {fileID: 0}
+  actBehaviour: {fileID: 4610820150450927902}
+  state: 1
   parentList: {fileID: 0}
+--- !u!114 &4610820150450927902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750434522400889750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80864248a3d21eb46b880e94aef3a9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: {fileID: 0}
+  descriptionClip: {fileID: 0}
+  description: "Una ganz\xFAa de juguete, no parece muy resistente. Pero podr\xEDa
+    abrir una cerradura floja."
+  oneUse: 0
+  usedDescriptionClip: {fileID: 0}
+  usedDescription: 
