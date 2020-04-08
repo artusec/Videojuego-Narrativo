@@ -11,12 +11,11 @@ public class LoginMenu : MonoBehaviour
 {
     public InputField username;
     public InputField pass;
-    private string failString = "Usuario y/o contraseña incorrectos";
 
     public void Login()
     {
         string user = username.text;
-        if(interaccion_servidor.login_user(user, pass.text) == failString)
+        if(interaccion_servidor.login_user(user, pass.text) == "1")
         {
             TextToSpeech.Speak("Usuario o contraseña incorrecto");
         }

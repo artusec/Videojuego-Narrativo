@@ -349,7 +349,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Cargando de web");
         string respuesta = interaccion_servidor.cargar_partida(user);
-        if (respuesta != "Algo ha fallado")
+        if (respuesta == "0")
         {
             updateGMFromWebString(respuesta);
         }

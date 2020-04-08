@@ -94,7 +94,7 @@ public static class interaccion_servidor
             responseFromServer = reader.ReadToEnd();
 
             // Respuesta del servidor 
-            Debug.Log(responseFromServer);
+            // Debug.Log(responseFromServer);
         }
         WebResponse httpResponse = httpRequest.GetResponse();
 
