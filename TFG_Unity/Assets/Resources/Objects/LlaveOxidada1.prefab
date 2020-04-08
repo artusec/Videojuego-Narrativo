@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7755430628152336999}
   - component: {fileID: 7755430628152336997}
   - component: {fileID: 7755430628152336998}
+  - component: {fileID: -9011382310950392670}
   m_Layer: 0
   m_Name: LlaveOxidada1
   m_TagString: Untagged
@@ -100,5 +101,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 8300000, guid: 86e7b1e6fa64a764d9fb81dcc1fa1cb3, type: 3}
   label: LLave oxidada
-  actBehaviour: {fileID: 0}
+  actBehaviour: {fileID: -9011382310950392670}
+  state: 1
   parentList: {fileID: 0}
+--- !u!114 &-9011382310950392670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755430628152336992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80864248a3d21eb46b880e94aef3a9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: {fileID: 0}
+  descriptionClip: {fileID: 0}
+  description: "Una llave caliente al tacto y cubierta de \xF3xido, podr\xEDa romperse
+    en cualquier momento."
+  oneUse: 0
+  usedDescriptionClip: {fileID: 0}
+  usedDescription: 

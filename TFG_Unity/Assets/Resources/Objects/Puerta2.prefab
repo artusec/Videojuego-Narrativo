@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: {fileID: 0}
   keyRequired: Pomo2
-  sceneToLoad: DemoEnd
+  sceneToLoad: Room3
   failAudio: {fileID: 8300000, guid: 05b3aabd4b4ed0047ae5c895b379b850, type: 3}
   successAudio: {fileID: 8300000, guid: bcf87275e0ce8d841b8a73f3e0c0eeb2, type: 3}
   doorOpen: {fileID: 8300000, guid: 1f9a2ff7255de8949a8db6add305efcb, type: 3}
