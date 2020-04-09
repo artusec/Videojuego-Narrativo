@@ -8,9 +8,11 @@ public class SRList : MonoBehaviour
     public List<SRElement> sreList;
     public SRList prevList;
     public int currentFocus;
+    public SRManager srm;
 
     void Start()
     {
+        srm = SRManager.instance;
         SetListToChildren();
     }
     public void setObjects()
@@ -73,7 +75,7 @@ public class SRList : MonoBehaviour
     {
         sreList.RemoveAt(index);
         if (index <= currentFocus) GoTo(currentFocus - 1);
-        else ReadFocus();
+        else if (srm.currentList == this) ReadFocus();
     }
 
     public void Remove(SRElement element)
@@ -89,8 +91,10 @@ public class SRList : MonoBehaviour
     public void Insert(int index, SRElement element)
     {
         sreList.Insert(index, element);
+
         if (index <= currentFocus) GoTo(currentFocus + 1);
-        else ReadFocus();
+        else if (srm.currentList == this)
+            ReadFocus();
     }
 
     public void Push(SRElement element)
@@ -120,9 +124,9 @@ public class SRList : MonoBehaviour
 
     public void GoToPreviousList()
     {
-        if (prevList != null)
+        if (prevList != null && srm !=null )
         {
-            SRManager.instance.SetList(prevList);
+            srm.SetList(prevList);
         }
     }
 
@@ -134,7 +138,7 @@ public class SRList : MonoBehaviour
             // no out of bounds
             if (currentFocus < 0) currentFocus = 0;
             else if (currentFocus >= sreList.Count) currentFocus = sreList.Count - 1;
-            sreList[currentFocus].ReadLabel();
+            if(srm.currentList == this) sreList[currentFocus].ReadLabel();
         }
     }
 }

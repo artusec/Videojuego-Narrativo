@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  label: Mesita de noche
+  label: Mesita
   actBehaviour: {fileID: 2969906492286857372}
   state: 1
   parentList: {fileID: 0}

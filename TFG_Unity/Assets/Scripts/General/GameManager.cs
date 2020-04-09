@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System.IO;
 
 [System.Serializable]
-public enum objectState {DESTROYED, DEFAULT, USED};
+public enum objectState {DESTROYED, DEFAULT, USED, USED2};
 
 public class GameManager : MonoBehaviour
 {
@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
             }
             string[] sceneRead = lines[2].Split(',');
             sceneObjs = new List<element>();
-            if (sceneRead.Length > 1)
+            if (sceneRead.Length > 0)
             {
                 for (int i = 0; i < sceneRead.Length; i++)
                 {

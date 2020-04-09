@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  label: Jugete Simon Dice
+  label: Juego Simon
   actBehaviour: {fileID: 2409541840032677876}
   state: 1
   parentList: {fileID: 0}
