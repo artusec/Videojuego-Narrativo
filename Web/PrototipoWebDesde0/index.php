@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -17,9 +16,8 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
 <head>
-
     <title>Videojuego Narrativo - Inicio</title>
-
+	<meta charset="UTF-8"/>
 </head>
 
 <body>
@@ -39,9 +37,22 @@
             <li class="nav-item">
                 <a class="nav-link" href="#4">Descarga</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./Login.php">Acceder</a>
-            </li>
+<?php
+            if (isset($_SESSION['login']) && $_SESSION['login'] === true){
+?>
+                <li class="nav-item">
+                    <a class="nav-link" href="./MiPerfil.php">Mi perfil</a>
+                </li>
+<?php
+            } else {
+?>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Web/Login.php">Acceder</a>
+                </li>
+<?php
+            }
+?>  
+
         </ul>
     </nav>
 

@@ -1,33 +1,37 @@
 <?php
-require_once __DIR__.'/User.php';
-require_once __DIR__.'/Form.php';
+require_once '../User.php';
+require_once 'Form.php';
 
 class FormLogin extends Form {
     public function __construct() {
         parent::__construct('Login', array('action' => 'Login.php'));
     }
 
-    protected function generaCamposFormulario($datosIniciales) {
+    protected function generaCamposFormulario($datos) {
         $html = '<section>
                     <div>
-                        <h2>Entrar</h2>
                         <form method="post" action="#">
                             <div>
                                 <div>
-                                    <input type="text" name="email" id="email" value="" placeholder="Email" />
+                                    <input type="text" name="username" id="username" value="" placeholder="Username" />
                                 </div>
                                 <div>
                                     <input type="password" name="pass" id="pass" value="" placeholder="Contraseña" />
                                 </div>
                                  <div>
-                                    <ul class="actions special">
+                                    <ul>
                                         <li><input type="submit" value="Aceptar" /></li>
                                     </ul>
                                 </div>
                             </div>
                         </form>
                     </div>
-                </section>';
+                </section>
+                <div>
+                    <button>
+                        <a href="Register.php" /> ¿Aun no tienes cuenta? Registrate ahora haciendo clic aquí
+                    </button
+                </div>';
         return $html;
     }
 
@@ -35,10 +39,10 @@ class FormLogin extends Form {
 
         $erroresFormulario = array();
 
-        $email = isset($datos['email']) ? $datos['email'] : null;
+        $username = isset($datos['username']) ? $datos['username'] : null;
 
-        if ( empty($email) ) {
-            $erroresFormulario[] = "El email no puede estar vacío";
+        if ( empty($username) ) {
+            $erroresFormulario[] = "El username no puede estar vacío";
         }
 
         $password = isset($datos['pass']) ? $datos['pass'] : null;
@@ -49,7 +53,6 @@ class FormLogin extends Form {
         if (count($erroresFormulario) === 0) {
             if ($usuario = User::login($email, $password)) {
                     $_SESSION['login'] = true;
-                    $_SESSION['email'] = $email;
                     $_SESSION['id'] = $usuario->getId();
                     $_SESSION['nombre'] = $usuario->getNombre();
                     $_SESSION['admin'] = $usuario->getEsAdministrador();

@@ -20,7 +20,7 @@ class User
         $user = self::find_user_by_username($username);
 
         if ($user && $user->compruebaPassword($password)) {
-            return true;
+            return $user;
         }
         return false;
     }
@@ -81,6 +81,8 @@ class User
             self::hashPassword($pass)
             );
         if ( $conn->query($query) ) {
+            $fila = array($username, $pass);
+            $user = new User($fila);
             $user->id = $conn->insert_id;
         } else {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
@@ -203,6 +205,7 @@ class User
 
     public function getId()
     {
+        echo ("Hola");
         return $this->id;
     }
 

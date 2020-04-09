@@ -1,6 +1,6 @@
 <?php
-	require_once 'includes/Config.php';
-	require_once 'includes/FormularioRegistro.php';
+	require_once '../DB_data.php';
+	require_once 'FormularioRegistro.php';
 ?>
 
 <!DOCTYPE HTML>
