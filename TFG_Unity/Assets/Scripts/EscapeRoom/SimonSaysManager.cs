@@ -32,6 +32,7 @@ public class SimonSaysManager : MonoBehaviour
     [Header("propiedades del audio")]
     [Tooltip("el audio que se reproducirá")]
     public AudioSource src;
+    public AudioSource ttsSource;
     public AudioClip []simonClips;
     [Tooltip("El sonido cuando el player se equivoca")]
     public AudioSource looseAudio;
@@ -112,9 +113,10 @@ public class SimonSaysManager : MonoBehaviour
     {
         //hacer cosos de inicio parro aqui 
         //  a este metodo se le llama al final del metodo Start
+        ttsSource.Play();
 
         //empieza el juego en el tiempo que le digas
-        Invoke("StartGame", 1);
+        Invoke("StartGame", ttsSource.clip.length+0.5f);
     }
     //arranca con la logica del juego
     private void StartGame()
@@ -219,7 +221,7 @@ public class SimonSaysManager : MonoBehaviour
                 else
                 {
                     print("victoria");
-                    Invoke("OnWin",src.clip.length);
+                    Invoke("OnWin", 0f);
                 }
             }
         }
