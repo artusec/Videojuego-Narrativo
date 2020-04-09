@@ -51,15 +51,13 @@ class FormLogin extends Form {
         }
 
         if (count($erroresFormulario) === 0) {
-            if ($usuario = User::login($email, $password)) {
+            if ($usuario = User::login($username, $password)) {
                     $_SESSION['login'] = true;
                     $_SESSION['id'] = $usuario->getId();
-                    $_SESSION['nombre'] = $usuario->getNombre();
-                    $_SESSION['admin'] = $usuario->getEsAdministrador();
-                    $_SESSION['profesor'] = $usuario->getEsProfesor();
-                    return "index.php";
+                    $_SESSION['username'] = $usuario->getUsername();
+                    return "../index.php";
             } else
-                $erroresFormulario[] = "El usuario o el password no coinciden";
+                $erroresFormulario[] = "No existe usuario con ese nombre o la contraseña es incorrecta";
         }
         return $erroresFormulario;
     }

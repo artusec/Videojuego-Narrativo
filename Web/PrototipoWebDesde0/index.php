@@ -72,7 +72,8 @@
     <div class="container-fluid">
         <p>&nbsp</p>
         
-        <p class="text-center" id="1"><button type="button" class="btn btn-primary btn-lg" id="downloadButton" onclick= "descarga()"><a href="./descarga.html"> Descarga ya! <img src="download.png" alt=""></a></button></p>
+        <h2>Descarga ya la app</h2>
+        <button><a download="app" href="logo.png" alt="">Descarga ya!</a></button>
 
         <p>&nbsp</p>
         <p>&nbsp</p>
