@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: cc5a8dc282f90374f8843eed44c8f1a4, type: 3}
   label: Carpeta chamuscada
   actBehaviour: {fileID: 6205381778210748061}
   state: 1
@@ -112,10 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 0}
-  description: "Esta carpeta tiene documentos m\xE9dicos dentro, aunque algunas partes
-    son ilegibles. Paciente ingresado con quemaduras de segundo grado y p\xE9rdida
-    de consciencia por <ilegible>, estado de coma."
+  descriptionClip: {fileID: 8300000, guid: 89533fd84b6bea049b339f22149a19a4, type: 3}
   oneUse: 0
   usedDescriptionClip: {fileID: 0}
-  usedDescription: 

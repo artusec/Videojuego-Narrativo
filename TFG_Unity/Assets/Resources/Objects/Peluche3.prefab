@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 8240d3b1a584f46448c67e39d5a46d06, type: 3}
   label: Osito de peluche
   actBehaviour: {fileID: 6435098633291532478}
   state: 1
@@ -112,9 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 0}
-  description: "Este peluche ha pasado d\xEDas mejores, esta manchado de oll\xEDn.
-    En la etiqueta pone: De pap\xE1, feliz cumplea\xF1os."
+  descriptionClip: {fileID: 8300000, guid: 04d859af1350985489868cd185ba0542, type: 3}
   oneUse: 0
   usedDescriptionClip: {fileID: 0}
-  usedDescription: 

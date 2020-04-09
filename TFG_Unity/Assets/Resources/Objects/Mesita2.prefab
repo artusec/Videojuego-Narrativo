@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 8d564638a255ac14a93d9b1de6cec753, type: 3}
   label: Mesita
   actBehaviour: {fileID: 2969906492286857372}
   state: 1
@@ -113,5 +113,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: {fileID: 0}
   item: Carpeta2
-  pickUpLine: {fileID: 0}
-  emptyLine: {fileID: 0}
+  pickUpLine: {fileID: 8300000, guid: 15d83b73376176047a010254c7f00214, type: 3}
+  emptyLine: {fileID: 8300000, guid: a6defdc586d1211488e35d3737adbf1b, type: 3}

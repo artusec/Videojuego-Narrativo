@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: f14af423fc61ef940a8dbd7b73a5df33, type: 3}
   label: "Ba\xFAl de juguetes"
   actBehaviour: {fileID: 2951170042534459503}
   state: 1
@@ -114,6 +114,6 @@ MonoBehaviour:
   element: {fileID: 0}
   item1: Peluche3
   item2: JuegoSimon3
-  pickUpLine1: {fileID: 0}
-  pickUpLine2: {fileID: 0}
-  emptyLine: {fileID: 0}
+  pickUpLine1: {fileID: 8300000, guid: bb61a3dc70172c94badc071c2989c1cb, type: 3}
+  pickUpLine2: {fileID: 8300000, guid: 0e41df95412c26c43823cafb9613a94e, type: 3}
+  emptyLine: {fileID: 8300000, guid: 0309dbcd2bfc0ad4582617819fed6ac0, type: 3}
