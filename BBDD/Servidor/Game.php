@@ -5,25 +5,24 @@ require_once __DIR__ . '/Aplication.php';
 class Game
 {   
     private $id;
-    private $user1;
-    private $user2;
-    private $room;
+    private $user;
+    private $date_start;
+
 
     private function __construct($array)
     {
-        $this->user1= $array['user1'];
-        $this->user2 = $array['user2'];
-        $this->room = $array['room'];
+        $this->user= $array['user'];
+        $this->date_start = $array['date_start'];
     }
 
 
     // Funciona
-    public function inicia_nuevo_juego_individual($user1)
+    public function inicia_nuevo_juego_individual($user)
     {
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
 
-        $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($user1));
+        $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($user));
         $rs = $conn->query($query);
         $fila = $rs->fetch_assoc();
         $id_usuario = $fila["id"];
@@ -32,18 +31,17 @@ class Game
             echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
         }
 
-        # Recuperamos el id de la partida individual que tiene user1 activa si la tiene
-        $query = sprintf("SELECT id FROM Games G WHERE user1 = '%d' and user2=1", $id_usuario);
+        # Recuperamos el id de la partida individual que tiene user activa si la tiene
+        $query = sprintf("SELECT id FROM Games G WHERE user = '%d'", $id_usuario);
         $rs = $conn->query($query);
         $fila = $rs->fetch_assoc();
         $id_game = $fila["id"];
 
         # Si tenia una partida, borramos de la tabla de estado de la misma
         if($id_game){
-            if($id_game->num_rows != 0){
-                $id_game = $id_game->fetch_row();
+            echo $id_game;
                 $query = sprintf("DELETE FROM State_Game WHERE id_game = '%d'",
-                    $conn->real_escape_string($id_game[0])
+                    $conn->real_escape_string($id_game)
                 );
                 $rs = $conn->query($query);
                 if ( ! $rs) {
@@ -52,21 +50,19 @@ class Game
                 }
 
                 # Y ademas borramos la partida propiamente de la tabla Games
-                $query = sprintf("DELETE FROM Games WHERE user1 = '%d' and user2=1",
-                $conn->real_escape_string($user1)
+                $query = sprintf("DELETE FROM Games WHERE user = '%d'",
+                $id_usuario
                 );
                 $rs = $conn->query($query);
                 if ( ! $rs ) {
                     echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
                     return false;
                 } 
-            }
         }
 
         # Insertamos una nueva partida individual
-        $query = sprintf("INSERT INTO Games (user1, user2) VALUES ('%d', '%d')",
-           	$id_usuario,
-            1
+        $query = sprintf("INSERT INTO Games (user) VALUES ('%d')",
+            $id_usuario
             );
 
         if ( $conn->query($query) ) {
@@ -99,7 +95,7 @@ class Game
         if ($rs) {
             $result = array();
             while ($fila = $rs->fetch_assoc()) {
-            	$aux = $fila["type"].":".$fila["state_object"];
+                $aux = $fila["type"].":".$fila["state_object"];
                 $result[$fila["object"]] = $aux;
             }
 
@@ -126,54 +122,54 @@ class Game
 
         if ( ! $id_usuario) {
             echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-			return false;
+            return false;
         }
 
-        $query = sprintf("SELECT id FROM Games G WHERE G.user1 = '%d'", $id_usuario);
+        $query = sprintf("SELECT id FROM Games G WHERE G.user = '%d'", $id_usuario);
         $rs = $conn->query($query);
         $fila = $rs->fetch_assoc();
         $id_game = $fila["id"];
 
         if ( ! $id_game) {
             echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-			return false;
+            return false;
         }
 
         $query = sprintf("DELETE FROM State_Game WHERE id_user = '%d'", $id_usuario);
-		$rs = $conn->query($query);
-		if ( ! $rs) {
+        $rs = $conn->query($query);
+        if ( ! $rs) {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             return false;
-		}
+        }
 
-		$fila = array();
+        $fila = array();
 
         foreach($datos as $clave=>$valor) {
-			if($clave == "username"){
-				$username = $valor;
-			}
-			else{
-				$fila = str_split($valor);
-				$objeto = $clave;
-				$tipo = intval($fila[0]);
-				$estado = intval($fila[2]);
+            if($clave == "username"){
+                $username = $valor;
+            }
+            else{
+                $fila = str_split($valor);
+                $objeto = $clave;
+                $tipo = intval($fila[0]);
+                $estado = intval($fila[2]);
 
-				$query = sprintf("INSERT INTO State_Game (id_game, id_user, object, type, state_object) VALUES ('%d', '%d', '%s', '%d', '%d')",
-				$id_game,
-				$id_usuario,
-		        $conn->real_escape_string($objeto),
-		        $tipo,
-		        $estado
-		        );
+                $query = sprintf("INSERT INTO State_Game (id_game, id_user, object, type, state_object) VALUES ('%d', '%d', '%s', '%d', '%d')",
+                $id_game,
+                $id_usuario,
+                $conn->real_escape_string($objeto),
+                $tipo,
+                $estado
+                );
 
-		        if (! $conn->query($query) ) {
-					echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-		            return false;
-		        }
-			}
-		}
+                if (! $conn->query($query) ) {
+                    echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+                    return false;
+                }
+            }
+        }
 
-		return true;
+        return true;
     }
 
 
@@ -185,19 +181,13 @@ class Game
     }
 
 
-    public function getUser1()
+    public function getUser()
     {
-        return $this->user1;
+        return $this->user;
     }
 
-
-    public function getUser2()
+    public function getDate()
     {
-        return $this->user2;
-    }
-
-    public function getRoom()
-    {
-        return $this->room;
+        return $this->date_start;
     }
 }
