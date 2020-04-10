@@ -13,27 +13,20 @@ class FormRegistro extends Form {
         $html = '<div class="row gtr-50 gtr-uniform">
                     <div class="col-12">
                         <input type="text" name="username" id="username" value="" placeholder="Username" />
-                    </div>
+                    </div> <br>
 
                     <div class="col-12">
                         <input type="email" name="email" id="email" value="" placeholder="Email" />
-                    </div>
+                    </div> <br>
                     <div class="col-12">
                         <input type="password" name="pass" id="pass" value="" placeholder="Contraseña" />
-                    </div>
+                    </div> <br>
                     <div class="col-12">
                         <input type="password" name="pass2" id="pass2" value="" placeholder="Repite la contraseña" />
-                    </div>
+                    </div> <br>
                     <div>
-                        <ul>
-                            <li><input type="submit" value="Aceptar" /></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <button>
-                        <a href="Login.php" /> ¿Ya tienes cuenta? Accede haciendo clic aquí
-                    </button
+                        <input type="submit" value="Aceptar" />
+                    </div> <br> 
                 </div>';
         return $html;
     }

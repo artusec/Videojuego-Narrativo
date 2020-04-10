@@ -8,30 +8,18 @@ class FormLogin extends Form {
     }
 
     protected function generaCamposFormulario($datos) {
-        $html = '<section>
+        $html = '<div>
                     <div>
-                        <form method="post" action="#">
-                            <div>
-                                <div>
-                                    <input type="text" name="username" id="username" value="" placeholder="Username" />
-                                </div>
-                                <div>
-                                    <input type="password" name="pass" id="pass" value="" placeholder="Contraseña" />
-                                </div>
-                                 <div>
-                                    <ul>
-                                        <li><input type="submit" value="Aceptar" /></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
+                        <input type="text" name="username" id="username" value="" placeholder="Username" />
+                    </div> <br>
+                    <div>
+                        <input type="password" name="pass" id="pass" value="" placeholder="Contraseña" />
+                    </div> <br>
+                     <div>
+                        <input type="submit" value="Aceptar" />
                     </div>
-                </section>
-                <div>
-                    <button>
-                        <a href="Register.php" /> ¿Aun no tienes cuenta? Registrate ahora haciendo clic aquí
-                    </button
-                </div>';
+                </div>
+                ';
         return $html;
     }
 
@@ -50,7 +38,7 @@ class FormLogin extends Form {
             $erroresFormulario[] = "El password no puede estar vacío.";
         }
 
-        if (count($erroresFormulario) === 0) {
+        if (count($erroresFormulario) == 0) {
             if ($usuario = User::login($username, $password)) {
                     $_SESSION['login'] = true;
                     $_SESSION['id'] = $usuario->getId();

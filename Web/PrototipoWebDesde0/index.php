@@ -1,3 +1,7 @@
+<?php
+    require_once __DIR__ . '/DB_data.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -41,7 +45,10 @@
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="./MiPerfil.php">Mi perfil</a>
+                    <a class="nav-link" href="./web/MiPerfil.php">Mi perfil</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./Logout.php">Cerrar Sesion</a>
                 </li>
 <?php
             } else {
@@ -78,7 +85,7 @@
         <p>&nbsp</p>
         <p>&nbsp</p>
 
-            <h1 class="Title-1">Introducción</h1>
+            <h1 class="Title-1" id='#1'>Introducción</h1>
             <p class="text-center">Una aventura narrativa donde trendrás que agudizar el oído y el tacto.</p>
             <div class="row">
                 <div class="col-sm-3"></div>
@@ -99,7 +106,7 @@
         <p>&nbsp</p>
         <p>&nbsp</p>
         
-        <h1 class="Title-1">¡Conoce los minijuegos!</h1>
+        <h1 class="Title-1" id="#3">¡Conoce los minijuegos!</h1>
         
         <p>&nbsp</p>
         <p>&nbsp</p>
