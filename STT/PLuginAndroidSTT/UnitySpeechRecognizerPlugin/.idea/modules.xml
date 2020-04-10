@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/UnityAndroidSpeechRecognizer-master-UnitySpeechRecognizerPlugin.iml" filepath="$PROJECT_DIR$/UnityAndroidSpeechRecognizer-master-UnitySpeechRecognizerPlugin.iml" group="UnitySpeechRecognizerPlugin" />
+      <module fileurl="file://$PROJECT_DIR$/UnitySpeechRecognizerPlugin.iml" filepath="$PROJECT_DIR$/UnitySpeechRecognizerPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/UnitySpeechRecognizerPlugin-app.iml" filepath="$PROJECT_DIR$/app/UnitySpeechRecognizerPlugin-app.iml" group="UnitySpeechRecognizerPlugin/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/sttlib/app-sttlib.iml" filepath="$PROJECT_DIR$/app/sttlib/app-sttlib.iml" group="UnitySpeechRecognizerPlugin/app/sttlib" />
+    </modules>
+  </component>
+</project>
