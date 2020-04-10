@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8422754548418777031}
   - component: {fileID: 2409541840032677876}
   m_Layer: 0
-  m_Name: JugueteSimon3
+  m_Name: JuegoSimon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
-  label: Jugete Simon Dice
+  audioLabel: {fileID: 8300000, guid: f9114f0049eb7dc44b15e0b8abfd0131, type: 3}
+  label: Juego Simon
   actBehaviour: {fileID: 2409541840032677876}
   state: 1
   parentList: {fileID: 0}
@@ -112,6 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  sceneToLoad: SimoSays
-  changeClip: {fileID: 0}
+  sceneToLoad: SimonSays
+  changeClip: {fileID: 8300000, guid: 9e7c614de0f606449b4fb4835f6f282a, type: 3}
   usedClip: {fileID: 0}

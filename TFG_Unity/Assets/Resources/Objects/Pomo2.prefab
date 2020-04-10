@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2324204192453348925}
   - component: {fileID: 2324204192453348927}
   - component: {fileID: 2324204192453348924}
+  - component: {fileID: 5181193592038256966}
   m_Layer: 0
   m_Name: Pomo2
   m_TagString: Untagged
@@ -100,6 +101,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 8300000, guid: 8f660a88dd618304d81a96db46adc5fb, type: 3}
   label: Pomo
-  actBehaviour: {fileID: 0}
+  actBehaviour: {fileID: 5181193592038256966}
   state: 1
   parentList: {fileID: 0}
+--- !u!114 &5181193592038256966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324204192453348922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80864248a3d21eb46b880e94aef3a9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: {fileID: 0}
+  descriptionClip: {fileID: 8300000, guid: ed65983fbdc38084084c5ce2697fa16d, type: 3}
+  oneUse: 0
+  usedDescriptionClip: {fileID: 0}

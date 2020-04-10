@@ -526,6 +526,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1663988167127843381, guid: 607954b0238c0df4da70deae728e0716,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.4000244
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663988167127843381, guid: 607954b0238c0df4da70deae728e0716,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2999878
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 607954b0238c0df4da70deae728e0716, type: 3}
 --- !u!1 &1362742506
@@ -728,6 +738,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: invObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: levelPassed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: newRoom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: room
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -782,26 +812,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
-        type: 3}
-      propertyPath: invObjects.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
-        type: 3}
-      propertyPath: levelPassed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
-        type: 3}
-      propertyPath: newRoom
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
-        type: 3}
-      propertyPath: room
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3d01be81baed249a5c052c3fd53b71, type: 3}
