@@ -39,7 +39,6 @@ class Game
 
         # Si tenia una partida, borramos de la tabla de estado de la misma
         if($id_game){
-            echo $id_game;
                 $query = sprintf("DELETE FROM State_Game WHERE id_game = '%d'",
                     $conn->real_escape_string($id_game)
                 );
