@@ -35,6 +35,10 @@ html{
     text-decoration: underline wavy;
 }   
 
+.nav-item{
+    color:#F2F1EF;
+}
+
 a{
     color:#F2F1EF;
 }
