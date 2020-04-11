@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/Aplication.php';
+require_once __DIR__ . '/DB_data.php';
 
 
 class User
@@ -10,8 +11,8 @@ class User
 
     private function __construct($array)
     {
-        $this->username= $array['username'];
-        $this->pass = $array['password'];
+        $this->username= $array[0];
+        $this->pass = $array[1];
     }
 
 

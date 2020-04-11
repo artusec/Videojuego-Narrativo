@@ -13,7 +13,7 @@
 	<table>
 		<thead>
 			<tr>
-				<th>Juegos</th>
+				<th>Juego</th>
 				<th>Fecha</th>
 				<th>Tiempo</th>
 			</tr>
