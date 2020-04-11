@@ -131,7 +131,7 @@ class User
             exit();
         }
 
-        $query = sprintf("DELETE FROM Games WHERE (user1 = '%d' or user2 = '%d')",
+        $query = sprintf("DELETE FROM Games WHERE (user = '%d')",
         $conn->real_escape_string($id_user),
         $conn->real_escape_string($id_user)
             );
@@ -164,20 +164,20 @@ class User
         $fila = $rs->fetch_assoc();
         $id_user = $fila["id"];
 
-		$query = sprintf("SELECT id FROM Games G WHERE user1 = '%d' and user2=1", $id_user);
+		$query = sprintf("SELECT id, date_start FROM Games G WHERE user = '%d'", $id_user);
         $rs = $conn->query($query);
         $fila = $rs->fetch_assoc();
         $id_game = $fila["id"];
+        $date_start = $fila["date_start"];
 
-        $query = sprintf("INSERT INTO Statistics (id_user, id_game, timed) VALUES ('%s', '%s', '%s')",
-            $conn->real_escape_string($id_game),
-            $conn->real_escape_string($id_user),
-            $conn->real_escape_string($timed)
+        $query = sprintf("INSERT INTO Statistics (id_user, id_game, timed, date_start) VALUES ('%d', '%d', '%f', '%s')",
+            $id_user,
+            $id_game,
+            $timed,
+            $date_start
             );
 
-        if ( $conn->query($query) ) {
-            $user->id = $conn->insert_id;
-        } else {
+        if (! $conn->query($query) ) {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             return false;
             exit();
@@ -185,6 +185,31 @@ class User
         return true;
     }
 
+    public function cargar_estadisticas($username){
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+
+        $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
+        $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_user = $fila["id"];
+
+        $query = sprintf("SELECT * FROM Statistics S join Games G on (S.id_game = G.id) WHERE (S.id_user = '%d')", $id_user);
+
+        $rs = $conn->query($query);
+        $result = false;
+        if ($rs) {
+            $result = array();
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = $fila;
+            }
+            $rs->free();
+        } else {
+            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+        return $result;
+    }
 
 
     /* Utils ---------------------------------------------------------------------------------*/

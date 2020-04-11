@@ -54,9 +54,10 @@ CREATE TABLE Statistics(
 	id int AUTO_INCREMENT,
 	id_user int,
 	id_game int,
-	timed double,
+	timed float,
+	date_start TIMESTAMP,
 
-	PRIMARY KEY (id),
+	PRIMARY KEY (id, id_user, id_game),
 	FOREIGN KEY (id_user) REFERENCES Users(id),
 	FOREIGN KEY (id_game) REFERENCES Games(id)
 );

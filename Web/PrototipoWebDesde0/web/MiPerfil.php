@@ -1,5 +1,6 @@
 <?php 
 	require_once '../User.php';
+	require_once '../DB_data.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,22 +14,33 @@
 		<thead>
 			<tr>
 				<th>Juegos</th>
+				<th>Fecha</th>
 				<th>Tiempo</th>
 			</tr>
 		</thead>
 		<tbody>
-			<?php 
+			<?php
+				$html = "";
 				$juegos = User::cargar_estadisticas($_SESSION['username']);
 				$numjuegos = sizeof($juegos);
 				if($numjuegos > 0) {
 					for ($i=0; $i < $numjuegos; $i++) {
                         $html .= '<tr>';
-                        $html .= '<td>' . $juegos[$i]['id'] . '</td>';
-                        $html .= '<td>' . $clases[$i]['time'] . '</td>';
+                        $html .= '<td>' . $juegos[$i]['id_game'] . '</td>';
+                        $html .= '<td>' . $juegos[$i]['date_start'] . '</td>';
+						$html .= '<td>' . $juegos[$i]['timed'] . '</td>';
                         $html .= '</tr>';                          
 					}
-					echo $html;
 				}
+				else{
+					$html .= '<tr>';
+                    $html .= '<td>Nada que mostrar</td>';
+                    $html .= '<td>Nada que mostrar</td>';
+                    $html .= '<td>Nada que mostrar</td>';
+                    $html .= '</tr>'; 
+
+				}
+				echo $html;
 			?>
 		</tbody>
 	</table>
