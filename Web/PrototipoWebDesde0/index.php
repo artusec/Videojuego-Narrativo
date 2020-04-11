@@ -58,8 +58,16 @@
                 </li>
 <?php
             }
-?>  
+?>             
 
+                <li class="nav-item">
+                    <a class="nav-link"  onclick="modoAltoContraste()">Modo Alto Contraste</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
+                </li>
+                
         </ul>
     </nav>
 
@@ -78,9 +86,14 @@
 
     <div class="container-fluid">
         <p>&nbsp</p>
-        
-        <h2>Descarga ya la app</h2>
-        <button><a download="app" href="logo.png" alt="">Descarga ya!</a></button>
+
+
+
+        <div class="col text-center">
+            <button class="btn btn-danger btn-lg"><a download="app" href="logo.png" alt="">Descarga ya!</a></button>
+        </div>
+
+
 
         <p>&nbsp</p>
         <p>&nbsp</p>
@@ -229,5 +242,36 @@
 
 </body>
 <script>
+
+        function modoAltoContraste(){
+
+            console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+            //Poner el menu a contraste alto
+            $(".nav").css({"background-color": "black"});
+            $("a").css({"color": "yellow"});
+        
+
+            //Poner ela pagina a alto contraste 
+            $(".container-fluid").css({"background-color": "black","color":"yellow"});
+
+            //Poner el footer a alto contraste 
+            $(".page-footer").css({"background-color": "black","color":"yellow"});
+            $(".list-group-item").css({"background-color": "black","color":"yellow"});
+            
+
+        }
+
+        function modoNormal(){
+            //Volver a modo normal 
+            $(".nav").css({"background-color": "#591D77"});
+            $("a").css({"color": "#F2F1EF"});
+
+            $(".container-fluid").css({"background-color": "#9932CC","color":"#F2F1EF"});
+
+            $(".page-footer").css({"background-color": "#591D77","color":"#F2F1EF"});
+            $(".list-group-item").css({"background-color": "#9932CC","color":"#F2F1EF"});
+        }
+
 </script>
 </html>
