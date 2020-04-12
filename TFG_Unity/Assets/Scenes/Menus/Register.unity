@@ -890,10 +890,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5eda360edb1c4449699a85070fa0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: {fileID: 0}
-  email: {fileID: 0}
-  pass: {fileID: 0}
-  pass2: {fileID: 0}
+  username: {fileID: 1675049383}
+  email: {fileID: 1072121452}
+  pass: {fileID: 1902542359}
+  pass2: {fileID: 490990216}
 --- !u!114 &1313989425
 MonoBehaviour:
   m_ObjectHideFlags: 0
