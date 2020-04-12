@@ -131,7 +131,7 @@ class User
             exit();
         }
 
-        $query = sprintf("DELETE FROM Games WHERE (user1 = '%d' or user2 = '%d')",
+        $query = sprintf("DELETE FROM Games WHERE (user = '%d')",
         $conn->real_escape_string($id_user),
         $conn->real_escape_string($id_user)
             );
@@ -164,7 +164,7 @@ class User
         $fila = $rs->fetch_assoc();
         $id_user = $fila["id"];
 
-		$query = sprintf("SELECT id FROM Games G WHERE user1 = '%d' and user2=1", $id_user);
+		$query = sprintf("SELECT id FROM Games G WHERE user = '%d'", $id_user);
         $rs = $conn->query($query);
         $fila = $rs->fetch_assoc();
         $id_game = $fila["id"];
@@ -185,6 +185,30 @@ class User
         return true;
     }
 
+    public function cargar_estadisticas($username){
+
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+
+        $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
+        $rs = $conn->query($query);
+        $fila = $rs->fetch_assoc();
+        $id_user = $fila["id"];
+
+        $query = sprintf("SELECT * FROM Statistics S WHERE id_user = '%d'", $id_user);
+        $rs = $conn->query($query);
+        if ($rs) {
+            $result = array();
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = $fila;
+            }
+            $rs->free();
+        } else {
+            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+        return $result;
+    }
 
 
     /* Utils ---------------------------------------------------------------------------------*/

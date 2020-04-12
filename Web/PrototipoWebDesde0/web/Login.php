@@ -11,21 +11,14 @@
 	</head>
 	<body>
 		<div>
-			<section>
-				<div>
-					<div>
-						<section>
-							<h2>Login</h2>
-							<form method="post" action="#">
-			<?php	
-				$form = new FormLogin();
-				$form->gestiona();
-			?>			
-							</form>
-						</section>
-					</div>
-				</div>
-			</section>
+			<div>
+				<h2>Login</h2>
+				<p>Identifícate o <a href='register.php' id = 'reg'>regístrate</a></p>
+				<?php	
+					$form = new FormLogin();
+					$form->gestiona();
+				?>	
+			</div>
 		</div>
 	</body>
 </html>

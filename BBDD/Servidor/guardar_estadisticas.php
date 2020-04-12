@@ -7,12 +7,12 @@ $username = $_POST["username"];
 $time = $_POST["time"];
 header("Content-type: text/html");
 
-$result = Game::guardar_estadisticas($username, $time);
+$result = User::guardar_estadisticas("arturo", 3.2);
 if ($result == false) {
-	print(0);
+	print(1);
 	exit();
 }
-print(1);
+print(0);
 exit();
 
 # 0 -> Success

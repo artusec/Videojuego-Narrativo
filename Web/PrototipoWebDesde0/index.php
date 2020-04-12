@@ -1,3 +1,7 @@
+<?php
+    require_once __DIR__ . '/DB_data.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -41,7 +45,10 @@
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="./MiPerfil.php">Mi perfil</a>
+                    <a class="nav-link" href="./web/MiPerfil.php">Mi perfil</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./Logout.php">Cerrar Sesion</a>
                 </li>
 <?php
             } else {
@@ -51,8 +58,16 @@
                 </li>
 <?php
             }
-?>  
+?>             
 
+                <li class="nav-item">
+                    <a class="nav-link"  onclick="modoAltoContraste()">Modo Alto Contraste</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
+                </li>
+                
         </ul>
     </nav>
 
@@ -71,14 +86,19 @@
 
     <div class="container-fluid">
         <p>&nbsp</p>
-        
-        <h2>Descarga ya la app</h2>
-        <button><a download="app" href="logo.png" alt="">Descarga ya!</a></button>
+
+
+
+        <div class="col text-center">
+            <button class="btn btn-danger btn-lg"><a download="app" href="logo.png" alt="">Descarga ya!</a></button>
+        </div>
+
+
 
         <p>&nbsp</p>
         <p>&nbsp</p>
 
-            <h1 class="Title-1">Introducción</h1>
+            <h1 class="Title-1" id='#1'>Introducción</h1>
             <p class="text-center">Una aventura narrativa donde trendrás que agudizar el oído y el tacto.</p>
             <div class="row">
                 <div class="col-sm-3"></div>
@@ -99,7 +119,7 @@
         <p>&nbsp</p>
         <p>&nbsp</p>
         
-        <h1 class="Title-1">¡Conoce los minijuegos!</h1>
+        <h1 class="Title-1" id="#3">¡Conoce los minijuegos!</h1>
         
         <p>&nbsp</p>
         <p>&nbsp</p>
@@ -222,5 +242,36 @@
 
 </body>
 <script>
+
+        function modoAltoContraste(){
+
+            console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+            //Poner el menu a contraste alto
+            $(".nav").css({"background-color": "black"});
+            $("a").css({"color": "yellow"});
+        
+
+            //Poner ela pagina a alto contraste 
+            $(".container-fluid").css({"background-color": "black","color":"yellow"});
+
+            //Poner el footer a alto contraste 
+            $(".page-footer").css({"background-color": "black","color":"yellow"});
+            $(".list-group-item").css({"background-color": "black","color":"yellow"});
+            
+
+        }
+
+        function modoNormal(){
+            //Volver a modo normal 
+            $(".nav").css({"background-color": "#591D77"});
+            $("a").css({"color": "#F2F1EF"});
+
+            $(".container-fluid").css({"background-color": "#9932CC","color":"#F2F1EF"});
+
+            $(".page-footer").css({"background-color": "#591D77","color":"#F2F1EF"});
+            $(".list-group-item").css({"background-color": "#9932CC","color":"#F2F1EF"});
+        }
+
 </script>
 </html>

@@ -11,21 +11,15 @@
 	</head>
 	<body>
 		<div>
-			<section>
-				<div>
-					<div>
-						<section>
-							<h2>Registrar</h2>
-							<form method="post" action="#">
-			<?php	
-				$form = new FormRegistro();
-				$form->gestiona();
-			?>			
-							</form>
-						</section>
-					</div>
-				</div>
-			</section>
+			<div>
+				<h2>Registrar</h2>
+				<?php	
+					$form = new FormRegistro();
+					$form->gestiona();
+				?>		
+				<label><a href="Login.php"/> ¿Ya tienes cuenta? Accede haciendo clic aquí</label>	
+							
+			</div>
 		</div>
 	</body>
 </html>

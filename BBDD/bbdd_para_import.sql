@@ -12,12 +12,11 @@ VALUES ("NULL", "NULL@NULL.NULL", "NULL");
 
 CREATE TABLE Games(
 	id int AUTO_INCREMENT,
-	user1 int NOT NULL,
-	user2 int DEFAULT 1,
+	user int NOT NULL,
+	date_start TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
 	PRIMARY KEY (id),
-	FOREIGN KEY (user1) REFERENCES Users(id),
-	FOREIGN KEY (user2) REFERENCES Users(id)
+	FOREIGN KEY (user) REFERENCES Users(id)
 );
 
 CREATE TABLE Objects(
@@ -55,9 +54,10 @@ CREATE TABLE Statistics(
 	id int AUTO_INCREMENT,
 	id_user int,
 	id_game int,
-	timed double,
+	timed float,
+	date_start TIMESTAMP,
 
-	PRIMARY KEY (id),
+	PRIMARY KEY (id, id_user, id_game),
 	FOREIGN KEY (id_user) REFERENCES Users(id),
 	FOREIGN KEY (id_game) REFERENCES Games(id)
 );
