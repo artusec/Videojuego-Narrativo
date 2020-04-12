@@ -11,11 +11,11 @@ header("Content-type: text/html");
 
 $user = User::login($username, $pass);
 if ($user == false) {
-	print(0);
+	print(1);
 	exit();
 }
 
-print(1);
+print(0);
 exit();
 
 # 0 -> Success
