@@ -23,6 +23,7 @@ public class LabyrithnManager : MonoBehaviour
     [Tooltip("El AudioSource desde el cual se reproducirán los sonidos de los eventos")]
     public AudioSource src;
     public AudioClip ttsReset;
+    public Animator music;
     //manejo del audio inicial y que el juego no empiece hasta que termine
     [Tooltip("El audio que sonará al empezar la escena, se sugiere que sea el audio tutorial")]
     public AudioClip [] initSound;
@@ -203,6 +204,7 @@ public class LabyrithnManager : MonoBehaviour
             src.clip = initSound[2];
             src.Play();
             src.transform.position = Vector3.zero;
+            music.Play("MusicDown");
             ended = true;
         }
     }

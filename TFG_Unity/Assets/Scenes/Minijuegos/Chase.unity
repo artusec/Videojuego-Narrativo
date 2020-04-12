@@ -277,7 +277,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6e53255ba5bae664f8d38f88b6e85399, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1614,7 +1614,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1ae5a5c6914b5c7498462802e684e346, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.427
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1794,6 +1794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   src: {fileID: 25182849}
   ttsReset: {fileID: 8300000, guid: 053c0a12e731bc3419c44ff450cdcf2e, type: 3}
+  music: {fileID: 145037291}
   initSound:
   - {fileID: 8300000, guid: e23d18f869c41ec4d98ac66663de5908, type: 3}
   - {fileID: 8300000, guid: fc430855a28fd9b40a75d67b1007c9c0, type: 3}

@@ -196,7 +196,7 @@ public class SimonSaysManager : MonoBehaviour
     {
         //si coincide con el input deseado
         if (lastRegistered == move.left && path[playerIndex] == SimonPoints.Left ||
-            lastRegistered == move.up && path[playerIndex] == SimonPoints.Centre ||
+            (lastRegistered == move.up && lastRegistered == move.down) && path[playerIndex] == SimonPoints.Centre ||
             lastRegistered == move.right && path[playerIndex] == SimonPoints.Right)
         {
             print("Adecuado");

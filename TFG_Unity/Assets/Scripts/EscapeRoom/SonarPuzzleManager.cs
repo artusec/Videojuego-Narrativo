@@ -278,7 +278,7 @@ public class SonarPuzzleManager : MonoBehaviour
                 print("cerca");
                 lastZone = SonarZones.cerca;
                 Vibration.Cancel();
-                Vibration.SonarVibration(vibrationStrengh, vibrationDuration, vibrationRestCerca, true);
+                Vibration.SonarVibration(vibrationStrengh, 2000, vibrationRestCerca, true);
             }
         }
         else if(dist <= (radios[cIndex].medio + radios[cIndex].cerca) )
@@ -325,8 +325,10 @@ public class SonarPuzzleManager : MonoBehaviour
 
     private void ChangeRadius(int index, float nCerca, float nMedio, float nLejos)
     {
-        radios[index].setCerca(nCerca);
-        radios[index].setMedio(nMedio);
-        radios[index].setLejos(nLejos);
+        SonarRadios auxRad = new SonarRadios();
+        auxRad.setCerca(nCerca);
+        auxRad.setMedio(nMedio);
+        auxRad.setLejos(nLejos);
+        radios[index] = auxRad;
     }
 }
