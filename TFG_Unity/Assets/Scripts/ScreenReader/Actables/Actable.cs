@@ -14,6 +14,6 @@ public class Actable : MonoBehaviour
 
     public void RemoveFromList()
     {
-        SRManager.instance.currentList.Remove(gameObject.GetComponent<SRElement>());
+        element.parentList.Remove(element);
     }
 }
