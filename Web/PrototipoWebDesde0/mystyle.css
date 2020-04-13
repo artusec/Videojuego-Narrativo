@@ -16,7 +16,7 @@ html{
 .container-fluid{
     height: 15%;
     background-color: #9932CC;
-    color:#F2F1EF;
+    color:#fefefe;
 }
 
 .text-center{
@@ -32,29 +32,29 @@ html{
 }
 .nav-link:hover,.nav-link:focus {
     background-color: #9932CC;
-    text-decoration: underline wavy;
+    text-decoration: underline;
 }   
 .nav-item{
-    color:#F2F1EF;
+    color:#fefefe;
 }
 a{
-    color:#F2F1EF;
+    color:#fefefe;
 }
 
 a:link {
-    color:#F2F1EF;
+    color:#fefefe;
 }
 /* A link that has been visited */
 a:visited {
-    color:#F2F1EF;
+    color:#fefefe;
 }
 /* A link that is hovered on */
 a:hover {
-    color:#F2F1EF;
+    color:#fefefe;
 }
 /* A link that is selected */
 a:active {
-    color:#F2F1EF;
+    color:#fefefe;
 }
 
 .rounded{
@@ -72,7 +72,7 @@ a:active {
 
 .page-footer{
     background-color:#591D77;
-    color:#F2F1EF;
+    color:#fefefe;
     width: 100%;
     max-width: 100%;
 }
@@ -88,7 +88,7 @@ a:active {
 
 .list-group-item{
     background-color: #9932CC;
-    color:#F2F1EF;
+    color:#fefefe;
 }
 
 .minijuegosOut{
@@ -97,7 +97,7 @@ a:active {
 }
 
 .minijuegosIn{
-    background-color:#F2F1EF;
+    background-color:#fefefe;
     border-radius: 5%;
     border: 1% solid #591D77;
     padding: 1%;

@@ -221,9 +221,9 @@
             <div class="col-sm-3">
                 <div class="footers">
                     <h4><strong>Dirección</strong></h4>
-                    <p>&nbsp</p>
-                    <p>Ciudad Universitaria</p>
+                    <p>&nbsp</p>                            
                     <p>Facultad de informática</p>
+                    <p>Ciudad Universitaria</p>
                     <p>Madrid</p>
                     <p>España</p>
                 </div>
@@ -265,10 +265,10 @@
             $(".nav").css({"background-color": "#591D77"});
             $("a").css({"color": "#F2F1EF"});
 
-            $(".container-fluid").css({"background-color": "#9932CC","color":"#F2F1EF"});
+            $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
 
-            $(".page-footer").css({"background-color": "#591D77","color":"#F2F1EF"});
-            $(".list-group-item").css({"background-color": "#9932CC","color":"#F2F1EF"});
+            $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
+            $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
         }
 
 </script>
