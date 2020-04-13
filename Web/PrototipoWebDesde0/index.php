@@ -89,7 +89,7 @@
 
 
 
-        <div class="col text-center">
+        <div class="col text-center" id='4'>
             <button class="btn btn-danger btn-lg"><a download="app" href="logo.png" alt="">Descarga ya!</a></button>
         </div>
 
@@ -98,7 +98,7 @@
         <p>&nbsp</p>
         <p>&nbsp</p>
 
-            <h1 class="Title-1" id='#1'>Introducción</h1>
+            <h1 class="Title-1" id='1'>Introducción</h1>
             <p class="text-center">Una aventura narrativa donde trendrás que agudizar el oído y el tacto.</p>
             <div class="row">
                 <div class="col-sm-3"></div>
@@ -119,7 +119,7 @@
         <p>&nbsp</p>
         <p>&nbsp</p>
         
-        <h1 class="Title-1" id="#3">¡Conoce los minijuegos!</h1>
+        <h1 class="Title-1" id="3">¡Conoce los minijuegos!</h1>
         
         <p>&nbsp</p>
         <p>&nbsp</p>
