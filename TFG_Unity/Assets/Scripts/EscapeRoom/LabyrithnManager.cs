@@ -22,6 +22,8 @@ public class LabyrithnManager : MonoBehaviour
 
     [Tooltip("El AudioSource desde el cual se reproducirán los sonidos de los eventos")]
     public AudioSource src;
+    public AudioClip ttsReset;
+    public Animator music;
     //manejo del audio inicial y que el juego no empiece hasta que termine
     [Tooltip("El audio que sonará al empezar la escena, se sugiere que sea el audio tutorial")]
     public AudioClip [] initSound;
@@ -86,6 +88,10 @@ public class LabyrithnManager : MonoBehaviour
         }
     }
 
+    public bool getPlayerCorrect()
+    {
+        return playerCorrect;
+    }
     private void startLogic()
     {
         initGame = true;
@@ -104,7 +110,7 @@ public class LabyrithnManager : MonoBehaviour
                 
             }
         }
-        else
+        else if(!ended)
         {
             EventContainer.transform.Translate(Vector3.down * Time.deltaTime * vel);
             src.transform.Translate(Vector3.down * Time.deltaTime * vel);
@@ -133,12 +139,15 @@ public class LabyrithnManager : MonoBehaviour
                 (!events[lastCollider].leftSound && m == move.right))
             {
                 playerCorrect = true;
+                ScreenInput.instance.deactivate(10);
                 //src.Stop();
                 return true;
             }
             //si no, quitamos una vida
             else
             {
+                ScreenInput.instance.deactivate(10);
+                playerCorrect = true;
                 AddLife(-1);
                 return false;
             }
@@ -175,6 +184,7 @@ public class LabyrithnManager : MonoBehaviour
         //paramos audio
         //src.Stop();
         //player.reinit();
+        ScreenInput.instance.activate();
 
         //si el player no introdujo el input correcto
         if (!playerCorrect)
@@ -194,6 +204,7 @@ public class LabyrithnManager : MonoBehaviour
             src.clip = initSound[2];
             src.Play();
             src.transform.position = Vector3.zero;
+            music.Play("MusicDown");
             ended = true;
         }
     }
@@ -204,11 +215,20 @@ public class LabyrithnManager : MonoBehaviour
         print("vidas: " + lifes.ToString());
         if (lifes <= 0)
         {
-            src.Stop();
-            resetContainer.SetActive(true);
-            looseText.gameObject.SetActive(true);
-            winText.gameObject.SetActive(false);
+            src.transform.position = Vector3.zero;
+            src.clip = ttsReset;
+            src.Play();
+            ended = true;
+            Invoke("resetScene", src.clip.length);
+            //resetContainer.SetActive(true);
+            //looseText.gameObject.SetActive(true);
+            //winText.gameObject.SetActive(false);
         }
+    }
+
+    void resetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public int GetLifes()
@@ -224,10 +244,5 @@ public class LabyrithnManager : MonoBehaviour
             //cuidado, solo funciona con BoxCollider2D
             Gizmos.DrawWireCube(lb.trigger.transform.position + (Vector3)lb.trigger.offset, ((BoxCollider2D)lb.trigger).size);
         }
-    }
-
-    public void ResetScene()
-    {
-        SceneManager.LoadScene("Persecución");
     }
 }

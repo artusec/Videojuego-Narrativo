@@ -121,7 +121,8 @@ public class Ganzua : MonoBehaviour
             case 1:
                 GameManager.instance.addItemToInv("LlaveOxidada1");
                 GameManager.instance.setScenState("CajaCandado1", 2);
-                GameManager.instance.saveToTXT();
+                GameManager.instance.removeItemFromInv("Ganzua1");
+                GameManager.instance.SaveData();
                 sceneToLoad = "Room1";
                 screenInput.deactivate(1);
                 Invoke("change", 1);

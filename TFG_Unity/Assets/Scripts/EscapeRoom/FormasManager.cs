@@ -103,6 +103,7 @@ public class FormasManager : MonoBehaviour
     }
 
     private void goToSelection() {
+        Vibration.Cancel();
         srm.type = SRType.Default;
         formas[level].SetActive(false);
         srm.currentList.currentFocus = 0;

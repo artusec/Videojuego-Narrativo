@@ -49,6 +49,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: e29720a2f89b33a4689c6a3cf8d12ef1, type: 3}
   label: Puerta
   actBehaviour: {fileID: 4390229923903446159}
+  state: 1
   parentList: {fileID: 0}
 --- !u!212 &695906755090590498
 SpriteRenderer:
@@ -117,6 +118,7 @@ MonoBehaviour:
   failAudio: {fileID: 8300000, guid: 3815a521ab0139d4a977d4f950e621b4, type: 3}
   successAudio: {fileID: 8300000, guid: bcf87275e0ce8d841b8a73f3e0c0eeb2, type: 3}
   doorOpen: {fileID: 8300000, guid: 1f9a2ff7255de8949a8db6add305efcb, type: 3}
+  destroyKeyOnUse: 1
 --- !u!82 &-3596768031843898457
 AudioSource:
   m_ObjectHideFlags: 0

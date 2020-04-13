@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 947251024}
   - component: {fileID: 947251025}
   m_Layer: 0
-  m_Name: Borrar Cuenta
+  m_Name: Borrar Datos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioLabel: {fileID: 0}
-  label: "Cerrar sesi\xF3n"
+  label: Borrar datos
   actBehaviour: {fileID: 947251024}
   state: 1
   parentList: {fileID: 0}

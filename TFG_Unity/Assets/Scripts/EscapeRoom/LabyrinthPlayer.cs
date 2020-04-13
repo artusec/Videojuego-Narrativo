@@ -12,6 +12,7 @@ public class LabyrinthPlayer : MonoBehaviour
     public AudioSource feet;
 
     private AudioSource bump;
+    public AudioClip hit;
 
     public AudioClip footSlip;
     public AudioClip[] pasos;
@@ -92,37 +93,19 @@ public class LabyrinthPlayer : MonoBehaviour
             if (ScreenInput.instance.getInput() == move.right)
             {
                 angleObj = new Vector3(0, 0, -90);
-                auxTurn = 0;
+                resetStep();
                 print("intento girar derecha");
-                bump.clip = footSlip;
-                bump.Play();
-                auxWalk = 0;
                 //si fallamos el giro
                 if (!LabyrithnManager.instance.checkPlayerInput(move.right))
-                {
-                    //paramos el sonido de correr y ponemos el sonido de golpe
-                    feet.Stop();
-                    bump.Play();
-                    //volvemos a invocar al sonido de correr solo si seguimos vivos
-                    if(LabyrithnManager.instance.GetLifes() > 0)
-                        Invoke("RestartRun", 0.5f);
-                }
+                    physicCollide();
             }
             else if (ScreenInput.instance.getInput() == move.left)
             {
                 angleObj = new Vector3(0, 0, 90);
-                auxTurn = 0;
-                bump.clip = footSlip;
-                bump.Play();
-                auxWalk = 0;
+                resetStep();
                 print("intento girar izquierda");
                 if (!LabyrithnManager.instance.checkPlayerInput(move.left))
-                {
-                    feet.Stop();
-                    bump.Play();
-                    if (LabyrithnManager.instance.GetLifes() > 0)
-                        Invoke("RestartRun", 0.5f);
-                }
+                    physicCollide();
             }
         }
     }
@@ -136,10 +119,27 @@ public class LabyrinthPlayer : MonoBehaviour
     private void OnTriggerExit2D(Collider2D coll)
     {
         inCollision = false;
+        if(!LabyrithnManager.instance.getPlayerCorrect())
+            physicCollide();
         reinit();
         LabyrithnManager.instance.ExitCollision(coll);
     }
 
+    void physicCollide()
+    {
+        auxWalk = -walkSpeed;
+        //paramos el sonido de correr y ponemos el sonido de golpe
+        feet.Stop();
+        bump.clip = hit;
+        bump.Play();
+    }
+    void resetStep()
+    {
+        auxTurn = 0;
+        bump.clip = footSlip;
+        bump.Play();
+        auxWalk = 0;
+    }
     private void RestartRun()
     {
         feet.Play();
