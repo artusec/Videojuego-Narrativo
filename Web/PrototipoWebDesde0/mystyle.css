@@ -30,11 +30,13 @@ html{
     background-color:#591D77;
     
 }
-.nav-link:hover,.nav-link:focus{
+.nav-link:hover,.nav-link:focus {
     background-color: #9932CC;
     text-decoration: underline wavy;
 }   
-
+.nav-item{
+    color:#F2F1EF;
+}
 a{
     color:#F2F1EF;
 }
@@ -54,8 +56,6 @@ a:hover {
 a:active {
     color:#F2F1EF;
 }
-
-
 
 .rounded{
     width: 100%;
