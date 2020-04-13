@@ -54,7 +54,7 @@
             } else {
 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Web/Login.php">Acceder</a>
+                    <a class="nav-link" href="./web/Login.php">Acceder</a>
                 </li>
 <?php
             }
