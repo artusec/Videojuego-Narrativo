@@ -1378,8 +1378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomPath: 0
-  pathLenght: 6
-  path: 020000000000000001000000000000000200000001000000
+  pathLenght: 5
+  path: 0200000000000000010000000000000002000000
   timeBetweenPoints: 0.3
   src: {fileID: 1351358889}
   ttsSource: {fileID: 1667583455}
@@ -1426,7 +1426,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047015453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1675908921}

@@ -61,7 +61,7 @@ public class MenuMover : MonoBehaviour
         if(Camera.main.transform.position != getCameraTargetPos(interestPoints[targetPoint].transform.position))
         {
             float distCovered = (Time.time - startTime) * speed;
-            float fracMovement = distCovered / lengthToStart;
+            float fracMovement = (lengthToStart == 0) ? 0 : distCovered / lengthToStart;
             Camera.main.transform.position = Vector3.Lerp(getCameraTargetPos(interestPoints[lastPoint].transform.position), 
                                                           getCameraTargetPos(interestPoints[targetPoint].transform.position),
                                                           fracMovement);

@@ -91,7 +91,8 @@ public class SRList : MonoBehaviour
     public void Insert(int index, SRElement element)
     {
         sreList.Insert(index, element);
-
+        element.parentList = this;
+ 
         if (index <= currentFocus) GoTo(currentFocus + 1);
         else if (srm.currentList == this)
             ReadFocus();

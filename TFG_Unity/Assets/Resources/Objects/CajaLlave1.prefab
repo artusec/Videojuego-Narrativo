@@ -48,6 +48,7 @@ MonoBehaviour:
   audioLabel: {fileID: 8300000, guid: 2d9be32ddffaee449ae87f3e67d0822e, type: 3}
   label: Caja
   actBehaviour: {fileID: -132261295968380531}
+  state: 1
   parentList: {fileID: 0}
 --- !u!212 &7126698711708841026
 SpriteRenderer:

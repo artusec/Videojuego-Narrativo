@@ -9,26 +9,30 @@ using System;
 
 public class LoginMenu : MonoBehaviour
 {
-    public InputField username;
-    public InputField pass;
+    public Text username;
+    public Text pass;
+    private string user = "";
 
     public void Login()
     {
-        string user = username.text;
+        user = username.text;
         if(interaccion_servidor.login_user(user, pass.text) == "1")
         {
             TextToSpeech.Speak("Usuario o contraseña incorrecto");
         }
         else
         {
-            TextToSpeech.Speak("Se inicio sesion como " + user);
-            // invoke para esperar texto
-            TextToSpeech.Speak("Iniciando juego");
-            GameManager.instance.clearData();
-            GameManager.instance.saveUsername(user);
-            GameManager.instance.onlinePlay = true;
+            TextToSpeech.Speak("Se inicio sesion como " + user + " .Iniciando juego.");
+            Invoke("invokeLogin", 3);
 
-            GameManager.instance.SetUpPlay();
         }
+    }
+
+    public void invokeLogin()
+    {
+        GameManager.instance.clearData();
+        GameManager.instance.saveUsername(user);
+        GameManager.instance.onlinePlay = true;
+        GameManager.instance.SetUpPlay();
     }
 }

@@ -100,6 +100,18 @@ public class GameManager : MonoBehaviour
         return index;
     }
 
+    public void removeItemFromInv(string s)
+    {
+        int i = searchInvByName(s);
+        if (i != -1) invObjects.RemoveAt(i);
+    }
+
+    public void removeItemFromScene(string s)
+    {
+        int i = searchSceneByName(s);
+        if (i != -1) sceneObjs.RemoveAt(i);
+    }
+
     /// <summary>
     /// Añade objeto a inventario en default
     /// </summary>

@@ -13,7 +13,7 @@
 		<div>
 			<div>
 				<h2>Login</h2>
-				<p>Identifícate o <a href='register.php' id = 'reg'>regístrate</a></p>
+				<p>Identifícate o <a href='Register.php' id = 'reg'>regístrate</a></p>
 				<?php	
 					$form = new FormLogin();
 					$form->gestiona();

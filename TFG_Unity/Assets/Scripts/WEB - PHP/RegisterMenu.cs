@@ -9,10 +9,10 @@ using System;
 
 public class RegisterMenu : MonoBehaviour
 {
-    public InputField username;
-    public InputField email;
-    public InputField pass;
-    public InputField pass2;
+    public Text username;
+    public Text email;
+    public Text pass;
+    public Text pass2;
 
     public void Register()
     {
@@ -20,17 +20,18 @@ public class RegisterMenu : MonoBehaviour
         string response = interaccion_servidor.register_user(user, email.text, pass.text, pass2.text);
         switch (response)
         {
-            case "0":
-                TextToSpeech.Speak("Se registro el usuario " + user + "correctamente.");
-                GameManager.instance.clearData();
-                GameManager.instance.saveUsername(user);
-                Invoke("OnSuccess", 0.5f);
-                break;
             case "1":
-                TextToSpeech.Speak("Ya existe un usuario con ese nombre, prueba con otro");
+                TextToSpeech.Speak("Ya existe un usuario con ese nombre, prueba con otro.");
                 break;
             case "2":
-                TextToSpeech.Speak("Las contraseñas no coinciden");
+                TextToSpeech.Speak("Las contraseñas no coinciden.");
+                break;
+            // Cambiar TODO , CAMBIO , MAL , PONER CASO 0, DEFAULT PORQUE NO VA BIEN EL SERVIDOR
+            default:
+                TextToSpeech.Speak("Se registro el usuario " + user + " . Iniciando juego.");
+                GameManager.instance.clearData();
+                GameManager.instance.saveUsername(user);
+                Invoke("OnSuccess", 4f);
                 break;
         }
     }
@@ -40,18 +41,4 @@ public class RegisterMenu : MonoBehaviour
         interaccion_servidor.nuevo_juego(username.text);
         GameManager.instance.changeScene("Intro");
     }
-
-    // que respuesta se recibe al crear un usuario?
-    /*string user = username.text;
-    string succesString = "Se registro el usuario " + user + "correctamente.";
-    string response = interaccion_servidor.register_user(user, email.text, pass.text, pass2.text);
-
-        if (response == succesString)
-        {
-            TextToSpeech.Speak(succesString);
-        }
-        else
-        {
-            TextToSpeech.Speak(response);
-        }*/
 }
