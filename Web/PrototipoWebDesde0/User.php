@@ -37,7 +37,8 @@ class User
         if ($rs) {
             if ( $rs->num_rows == 1) {
                 $fila = $rs->fetch_assoc();
-                $user = new User($fila);
+                $datos = array($fila['username'],$fila['password']);
+                $user = new User($datos);
                 $user->id = $fila['id'];
                 $result = $user;
             }
@@ -59,7 +60,8 @@ class User
         if ($rs) {
             if ( $rs->num_rows == 1) {
                 $fila = $rs->fetch_assoc();
-                $user = new User($fila);
+                $datos = array($fila['username'],$fila['password']);
+                $user = new User($datos);
                 $user->id = $fila['id'];
                 $result = $user;  
             }
