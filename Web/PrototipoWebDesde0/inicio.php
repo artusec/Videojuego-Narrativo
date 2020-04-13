@@ -33,9 +33,6 @@
                 <a class="nav-link" href="#1">Introduccion</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#2">Sobre el videojuego</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="#3">Minijuegos</a>
             </li>
             <li class="nav-item">
@@ -188,8 +185,6 @@
                     Somos un equipo formado para realizar este TFG. El equipo consta de 3 estudiantes del grado en ingeniería informática  y 3 estudiantes del grado en desarrollo de videojuegos, además de contar 
                     con la ayuda de los profesores Joaquin Recas Piorno y Maria Guijarro  Mata-García.
                     <p>&nbsp</p>
-                    <p><strong>Email:</strong></p>
-                    <p>videojuego.narrativo@gmail.com</p>
                     <p><strong>Github:</strong></p>
                     <p>https://github.com/artuyero/Videojuego-Narrativo</p>
 
@@ -201,6 +196,7 @@
             <div class="col-sm-3">
                 <div class="footers">
                     <h4><strong>Equipo:</strong></h4>
+                    <p>&nbsp</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Arturo Aguirre Calvo</li>
                             <li class="list-group-item">Eduardo Andrés Morais</li>
@@ -216,7 +212,10 @@
             <div class="col-sm-3">
                 <div class="footers">
                     <h4><strong>Contacto</strong></h4>
-
+                    <p>&nbsp</p>
+                    <p>Para cualquier consulta no dudes en escribirnos a nuestro correo.</p>
+                    <p><strong>Email:</strong></p>
+                    <p>videojuego.narrativo@gmail.com</p>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -245,7 +244,6 @@
 
         function modoAltoContraste(){
 
-            console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
             //Poner el menu a contraste alto
             $(".nav").css({"background-color": "black"});
