@@ -61,6 +61,7 @@ public class SonarPuzzleManager : MonoBehaviour
 
     public AudioClip looseSound;
     public AudioClip winSound;
+    public AudioClip winTTS;
 
     public AudioClip introTTS;
 
@@ -253,6 +254,12 @@ public class SonarPuzzleManager : MonoBehaviour
     }
 
     void onVictory()
+    {
+        src.PlayOneShot(winTTS);
+        Invoke("onVictory2", winTTS.length);
+    }
+
+    void onVictory2()
     {
         int progress = GameManager.instance.room;
         switch (progress)
