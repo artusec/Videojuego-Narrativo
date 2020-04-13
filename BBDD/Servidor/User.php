@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/Aplication.php';
+require_once __DIR__ . '/DB_data.php';
 
 
 class User
@@ -10,8 +11,8 @@ class User
 
     private function __construct($array)
     {
-        $this->username= $array['username'];
-        $this->pass = $array['password'];
+        $this->username= $array[0];
+        $this->pass = $array[1];
     }
 
 
@@ -36,7 +37,8 @@ class User
         if ($rs) {
             if ( $rs->num_rows == 1) {
                 $fila = $rs->fetch_assoc();
-                $user = new User($fila);
+                $datos = array($fila['username'],$fila['password']);
+                $user = new User($datos);
                 $user->id = $fila['id'];
                 $result = $user;
             }
@@ -58,7 +60,8 @@ class User
         if ($rs) {
             if ( $rs->num_rows == 1) {
                 $fila = $rs->fetch_assoc();
-                $user = new User($fila);
+                $datos = array($fila['username'],$fila['password']);
+                $user = new User($datos);
                 $user->id = $fila['id'];
                 $result = $user;  
             }
@@ -164,20 +167,20 @@ class User
         $fila = $rs->fetch_assoc();
         $id_user = $fila["id"];
 
-		$query = sprintf("SELECT id FROM Games G WHERE user = '%d'", $id_user);
+		$query = sprintf("SELECT id, date_start FROM Games G WHERE user = '%d'", $id_user);
         $rs = $conn->query($query);
         $fila = $rs->fetch_assoc();
         $id_game = $fila["id"];
+        $date_start = $fila["date_start"];
 
-        $query = sprintf("INSERT INTO Statistics (id_user, id_game, timed) VALUES ('%s', '%s', '%s')",
-            $conn->real_escape_string($id_game),
-            $conn->real_escape_string($id_user),
-            $conn->real_escape_string($timed)
+        $query = sprintf("INSERT INTO Statistics (id_user, id_game, timed, date_start) VALUES ('%d', '%d', '%f', '%s')",
+            $id_user,
+            $id_game,
+            $timed,
+            $date_start
             );
 
-        if ( $conn->query($query) ) {
-            $user->id = $conn->insert_id;
-        } else {
+        if (! $conn->query($query) ) {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             return false;
             exit();
@@ -186,7 +189,6 @@ class User
     }
 
     public function cargar_estadisticas($username){
-
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
 
@@ -195,8 +197,10 @@ class User
         $fila = $rs->fetch_assoc();
         $id_user = $fila["id"];
 
-        $query = sprintf("SELECT * FROM Statistics S WHERE id_user = '%d'", $id_user);
+        $query = sprintf("SELECT * FROM Statistics S join Games G on (S.id_game = G.id) WHERE (S.id_user = '%d')", $id_user);
+
         $rs = $conn->query($query);
+        $result = false;
         if ($rs) {
             $result = array();
             while ($fila = $rs->fetch_assoc()) {
