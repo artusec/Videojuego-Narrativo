@@ -1796,7 +1796,7 @@ MonoBehaviour:
   ttsReset: {fileID: 8300000, guid: 053c0a12e731bc3419c44ff450cdcf2e, type: 3}
   music: {fileID: 145037291}
   initSound:
-  - {fileID: 8300000, guid: e23d18f869c41ec4d98ac66663de5908, type: 3}
+  - {fileID: 8300000, guid: 3829ee4b6469d5849a36998931fa6a47, type: 3}
   - {fileID: 8300000, guid: fc430855a28fd9b40a75d67b1007c9c0, type: 3}
   - {fileID: 8300000, guid: 1cf1dc79f21591346a95acf27f0db4d7, type: 3}
   initGame: 0
