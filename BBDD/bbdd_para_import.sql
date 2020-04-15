@@ -7,9 +7,6 @@ CREATE TABLE Users(
 	PRIMARY KEY (id, username)
 );
 
-INSERT INTO Users(username, email, password)
-VALUES ("NULL", "NULL@NULL.NULL", "NULL");
-
 CREATE TABLE Games(
 	id int AUTO_INCREMENT,
 	user int NOT NULL,
@@ -20,12 +17,11 @@ CREATE TABLE Games(
 );
 
 CREATE TABLE Objects(
-	id int AUTO_INCREMENT,
-	name varchar(20),
+	name varchar(50),
 	description varchar(50),
 	type int,
 
-	PRIMARY KEY (id)
+	PRIMARY KEY (name)
 );
 
 CREATE TABLE State_Game(
@@ -37,17 +33,6 @@ CREATE TABLE State_Game(
 
 	PRIMARY KEY (id_game, id_user, object),
 	FOREIGN KEY (id_user) REFERENCES Users(id)
-);
-
-CREATE TABLE Messages(
-	id int AUTO_INCREMENT,
-	id_sender int,
-	id_receiver int,
-	message text,
-
-	PRIMARY KEY (id),
-	FOREIGN KEY (id_sender) REFERENCES Users(id),
-	FOREIGN KEY (id_receiver) REFERENCES Users(id)
 );
 
 CREATE TABLE Statistics(
