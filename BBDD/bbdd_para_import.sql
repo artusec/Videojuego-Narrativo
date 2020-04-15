@@ -18,10 +18,52 @@ CREATE TABLE Games(
 
 CREATE TABLE Objects(
 	name varchar(50),
+	real_name varchar(50),
 	description varchar(50),
-	type int,
 
 	PRIMARY KEY (name)
+);
+
+INSERT INTO Objects (
+	name,
+	real_name,
+	description
+)
+VALUES
+	(
+	"Ganzua1",
+	"Ganzúa",
+	""
+	),
+	(
+	"LlaveOxidada1",
+	"Llave oxidada",
+	""
+	),
+	(
+	"LlavePequeña2",
+	"Llave pequeña",
+	""
+	),
+	(
+	"Pomo2",
+	"Pomo",
+	""
+	),
+	(
+	"Carpeta2",
+	"Carpeta chamuscada",
+	""
+	),
+	(
+	"JuegoSimon3",
+	"Juego Simón",
+	""
+	),
+	(
+	"Peluche3",
+	"Osito de peluche",
+	""
 );
 
 CREATE TABLE State_Game(
@@ -32,7 +74,9 @@ CREATE TABLE State_Game(
 	state_object int,
 
 	PRIMARY KEY (id_game, id_user, object),
-	FOREIGN KEY (id_user) REFERENCES Users(id)
+	FOREIGN KEY (id_user) REFERENCES Users(id),
+	FOREIGN KEY (object) REFERENCES Objects(name),
+	FOREIGN KEY (id_game) REFERENCES Games(id)
 );
 
 CREATE TABLE Statistics(
