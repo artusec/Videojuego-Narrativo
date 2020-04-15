@@ -8,17 +8,17 @@ class FormLogin extends Form {
     }
 
     protected function generaCamposFormulario($datos) {
-        $html = '<div>
-                    <div>
-                        <input type="text" name="username" id="username" value="" placeholder="Username" />
-                    </div> <br>
-                    <div>
-                        <input type="password" name="pass" id="pass" value="" placeholder="Contraseña" />
-                    </div> <br>
-                     <div>
-                        <input type="submit" value="Aceptar" />
+        $html = '<form class="form-inline" action="/action_page.php">
+                    <div class="form-group">
+                        Usuario<input type="text" name="username" class="form-control" id="username" value=""  placeholder="Username">
                     </div>
-                </div>
+                    <div class="form-group">
+                        Contraseña<input type="password" class="form-control" id="pass" value=""  placeholder="Contraseña">
+                    </div>
+                    <div class="col text-center">
+                        <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
+                    </div>    
+                </form> 
                 ';
         return $html;
     }
@@ -43,7 +43,7 @@ class FormLogin extends Form {
                     $_SESSION['login'] = true;
                     $_SESSION['id'] = $usuario->getId();
                     $_SESSION['username'] = $usuario->getUsername();
-                    return "../inicio.php";
+                    return "../index.php";
             } else
                 $erroresFormulario[] = "No existe usuario con ese nombre o la contraseña es incorrecta";
         }
