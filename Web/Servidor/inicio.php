@@ -118,26 +118,22 @@
 
 
     <div class="container-fluid">
-        
         <p>&nbsp</p>
         <p>&nbsp</p>
-        
         <h1 class="Title-1" id="3">¡Conoce los minijuegos!</h1>
-        
         <p>&nbsp</p>
         <p>&nbsp</p>
-
-
             <div class="row">
 
                 <div class="col-sm-4">     
                     
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="logo.png" alt="Card image cap">
+                                <img class="card-img-top" src="/web/imagenes/caja_fuerte.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a src="" aria-label="Leer mas sobre el minijuego numero3">Leer mas</a>
+                                  <p class="card-text">GANZUA</p>
+                                  <p class="card-text">Hacer circulos con el dedo sobre la pantalla hasta oir el desbloqueo de la caja fuerte.</p>
+                                  <a src="" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                                 </div>
                             </div>
                     </div>
@@ -147,30 +143,51 @@
                    
                     <div class="minijuegosOut">
                         <div class="card">
-                            <img class="card-img-top" src="logo.png" alt="Card image cap">
+                            <img class="card-img-top" src="/web/imagenes/ondas.png" alt="Card image cap">
                             <div class="card-body">
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a src="" aria-label="Leer mas sobre el minijuego numero3">Leer mas</a>
-
+							<p class="card-text">VOCES A LO LEJOS</p>
+							<p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
+                              <a src="" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                             </div>
                         </div>
-
                 </div>
                 </div>
                 <div class="col-sm-4">    
-
+                    <div class="minijuegosOut">
+                            <div class="card">
+                                <img class="card-img-top" src="/web/imagenes/formas.png" alt="Card image cap">
+                                <div class="card-body">
+                                <p class="card-text">FORMAS</p>
+								<p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                                <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+				<div class="col-sm-4">    
+                    <div class="minijuegosOut">
+                            <div class="card">
+                                <img class="card-img-top" src="/web/imagenes/punto_caliente.png" alt="Card image cap">
+                                <div class="card-body">
+                                <p class="card-text">PUNTOS CALIENTES</p>
+								<p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>
+                                <a src="" aria-label="Leer mas sobre el minijuego puntos calientes">Leer mas</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
                                 <img class="card-img-top" src="logo.png" alt="Card image cap">
                                 <div class="card-body">
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a src="" aria-label="Leer mas sobre el minijuego numero3">Leer mas</a>
+                                <p class="card-text">SIMON SAYS</p>
+								<p class="card-text">Falta</p>
+                                <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
                             </div>
                     </div>
-
                 </div>
-
             </div>
         <p>&nbsp</p>
         <p>&nbsp</p>
