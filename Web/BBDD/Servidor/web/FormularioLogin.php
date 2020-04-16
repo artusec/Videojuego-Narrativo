@@ -13,7 +13,7 @@ class FormLogin extends Form {
                         Usuario<input type="text" name="username" class="form-control" id="username" value=""  placeholder="Username">
                     </div>
                     <div class="form-group">
-                        Contraseña<input type="password" class="form-control" id="pass" value=""  placeholder="Contraseña">
+                        Contraseña<input type="password"  name="pass" class="form-control" id="pass" value=""  placeholder="Contraseña">
                     </div>
                     <div class="col text-center">
                         <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
@@ -43,7 +43,7 @@ class FormLogin extends Form {
                     $_SESSION['login'] = true;
                     $_SESSION['id'] = $usuario->getId();
                     $_SESSION['username'] = $usuario->getUsername();
-                    return "../index.php";
+                    return "../inicio.php";
             } else
                 $erroresFormulario[] = "No existe usuario con ese nombre o la contraseña es incorrecta";
         }
