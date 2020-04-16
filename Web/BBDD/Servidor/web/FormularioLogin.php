@@ -8,7 +8,7 @@ class FormLogin extends Form {
     }
 
     protected function generaCamposFormulario($datos) {
-        $html = '<form class="form-inline" action="/action_page.php">
+        $html = '<form class="form-inline">
                     <div class="form-group">
                         Usuario<input type="text" name="username" class="form-control" id="username" value=""  placeholder="Username">
                     </div>
