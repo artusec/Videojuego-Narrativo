@@ -89,67 +89,10 @@
 
 
 
-	<footer class="page-footer">
-
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="footers">
-                    <h4><strong>Sobre nosotros</strong></h4>
-                    <p>&nbsp</p>
-                    Somos un equipo formado para realizar este TFG. El equipo consta de 3 estudiantes del grado en ingeniería informática  y 3 estudiantes del grado en desarrollo de videojuegos, además de contar 
-                    con la ayuda de los profesores Joaquin Recas Piorno y Maria Guijarro  Mata-García.
-                    <p>&nbsp</p>
-                    <p><strong>Github:</strong></p>
-                    <p>https://github.com/artuyero/Videojuego-Narrativo</p>
-                </div>
-
-            </div>
-
-            <div class="col-sm-3">
-                <div class="footers">
-                    <h4><strong>Equipo:</strong></h4>
-                    <p>&nbsp</p>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Arturo Aguirre Calvo</li>
-                            <li class="list-group-item">Eduardo Andrés Morais</li>
-                            <li class="list-group-item">Fernando Cortés Sacho</li>
-                            <li class="list-group-item">Alberto Casaso Trapote</li>
-                            <li class="list-group-item">Héctor Marcos Rabadán</li>
-                            <li class="list-group-item">Diego Martínez Simarro</li>
-                            <li class="list-group-item">María Guijarro Mata-García</li>
-                            <li class="list-group-item">Joaquin Recas Piorno</li>
-                        </ul>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="footers">
-                    <h4><strong>Contacto</strong></h4>
-                    <p>&nbsp</p>
-                    <p>Para cualquier consulta no dudes en escribirnos a nuestro correo.</p>
-                    <p><strong>Email:</strong></p>
-                    <p>videojuego.narrativo@gmail.com</p>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="footers">
-                    <h4><strong>Dirección</strong></h4>
-                    <p>&nbsp</p>                            
-                    <p>Facultad de informática</p>
-                    <p>Ciudad Universitaria</p>
-                    <p>Madrid</p>
-                    <p>España</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://www.ucm.es/">Universidad Complutense de Madrid</a>
-        </div>
-   
-
-
-    </footer>
+<?php
+    require_once __DIR__ . '../footer.html';
+?>
+ 
 
 </body>
 <script>
