@@ -56,7 +56,6 @@
 <?php
             }
 ?>             
-
                 <li class="nav-item">
                     <a class="nav-link"  onclick="modoAltoContraste()">Modo Alto Contraste</a>
                 </li>
@@ -96,7 +95,12 @@
         <p>&nbsp</p>
 
             <h1 class="Title-1" id='1'>Introducción</h1>
-            <p class="text-center">Una aventura narrativa donde trendrás que agudizar el oído y el tacto.</p>
+            <p>&nbsp</p>
+
+            <p class="text-center">¡Bienvenido a [NOMBRE]!</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-3">

@@ -33,13 +33,13 @@
 	<nav title="Menu horizontal">
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link" href="#1">Introduccion</a>
+                <a class="nav-link" href="../inicio.php">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#3">Minijuegos</a>
+                <a class="nav-link" href="../inicio.php#3">Minijuegos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#4">Descarga</a>
+                <a class="nav-link" href="../inicio.php#4">Descarga</a>
             </li>
 <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
@@ -51,15 +51,8 @@
                     <a class="nav-link" href="../Logout.php">Cerrar Sesion</a>
                 </li>
 <?php
-            } else {
-?>
-                <li class="nav-item">
-                    <a class="nav-link" href="./Login.php">Acceder</a>
-                </li>
-<?php
             }
-?>             
-
+?>
                 <li class="nav-item">
                     <a class="nav-link"  onclick="modoAltoContraste()">Modo Alto Contraste</a>
                 </li>
@@ -159,5 +152,37 @@
     </footer>
 
 </body>
+<script>
+
+
+    function modoAltoContraste(){
+        //Poner el menu a contraste alto
+        $(".nav").css({"background-color": "black"});
+        $("a").css({"color": "yellow"});
+
+
+        //Poner ela pagina a alto contraste 
+        $(".container-fluid").css({"background-color": "black","color":"yellow"});
+
+        //Poner el footer a alto contraste 
+        $(".page-footer").css({"background-color": "black","color":"yellow"});
+        $(".list-group-item").css({"background-color": "black","color":"yellow"});
+    }
+
+    function modoNormal(){
+    //Volver a modo normal 
+        $(".nav").css({"background-color": "#591D77"});
+        $("a").css({"color": "#F2F1EF"});
+
+        $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
+
+        $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
+        $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
+    }
+
+</script>
+
+
+
 
 </html>

@@ -12,8 +12,8 @@ html{
 }
 .container-fluid{
     height: 25%;
-    background-color:black;
-    color:#9932CC;
+    background-color:#9932CC;
+    color:#fefefe;
 }
 .nav{
     background-color:#591D77;
@@ -58,4 +58,6 @@ html{
     background-color: #9932CC;
     color:#fefefe;
 }
-
+#reg{
+    color:black;
+}
