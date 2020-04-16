@@ -10,24 +10,23 @@ class FormRegistro extends Form {
 
     protected function generaCamposFormulario($datosIniciales) {
 
-        $html = '<div class="row gtr-50 gtr-uniform">
-                    <div class="col-12">
-                        <input type="text" name="username" id="username" value="" placeholder="Username" />
-                    </div> <br>
-
-                    <div class="col-12">
-                        <input type="email" name="email" id="email" value="" placeholder="Email" />
-                    </div> <br>
-                    <div class="col-12">
-                        <input type="password" name="pass" id="pass" value="" placeholder="Contraseña" />
-                    </div> <br>
-                    <div class="col-12">
-                        <input type="password" name="pass2" id="pass2" value="" placeholder="Repite la contraseña" />
-                    </div> <br>
-                    <div>
-                        <input type="submit" value="Aceptar" />
-                    </div> <br> 
-                </div>';
+        $html = '<form class="form-inline">
+                    <div class="form-group">
+                        Usuario<input type="text" name="username" class="form-control" id="username" value=""  placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        Email<input type="email" name="email" class="form-control" id="email" value=""  placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                    Contraseña<input type="password" name="pass" class="form-control" id="pass" value=""  placeholder="Contraseña">
+                    </div>
+                    <div class="form-group">
+                    Repite la contraseña<input type="password" name="pass2" class="form-control" id="pass2" value=""  placeholder="Repite la contraseña">
+                    </div>
+                    <div class="col text-center">
+                        <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
+                    </div>  
+                </form>';
         return $html;
     }
     
@@ -66,7 +65,7 @@ class FormRegistro extends Form {
                     $_SESSION['email'] = $email;
                     $_SESSION['username'] = $user->getUsername();
                     $_SESSION['id'] = $user->getId();
-                    return '../inicio.php';
+                    return '../index.php';
                 }
             }
         }
