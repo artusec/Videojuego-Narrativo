@@ -151,7 +151,7 @@
 					</table>
 				</div>
 				<div class="col-sm-4"><img class="animation2" src="animation-obj.gif"></div>
-			
+			</div>
 		</div>
 
 
