@@ -86,7 +86,7 @@
 
 
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg"><a download="app" href="logo.png" alt="">Descarga ya!</a></button>
+            <button class="btn btn-danger btn-lg"><a download="app" href="logo.png" alt="">Descarga ya! <img src="download.png"></a></button>
         </div>
 
 
@@ -119,6 +119,7 @@
         <p>&nbsp</p>
         <h1 class="Title-1" id="3">¡Conoce los minijuegos!</h1>
         <p>&nbsp</p>
+        <p class="text-center"><img src="jigsaw.png"></p>
         <p>&nbsp</p>
             <div class="row">
 
@@ -176,7 +177,7 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="logo.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/simon_says.png" alt="Card image cap">
                                 <div class="card-body">
                                 <p class="card-text">SIMON SAYS</p>
 								<p class="card-text">Falta</p>
