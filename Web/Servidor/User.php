@@ -215,6 +215,28 @@ class User
     }
 
 
+    public function cargar_objetos($id_user){
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+
+        $query = sprintf("SELECT O.real_name, O.description FROM State_game S join Objects O on (S.object = O.name) WHERE (S.id_user = '%d')", $id_user);
+
+        $rs = $conn->query($query);
+        $result = false;
+        if ($rs) {
+            $result = array();
+            while ($fila = $rs->fetch_assoc()) {
+                $result[] = $fila;
+            }
+            $rs->free();
+        } else {
+            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+        return $result;
+    }
+
+
     /* Utils ---------------------------------------------------------------------------------*/
 
     private static function hashPassword($password)
