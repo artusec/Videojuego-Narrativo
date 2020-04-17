@@ -98,20 +98,17 @@
             <p>&nbsp</p>
 			<p>&nbsp</p>
 
-
+            
+         <p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
+         <p>&nbsp</p>
+         <p>&nbsp</p>
             <div class="row">
-                <div class="col-sm-4"><img src="logo.png" class="img-Inicio1" alt="Hola hola Probando"></div>
-                <div class="col-sm-8">
-                    <p>&nbsp</p>
-                    <p>Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
+                
+                <div class="col-sm-3">
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-8">
-                    <p>Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
-                </div>
-                <div class="col-sm-4"><img src="logo.png" class="img-Inicio2" alt="Hola hola Probando"></div>
+                <div class="col-sm-3"><img src="logo.png"  class="rounded"alt="Hola hola Probando"></div>
+                <div class="col-sm-3"><img src="logo.png"  class="rounded" alt="Hola hola Probando"></div>
+                <div class="col-sm-3"></div>
             </div>
     </div>
 
