@@ -68,7 +68,7 @@
 	<p>&nbsp</p>
 	<p>&nbsp</p>
 		<div class="row">
-				<div class="col-sm-4"></div>
+				<div class="col-sm-4"><img class="animation" src="animation.gif"></div>
 				<div class="col-sm-4">
 					<h1>ESTADISTICAS</h1>
 					<table>
@@ -150,7 +150,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-sm-4"></div>
+				<div class="col-sm-4"><img class="animation2" src="animation-obj.gif"></div>
 			
 		</div>
 
@@ -163,4 +163,34 @@
 ?>
  
 </body>
+<script>
+
+
+    function modoAltoContraste(){
+        //Poner el menu a contraste alto
+        $(".nav").css({"background-color": "black"});
+        $("a").css({"color": "yellow"});
+
+
+        //Poner ela pagina a alto contraste 
+        $(".container-fluid").css({"background-color": "black","color":"yellow"});
+
+        //Poner el footer a alto contraste 
+        $(".page-footer").css({"background-color": "black","color":"yellow"});
+        $(".list-group-item").css({"background-color": "black","color":"yellow"});
+    }
+
+    function modoNormal(){
+    //Volver a modo normal 
+        $(".nav").css({"background-color": "#591D77"});
+        $("a").css({"color": "#F2F1EF"});
+
+        $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
+
+        $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
+        $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
+    }
+
+</script>
+
 </html>
