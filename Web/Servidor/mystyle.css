@@ -130,3 +130,7 @@ a:active {
 .breadcrumb{
     background-color: #9932CC;
 }
+.footer-div{
+    justify-items: center;
+    display: flex;
+}
