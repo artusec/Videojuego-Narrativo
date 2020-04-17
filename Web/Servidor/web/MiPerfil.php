@@ -113,12 +113,46 @@
 			<p>&nbsp</p>
 			<p>&nbsp</p>
 			<p>&nbsp</p>
-			<p>&nbsp</p>
-			<p>&nbsp</p>
-			<p>&nbsp</p>
-		<br>
-		<br>
-	</div>
+
+			<div class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					<h1>Objetos de la partida actual</h1>
+					<table>
+						<thead>
+							<tr>
+								<th>Nombre del objeto</th>
+								<th>Descripción</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+								$html = "";
+								$objetos = User::cargar_objetos($_SESSION['id']);
+								$numobjetos = sizeof($objetos);
+								if($numobjetos > 0) {
+									for ($i=0; $i < $numobjetos; $i++) {
+										$html .= '<tr>';
+										$html .= '<td>' . $objetos[$i]['real_name'] . '</td>';
+										$html .= '<td>' . $objetos[$i]['description'] . '</td>';
+										$html .= '</tr>';                          
+									}
+								}
+								else{
+									$html .= '<tr>';
+									$html .= '<td>Nada que mostrar</td>';
+									$html .= '<td>Nada que mostrar</td>';
+									$html .= '</tr>'; 
+
+								}
+								echo $html;
+							?>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-sm-4"></div>
+			
+		</div>
 
 
 
