@@ -94,24 +94,24 @@
         <p>&nbsp</p>
         <p>&nbsp</p>
 
-            <h1 class="Title-1" id='1'>Introducción</h1>
+            <h1 class="Title-1" id='1'>¡Te damos la bienvenida a [NOMBRE]!</h1>
             <p>&nbsp</p>
-
-            <p class="text-center">¡Te damos la bienvenida a [NOMBRE]!</p>
-            <p>&nbsp</p>
-            <p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
 			<p>&nbsp</p>
 
 
             <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-3">
-                    <img src="logo.png" class="rounded" alt="Hola hola Probando">
+                <div class="col-sm-4"><img src="logo.png" class="img-Inicio1" alt="Hola hola Probando"></div>
+                <div class="col-sm-8">
+                    <p>&nbsp</p>
+                    <p>Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
                 </div>
-                <div class="col-sm-3">
-                    <img src="logo.png" class="rounded" alt="Hola hola Probando">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
                 </div>
-                <div class="col-sm-3"></div>
+                <div class="col-sm-4"><img src="logo.png" class="img-Inicio2" alt="Hola hola Probando"></div>
             </div>
     </div>
 
@@ -129,7 +129,7 @@
                     
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="/web/imagenes/caja_fuerte.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/caja_fuerte.jpg" alt="Card image cap">
                                 <div class="card-body">
                                   <p class="card-text">GANZUA</p>
                                   <p class="card-text">Hacer circulos con el dedo sobre la pantalla hasta oir el desbloqueo de la caja fuerte.</p>
@@ -143,7 +143,7 @@
                    
                     <div class="minijuegosOut">
                         <div class="card">
-                            <img class="card-img-top" src="/web/imagenes/ondas.png" alt="Card image cap">
+                            <img class="card-img-top" src="./web/imagenes/ondas.png" alt="Card image cap">
                             <div class="card-body">
 							<p class="card-text">VOCES A LO LEJOS</p>
 							<p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
@@ -155,7 +155,7 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="/web/imagenes/formas.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/formas.png" alt="Card image cap">
                                 <div class="card-body">
                                 <p class="card-text">FORMAS</p>
 								<p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
@@ -167,7 +167,7 @@
 				<div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="/web/imagenes/punto_caliente.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/punto_caliente.png" alt="Card image cap">
                                 <div class="card-body">
                                 <p class="card-text">PUNTOS CALIENTES</p>
 								<p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>

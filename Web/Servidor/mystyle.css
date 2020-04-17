@@ -130,3 +130,14 @@ a:active {
 .breadcrumb{
     background-color: #9932CC;
 }
+
+.img-Inicio1{
+    margin-left: 5%;
+    width: 100%;
+    border-radius: 5%;
+}
+.img-Inicio2{
+    margin-right: 5%;
+    width: 100%;
+    border-radius: 5%;
+}
