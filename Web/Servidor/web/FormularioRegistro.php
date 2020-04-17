@@ -65,7 +65,7 @@ class FormRegistro extends Form {
                     $_SESSION['email'] = $email;
                     $_SESSION['username'] = $user->getUsername();
                     $_SESSION['id'] = $user->getId();
-                    return '../index.php';
+                    return '../inicio.php';
                 }
             }
         }

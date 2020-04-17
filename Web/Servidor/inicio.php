@@ -82,37 +82,47 @@
 
     <div class="container-fluid">
         <p>&nbsp</p>
-
-
-
+		<p>&nbsp</p>
+        <p>&nbsp</p>
         <div class="col text-center" id='4'>
             <button class="btn btn-danger btn-lg"><a download="app" href="logo.png" alt="">Descarga ya! <img src="download.png"></a></button>
         </div>
-
-
-
         <p>&nbsp</p>
         <p>&nbsp</p>
+        <h1 class="Title-1" id='1'>¡Te damos la bienvenida a [NOMBRE]!</h1>
+        <p>&nbsp</p>
+		<p>&nbsp</p>  
+		<p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
+		<p>&nbsp</p>
+		<p>&nbsp</p>
 
-            <h1 class="Title-1" id='1'>¡Te damos la bienvenida a [NOMBRE]!</h1>
-            <p>&nbsp</p>
-			<p>&nbsp</p>
-
-            
-         <p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
-         <p>&nbsp</p>
-         <p>&nbsp</p>
-            <div class="row">
-                
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-3"><img src="logo.png"  class="rounded"alt="Hola hola Probando"></div>
-                <div class="col-sm-3"><img src="logo.png"  class="rounded" alt="Hola hola Probando"></div>
-                <div class="col-sm-3"></div>
-            </div>
-    </div>
-
-
+        <div class="row">
+			<div class="col-sm-4">    
+	            <div class="minijuegosOut">
+	                    <div class="card">
+	                        <img src="/web/imagenes/accesibilidad.jpg"  class="rounded"alt="Hola hola Probando">
+	                        <div class="card-body">
+		                        <p class="card-text">ACCESIBILIDAD</p>
+								<p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+		                        <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+		                    </div>
+	                    </div>
+	            </div>
+	        </div>
+	        <div class="col-sm-4">    
+	            <div class="minijuegosOut">
+	                    <div class="card">
+	                        <img src="/web/imagenes/cloud.png"  class="rounded" alt="Hola hola Probando">
+	                        <div class="card-body">
+		                        <p class="card-text">NUBE</p>
+								<p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+		                        <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+		                    </div>
+	                    </div>
+	            </div>
+	        </div>
+	    </div>
+ 	</div>
 
     <div class="container-fluid">
         <p>&nbsp</p>
@@ -122,9 +132,7 @@
         <p class="text-center"><img src="jigsaw.png"></p>
         <p>&nbsp</p>
             <div class="row">
-
-                <div class="col-sm-4">     
-                    
+                <div class="col-sm-4">     S
                     <div class="minijuegosOut">
                             <div class="card">
                                 <img class="card-img-top" src="./web/imagenes/caja_fuerte.jpg" alt="Card image cap">
@@ -135,10 +143,8 @@
                                 </div>
                             </div>
                     </div>
-
                 </div>
                 <div class="col-sm-4">   
-                   
                     <div class="minijuegosOut">
                         <div class="card">
                             <img class="card-img-top" src="./web/imagenes/ondas.png" alt="Card image cap">
