@@ -63,7 +63,6 @@
                 <li class="nav-item">
                     <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
                 </li>
-                
         </ul>
     </nav>
 
@@ -78,14 +77,12 @@
         </div>
     </div>
 
-   
-
     <div class="container-fluid">
         <p>&nbsp</p>
 		<p>&nbsp</p>
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg"><a download="app" href="logo.png" alt="">Descarga ya! <img src="download.png"></a></button>
+            <button class="btn btn-danger btn-lg"><a download="APK" href="/web/apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="download.png"></a></button>
         </div>
         <p>&nbsp</p>
         <p>&nbsp</p>
@@ -132,7 +129,7 @@
         <p class="text-center"><img src="jigsaw.png"></p>
         <p>&nbsp</p>
             <div class="row">
-                <div class="col-sm-4">     S
+                <div class="col-sm-4">
                     <div class="minijuegosOut">
                             <div class="card">
                                 <img class="card-img-top" src="./web/imagenes/caja_fuerte.jpg" alt="Card image cap">
@@ -150,7 +147,7 @@
                             <img class="card-img-top" src="./web/imagenes/ondas.png" alt="Card image cap">
                             <div class="card-body">
 							<p class="card-text">VOCES A LO LEJOS</p>
-							<p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
+							<p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección (es necesario jugarlo con cascos para oir el sonido 3D).</p>
                               <a src="" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                             </div>
                         </div>
@@ -168,6 +165,9 @@
                             </div>
                     </div>
                 </div>
+            </div>
+            <p>&nbsp</p>
+            <div class="row">
 				<div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
@@ -197,20 +197,13 @@
         <p>&nbsp</p>
         &nbsp
     </div>
-
-
-
 <?php
     require_once __DIR__ . '/web/footer.html';
 ?>
- 
-
-
 </body>
 <script>
 
         function modoAltoContraste(){
-
 
             //Poner el menu a contraste alto
             $(".nav").css({"background-color": "black"});
@@ -223,8 +216,6 @@
             //Poner el footer a alto contraste 
             $(".page-footer").css({"background-color": "black","color":"yellow"});
             $(".list-group-item").css({"background-color": "black","color":"yellow"});
-            
-
         }
 
         function modoNormal(){
