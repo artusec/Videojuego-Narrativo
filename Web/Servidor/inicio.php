@@ -86,7 +86,7 @@
 
 
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg"><a download="app" href="logo.png" alt="">Descarga ya!</a></button>
+            <button class="btn btn-danger btn-lg"><a download="app" href="logo.png" alt="">Descarga ya! <img src="download.png"></a></button>
         </div>
 
 
@@ -98,20 +98,17 @@
             <p>&nbsp</p>
 			<p>&nbsp</p>
 
-
+            
+         <p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
+         <p>&nbsp</p>
+         <p>&nbsp</p>
             <div class="row">
-                <div class="col-sm-4"><img src="logo.png" class="img-Inicio1" alt="Hola hola Probando"></div>
-                <div class="col-sm-8">
-                    <p>&nbsp</p>
-                    <p>Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
+                
+                <div class="col-sm-3">
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-8">
-                    <p>Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
-                </div>
-                <div class="col-sm-4"><img src="logo.png" class="img-Inicio2" alt="Hola hola Probando"></div>
+                <div class="col-sm-3"><img src="logo.png"  class="rounded"alt="Hola hola Probando"></div>
+                <div class="col-sm-3"><img src="logo.png"  class="rounded" alt="Hola hola Probando"></div>
+                <div class="col-sm-3"></div>
             </div>
     </div>
 
@@ -122,6 +119,7 @@
         <p>&nbsp</p>
         <h1 class="Title-1" id="3">¡Conoce los minijuegos!</h1>
         <p>&nbsp</p>
+        <p class="text-center"><img src="jigsaw.png"></p>
         <p>&nbsp</p>
             <div class="row">
 
@@ -179,7 +177,7 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="logo.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/simon_says.png" alt="Card image cap">
                                 <div class="card-body">
                                 <p class="card-text">SIMON SAYS</p>
 								<p class="card-text">Falta</p>
