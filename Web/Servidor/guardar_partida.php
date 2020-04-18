@@ -8,19 +8,21 @@ $datos = array();
 
 # Pisar la lista entera de objetos con los que nos pasan
 
-# "username" -> <username>
-# "nombre_objeto" -> <tipo>:<estado>
+# "username" 		-> <username>
+# "nombre_objeto" 	-> <tipo>:<estado>
+# "time"			-> <tiempo>
 
 
 header("Content-type: text/html");
 
-# $peticion = "username=paco&llave=1:1&caja=2:2&puerta=2:3";
+# $peticion = "username=paco&llave=1:1&caja=2:2&puerta=2:3.......&time=4,3";
 
 /*$peticion = array(
-    "username" => "paco",
-    "llave" => "1:1",
-    "caja" => "2:3",
-    "tabla" => "1:5",
+    "username" 	=> "paco",
+    "llave" 	=> "1:1",
+    "caja" 		=> "2:3",
+    "tabla" 	=> "1:5",
+    "time" 		=> "4,2"
 );*/
 
 if (Game::guardar_partida_individual($_POST)){

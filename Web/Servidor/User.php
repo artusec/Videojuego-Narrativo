@@ -158,7 +158,7 @@ class User
     }
 
 
-    public function guardar_estadisticas($username, $timed){
+    public function guardar_estadisticas($username){
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
 
@@ -167,16 +167,17 @@ class User
         $fila = $rs->fetch_assoc();
         $id_user = $fila["id"];
 
-		$query = sprintf("SELECT id, date_start FROM Games G WHERE user = '%d'", $id_user);
+		$query = sprintf("SELECT id, date_start, time_played FROM Games G WHERE user = '%d'", $id_user);
         $rs = $conn->query($query);
         $fila = $rs->fetch_assoc();
         $id_game = $fila["id"];
         $date_start = $fila["date_start"];
+        $time_played = $fila["time_played"];
 
         $query = sprintf("INSERT INTO Statistics (id_user, id_game, timed, date_start) VALUES ('%d', '%d', '%f', '%s')",
             $id_user,
             $id_game,
-            $timed,
+            $time_played,
             $date_start
             );
 

@@ -15,12 +15,12 @@ if (User::find_user_by_username($username) == false){
 	if($pass == $pass2){
 			$app = User::insert_user($username, $email, $pass);
 			print(0);
-			exit();
+	} else {
+		print(2);
 	}
-	print(2);
-	exit();
+} else {
+	print(1);
 }
-print(1);
 exit();
 
 # 0 -> Success

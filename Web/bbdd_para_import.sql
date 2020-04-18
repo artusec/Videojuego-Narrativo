@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-04-2020 a las 19:01:20
+-- Tiempo de generación: 18-04-2020 a las 19:52:44
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -31,9 +31,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `games` (
   `id` int(11) NOT NULL,
   `user` int(11) NOT NULL,
-  `date_start` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `date_start` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `time_played` double DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
 
 -- --------------------------------------------------------
 
@@ -74,7 +74,6 @@ CREATE TABLE `state_game` (
   `state_object` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-
 -- --------------------------------------------------------
 
 --
@@ -89,7 +88,6 @@ CREATE TABLE `statistics` (
   `date_start` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-
 -- --------------------------------------------------------
 
 --
@@ -103,6 +101,9 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Índices para tablas volcadas
+--
 
 --
 -- Indices de la tabla `games`

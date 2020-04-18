@@ -61,10 +61,10 @@ public static class interaccion_servidor
         return Upload(peticion, "borrar_usuario.php");
     }
 
-    public static string guardar_estadisticas(string usuario, double time)
+    public static string guardar_estadisticas(string usuario)
     {
         type = PetitionType.STATISTICS;
-        peticion = "username=" + usuario + "&time=" + time;
+        peticion = "username=" + usuario;
         return Upload(peticion, "guardar_estadisticas.php");
     }
 

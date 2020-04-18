@@ -8,8 +8,7 @@ $username = $_POST["username"];
 header("Content-type: text/html");
 
 if (Game::inicia_nuevo_juego_individual($username)){
-	print(0)
-	exit();
+	print(0);
 }
 else{
 	print(1);

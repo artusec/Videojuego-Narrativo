@@ -147,6 +147,27 @@ class Game
             if($clave == "username"){
                 $username = $valor;
             }
+            elseif ($clave == "time") {
+
+                $time = sprintf("SELECT time_played FROM Games G WHERE G.id_game = '%d'",
+                    $id_game
+                );
+                if ( ! $conn->query($query) ) {
+                    echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+                    return false;
+                }
+
+                $total_time = $time + $valor;
+
+                $query = sprintf("UPDATE Games G SET G.timed_played = ('%d') WHERE G.id_game = '%d'",
+                    $total_time,
+                    $id_game
+                );
+                if ( ! $conn->query($query) ) {
+                    echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+                    return false;
+                }
+            }
             else{
                 $fila = str_split($valor);
                 $objeto = $clave;
