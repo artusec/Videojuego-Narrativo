@@ -89,7 +89,10 @@
         <h1 class="Title-1" id='1'>¡Te damos la bienvenida <?php echo $_SESSION['username'] ?>!</h1>
 		<p>&nbsp</p>  
         <?php
-            }
+            }else{  ?>
+                <h1 class="Title-1" id='1'>¡Te damos la bienvenida!</h1>
+                <p>&nbsp</p>  
+        <?php    }
         ?>
 		<p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
 		<p>&nbsp</p>

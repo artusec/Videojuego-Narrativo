@@ -21,6 +21,7 @@ html{
 }
 .nav-link:hover,.nav-link:focus {
     background-color: #9932CC;
+    color:#fefefe;
     text-decoration: underline;
 }   
 .nav-item{
@@ -29,6 +30,7 @@ html{
 .nav-link{
     color:#fefefe;
 }
+  
 .img-container{
     background-color: black;
     max-width: 100%;
@@ -60,4 +62,8 @@ html{
 }
 #reg{
     color:black;
+}
+.footer-div{
+    justify-items: center;
+    display: flex;
 }

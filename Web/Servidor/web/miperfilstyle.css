@@ -21,6 +21,7 @@ html{
 }
 .nav-link:hover,.nav-link:focus {
     background-color: #9932CC;
+    color:#fefefe;
     text-decoration: underline;
 }   
 .nav-item{
@@ -56,4 +57,8 @@ html{
 }
 .animation2{
     width:60%;
+}
+.footer-div{
+    justify-items: center;
+    display: flex;
 }

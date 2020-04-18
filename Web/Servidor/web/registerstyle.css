@@ -22,6 +22,7 @@ html{
 .nav-link:hover,.nav-link:focus {
     background-color: #9932CC;
     text-decoration: underline;
+    color:#fefefe;
 }   
 .nav-item{
     color:#fefefe;
@@ -61,4 +62,8 @@ html{
 
 #a-login{
     color:black;
+}
+.footer-div{
+    justify-items: center;
+    display: flex;
 }
