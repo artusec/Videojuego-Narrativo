@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -234,7 +234,7 @@ public class GameManager : MonoBehaviour
     {
         loadRoomNumber();
         lastTime = System.DateTime.Now;
-        if (room == 0) changeScene("Room1");
+        if (room == 0) changeScene("Intro");
         else changeScene("Room" + room.ToString());
     }
 
