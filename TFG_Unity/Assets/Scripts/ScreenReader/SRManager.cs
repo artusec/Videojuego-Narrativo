@@ -45,6 +45,7 @@ public class SRManager : MonoBehaviour
             {
                 gm.loadRoomFromFile(roomIndex);
                 gm.instantiateRoom();
+                gm.SaveData();
                 if (intro != null && intro.Length != 0)
                 {
                     playTTS(intro[0]);

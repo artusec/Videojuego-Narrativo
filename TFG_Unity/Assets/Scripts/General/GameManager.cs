@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public bool onlinePlay = false;
     public string user = "Paco";
 
+    private System.DateTime lastTime;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -231,7 +233,8 @@ public class GameManager : MonoBehaviour
     public void SetUpPlay()
     {
         loadRoomNumber();
-        if (room == 0) changeScene("Intro");
+        lastTime = System.DateTime.Now;
+        if (room == 0) changeScene("Room1");
         else changeScene("Room" + room.ToString());
     }
 
@@ -421,6 +424,8 @@ public class GameManager : MonoBehaviour
 
         // Objeto inicial con numero de habitacion
         gameState.Add("RoomNumber", "0:" + room.ToString());
+        // Objeto con el tiempo transcurrido
+        // gameState.Add("Time", GetPlayTimeInc().ToString());
 
         if (sceneObjs.Count > 0)
         {
@@ -438,12 +443,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        
         // Debug
         foreach(var v in gameState)
         {
             Debug.Log(v.Key + " " + v.Value);
         }
-
+        
         return gameState;
     }
 
@@ -484,5 +490,14 @@ public class GameManager : MonoBehaviour
                 invObjects.Add(new element(name, state));
             }
         }
+    }
+
+    // Actualiza el tiempo de juego y devuelve el incremento
+    public int GetPlayTimeInc()
+    {
+        System.DateTime aux = System.DateTime.Now;
+        int inc = (int)(aux - lastTime).TotalSeconds;
+        lastTime = aux;
+        return inc;
     }
 }

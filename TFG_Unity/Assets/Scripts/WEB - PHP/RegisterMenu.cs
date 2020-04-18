@@ -31,6 +31,7 @@ public class RegisterMenu : MonoBehaviour
                 TextToSpeech.Speak("Se registro el usuario " + user + " . Iniciando juego.");
                 GameManager.instance.clearData();
                 GameManager.instance.saveUsername(user);
+                GameManager.instance.onlinePlay = true;
                 Invoke("OnSuccess", 4f);
                 break;
         }
@@ -39,6 +40,6 @@ public class RegisterMenu : MonoBehaviour
     private void OnSuccess()
     {
         interaccion_servidor.nuevo_juego(username.text);
-        GameManager.instance.changeScene("Intro");
+        GameManager.instance.SetUpPlay();
     }
 }
