@@ -83,8 +83,14 @@
             <button class="btn btn-danger btn-lg"><a download="APK" href="/web/apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="download.png"></a></button>
         </div>
         <p>&nbsp</p>
-        <h1 class="Title-1" id='1'>¡Te damos la bienvenida a [NOMBRE]!</h1>
+        <?php
+            if (isset($_SESSION['login']) && $_SESSION['login'] === true){
+        ?>
+        <h1 class="Title-1" id='1'>¡Te damos la bienvenida <?php echo $_SESSION['username'] ?>!</h1>
 		<p>&nbsp</p>  
+        <?php
+            }
+        ?>
 		<p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
 		<p>&nbsp</p>
 		<p>&nbsp</p>
