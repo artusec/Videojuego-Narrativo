@@ -20,7 +20,8 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
 <head>
-    <title>Videojuego Narrativo - Inicio</title>
+    <link rel="icon" type="image/x-icon" href="./web/imagenes/favicon.ico" />
+    <title>ASHED MEMORIES - Inicio</title>
 	<meta charset="UTF-8"/>
 </head>
 
@@ -69,28 +70,36 @@
 
     <div class="img-container">
         <div class="row logo">
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="Name">
+                <p class="text-center">ASHED</p>
+                </div>
+            </div>
             <div class="col-sm-4">
                 <img src="./web/imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
             </div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="Name">
+                <p class="text-center">MEMORIES</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="container-fluid">
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg"><a download="APK" href="./web/apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./web/imagenes/download.png"></a></button>
+            <button class="btn btn-danger btn-lg"><a download="AshenMemories" href="./web/apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./web/imagenes/download.png"></a></button>
         </div>
         <p>&nbsp</p>
         <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
         ?>
-        <h1 class="Title-1" id='1'>¡Te damos la bienvenida <?php echo $_SESSION['username'] ?>!</h1>
+        <h1 class="Title-1" id='1'>¡Te damos la bienvenida a ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
 		<p>&nbsp</p>  
         <?php
             }else{  ?>
-                <h1 class="Title-1" id='1'>¡Te damos la bienvenida!</h1>
+                <h1 class="Title-1" id='1'>¡Te damos la bienvenida a ASHED MEMORIES!</h1>
                 <p>&nbsp</p>  
         <?php    }
         ?>
