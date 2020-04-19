@@ -36,8 +36,7 @@ class Game
         $query = sprintf("SELECT id FROM Games G WHERE user = '%d'", $id_usuario);
         $rs = $conn->query($query);
 
-        if (! $rs) {
-            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+        if ($rs->num_rows == 0) {
             return false;
         }
 
