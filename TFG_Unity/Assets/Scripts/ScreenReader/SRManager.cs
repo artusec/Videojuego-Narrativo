@@ -9,7 +9,7 @@ public class SRManager : MonoBehaviour
 
 
     public AudioSource ttsSource;
-    public AudioClip[] intro;
+    public AudioClip intro;
     public SRType type = SRType.Default;
 
     public int roomIndex = -1;
@@ -46,11 +46,11 @@ public class SRManager : MonoBehaviour
                 gm.loadRoomFromFile(roomIndex);
                 gm.instantiateRoom();
                 gm.SaveData();
-                if (intro != null && intro.Length != 0)
+                if (intro != null && intro.length != 0)
                 {
-                    playTTS(intro[0]);
-                    deactivate(intro[0].length);
-                    Invoke("introReadFocus", intro[0].length);
+                    playTTS(intro);
+                    deactivate(intro.length);
+                    Invoke("introReadFocus", intro.length);
                 }
                 else introReadFocus();
             }

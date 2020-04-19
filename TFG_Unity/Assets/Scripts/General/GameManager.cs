@@ -319,6 +319,11 @@ public class GameManager : MonoBehaviour
         File.WriteAllText(savePath, roomFileLines);
     }
 
+    public void gameEnd()
+    {
+        interaccion_servidor.guardar_estadisticas(GameManager.instance.user);
+        interaccion_servidor.nuevo_juego(GameManager.instance.user);
+    }
     public void saveToGMFromSRM()
     {
         SRManager srm = SRManager.instance;

@@ -566,6 +566,7 @@ Transform:
   - {fileID: 1597854504}
   - {fileID: 1260813165}
   - {fileID: 501887160}
+  - {fileID: 1153832736}
   m_Father: {fileID: 1614197040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -592,6 +593,7 @@ MonoBehaviour:
   - {fileID: 1597854506}
   - {fileID: 1260813167}
   - {fileID: 501887162}
+  - {fileID: 1153832738}
   prevList: {fileID: 0}
   currentFocus: 0
   srm: {fileID: 0}
@@ -785,6 +787,71 @@ MonoBehaviour:
   audioLabel: {fileID: 0}
   label: Arturo Aguirre Calvo
   actBehaviour: {fileID: 1137741443}
+  state: 1
+  parentList: {fileID: 0}
+--- !u!1 &1153832735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1153832736}
+  - component: {fileID: 1153832738}
+  - component: {fileID: 1153832737}
+  m_Layer: 0
+  m_Name: VolverAlMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1153832736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153832735}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8105664, y: 3.2541385, z: -0.5019531}
+  m_LocalScale: {x: 0.64827, y: 0.64827, z: 0.64827}
+  m_Children: []
+  m_Father: {fileID: 617185286}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153832737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153832735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2426b317a5fc9194188fd453841dfc07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: {fileID: 0}
+  sceneToLoad: MainMenu
+  changeClip: {fileID: 0}
+  usedClip: {fileID: 0}
+--- !u!114 &1153832738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153832735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLabel: {fileID: 0}
+  label: Volver al Menu
+  actBehaviour: {fileID: 1153832737}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &1205110784
@@ -989,6 +1056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1535312672}
   - component: {fileID: 1535312673}
+  - component: {fileID: 1535312674}
   m_Layer: 0
   m_Name: Anim
   m_TagString: Untagged
@@ -1033,6 +1101,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1535312674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535312671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5795de63e38e64dbc618d57d40c880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1597854503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,6 +1327,75 @@ MonoBehaviour:
   readOnStart: 1
   inventory: {fileID: 0}
   scene: {fileID: 617185287}
+--- !u!1001 &1718629188
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4817786954649803766, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.8358443
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1308752
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.0536337
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb3d01be81baed249a5c052c3fd53b71, type: 3}
 --- !u!1001 &1858079520
 PrefabInstance:
   m_ObjectHideFlags: 0
