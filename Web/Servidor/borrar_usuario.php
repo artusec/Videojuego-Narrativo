@@ -9,9 +9,10 @@ header("Content-type: text/html");
 
 if (User::borrar_usuario($username)){
 	print(0);
-	exit();
 }
-print(1);
+else{
+	print(1);	
+}
 exit();
 
 # 0 -> Success

@@ -50,30 +50,6 @@ class User
     }
 
 
-    public static function find_by_id($id)
-    {
-        $app = Aplication::getSingleton();
-        $conn = $app->conexionBd();
-        $query = sprintf("SELECT * FROM Users U WHERE U.id = '%d'", $conn->real_escape_string($id));
-        $rs = $conn->query($query);
-        $result = false;
-        if ($rs) {
-            if ( $rs->num_rows == 1) {
-                $fila = $rs->fetch_assoc();
-                $datos = array($fila['username'],$fila['password']);
-                $user = new User($datos);
-                $user->id = $fila['id'];
-                $result = $user;  
-            }
-            $rs->free();
-        } else {
-            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-            exit();
-        }
-        return $result;
-    }
-
-
     public static function insert_user($username, $email, $pass)
     {
         $app = Aplication::getSingleton();
@@ -103,58 +79,46 @@ class User
 
         $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
         $rs = $conn->query($query);
+        if ($rs->num_rows == 0) {
+            return false;
+        }
         $fila = $rs->fetch_assoc();
         $id_user = $fila["id"];
 
         $query = sprintf("DELETE FROM Statistics WHERE id_user = '%d'",
-            $conn->real_escape_string($id_user)
-            );
+            $id_user
+        );
         if (! $conn->query($query) ) {
-            $user->id = $conn->insert_id;
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-            exit();
-        }
-
-        $query = sprintf("DELETE FROM Messages WHERE (id_sender = '%d' or id_receiver = '%d')",
-            $conn->real_escape_string($id_user),
-            $conn->real_escape_string($id_user)
-            );
-        if (! $conn->query($query) ) {
-            $user->id = $conn->insert_id;
-            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-            exit();
+            return false;
         }
 
         $query = sprintf("DELETE FROM State_Game WHERE id_user = '%d'",
-            $conn->real_escape_string($id_user)
+            $id_user
             );
         if (! $conn->query($query) ) {
-            $user->id = $conn->insert_id;
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-            exit();
+            return false;
         }
 
         $query = sprintf("DELETE FROM Games WHERE (user = '%d')",
-        $conn->real_escape_string($id_user),
-        $conn->real_escape_string($id_user)
-            );
+            $id_user
+        );
         if (! $conn->query($query) ) {
-            $user->id = $conn->insert_id;
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-            exit();
+            return false;
         }
 
 
         $query = sprintf("DELETE FROM Users WHERE id = '%d'",
-            $conn->real_escape_string($id_user)
-            );
+            $id_user
+        );
         if (! $conn->query($query) ) {
-            $user->id = $conn->insert_id;
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-            exit();
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
 
