@@ -364,9 +364,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Cargando de web");
         string respuesta = interaccion_servidor.cargar_partida(user);
-        if (respuesta == "0")
+        string[] lines = respuesta.Split('\n');
+        if (lines[0] == "0")
         {
-            updateGMFromWebString(respuesta);
+            updateGMFromWebString(lines[1]);
         }
         else room = 0;
     }
@@ -425,7 +426,7 @@ public class GameManager : MonoBehaviour
         // Objeto inicial con numero de habitacion
         gameState.Add("RoomNumber", "0:" + room.ToString());
         // Objeto con el tiempo transcurrido
-        // gameState.Add("Time", GetPlayTimeInc().ToString());
+        gameState.Add("time", GetPlayTimeInc().ToString());
 
         if (sceneObjs.Count > 0)
         {

@@ -26,12 +26,12 @@ public class RegisterMenu : MonoBehaviour
             case "2":
                 TextToSpeech.Speak("Las contraseñas no coinciden.");
                 break;
-            // Cambiar TODO , CAMBIO , MAL , PONER CASO 0, DEFAULT PORQUE NO VA BIEN EL SERVIDOR
-            default:
+            case "0":
                 TextToSpeech.Speak("Se registro el usuario " + user + " . Iniciando juego.");
                 GameManager.instance.clearData();
                 GameManager.instance.saveUsername(user);
                 GameManager.instance.onlinePlay = true;
+                interaccion_servidor.nuevo_juego(username.text);
                 Invoke("OnSuccess", 4f);
                 break;
         }
@@ -39,7 +39,6 @@ public class RegisterMenu : MonoBehaviour
 
     private void OnSuccess()
     {
-        interaccion_servidor.nuevo_juego(username.text);
         GameManager.instance.SetUpPlay();
     }
 }

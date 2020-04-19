@@ -107,7 +107,7 @@ public static class interaccion_servidor
         switch (type)
         {
             case PetitionType.LOAD:
-                if (s != "Algo ha fallado")
+                if (s != "1")
                 {
                     s = s.Remove(s.Length - 1);
                 }
