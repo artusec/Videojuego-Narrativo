@@ -36,12 +36,13 @@ class Game
         $query = sprintf("SELECT id FROM Games G WHERE user = '%d'", $id_usuario);
         $rs = $conn->query($query);
 
-        if ($rs->num_rows == 0) {
-            return false;
+        if ($rs->num_rows != 0) {
+            $fila = $rs->fetch_assoc();
+            $id_game = $fila["id"];
         }
-
-        $fila = $rs->fetch_assoc();
-        $id_game = $fila["id"];
+        else {
+            $id_game = false;
+        }
 
         # Si tenia una partida, borramos de la tabla de estado de la misma
         if($id_game){
