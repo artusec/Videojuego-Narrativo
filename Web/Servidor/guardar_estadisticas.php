@@ -8,10 +8,11 @@ header("Content-type: text/html");
 
 $result = User::guardar_estadisticas($username);
 if ($result == false) {
-	print(0);
-	exit();
+	print(1);
 }
-print(1);
+else{
+	print(0);
+}
 exit();
 
 # 0 -> Success

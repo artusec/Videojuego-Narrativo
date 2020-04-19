@@ -24,16 +24,23 @@ class Game
 
         $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($user));
         $rs = $conn->query($query);
+
+        if ($rs->num_rows == 0) {
+            return false;
+        }
+
         $fila = $rs->fetch_assoc();
         $id_usuario = $fila["id"];
-
-        if ( ! $id_usuario) {
-            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-        }
 
         # Recuperamos el id de la partida individual que tiene user activa si la tiene
         $query = sprintf("SELECT id FROM Games G WHERE user = '%d'", $id_usuario);
         $rs = $conn->query($query);
+
+        if (! $rs) {
+            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            return false;
+        }
+
         $fila = $rs->fetch_assoc();
         $id_game = $fila["id"];
 
@@ -83,14 +90,16 @@ class Game
 
         $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
         $rs = $conn->query($query);
+        if ($rs->num_rows == 0) {
+            return false;
+        }
         $fila = $rs->fetch_assoc();
         $id_usuario = $fila["id"];
 
-        # Recuperamos el id de la partida individual
+        // Esto nos devuelve todos los objetos del usuario en su partida individual y su estado
         $query = sprintf("SELECT object, type, state_object FROM  State_Game S where S.id_user = '%d'", $id_usuario);
         $rs = $conn->query($query);
 
-        // Esto nos devuelve todos los objetos del usuario en su partida individual y su estado
         if ($rs) {
             $result = array();
             while ($fila = $rs->fetch_assoc()) {
@@ -116,28 +125,24 @@ class Game
 
         $query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($usuario));
         $rs = $conn->query($query);
+        if ($rs->num_rows == 0) {
+            return false;
+        }
         $fila = $rs->fetch_assoc();
         $id_usuario = $fila["id"];
 
-        if ( ! $id_usuario) {
-            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
-            return false;
-        }
-
         $query = sprintf("SELECT id FROM Games G WHERE G.user = '%d'", $id_usuario);
         $rs = $conn->query($query);
-        $fila = $rs->fetch_assoc();
-        $id_game = $fila["id"];
-
-        if ( ! $id_game) {
-            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+        if ($rs->num_rows == 0) {
             return false;
         }
+        $fila = $rs->fetch_assoc();
+        $id_game = $fila["id"];
 
         $query = sprintf("DELETE FROM State_Game WHERE id_user = '%d'", $id_usuario);
         $rs = $conn->query($query);
         if ( ! $rs) {
-            echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            echo "Error al borrar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             return false;
         }
 
@@ -149,22 +154,24 @@ class Game
             }
             elseif ($clave == "time") {
 
-                $time = sprintf("SELECT time_played FROM Games G WHERE G.id_game = '%d'",
+                $query = sprintf("SELECT time_played FROM Games G WHERE (G.id = '%d')",
                     $id_game
                 );
-                if ( ! $conn->query($query) ) {
-                    echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+                $rs = $conn->query($query);
+                if ( ! $rs ) {
+                    echo "Error al buscar el tiempo en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
                     return false;
                 }
+                $fila = $rs->fetch_assoc();
 
-                $total_time = $time + $valor;
+                $total_time = (int)$fila["time_played"] + $valor;
 
-                $query = sprintf("UPDATE Games G SET G.timed_played = ('%d') WHERE G.id_game = '%d'",
+                $query = sprintf("UPDATE Games G SET G.time_played = ('%d') WHERE (G.id = '%d')",
                     $total_time,
                     $id_game
                 );
                 if ( ! $conn->query($query) ) {
-                    echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+                    echo "Error al actualizar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
                     return false;
                 }
             }

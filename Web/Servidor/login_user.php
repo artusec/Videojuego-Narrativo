@@ -12,10 +12,10 @@ header("Content-type: text/html");
 $user = User::login($username, $pass);
 if ($user == false) {
 	print(1);
-	exit();
 }
-
-print(0);
+else{
+	print(0);
+}
 exit();
 
 # 0 -> Success

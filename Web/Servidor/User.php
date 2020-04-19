@@ -164,11 +164,19 @@ class User
 
 		$query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
         $rs = $conn->query($query);
+        if ($rs->num_rows == 0) {
+            return false;
+        }
         $fila = $rs->fetch_assoc();
         $id_user = $fila["id"];
 
 		$query = sprintf("SELECT id, date_start, time_played FROM Games G WHERE user = '%d'", $id_user);
         $rs = $conn->query($query);
+
+        if ($rs->num_rows == 0) {
+            return false;
+        }
+
         $fila = $rs->fetch_assoc();
         $id_game = $fila["id"];
         $date_start = $fila["date_start"];
@@ -184,7 +192,6 @@ class User
         if (! $conn->query($query) ) {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             return false;
-            exit();
         }
         return true;
     }
