@@ -69,11 +69,13 @@
 	
 	<div class="container-fluid">
 	<p>&nbsp</p>
-	<p>&nbsp</p>
+    <p>&nbsp</p>
+    
 		<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-				<h1>Login</h1>
+                <h1>Login</h1>
+                <p>&nbsp</p>
 				<p>Identifícate o <a href='Register.php' id = 'reg'>regístrate</a></p>
 				<?php	
 				$form = new FormLogin();
@@ -83,8 +85,6 @@
 		<div class="col-sm-4"></div>
 			<p>&nbsp</p>
 		</div>
-		<br>
-		<br>
 	</div>
 
 
