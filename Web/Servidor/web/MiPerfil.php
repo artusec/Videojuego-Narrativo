@@ -68,7 +68,7 @@
 	<p>&nbsp</p>
 	<p>&nbsp</p>
 		<div class="row">
-				<div class="col-sm-4"><img class="animation" src="animation.gif"></div>
+				<div class="col-sm-4"><img class="animation" src="./imagenes/animation.gif"></div>
 				<div class="col-sm-4">
 					<h1>ESTADISTICAS</h1>
 					<table>
@@ -150,7 +150,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-sm-4"><img class="animation2" src="animation-obj.gif"></div>
+				<div class="col-sm-4"><img class="animation2" src="./imagenes/animation-obj.gif"></div>
 			</div>
 		</div>
 

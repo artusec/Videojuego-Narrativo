@@ -68,9 +68,8 @@
 
 	
 	<div class="container-fluid">
-	<p>&nbsp</p>
     <p>&nbsp</p>
-    
+    <p>&nbsp</p>
 		<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
@@ -83,7 +82,8 @@
 				?>
 		</div>
 		<div class="col-sm-4"></div>
-			<p>&nbsp</p>
+            <p>&nbsp</p>
+            
 		</div>
 	</div>
 
