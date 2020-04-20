@@ -11,8 +11,6 @@
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <script src="./cookies.js"></script>
-
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
@@ -21,6 +19,7 @@
 
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
+    <script src="./cookies.js"></script>
 
 
 <head>
@@ -68,6 +67,12 @@
                 <li class="nav-item">
                     <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
                 </li>
+                <li class="nav-item">
+                     <label class="switch">
+                        <input type="checkbox" id="mode" checked> 
+                            <span class="slider round"></span>
+                    </label>               
+                </li>
         </ul>
     </nav>
 
@@ -113,30 +118,30 @@
 
         <div class="row">
         <div class="col-sm-3"></div>
-            <div class="col-sm-3">    
-                <div class="minijuegosOut">
-                        <div class="card">
-                            <img src="./web/imagenes/accesibility.png"  class="card-img-top "alt="Hola hola Probando">
-                            <div class="card-body">
-                                <p class="card-text">ACCESIBILIDAD</p>
-                                <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                                <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
-                            </div>
+        <div class="col-sm-3">    
+            <div class="minijuegosOut">
+                    <div class="card">
+                        <img src="./web/imagenes/accesibility.png"  class="card-img-top "alt="Hola hola Probando">
+                        <div class="card-body">
+                            <p class="card-text">ACCESIBILIDAD</p>
+                            <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                            <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                         </div>
-                </div>
+                    </div>
             </div>
-            <div class="col-sm-3">    
-                <div class="minijuegosOut">
-                        <div class="card">
-                            <img src="./web/imagenes/nube.png"  class="card-img-top" alt="Hola hola Probando">
-                            <div class="card-body">
-                                <p class="card-text">NUBE</p>
-                                <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                                <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
-                            </div>
+        </div>
+        <div class="col-sm-3">    
+            <div class="minijuegosOut">
+                    <div class="card">
+                        <img src="./web/imagenes/nube.png"  class="card-img-top" alt="Hola hola Probando">
+                        <div class="card-body">
+                            <p class="card-text">NUBE</p>
+                            <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                            <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                         </div>
-                </div>
+                    </div>
             </div>
+        </div>
         </div>
         <div class="col-sm-3"></div>
     </div>
@@ -268,6 +273,18 @@
 
             removeCookie("accesibility");
         }
+
+        $('#mode').change(function() {
+            if(this.checked) { 
+                console.log("change");
+                modoNormal();
+            }
+            else{
+                modoAltoContraste();
+            }
+        });
+
+
 
 </script>
 </html>
