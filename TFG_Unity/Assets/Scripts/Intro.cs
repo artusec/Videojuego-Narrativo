@@ -58,6 +58,7 @@ public class Intro : MonoBehaviour
         src.Play();
         src.Pause();
         initPos = fireSprite.transform.position;
+        anim.Play("Fire");
     }
     private void Update()
     {

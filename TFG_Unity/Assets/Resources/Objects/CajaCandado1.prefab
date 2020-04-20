@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 8300000, guid: bcfee1aabbed8164a916ecdf72ec16e5, type: 3}
+  audioLabel: {fileID: 8300000, guid: 92100d5d41bf86e4396336ab10b59afc, type: 3}
   label: Caja fuerte
   actBehaviour: {fileID: -4489167581602843832}
+  state: 1
   parentList: {fileID: 0}
 --- !u!212 &106308634267985665
 SpriteRenderer:

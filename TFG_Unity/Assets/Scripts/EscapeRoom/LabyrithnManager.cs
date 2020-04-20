@@ -19,6 +19,7 @@ public class LabyrithnManager : MonoBehaviour
 {
     public static LabyrithnManager instance;
     //public LabyrinthPlayer player;
+    TTS ttsSource;
 
     [Tooltip("El AudioSource desde el cual se reproducirán los sonidos de los eventos")]
     public AudioSource src;
@@ -86,6 +87,7 @@ public class LabyrithnManager : MonoBehaviour
             print("No se encontró audio inicial, se esperará 1 segundo para inicial el juego");
             Invoke("startLogic", initWaitTime);
         }
+        ttsSource = TTS.instance;
     }
 
     public bool getPlayerCorrect()
@@ -104,8 +106,7 @@ public class LabyrithnManager : MonoBehaviour
         {
             if (!src.isPlaying && src.clip == initSound[0])
             {
-                src.clip = initSound[1];
-                src.Play();
+                ttsSource.PlayClip(initSound[1]);
                 initGame = true;
                 
             }

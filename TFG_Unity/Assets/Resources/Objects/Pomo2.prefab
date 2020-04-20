@@ -117,6 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 8300000, guid: ed65983fbdc38084084c5ce2697fa16d, type: 3}
+  descriptionClip: {fileID: 8300000, guid: 6b89c820510954940a3fa473663864e0, type: 3}
   oneUse: 0
   usedDescriptionClip: {fileID: 0}
