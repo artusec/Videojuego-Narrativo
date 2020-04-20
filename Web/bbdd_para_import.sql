@@ -131,8 +131,7 @@ ALTER TABLE `state_game`
 --
 ALTER TABLE `statistics`
   ADD PRIMARY KEY (`id`,`id_user`,`id_game`),
-  ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_game` (`id_game`);
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indices de la tabla `users`
@@ -177,15 +176,13 @@ ALTER TABLE `games`
 --
 ALTER TABLE `state_game`
   ADD CONSTRAINT `state_game_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `state_game_ibfk_2` FOREIGN KEY (`object`) REFERENCES `objects` (`name`),
   ADD CONSTRAINT `state_game_ibfk_3` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`);
 
 --
 -- Filtros para la tabla `statistics`
 --
 ALTER TABLE `statistics`
-  ADD CONSTRAINT `statistics_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `statistics_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`);
+  ADD CONSTRAINT `statistics_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

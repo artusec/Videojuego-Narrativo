@@ -11,7 +11,7 @@ $datos = array();
 if ($datos = Game::cargar_partida_individual($user)){
 	print(0 . "\n");
 	foreach($datos as $clave=>$valor) {
-		print($clave."-".$valor);
+		print($clave."-".$valor.",");
 	}
 	exit();
 }
