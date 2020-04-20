@@ -68,7 +68,7 @@
 	<p>&nbsp</p>
 	<p>&nbsp</p>
 		<div class="row">
-				<div class="col-sm-4"><img class="animation" src="./imagenes/animation.gif"></div>
+				<div class="col-sm-4"><img class="animation" id="animation1"src="./imagenes/animation.gif"></div>
 				<div class="col-sm-4">
 					<h1>ESTADISTICAS</h1>
 					<table>
@@ -150,7 +150,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-sm-4"><img class="animation2" src="./imagenes/animation-obj.gif"></div>
+				<div class="col-sm-4"><img class="animation2" id="animation2" src="./imagenes/animation-obj.gif"></div>
 			</div>
 		</div>
 
@@ -174,6 +174,8 @@
 
         //Poner ela pagina a alto contraste 
         $(".container-fluid").css({"background-color": "black","color":"yellow"});
+		$("#animation1").attr("src", "./imagenes/animation2.gif");
+		$("#animation2").attr("src", "./imagenes/animation-obj-2.gif");
 
         //Poner el footer a alto contraste 
         $(".page-footer").css({"background-color": "black","color":"yellow"});
@@ -186,6 +188,8 @@
         $("a").css({"color": "#F2F1EF"});
 
         $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
+		$("#animation1").attr("src", "./imagenes/animation.gif");
+		$("#animation2").attr("src", "./imagenes/animation-obj.gif");
 
         $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
         $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
