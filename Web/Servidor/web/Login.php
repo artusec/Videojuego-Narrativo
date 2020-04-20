@@ -21,6 +21,8 @@
 
 <link rel="stylesheet" type="text/css" href="loginstyle.css">
 
+<script src="../cookies.js"></script>
+
 
 <head>
 	<title>Login</title
@@ -96,6 +98,15 @@
 
 </body>
 <script>
+
+    $( document ).ready(function() {
+            if (detectCookie("accesibility")){
+            modoAltoContraste();
+        }
+        else{
+            modoNormal();
+        }
+        });
 
 
     function modoAltoContraste(){

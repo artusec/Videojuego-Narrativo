@@ -20,6 +20,8 @@
 
 <link rel="stylesheet" type="text/css" href="registerstyle.css">
 
+<script src="../cookies.js"></script>
+
 <head>
 	<title>Registrar</title>
 	<meta charset="utf-8" />
@@ -87,6 +89,15 @@
 
 </body>
 <script>
+
+	$( document ).ready(function() {
+            if (detectCookie("accesibility")){
+            modoAltoContraste();
+        }
+        else{
+            modoNormal();
+        }
+        });
 
 		function modoAltoContraste(){
 			//Poner el menu a contraste alto
