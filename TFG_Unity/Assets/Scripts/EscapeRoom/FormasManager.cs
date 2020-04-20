@@ -4,6 +4,9 @@ using UnityEngine;
 
 using UnityEngine.UI;
 
+//enumerado con las diseños de posibles formas a elegir en la fase de selección
+//  no tienen por qué existir la formas física como GO para añadir 
+//  una forma nueva, salvo que vaya a ser la solución de un nivel
 [System.Serializable]
 public enum Forma {
     Cuadrado,
@@ -15,23 +18,21 @@ public enum Forma {
     Retroceder
 }
 
+//struct que maneja la fase de selección de un nivel minijuego como tal
 [System.Serializable]
 public struct FormasSelectionOptions
 {
-    public Forma solution;
-    public Forma[] formas;
+    public Forma solution;  //la solución al nivel
+    public Forma[] formas;  //lista de las posibles formas a elegir, un elemento debe ser igual que solution para poder ser pasable
+
 }
 
+//clase principal del minijuego que manaje el flujo general. En caso de extender el minijuego y que haya otros componentes
+//  que necesiten acceder a éste, se podría hacer de esta clase un singleton de manera similar a cómo están hechos otros minijuegos
 public class FormasManager : MonoBehaviour
 {
-    public AudioClip introTTS;
-    public AudioClip success;
-    public AudioClip wrong;
-    public AudioClip ttsFin;
-
-    //para manejar el flujo del minijuego
-    public int level = 0;
-    private bool selectionPhase = false;
+    public int level = 0;    //para manejar el flujo de nivel del minijuego, se mueve en rango [0, formas.Count-1]
+    private bool selectionPhase = false;    //bandera auxiliar para manejar las dos fases dentro de un nivel
 
     [Tooltip("Los diferentes GOs que serán utilizados como formas a reconocer")]
     [SerializeField]
@@ -39,38 +40,40 @@ public class FormasManager : MonoBehaviour
 
     [Tooltip("Las distintas opciones de seleccion para cada GO en la lista de formas")]
     [SerializeField]
-    public List<FormasSelectionOptions> textos;
-
-    [Tooltip("El menú de selección, para activarlo o desactivarlo según corresponda ")]
-    public GameObject selectionContainer;
+    public List<FormasSelectionOptions> optionList;
 
     [Space(10)]
 
+    //audios del juego
+    public AudioClip introTTS;  //suena nada más comienza la escena
+    public AudioClip success;   //suena al elegir la forma correcta
+    public AudioClip wrong;     //suena al equivocarse en la selección
+    public AudioClip ttsFin;    //suena al terminar el minijuego
+
+    [Tooltip("Los labels de las distintas formas dentro del enum Forma")]
     public AudioClip[] formAudios = new AudioClip[(int)Forma.Retroceder];
 
     public ScreenInput input = null;
-
-    private SRManager srm = null;
+    private SRManager srm = null;   //se registra en el start sólo al ser estático
 
     private void OnValidate()
     {
-        //controla que el array de textos de selección siempre tenga el mismo tamaño que el array de formas a reconocer (no se puede reiniciar 
-        //  el array de textos al tamaño del array de formas directamente porque desde editor se pierden los textos escritos previamente)
-        if (textos.Count != formas.Count) {
+        //se controla que la lista de opciones no tenga ni más ni menos elementos que el número de formas físicas en la lista de formas
+        if (optionList.Count != formas.Count) {
             print("El tamaño del array de textos de seleccion es distinto al del array de formas. Ajustando el tamaño" +
                 "para que sea igual al array de formas");
-            if (textos.Count < formas.Count)
+            if (optionList.Count < formas.Count)
             {
-                for (int i = 0; i < formas.Count - textos.Count; i++)
-                    textos.Add(new FormasSelectionOptions());
+                for (int i = 0; i < formas.Count - optionList.Count; i++)
+                    optionList.Add(new FormasSelectionOptions());
             }
             else
             {
-                for (int i = 0; i < textos.Count - formas.Count; i++)
-                    textos.RemoveAt(textos.Count - 1);
+                for (int i = 0; i < optionList.Count - formas.Count; i++)
+                    optionList.RemoveAt(optionList.Count - 1);
             }
         }
-        //controla que la variable level no sobrepase el limite del array de formas
+        //se controla que la variable level no sobrepase el limite del array de formas al iniciar al juego
         if (level < 0)
             level = 0;
         else if (level > formas.Count - 1)
@@ -79,55 +82,46 @@ public class FormasManager : MonoBehaviour
 
     void Start()
     {
-        //activamos la primera forma a reconocer
-        // reproducir u naudio con el texto TTS.instance.PlayTTS("Trata de reconocer las formas con la vibracion, despues abre la selección con doble tap y seleccionala.");
         srm = SRManager.instance;
-        setLevel(level);
-
+        setLevel(level);    //activamos la primera forma a reconocer
         srm.playTTS(introTTS);
+        //se desactiva el input del usuario mientras dure el sonido inicial
         ScreenInput.instance.deactivate(introTTS.length);
     }
 
     void Update()
     {
-        // con doble click activamos la seleccion de forma
+        //si se está en fase de reconocimiento (srm esta en modo NoInput para no tener en cuenta los swipes en esta fase)
         if (srm.type == SRType.NoInput)
         {
+            // con doble click se activa la fase de seleccion
             if (input.getInput() == move.doubleClick && !selectionPhase)
             {
-                print("pasando a fase de seleccion");
-                // el invoke es necesario para que no se detecte pulsacion en el mismo frame
+                // el invoke es necesario para que no se detecte la doble pulsacion en el mismo frame
                 Invoke("goToSelection", 0.1f);
             }
         }
     }
 
     private void goToSelection() {
-        Vibration.Cancel();
-        srm.type = SRType.Default;
-        formas[level].SetActive(false);
+        Vibration.Cancel();     //se cancelan las vibraciones activas por si acaso
+        formas[level].SetActive(false); //forma desactivada para que no siga activando vibraciones indeseadas
+        selectionPhase = true;  //marcaje de bandera
+        //ajustes del srm
+        srm.type = SRType.Default;  //se cambia el modo de srm para que ahora sí reconozca los swipes
         srm.currentList.currentFocus = 0;
         srm.currentList.GoToBeginning();
-        selectionPhase = true;
-    }
-
-    private void goToRecognition()
-    {
-        //srm.type = SRType.NoInput;
-        //formas[level].SetActive(true);
-        selectionPhase = false;
     }
 
     public void setLevel(int nLevel)
     {
         if (level < 0 || level >= formas.Count)
             throw new System.Exception("Se ha intentado acceder a un índice erróneo en el array de formas");
-    
+        //desactivamos todas las formas y luego activamos la correspondiente
         for (int i = 0; i < formas.Count; i++)
             formas[i].SetActive(false);
         formas[nLevel].SetActive(true);
-
-        setUpForms();
+        setUpForms();   //ajuste de información de la lista del srm
     }
 
     public void addLevel(int nLevel)
@@ -135,16 +129,17 @@ public class FormasManager : MonoBehaviour
         //válido para nLevel negativo y seguro para no pasarse del límite del array
         level = (level + nLevel) % formas.Count;
         setLevel(level);
-        ReturnToSelection();
+        ReturnToRecognition();
     }
 
+    //método que ajusta la lista del srm para que tenga la información del nivel actual
     private void setUpForms()
     {
         List<SRElement> list = SRManager.instance.currentList.sreList;
         Forma f;
-        for(int i = 0; i < textos.Count; i++)
+        for(int i = 0; i < optionList.Count; i++)
         {
-            f = textos[level].formas[i];
+            f = optionList[level].formas[i];
 
             list[i].label = f.ToString();
             list[i].audioLabel = formAudios[(int)f];
@@ -152,32 +147,29 @@ public class FormasManager : MonoBehaviour
         }
     }
 
-    public void ReceiveChoice(Forma s)
+    //método que recibe la forma seleccionada, determina si es la correcta, y actúa en consecuencia
+    public void ReceiveChoice(Forma f)
     {
         //caso de acierto con la forma solución
-        if (s == textos[level].solution)
+        if (f == optionList[level].solution)
         {
             SRManager.instance.playTTS(success);
-            //Audio TTS.instance.PlayTTS("Acierto");
-            //condición de victoria del puzle
-            if (level == textos.Count - 1)
+            if (level == optionList.Count - 1)  //condición de victoria del puzle
             {
-                print("victoria");
                 SRManager.instance.playTTS(ttsFin);
-                ScreenInput.instance.deactivate(ttsFin.length);
-                Invoke("OnVictory", ttsFin.length);
+                ScreenInput.instance.deactivate(ttsFin.length); //no se tiene en cuenta el input mientras dure el audio final
+                Invoke("OnVictory", ttsFin.length); //se espera a que termine de reproducirse el audio para avanzar a la siguiente escena
             }
-            addLevel(1);
+            addLevel(1);    //si no se ha acabado el minijuego, pasamos al siguiente nivel
         }
         //caso de fallo de selección
         else
         {
             SRManager.instance.playTTS(wrong);
-           // Audio TTS.instance.PlayTTS("Fallo");
-            print("fallo de selección");
         }
     }
 
+    //método de manejo de eventos al terminar el minijuego
     private void OnVictory()
     {
         int progress = GameManager.instance.room;
@@ -191,16 +183,18 @@ public class FormasManager : MonoBehaviour
                 break;
             default:
                 break;
-
         }
     }
 
-    public void ReturnToSelection()
+    public void ReturnToRecognition()
     {
-        // reproducir audio TTS.instance.PlayTTS("Volviendo a la fase de reconocimiento");
-        srm.type = SRType.NoInput;
-        formas[level].SetActive(true);
-        //necesario para que no vuelva a contar el doble click para otra razon en el mismo frame
-        Invoke("goToRecognition", 0.1f);
+        srm.type = SRType.NoInput;  //se vuelve a cambiar el modo para ajustarlo a la fase de reconocimiento
+        formas[level].SetActive(true);  
+        Invoke("goToRecognition", 0.1f);    //necesario para que no vuelva a contar el doble click para otra razon en el mismo frame
+    }
+
+    private void goToRecognition()
+    {
+        selectionPhase = false;
     }
 }

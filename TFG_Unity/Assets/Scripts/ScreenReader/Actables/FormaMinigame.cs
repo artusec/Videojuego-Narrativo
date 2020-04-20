@@ -10,7 +10,7 @@ public class FormaMinigame : Actable
 
     public override void Act()
     {
-        if (form == Forma.Retroceder) frm.ReturnToSelection();
+        if (form == Forma.Retroceder) frm.ReturnToRecognition();
         else frm.ReceiveChoice(form);
     }
 }

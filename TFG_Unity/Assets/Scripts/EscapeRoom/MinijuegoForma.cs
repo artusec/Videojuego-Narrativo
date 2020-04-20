@@ -4,32 +4,43 @@ using UnityEngine;
 
 public class MinijuegoForma : MonoBehaviour
 {
-    //auxiliar para manejar que no se repitan llamadas a la vibracion
+    //auxiliar bandera
     private bool lastCliked = false;
 
     private void OnMouseOver()
     {
-        print("encima");
+        //si pulsamos sobre la forma
         if (ScreenInput.instance.getInput() == move.pressing)
         {
+            //usamos una bandera para no repetir llamadas a comenzar la vibración
             if (!lastCliked)
             {
-                lastCliked = true;
-                Vibration.SonarVibration(1, 2000, 0, true);
-                //Vibration.SonarVibration(1, 1, 0, true);
                 //llamada a vibrar al maximo
-                print("clickado");
+                Vibration.SonarVibration(1, 2000, 0, true);
+                OnVibrationStart();
             }
         }
         else
         {
+            //si dejamos de pulsar, reajustamos la bandera y cancelamos la vibración
             lastCliked = false;
             Vibration.Cancel();
         }
     }
 
+    //metodo auxiliar para eventos que empiezan cuando comienza a vibrar la forma (reproducción de un sonido, por ejemplo)
+    private void OnVibrationStart()
+    {
+        //ajuste de bandera
+        lastCliked = true;
+
+        //manejo de eventos
+        //-----------------
+    }
+
     private void OnMouseExit()
     {
+        //si nos salimos de la forma, podemos resetear la vibración y la bandera
         lastCliked = false;
         Vibration.Cancel();
     }
