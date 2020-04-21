@@ -11,21 +11,29 @@ class FormRegistro extends Form {
     protected function generaCamposFormulario($datosIniciales) {
 
         $html = '<form class="form-inline">
-                    <div class="form-group">
-                        Usuario<input type="text" name="username" class="form-control" id="username" value=""  placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        Email<input type="email" name="email" class="form-control" id="email" value=""  placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                    Contraseña<input type="password" name="pass" class="form-control" id="pass" value=""  placeholder="Contraseña">
-                    </div>
-                    <div class="form-group">
-                    Repite la contraseña<input type="password" name="pass2" class="form-control" id="pass2" value=""  placeholder="Repite la contraseña">
-                    </div>
-                    <div class="col text-center">
-                        <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
-                    </div>  
+                    <fieldset>
+                        <legend><h1>Registrar</h1></legend>
+                        <a id="a-login" href="Login.php" aria-labe="Página de inicio de sesión" /> ¿Ya tienes cuenta? Accede haciendo clic aquí</a>
+                        <div class="form-group">
+                            <label for="username" >Usuario</label>
+                            <input type="text" name="username" class="form-control" id="username" value=""  placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" >Email</label>
+                            <input type="email" name="email" class="form-control" id="email" value=""  placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass" >Contraseña</label>
+                            <input type="password" name="pass" class="form-control" id="pass" value=""  placeholder="Contraseña">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass2" >Repite la contraseña</label>
+                            <input type="password" name="pass2" class="form-control" id="pass2" value=""  placeholder="Repite la contraseña">
+                        </div>
+                        <div class="col text-center">
+                            <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
+                        </div> 
+                    </fieldset>     
                 </form>';
         return $html;
     }

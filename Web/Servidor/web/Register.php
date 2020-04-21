@@ -68,8 +68,6 @@
 		<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-				<h1>Registrar</h1>
-				<label><a id="a-login" href="Login.php"/> ¿Ya tienes cuenta? Accede haciendo clic aquí</a></label>	
 				<?php	
 				$form = new FormRegistro();
 				$form->gestiona();

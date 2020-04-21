@@ -68,7 +68,7 @@
                     <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
                 </li>
                 <li class="nav-item">
-                     <label class="switch">
+                     <label class="switch" for="mode">
                         <input type="checkbox" id="mode" checked> 
                             <span class="slider round"></span>
                     </label>               
@@ -98,7 +98,7 @@
     <div class="container-fluid">
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg"><a download="AshenMemories" href="./web/apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./web/imagenes/download.png"></a></button>
+            <button class="btn btn-danger btn-lg"><a download="AshenMemories" href="./web/apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./web/imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>
         <?php
@@ -121,7 +121,7 @@
         <div class="col-sm-3">    
             <div class="minijuegosOut">
                     <div class="card">
-                        <img src="./web/imagenes/accesibility.png"  class="card-img-top "alt="Hola hola Probando">
+                        <img src="./web/imagenes/accesibility.png"  class="card-img-top "alt="">
                         <div class="card-body">
                             <p class="card-text">ACCESIBILIDAD</p>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
@@ -133,7 +133,7 @@
         <div class="col-sm-3">    
             <div class="minijuegosOut">
                     <div class="card">
-                        <img src="./web/imagenes/nube.png"  class="card-img-top" alt="Hola hola Probando">
+                        <img src="./web/imagenes/nube.png"  class="card-img-top" alt="">
                         <div class="card-body">
                             <p class="card-text">NUBE</p>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
@@ -151,14 +151,14 @@
         <p>&nbsp</p>
         <p>&nbsp</p>
         <h1 class="Title-1" id="3">¡Conoce los minijuegos!</h1>
-        <p class="text-center"><img src="./web/imagenes/jigsaw.png"></p>
+        <p class="text-center"><img src="./web/imagenes/jigsaw.png" alt=""></p>
         <p>&nbsp</p>
         <p>&nbsp</p>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./web/imagenes/safe_box.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/safe_box.png" alt="">
                                 <div class="card-body">
                                   <p class="card-text">GANZUA</p>
                                   <p class="card-text">Hacer circulos con el dedo sobre la pantalla hasta oir el desbloqueo de la caja fuerte.</p>
@@ -170,7 +170,7 @@
                 <div class="col-sm-4">   
                     <div class="minijuegosOut">
                         <div class="card">
-                            <img class="card-img-top" src="./web/imagenes/earphone.png" alt="Card image cap">
+                            <img class="card-img-top" src="./web/imagenes/earphone.png" alt="">
                             <div class="card-body">
                             <p class="card-text">VOCES A LO LEJOS</p>
                             <p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
@@ -182,7 +182,7 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./web/imagenes/geometry.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/geometry.png" alt="">
                                 <div class="card-body">
                                 <p class="card-text">FORMAS</p>
                                 <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
@@ -200,7 +200,7 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./web/imagenes/diana.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/diana.png" alt="">
                                 <div class="card-body">
                                 <p class="card-text">PUNTOS CALIENTES</p>
                                 <p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>
@@ -212,7 +212,7 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./web/imagenes/simondice.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/simondice.png" alt="">
                                 <div class="card-body">
                                 <p class="card-text">SIMON SAYS</p>
                                 <p class="card-text">Pasar el dedo por la pantalla y jugar al simon dice de toda la vida que hemos jugado todos de pequeños.</p>

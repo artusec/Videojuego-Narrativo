@@ -9,16 +9,22 @@ class FormLogin extends Form {
 
     protected function generaCamposFormulario($datos) {
         $html = '<form class="form-inline">
-                    <div class="form-group">
-                        Usuario<input type="text" name="username" class="form-control" id="username" value=""  placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        Contraseña<input type="password"  name="pass" class="form-control" id="pass" value=""  placeholder="Contraseña">
-                    </div>
-                    <p>&nbsp</p>
-                    <div class="col text-center">
-                        <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
-                    </div>    
+                    <fieldset>
+                        <legend><h1>Login</h1></legend>
+				        <p>Identifícate o <a href="Register.php" id = "reg" aria-labe="Página de registro" >regístrate</a></p>
+                        <div class="form-group">
+                            <label for="username" >Usuario</label>
+                            <input type="text" name="username" class="form-control" id="username" value=""  placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass" >Contraseña</label>
+                            <input type="password"  name="pass" class="form-control" id="pass" value=""  placeholder="Contraseña">
+                        </div>
+                        <p>&nbsp</p>
+                        <div class="col text-center">
+                            <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
+                        </div>  
+                    </fieldset>       
                 </form> 
                 ';
         return $html;
