@@ -20,7 +20,7 @@ public class SRList : MonoBehaviour
 
     }
 
-    private void SetListToChildren()
+    public void SetListToChildren()
     {
         foreach (SRElement e in sreList)
         {
