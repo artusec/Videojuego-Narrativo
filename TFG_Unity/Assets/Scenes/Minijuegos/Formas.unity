@@ -1339,6 +1339,7 @@ MonoBehaviour:
   type: 2
   inventoryClip: {fileID: 0}
   sceneClip: {fileID: 0}
+  listBumpClip: {fileID: 8300000, guid: 80b10e665ba8e3a4bbc2760e57a5b481, type: 3}
   roomIndex: -1
   currentList: {fileID: 308081732080678677}
   readOnStart: 0

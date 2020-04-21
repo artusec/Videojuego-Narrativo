@@ -1106,8 +1106,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ttsSource: {fileID: 6402631315891645124}
-  intro: []
+  intro: {fileID: 0}
   type: 0
+  inventoryClip: {fileID: 0}
+  sceneClip: {fileID: 0}
+  listBumpClip: {fileID: 8300000, guid: 80b10e665ba8e3a4bbc2760e57a5b481, type: 3}
   roomIndex: -1
   currentList: {fileID: 1843571703831433810}
   readOnStart: 1

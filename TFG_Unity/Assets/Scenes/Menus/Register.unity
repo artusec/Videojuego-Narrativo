@@ -2237,6 +2237,9 @@ MonoBehaviour:
   ttsSource: {fileID: 6970027790493066744}
   intro: {fileID: 0}
   type: 0
+  inventoryClip: {fileID: 0}
+  sceneClip: {fileID: 0}
+  listBumpClip: {fileID: 8300000, guid: 80b10e665ba8e3a4bbc2760e57a5b481, type: 3}
   roomIndex: -1
   currentList: {fileID: 724282276}
   readOnStart: 1

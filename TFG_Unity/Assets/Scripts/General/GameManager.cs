@@ -319,10 +319,20 @@ public class GameManager : MonoBehaviour
         File.WriteAllText(savePath, roomFileLines);
     }
 
+    public void resetLocalData()
+    {
+        GameManager.instance.clearData();
+        GameManager.instance.saveUsername("");
+    }
     public void gameEnd()
     {
-        interaccion_servidor.guardar_estadisticas(GameManager.instance.user);
-        interaccion_servidor.nuevo_juego(GameManager.instance.user);
+        if (onlinePlay)
+        {
+            interaccion_servidor.guardar_estadisticas(GameManager.instance.user);
+            interaccion_servidor.nuevo_juego(GameManager.instance.user);
+        }
+        else
+            resetLocalData();
     }
     public void saveToGMFromSRM()
     {

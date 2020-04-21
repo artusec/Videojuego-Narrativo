@@ -10,7 +10,6 @@ public class UnLogin : Actable
     {
         if(clip != null)
             SRManager.instance.playTTS(clip);
-        GameManager.instance.clearData();
-        GameManager.instance.saveUsername("");
+        GameManager.instance.resetLocalData();
     }
 }
