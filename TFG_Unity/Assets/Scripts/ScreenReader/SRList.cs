@@ -15,10 +15,6 @@ public class SRList : MonoBehaviour
         srm = SRManager.instance;
         SetListToChildren();
     }
-    public void setObjects()
-    {
-
-    }
 
     public void SetListToChildren()
     {
@@ -136,10 +132,15 @@ public class SRList : MonoBehaviour
         if (sreList.Count > 0)
         {
             currentFocus = index;
+            bool outOfBounds = false;
             // no out of bounds
-            if (currentFocus < 0) currentFocus = 0;
-            else if (currentFocus >= sreList.Count) currentFocus = sreList.Count - 1;
-            if(srm.currentList == this) sreList[currentFocus].ReadLabel();
+            if (currentFocus < 0) { currentFocus = 0; outOfBounds = true; }
+            else if (currentFocus >= sreList.Count) { currentFocus = sreList.Count - 1; outOfBounds = true; }
+            if (srm.currentList == this)
+            {
+                if (!outOfBounds) sreList[currentFocus].ReadLabel();
+                else srm.listBump();
+            }
         }
     }
 }

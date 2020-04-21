@@ -15,6 +15,8 @@ public class SRManager : MonoBehaviour
     public AudioClip inventoryClip;
     public AudioClip sceneClip;
 
+    public AudioClip listBumpClip;
+
     public int roomIndex = -1;
     public SRList currentList;
     public bool readOnStart = false;
@@ -111,6 +113,14 @@ public class SRManager : MonoBehaviour
         ttsSource.clip = clip;
         ttsSource.Play();
     }
+
+    // Reproduce clip de borde de lista
+    public void listBump()
+    {
+        ttsSource.clip = listBumpClip;
+        ttsSource.Play();
+    }
+
     public void SetList(SRList srl)
     {
         prevList = currentList;
