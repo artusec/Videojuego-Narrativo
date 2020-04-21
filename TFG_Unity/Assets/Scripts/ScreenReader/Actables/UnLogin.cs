@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class UnLogin : Actable
 {
+    public AudioClip clip;
     // Start is called before the first frame update
     public override void Act()
     {
-        TextToSpeech.Speak("Datos borrados");
+        if(clip != null)
+            SRManager.instance.playTTS(clip);
         GameManager.instance.clearData();
         GameManager.instance.saveUsername("");
     }

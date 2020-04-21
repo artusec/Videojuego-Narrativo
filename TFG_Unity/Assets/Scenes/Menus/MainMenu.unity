@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
+        type: 3}
+      propertyPath: room
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4817786954649803764, guid: bb3d01be81baed249a5c052c3fd53b71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,11 +191,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4817786954649803767, guid: bb3d01be81baed249a5c052c3fd53b71,
-        type: 3}
-      propertyPath: room
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3d01be81baed249a5c052c3fd53b71, type: 3}
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: {fileID: 0}
   url: http://laslomasiii.serveftp.net:4398/inicio.php
-  avisoCarga: {fileID: 0}
+  avisoCarga: {fileID: 8300000, guid: 3077df492f9e6a34a87ff5362729b0c0, type: 3}
 --- !u!212 &309094871
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 3ac3a53a2c133d140845645c99d3033a, type: 3}
   label: "P\xE1gina Web"
   actBehaviour: {fileID: 309094870}
   state: 1
@@ -453,7 +453,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 5109f97dd6d34ac44aacef376cb39dc7, type: 3}
   label: Borrar datos
   actBehaviour: {fileID: 947251024}
   state: 1
@@ -921,6 +921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
+  clip: {fileID: 8300000, guid: 6ff417d118c79d5499726070063598f5, type: 3}
 --- !u!212 &947251025
 SpriteRenderer:
   m_ObjectHideFlags: 0

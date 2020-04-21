@@ -1187,7 +1187,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1337,6 +1337,8 @@ MonoBehaviour:
   ttsSource: {fileID: 4974682376960626563}
   intro: {fileID: 0}
   type: 2
+  inventoryClip: {fileID: 0}
+  sceneClip: {fileID: 0}
   roomIndex: -1
   currentList: {fileID: 308081732080678677}
   readOnStart: 0

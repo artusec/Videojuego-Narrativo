@@ -46,6 +46,7 @@ MonoBehaviour:
   sreList: []
   prevList: {fileID: 7322511650176377992}
   currentFocus: 0
+  srm: {fileID: 0}
 --- !u!1 &5125083634777440375
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,8 +94,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ttsSource: {fileID: 6402631314612168855}
+  intro: {fileID: 0}
   type: 0
+  inventoryClip: {fileID: 8300000, guid: 5caf4d6871ee8a140a9ab5ae011345d9, type: 3}
+  sceneClip: {fileID: 8300000, guid: 1c8101fa969f2504e917b3e67880e2a2, type: 3}
+  roomIndex: -1
   currentList: {fileID: 1843571702946516993}
+  readOnStart: 0
   inventory: {fileID: 7322511650176377992}
   scene: {fileID: 1843571702946516993}
 --- !u!82 &6402631314612168855
@@ -239,3 +245,4 @@ MonoBehaviour:
   sreList: []
   prevList: {fileID: 1843571702946516993}
   currentFocus: 0
+  srm: {fileID: 0}

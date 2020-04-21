@@ -117,8 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 0}
-  description: "Una llave peque\xF1a de metal, parece ser de un armario o c\xF3moda."
+  descriptionClip: {fileID: 8300000, guid: 687868ffff7b9514587fcd3f9bb3f50e, type: 3}
   oneUse: 0
   usedDescriptionClip: {fileID: 0}
-  usedDescription: 

@@ -113,5 +113,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: {fileID: 0}
   sceneToLoad: SimonSays
-  changeClip: {fileID: 8300000, guid: 9e7c614de0f606449b4fb4835f6f282a, type: 3}
+  changeClip: {fileID: 8300000, guid: 868f4871506b42942a733a16e66d3a6c, type: 3}
   usedClip: {fileID: 0}

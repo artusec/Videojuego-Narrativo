@@ -12,6 +12,9 @@ public class SRManager : MonoBehaviour
     public AudioClip intro;
     public SRType type = SRType.Default;
 
+    public AudioClip inventoryClip;
+    public AudioClip sceneClip;
+
     public int roomIndex = -1;
     public SRList currentList;
     public bool readOnStart = false;
@@ -151,15 +154,35 @@ public class SRManager : MonoBehaviour
                 currentList.ActOnFocus();
                 break;
             case move.down:
-                currentList.GoToPreviousList();
+
+                changeList();
                 break;
             case move.up:
-                currentList.GoToPreviousList();
+                changeList();
                 break;
             default: break;
         }
     }
 
+    void changeList()
+    {
+        if (currentList == scene)
+        {
+            playTTS(inventoryClip);
+            screenInput.deactivate(inventoryClip.length);
+            Invoke("callCurrentList", inventoryClip.length);
+        }
+        else if (currentList == inventory)
+        {
+            playTTS(sceneClip);
+            screenInput.deactivate(sceneClip.length);
+            Invoke("callCurrentList", sceneClip.length);
+        }
+    }
+    void callCurrentList()
+    {
+        currentList.GoToPreviousList();
+    }
     void DefaultGestures(move m)
     {
         switch (m)

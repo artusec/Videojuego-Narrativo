@@ -15,6 +15,7 @@ public class AddItemToInventory : Actable
         objectState state = element.getState();
         if (state == objectState.DEFAULT)
         {
+            ScreenInput.instance.deactivate(pickUpLine.length);
             GameManager.instance.addItemToInv(item);
             SRManager.instance.playTTS(pickUpLine);
             element.setState(objectState.USED);

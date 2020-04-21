@@ -117,9 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 0}
-  description: "Una ganz\xFAa de juguete, no parece muy resistente. Pero podr\xEDa
-    abrir una cerradura floja."
+  descriptionClip: {fileID: 8300000, guid: 04551afe63dfb2b418f9d95e250af425, type: 3}
   oneUse: 0
   usedDescriptionClip: {fileID: 0}
-  usedDescription: 

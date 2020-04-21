@@ -117,9 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 0}
-  description: "Una llave caliente al tacto y cubierta de \xF3xido, podr\xEDa romperse
-    en cualquier momento."
+  descriptionClip: {fileID: 8300000, guid: 5dc2ab4d7e802534895b82b56d2f3526, type: 3}
   oneUse: 0
   usedDescriptionClip: {fileID: 0}
-  usedDescription: 
