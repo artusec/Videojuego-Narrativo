@@ -41,7 +41,6 @@ html{
 .nav-link:hover,.nav-link:focus {
     background-color: #9932CC;
     text-decoration: underline;
-   
 }   
 .nav-item{
     color:#fefefe;

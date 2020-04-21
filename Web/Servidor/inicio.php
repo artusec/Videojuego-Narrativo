@@ -63,15 +63,14 @@
                 <li class="nav-item">
                     <a class="nav-link"  onclick="modoAltoContraste()">Modo Alto Contraste</a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
-                </li>
                 <li class="nav-item">
                      <label class="switch" for="mode">
                         <input type="checkbox" id="mode" checked> 
                             <span class="slider round"></span>
                     </label>               
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
                 </li>
         </ul>
     </nav>
@@ -257,6 +256,16 @@
             $(".page-footer").css({"background-color": "black","color":"yellow"});
             $(".list-group-item").css({"background-color": "black","color":"yellow"});
 
+            $('#mode').prop('checked', false);
+        
+            $('.nav-link').css({"background-color": "black"})
+
+            $('.nav-link').hover(function(){
+                $(this).css({"background-color": "dimgray"});
+            }, function(){
+                $(this).css({"background-color": "black"});
+            });
+
             setCookie("accesibility", 1, 1);
   
         }
@@ -270,6 +279,17 @@
 
             $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
             $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
+
+            $('.nav-link').css({"background-color": "#591D77"})
+
+            $('.nav-link').hover(function(){
+                $(this).css({"background-color": "#9932CC"});
+            }, function(){
+                $(this).css({"background-color": "#591D77"});
+            });
+
+            $('#mode').prop('checked', true);
+
 
             removeCookie("accesibility");
         }
