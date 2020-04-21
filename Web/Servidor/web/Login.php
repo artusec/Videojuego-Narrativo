@@ -117,6 +117,8 @@
         //Poner el footer a alto contraste 
         $(".page-footer").css({"background-color": "black","color":"yellow"});
         $(".list-group-item").css({"background-color": "black","color":"yellow"});
+
+        setCookie("accesibility", 1, 1);
     }
 
     function modoNormal(){
@@ -128,6 +130,8 @@
 
         $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
         $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
+
+        removeCookie("accesibility");
     }
 
 </script>
