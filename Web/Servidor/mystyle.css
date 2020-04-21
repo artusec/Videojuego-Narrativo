@@ -45,6 +45,10 @@ html{
 .nav-item{
     color:#fefefe;
 }
+
+#left-pad2{
+    margin-left:10%;
+}
 a{
     color:#fefefe;
 }

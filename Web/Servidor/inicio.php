@@ -33,7 +33,7 @@
 
     <nav title="Menu horizontal">
         <ul class="nav justify-content-center">
-            <li class="nav-item">
+            <li class="nav-item" id="">
                 <a class="nav-link" href="#1">Introduccion</a>
             </li>
             <li class="nav-item">
@@ -60,7 +60,7 @@
 <?php
             }
 ?>             
-                <li class="nav-item">
+                <li class="nav-item" id="left-pad2">
                     <a class="nav-link"  onclick="modoAltoContraste()">Modo Alto Contraste</a>
                 </li>
                 <li class="nav-item">
@@ -78,15 +78,15 @@
 
     <div class="img-container">
         <div class="row logo">
-            <div class="col-sm-4">
+            <div class="col-lg-4 col-md-12">
                 <div class="Name">
                 <p class="text-center">ASHED</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-lg-4 col-md-12">
                 <img src="./web/imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
             </div>
-            <div class="col-sm-4">
+            <div class="col-lg-4 col-md-12">
                 <div class="Name">
                 <p class="text-center">MEMORIES</p>
                 </div>
