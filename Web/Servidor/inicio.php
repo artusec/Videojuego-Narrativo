@@ -19,10 +19,13 @@
 
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
+    <script src="./cookies.js"></script>
+
+
 <head>
     <link rel="icon" type="image/x-icon" href="./web/imagenes/favicon.ico" />
     <title>ASHED MEMORIES - Inicio</title>
-	<meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 </head>
 
 <body>
@@ -60,7 +63,12 @@
                 <li class="nav-item">
                     <a class="nav-link"  onclick="modoAltoContraste()">Modo Alto Contraste</a>
                 </li>
-
+                <li class="nav-item">
+                     <label class="switch" for="mode">
+                        <input type="checkbox" id="mode" checked> 
+                            <span class="slider round"></span>
+                    </label>               
+                </li>
                 <li class="nav-item">
                     <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
                 </li>
@@ -89,67 +97,67 @@
     <div class="container-fluid">
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg"><a download="AshenMemories" href="./web/apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./web/imagenes/download.png"></a></button>
+            <button class="btn btn-danger btn-lg"><a download="AshenMemories" href="./web/apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./web/imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>
         <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
         ?>
         <h1 class="Title-1" id='1'>¡Te damos la bienvenida a ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
-		<p>&nbsp</p>  
+        <p>&nbsp</p>  
         <?php
             }else{  ?>
                 <h1 class="Title-1" id='1'>¡Te damos la bienvenida a ASHED MEMORIES!</h1>
                 <p>&nbsp</p>  
         <?php    }
         ?>
-		<p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
-		<p>&nbsp</p>
-		<p>&nbsp</p>
+        <p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
 
         <div class="row">
         <div class="col-sm-3"></div>
-			<div class="col-sm-3">    
-	            <div class="minijuegosOut">
-	                    <div class="card">
-	                        <img src="./web/imagenes/accesibility.png"  class="card-img-top "alt="Hola hola Probando">
-	                        <div class="card-body">
-		                        <p class="card-text">ACCESIBILIDAD</p>
-								<p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
-		                        <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
-		                    </div>
-	                    </div>
-	            </div>
-	        </div>
-	        <div class="col-sm-3">    
-	            <div class="minijuegosOut">
-	                    <div class="card">
-	                        <img src="./web/imagenes/nube.png"  class="card-img-top" alt="Hola hola Probando">
-	                        <div class="card-body">
-		                        <p class="card-text">NUBE</p>
-								<p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
-		                        <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
-		                    </div>
-	                    </div>
-	            </div>
-	        </div>
-	    </div>
+        <div class="col-sm-3">    
+            <div class="minijuegosOut">
+                    <div class="card">
+                        <img src="./web/imagenes/accesibility.png"  class="card-img-top "alt="">
+                        <div class="card-body">
+                            <p class="card-text">ACCESIBILIDAD</p>
+                            <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                            <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-sm-3">    
+            <div class="minijuegosOut">
+                    <div class="card">
+                        <img src="./web/imagenes/nube.png"  class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">NUBE</p>
+                            <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                            <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </div>
         <div class="col-sm-3"></div>
- 	</div>
+    </div>
 
 
     <div class="container-fluid">
         <p>&nbsp</p>
         <p>&nbsp</p>
         <h1 class="Title-1" id="3">¡Conoce los minijuegos!</h1>
-        <p class="text-center"><img src="./web/imagenes/jigsaw.png"></p>
+        <p class="text-center"><img src="./web/imagenes/jigsaw.png" alt=""></p>
         <p>&nbsp</p>
         <p>&nbsp</p>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./web/imagenes/safe_box.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/safe_box.png" alt="">
                                 <div class="card-body">
                                   <p class="card-text">GANZUA</p>
                                   <p class="card-text">Hacer circulos con el dedo sobre la pantalla hasta oir el desbloqueo de la caja fuerte.</p>
@@ -161,10 +169,10 @@
                 <div class="col-sm-4">   
                     <div class="minijuegosOut">
                         <div class="card">
-                            <img class="card-img-top" src="./web/imagenes/earphone.png" alt="Card image cap">
+                            <img class="card-img-top" src="./web/imagenes/earphone.png" alt="">
                             <div class="card-body">
-							<p class="card-text">VOCES A LO LEJOS</p>
-							<p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
+                            <p class="card-text">VOCES A LO LEJOS</p>
+                            <p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
                               <a src="" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                             </div>
                         </div>
@@ -173,10 +181,10 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./web/imagenes/geometry.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/geometry.png" alt="">
                                 <div class="card-body">
                                 <p class="card-text">FORMAS</p>
-								<p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                                <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
                                 <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
                             </div>
@@ -188,13 +196,13 @@
             <p>&nbsp</p>
             <div class="row">
             <div class="col-sm-2"></div>
-				<div class="col-sm-4">    
+                <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./web/imagenes/diana.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/diana.png" alt="">
                                 <div class="card-body">
                                 <p class="card-text">PUNTOS CALIENTES</p>
-								<p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>
+                                <p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>
                                 <a src="" aria-label="Leer mas sobre el minijuego puntos calientes">Leer mas</a>
                                 </div>
                             </div>
@@ -203,10 +211,10 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./web/imagenes/simondice.png" alt="Card image cap">
+                                <img class="card-img-top" src="./web/imagenes/simondice.png" alt="">
                                 <div class="card-body">
                                 <p class="card-text">SIMON SAYS</p>
-								<p class="card-text">Pasar el dedo por la pantalla y jugar al simon dice de toda la vida que hemos jugado todos de pequeños.</p>
+                                <p class="card-text">Pasar el dedo por la pantalla y jugar al simon dice de toda la vida que hemos jugado todos de pequeños.</p>
                                 <a src="" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
                             </div>
@@ -224,6 +232,16 @@
 </body>
 <script>
 
+        $( document ).ready(function() {
+            if (detectCookie("accesibility")){
+            modoAltoContraste();
+        }
+        else{
+            modoNormal();
+        }
+        });
+
+
         function modoAltoContraste(){
 
             //Poner el menu a contraste alto
@@ -237,6 +255,19 @@
             //Poner el footer a alto contraste 
             $(".page-footer").css({"background-color": "black","color":"yellow"});
             $(".list-group-item").css({"background-color": "black","color":"yellow"});
+
+            $('#mode').prop('checked', false);
+        
+            $('.nav-link').css({"background-color": "black"})
+
+            $('.nav-link').hover(function(){
+                $(this).css({"background-color": "dimgray"});
+            }, function(){
+                $(this).css({"background-color": "black"});
+            });
+
+            setCookie("accesibility", 1, 1);
+  
         }
 
         function modoNormal(){
@@ -248,7 +279,32 @@
 
             $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
             $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
+
+            $('.nav-link').css({"background-color": "#591D77"})
+
+            $('.nav-link').hover(function(){
+                $(this).css({"background-color": "#9932CC"});
+            }, function(){
+                $(this).css({"background-color": "#591D77"});
+            });
+
+            $('#mode').prop('checked', true);
+
+
+            removeCookie("accesibility");
         }
+
+        $('#mode').change(function() {
+            if(this.checked) { 
+                console.log("change");
+                modoNormal();
+            }
+            else{
+                modoAltoContraste();
+            }
+        });
+
+
 
 </script>
 </html>

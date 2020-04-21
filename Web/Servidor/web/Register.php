@@ -20,6 +20,8 @@
 
 <link rel="stylesheet" type="text/css" href="registerstyle.css">
 
+<script src="../cookies.js"></script>
+
 <head>
 	<title>Registrar</title>
 	<meta charset="utf-8" />
@@ -66,8 +68,6 @@
 		<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-				<h1>Registrar</h1>
-				<label><a id="a-login" href="Login.php"/> ¿Ya tienes cuenta? Accede haciendo clic aquí</a></label>	
 				<?php	
 				$form = new FormRegistro();
 				$form->gestiona();
@@ -87,6 +87,15 @@
 
 </body>
 <script>
+
+	$( document ).ready(function() {
+            if (detectCookie("accesibility")){
+            modoAltoContraste();
+        }
+        else{
+            modoNormal();
+        }
+        });
 
 		function modoAltoContraste(){
 			//Poner el menu a contraste alto

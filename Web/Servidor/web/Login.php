@@ -21,6 +21,8 @@
 
 <link rel="stylesheet" type="text/css" href="loginstyle.css">
 
+<script src="../cookies.js"></script>
+
 
 <head>
 	<title>Login</title
@@ -69,13 +71,9 @@
 	
 	<div class="container-fluid">
     <p>&nbsp</p>
-    <p>&nbsp</p>
 		<div class="row">
 				<div class="col-sm-4"></div>
-				<div class="col-sm-4">
-                <h1>Login</h1>
-                <p>&nbsp</p>
-				<p>Identifícate o <a href='Register.php' id = 'reg'>regístrate</a></p>
+				<div class="col-sm-4">    
 				<?php	
 				$form = new FormLogin();
 				$form->gestiona();
@@ -96,6 +94,15 @@
 
 </body>
 <script>
+
+    $( document ).ready(function() {
+            if (detectCookie("accesibility")){
+            modoAltoContraste();
+        }
+        else{
+            modoNormal();
+        }
+        });
 
 
     function modoAltoContraste(){

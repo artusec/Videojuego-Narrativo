@@ -21,6 +21,8 @@
 
 <link rel="stylesheet" type="text/css" href="miperfilstyle.css">
 
+<script src="../cookies.js"></script>
+
 
 <head>
 	<title>Registrar</title>
@@ -68,7 +70,7 @@
 	<p>&nbsp</p>
 	<p>&nbsp</p>
 		<div class="row">
-				<div class="col-sm-4"><img class="animation" id="animation1"src="./imagenes/animation.gif"></div>
+		<div class="col-sm-4"><img class="animation" id="animation1"src="./imagenes/animation.gif"></div>
 				<div class="col-sm-4">
 					<h1>ESTADISTICAS</h1>
 					<table>
@@ -164,6 +166,15 @@
  
 </body>
 <script>
+
+	$( document ).ready(function() {
+            if (detectCookie("accesibility")){
+            modoAltoContraste();
+        }
+        else{
+            modoNormal();
+        }
+        });
 
 
     function modoAltoContraste(){
