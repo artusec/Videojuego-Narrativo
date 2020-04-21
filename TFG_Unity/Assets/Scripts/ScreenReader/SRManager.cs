@@ -153,6 +153,9 @@ public class SRManager : MonoBehaviour
             case move.down:
                 currentList.GoToPreviousList();
                 break;
+            case move.up:
+                currentList.GoToPreviousList();
+                break;
             default: break;
         }
     }
