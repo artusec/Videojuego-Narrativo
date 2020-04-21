@@ -72,6 +72,10 @@ public class SRManager : MonoBehaviour
                 gm.instantiateRoom();
                 currentList.ReadFocus();
             }
+            // Nos aseguramos de la asignación de los objetos
+            // ya que Unity no garantiza el orden de los Starts
+            inventory.SetListToChildren();
+            scene.SetListToChildren();
         }
         else introReadFocus();
     }
