@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
-    <script src="./cookies.js"></script>
+    <script src="../cookies.js"></script>
 
 
 <head>
