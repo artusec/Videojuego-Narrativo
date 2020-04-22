@@ -47,12 +47,13 @@
 				<?php	
 				$form = new FormLogin();
 				$form->gestiona();
-				?>
+                ?>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
 		</div>
 		<div class="col-sm-4"></div>
-            <p>&nbsp</p>
-            
-		</div>
+        </div>
+        
 	</div>
 
 
@@ -88,7 +89,15 @@
         $(".page-footer").css({"background-color": "black","color":"yellow"});
         $(".list-group-item").css({"background-color": "black","color":"yellow"});
 
+        $('.nav-link').css({"background-color": "black"})
+
         setCookie("accesibility", 1, 1);
+
+        $('.nav-link').hover(function(){
+                $(this).css({"background-color": "dimgray"});
+            }, function(){
+                $(this).css({"background-color": "black"});
+            });
     }
 
     function modoNormal(){
@@ -101,9 +110,30 @@
         $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
         $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
 
+        $('.nav-link').css({"background-color": "#591D77"})
+
+
         removeCookie("accesibility");
+
+        $('.nav-link').hover(function(){
+                $(this).css({"background-color": "#9932CC"});
+            }, function(){
+                $(this).css({"background-color": "#591D77"});
+            });
+
+            $('#mode').prop('checked', true);
     }
 
+
+    $('#mode').change(function() {
+            if(this.checked) { 
+                console.log("change");
+                modoNormal();
+            }
+            else{
+                modoAltoContraste();
+            }
+        });
 </script>
 
 

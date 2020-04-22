@@ -1,7 +1,7 @@
 <nav title="Menu horizontal">
     <ul class="nav justify-content-center">
         <li class="nav-item" id="">
-            <a class="nav-link" href="./inicio.php#1">Introduccion</a>
+            <a class="nav-link" href="./inicio.php">Introduccion</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="./inicio.php#3">Minijuegos</a>
