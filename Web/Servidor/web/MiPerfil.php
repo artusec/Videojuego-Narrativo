@@ -34,19 +34,19 @@
 		<nav title="Menu horizontal">
 				<ul class="nav justify-content-center">
 					<li class="nav-item">
-						<a class="nav-link" href="./inicio.php">Inicio</a>
+						<a class="nav-link" href="../inicio.php">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="./inicio.php#3">Minijuegos</a>
+						<a class="nav-link" href="../inicio.php#3">Minijuegos</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="./inicio.php#4">Descarga</a>
+						<a class="nav-link" href="../inicio.php#4">Descarga</a>
 					</li>
 		<?php
 					if (isset($_SESSION['login']) && $_SESSION['login'] === true){
 		?>
 						<li class="nav-item">
-							<a class="nav-link" href="./MiPerfil.php">Mi perfil</a>
+							<a class="nav-link" href="../web/MiPerfil.php">Mi perfil</a>
 						</li>
 						<li>
 							<a class="nav-link" href="../Logout.php">Cerrar Sesion</a>
@@ -72,12 +72,13 @@
 		<div class="row">
 		<div class="col-sm-4"><img class="animation" id="animation1"src="./imagenes/animation.gif"></div>
 				<div class="col-sm-4">
-					<h1>ESTADISTICAS</h1>
-					<table>
-						<thead>
+					<h1><p class="text-center">Estadisticas</p></h1>
+					<p>&nbsp</p>
+					<table class="table">
+						<thead class="thead-dark">
 							<tr>
-								<th>Juego</th>
-								<th>Fecha</th>
+								<th>Partida</th>
+								<th>Ultima vez jugado</th>
 								<th>Tiempo</th>
 							</tr>
 						</thead>
@@ -119,11 +120,12 @@
 			<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-					<h1>Objetos de la partida actual</h1>
-					<table>
-						<thead>
+					<h1><p class="text-center">Objetos de la partida actual</p></h1>
+					<p>&nbsp</p>
+					<table class="table">
+						<thead class="thead-dark">
 							<tr>
-								<th>Nombre del objeto</th>
+								<th>Objeto</th>
 								<th>Descripción</th>
 							</tr>
 						</thead>
@@ -136,7 +138,7 @@
 									for ($i=0; $i < $numobjetos; $i++) {
 										$html .= '<tr>';
 										$html .= '<td>' . $objetos[$i]['real_name'] . '</td>';
-										$html .= '<td>' . $objetos[$i]['description'] . '</td>';
+										$html .= '<td>' . $objetos[$i]['description'] . '<p>&nbsp</p></td>';
 										$html .= '</tr>';                          
 									}
 								}
@@ -151,6 +153,9 @@
 							?>
 						</tbody>
 					</table>
+					<p>&nbsp</p>
+			<p>&nbsp</p>
+			<p>&nbsp</p>
 				</div>
 				<div class="col-sm-4"><img class="animation2" id="animation2" src="./imagenes/animation-obj.gif"></div>
 			</div>
