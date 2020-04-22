@@ -169,7 +169,7 @@ class User
         $fila = $rs->fetch_assoc();
         $id_user = $fila["id"];
 
-        $query = sprintf("SELECT * FROM Statistics S join Games G on (S.id_game = G.id) WHERE (S.id_user = '%d')", $id_user);
+        $query = sprintf("SELECT * FROM Statistics S WHERE (S.id_user = '%d')", $id_user);
 
         $rs = $conn->query($query);
         $result = false;

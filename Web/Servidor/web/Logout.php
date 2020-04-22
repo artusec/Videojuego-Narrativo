@@ -1,5 +1,5 @@
 <?php
-	require_once __DIR__.'/DB_data.php';
+	require_once '../DB_data.php';
 
 	unset($_SESSION["login"]);
 	unset($_SESSION["profesor"]);

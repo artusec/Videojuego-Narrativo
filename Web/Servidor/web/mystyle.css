@@ -45,6 +45,10 @@ html{
 .nav-item{
     color:#fefefe;
 }
+
+#left-pad2{
+    margin-left:10%;
+}
 a{
     color:#fefefe;
 }
@@ -99,6 +103,9 @@ a:active {
     color:#fefefe;
 }
 
+.leer-mas{
+    color:#9932CC;
+}
 .minijuegosOut{
     padding-left: 10%;
     

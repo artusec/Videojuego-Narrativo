@@ -21,49 +21,20 @@
 
 <link rel="stylesheet" type="text/css" href="miperfilstyle.css">
 
-<script src="../cookies.js"></script>
+<script src="./js/cookies.js"></script>
 
 
 <head>
+<link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Registrar</title>
 	<meta charset="utf-8" /></title>
 </head>
 
 		<body>
 			
-		<nav title="Menu horizontal">
-				<ul class="nav justify-content-center">
-					<li class="nav-item">
-						<a class="nav-link" href="../inicio.php">Inicio</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../inicio.php#3">Minijuegos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../inicio.php#4">Descarga</a>
-					</li>
-		<?php
-					if (isset($_SESSION['login']) && $_SESSION['login'] === true){
-		?>
-						<li class="nav-item">
-							<a class="nav-link" href="../web/MiPerfil.php">Mi perfil</a>
-						</li>
-						<li>
-							<a class="nav-link" href="../Logout.php">Cerrar Sesion</a>
-						</li>
-		<?php
-					}
-		?>
-						<li class="nav-item">
-							<a class="nav-link"  onclick="modoAltoContraste()">Modo Alto Contraste</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
-						</li>
-						
-				</ul>
-			</nav>
+<?php
+    require_once './generic/header.php';
+?>
 
 	<div class="container-fluid">
 	
@@ -72,12 +43,13 @@
 		<div class="row">
 		<div class="col-sm-4"><img class="animation" id="animation1"src="./imagenes/animation.gif"></div>
 				<div class="col-sm-4">
-					<h1>ESTADISTICAS</h1>
-					<table>
-						<thead>
+					<h1><p class="text-center">Estadisticas</p></h1>
+					<p>&nbsp</p>
+					<table class="table">
+						<thead class="thead-dark">
 							<tr>
-								<th>Juego</th>
-								<th>Fecha</th>
+								<th>Partida</th>
+								<th>Ultima vez jugado</th>
 								<th>Tiempo</th>
 							</tr>
 						</thead>
@@ -119,11 +91,12 @@
 			<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-					<h1>Objetos de la partida actual</h1>
-					<table>
-						<thead>
+					<h1><p class="text-center">Objetos de la partida actual</p></h1>
+					<p>&nbsp</p>
+					<table class="table">
+						<thead class="thead-dark">
 							<tr>
-								<th>Nombre del objeto</th>
+								<th>Objeto</th>
 								<th>Descripción</th>
 							</tr>
 						</thead>
@@ -136,7 +109,7 @@
 									for ($i=0; $i < $numobjetos; $i++) {
 										$html .= '<tr>';
 										$html .= '<td>' . $objetos[$i]['real_name'] . '</td>';
-										$html .= '<td>' . $objetos[$i]['description'] . '</td>';
+										$html .= '<td>' . $objetos[$i]['description'] . '<p>&nbsp</p></td>';
 										$html .= '</tr>';                          
 									}
 								}
@@ -151,6 +124,9 @@
 							?>
 						</tbody>
 					</table>
+					<p>&nbsp</p>
+			<p>&nbsp</p>
+			<p>&nbsp</p>
 				</div>
 				<div class="col-sm-4"><img class="animation2" id="animation2" src="./imagenes/animation-obj.gif"></div>
 			</div>
@@ -161,7 +137,7 @@
 	
 
 <?php
-    require_once __DIR__ . '../footer.html';
+    require_once __DIR__ . './generic/footer.html';
 ?>
  
 </body>
@@ -191,6 +167,17 @@
         //Poner el footer a alto contraste 
         $(".page-footer").css({"background-color": "black","color":"yellow"});
         $(".list-group-item").css({"background-color": "black","color":"yellow"});
+
+		
+		$('.nav-link').css({"background-color": "black"})
+
+		setCookie("accesibility", 1, 1);
+		
+		$('.nav-link').hover(function(){
+					$(this).css({"background-color": "dimgray"});
+				}, function(){
+					$(this).css({"background-color": "black"});
+	});
     }
 
     function modoNormal(){
@@ -204,7 +191,28 @@
 
         $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
         $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
+
+		$('.nav-link').css({"background-color": "#591D77"})
+
+		removeCookie("accesibility");
+		$('.nav-link').hover(function(){
+                $(this).css({"background-color": "#9932CC"});
+            }, function(){
+                $(this).css({"background-color": "#591D77"});
+            });
+
+            $('#mode').prop('checked', true);
     }
+
+	$('#mode').change(function() {
+            if(this.checked) { 
+                console.log("change");
+                modoNormal();
+            }
+            else{
+                modoAltoContraste();
+            }
+        });
 
 </script>
 
