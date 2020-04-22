@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="EstoNoMeSirve_data" version="1.3.0" audacityversion="2.3.0" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="679.9752014879" rate="48000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="Software" value="Lavf58.20.100"/>
+	</tags>
+	<wavetrack name="EstoNoMeSirve" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="3.162278" pan="0.0" colorindex="0">
+		<waveclip offset="0.55295833" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="49826">
+				<waveblock start="0">
+					<simpleblockfile filename="e08086e8.au" len="8365" min="-0.231354" max="0.276062" rms="0.048209"/>
+				</waveblock>
+				<waveblock start="8365">
+					<simpleblockfile filename="e080855b.au" len="41461" min="-0.357422" max="0.365509" rms="0.050461"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Win" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="48000" gain="0.316228" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="96780">
+				<waveblock start="0">
+					<simpleblockfile filename="e08082ca.au" len="96780" min="-0.585918" max="0.529965" rms="0.059086"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

@@ -50,6 +50,8 @@ public class FormasManager : MonoBehaviour
     public AudioClip wrong;     //suena al equivocarse en la selección
     public AudioClip ttsFin;    //suena al terminar el minijuego
 
+    public AudioClip[] nextFormClips;
+
     [Tooltip("Los labels de las distintas formas dentro del enum Forma")]
     public AudioClip[] formAudios = new AudioClip[(int)Forma.Retroceder];
 
@@ -98,6 +100,7 @@ public class FormasManager : MonoBehaviour
             if (input.getInput() == move.doubleClick && !selectionPhase)
             {
                 // el invoke es necesario para que no se detecte la doble pulsacion en el mismo frame
+                ScreenInput.instance.deactivate(0.1f);
                 Invoke("goToSelection", 0.1f);
             }
         }
@@ -122,6 +125,11 @@ public class FormasManager : MonoBehaviour
             formas[i].SetActive(false);
         formas[nLevel].SetActive(true);
         setUpForms();   //ajuste de información de la lista del srm
+    }
+
+    void auxAddLevel()
+    {
+        addLevel(1);
     }
 
     public void addLevel(int nLevel)
@@ -160,7 +168,13 @@ public class FormasManager : MonoBehaviour
                 ScreenInput.instance.deactivate(ttsFin.length); //no se tiene en cuenta el input mientras dure el audio final
                 Invoke("OnVictory", ttsFin.length); //se espera a que termine de reproducirse el audio para avanzar a la siguiente escena
             }
-            addLevel(1);    //si no se ha acabado el minijuego, pasamos al siguiente nivel
+            else
+            {
+                //Pasa a estado FORMA
+                srm.playTTS(nextFormClips[level]);
+                ScreenInput.instance.deactivate(nextFormClips[level].length);
+                Invoke("auxAddLevel", nextFormClips[level].length);    //si no se ha acabado el minijuego, pasamos al siguiente nivel
+            }
         }
         //caso de fallo de selección
         else
