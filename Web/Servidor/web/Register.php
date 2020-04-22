@@ -20,18 +20,20 @@
 
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
-    <script src="../cookies.js"></script>
+    <script src="./js/cookies.js"></script>
 
 <head>
+<link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Registrar</title>
 	<meta charset="utf-8" />
 </head>
 	<body>
 
+		
 <?php
-    require_once './header.php';
+    require_once './generic/header.php';
 ?>
-
+	
 
 	<div class="container-fluid">
 	<p>&nbsp</p>
@@ -52,7 +54,7 @@
 
 	
 <?php
-    require_once __DIR__ . '../footer.html';
+    require_once  './generic/footer.html';
 ?>
 
 </body>

@@ -22,7 +22,7 @@
         } else {
 ?>
             <li class="nav-item">
-                <a class="nav-link" href="./Login.php">Acceder</a>
+                <a class="nav-link" aria-label="Cerrar sesión y volver a la página principal" href="./Login.php">Acceder</a>
             </li>
 <?php
         }

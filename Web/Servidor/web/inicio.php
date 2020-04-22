@@ -19,11 +19,11 @@
 
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
-    <script src="../cookies.js"></script>
+    <script src="./js/cookies.js"></script>
 
 
 <head>
-    <link rel="icon" type="image/x-icon" href="./web/imagenes/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
     <title>ASHED MEMORIES - Inicio</title>
     <meta charset="UTF-8"/>
 </head>
@@ -32,7 +32,7 @@
 
 
 <?php
-    require_once './header.php';
+    require_once './generic/header.php';
 ?>
 
 
@@ -187,7 +187,7 @@
         &nbsp
     </div>
 <?php
-    require_once './footer.html';
+    require_once './generic/footer.html';
 ?>
 </body>
 <script>
@@ -236,7 +236,7 @@
             //Volver a modo normal 
             $(".nav").css({"background-color": "#591D77"});
             $("a").css({"color": "#F2F1EF"});
-            $("#descarga").css({"color": "black"});
+            $("#descarga").css({"color": "#fefefe"});
 
             $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
 

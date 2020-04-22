@@ -21,10 +21,11 @@
 
 <link rel="stylesheet" type="text/css" href="miperfilstyle.css">
 
-<script src="../cookies.js"></script>
+<script src="./js/cookies.js"></script>
 
 
 <head>
+<link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Registrar</title>
 	<meta charset="utf-8" /></title>
 </head>
@@ -32,7 +33,7 @@
 		<body>
 			
 <?php
-    require_once './header.php';
+    require_once './generic/header.php';
 ?>
 
 	<div class="container-fluid">
@@ -136,7 +137,7 @@
 	
 
 <?php
-    require_once __DIR__ . '../footer.html';
+    require_once __DIR__ . './generic/footer.html';
 ?>
  
 </body>
@@ -167,7 +168,16 @@
         $(".page-footer").css({"background-color": "black","color":"yellow"});
         $(".list-group-item").css({"background-color": "black","color":"yellow"});
 
+		
+		$('.nav-link').css({"background-color": "black"})
+
 		setCookie("accesibility", 1, 1);
+		
+		$('.nav-link').hover(function(){
+					$(this).css({"background-color": "dimgray"});
+				}, function(){
+					$(this).css({"background-color": "black"});
+	});
     }
 
     function modoNormal(){
@@ -182,8 +192,27 @@
         $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
         $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
 
+		$('.nav-link').css({"background-color": "#591D77"})
+
 		removeCookie("accesibility");
+		$('.nav-link').hover(function(){
+                $(this).css({"background-color": "#9932CC"});
+            }, function(){
+                $(this).css({"background-color": "#591D77"});
+            });
+
+            $('#mode').prop('checked', true);
     }
+
+	$('#mode').change(function() {
+            if(this.checked) { 
+                console.log("change");
+                modoNormal();
+            }
+            else{
+                modoAltoContraste();
+            }
+        });
 
 </script>
 
