@@ -7,64 +7,34 @@
 <html lang="ES">
 
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="loginstyle.css">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
 
-<script src="../cookies.js"></script>
+    <script src="../cookies.js"></script>
 
 
 <head>
-	<title>Login</title
+	<title>Login</title>
 		<meta charset="utf-8" />
 </head>
 
 <body>
 		
 
-	<nav title="Menu horizontal">
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link" href="./inicio.php">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./inicio.php#3">Minijuegos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./inicio.php#4">Descarga</a>
-            </li>
 <?php
-            if (isset($_SESSION['login']) && $_SESSION['login'] === true){
+    require_once './header.php';
 ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="./MiPerfil.php">Mi perfil</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="../Logout.php">Cerrar Sesion</a>
-                </li>
-<?php
-            }
-?>
-                <li class="nav-item">
-                    <a class="nav-link"  onclick="modoAltoContraste()">Modo Alto Contraste</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
-                </li>
-                
-        </ul>
-	</nav>
 	
 
 
