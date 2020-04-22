@@ -19,7 +19,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="loginstyle.css">
+<link rel="stylesheet" type="text/css" href="minigames.css">
 
 <script src="../cookies.js"></script>
 
@@ -67,17 +67,42 @@
 	</nav>
 	
 
+    <div class="img-container">
+        <div class="row logo">
+            <div class="col-lg-4 col-md-12">
+                <div class="Name">
+                <p class="text-center">ASHED</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="Name">
+                <p class="text-center">MEMORIES</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+            <p>&nbsp</p>
+            <h1><p class="text-center">SIMON DICE</p></h1>
+            <p>&nbsp</p>
+            <h3>Concepto</h3>
+                <p>&nbsp</p>
+                <h3>¿Como se juega?</h3>
+            <p>&nbsp</p>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
 
-	
-	<div class="container-fluid">
-    <p>&nbsp</p>
-	<h1>SIMON DICE</h1>
-    <h3>Concepto</h3>
-    <p></p>
-    <p>&nbsp</p>
-    <h3>¿Como se juega?</h3>
-    <p></p>
-	</div>
 
 
 

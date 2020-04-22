@@ -124,7 +124,7 @@
                         <div class="card-body">
                             <p class="card-text">ACCESIBILIDAD</p>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                            <a href="./web/accesibilidad.php" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
+                            <a href="./web/accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
                     </div>
             </div>
@@ -136,7 +136,7 @@
                         <div class="card-body">
                             <p class="card-text">NUBE</p>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                            <a class="card-text" href="./web/nube.php" aria-label="Leer mas sobre la nube">Leer mas</a>
+                            <a class="card-text" href="./web/nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
                         </div>
                     </div>
             </div>
@@ -161,7 +161,7 @@
                                 <div class="card-body">
                                   <p class="card-text">GANZUA</p>
                                   <p class="card-text">Hacer circulos con el dedo sobre la pantalla hasta oir el desbloqueo de la caja fuerte.</p>
-                                  <a href="./web/ganzua.php" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
+                                  <a href="./web/ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                                 </div>
                             </div>
                     </div>
@@ -173,7 +173,7 @@
                             <div class="card-body">
                             <p class="card-text">VOCES A LO LEJOS</p>
                             <p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
-                              <a href="./web/voces.php" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
+                              <a href="./web/voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                             </div>
                         </div>
                 </div>
@@ -185,7 +185,7 @@
                                 <div class="card-body">
                                 <p class="card-text">FORMAS</p>
                                 <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                                <a href="./web/formas.php" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+                                <a href="./web/formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
                             </div>
                     </div>
@@ -203,7 +203,7 @@
                                 <div class="card-body">
                                 <p class="card-text">PUNTOS CALIENTES</p>
                                 <p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>
-                                <a href="./web/puntos.php" aria-label="Leer mas sobre el minijuego puntos calientes">Leer mas</a>
+                                <a href="./web/puntos.php" class="leer-mas" aria-label="Leer mas sobre el minijuego puntos calientes">Leer mas</a>
                                 </div>
                             </div>
                     </div>
@@ -215,7 +215,7 @@
                                 <div class="card-body">
                                 <p class="card-text">SIMON SAYS</p>
                                 <p class="card-text">Pasar el dedo por la pantalla y jugar al simon dice de toda la vida que hemos jugado todos de pequeños.</p>
-                                <a href="./web/simon.php" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+                                <a href="./web/simon.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
                             </div>
                     </div>
@@ -251,6 +251,7 @@
 
             //Poner ela pagina a alto contraste 
             $(".container-fluid").css({"background-color": "black","color":"yellow"});
+            $(".leer-mas").css({"color": "yellow"});
 
             //Poner el footer a alto contraste 
             $(".page-footer").css({"background-color": "black","color":"yellow"});
@@ -281,6 +282,8 @@
             $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
 
             $('.nav-link').css({"background-color": "#591D77"})
+
+            $(".leer-mas").css({"color": "#9932CC"});
 
             $('.nav-link').hover(function(){
                 $(this).css({"background-color": "#9932CC"});
