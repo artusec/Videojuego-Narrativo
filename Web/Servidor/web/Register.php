@@ -31,19 +31,19 @@
 	<nav title="Menu horizontal">
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link" href="../inicio.php">Inicio</a>
+                <a class="nav-link" href="./inicio.php">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../inicio.php#3">Minijuegos</a>
+                <a class="nav-link" href="./inicio.php#3">Minijuegos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../inicio.php#4">Descarga</a>
+                <a class="nav-link" href="./inicio.php#4">Descarga</a>
             </li>
 <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="../web/MiPerfil.php">Mi perfil</a>
+                    <a class="nav-link" href="./MiPerfil.php">Mi perfil</a>
                 </li>
                 <li>
                     <a class="nav-link" href="../Logout.php">Cerrar Sesion</a>
