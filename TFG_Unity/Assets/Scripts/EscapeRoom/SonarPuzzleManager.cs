@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//struct que maneja la información de un punto
 [System.Serializable]
 public struct SonarRadios
 {
+    //distancia de los radios de acción
     public float cerca,
                 medio,
                 lejos;
@@ -15,6 +17,7 @@ public struct SonarRadios
     public void setAudio(AudioClip nAudio) { clickSound = nAudio; }
 }
 
+//enumerado axuliar para llevar la cuenta de la posición actual
 public enum SonarZones
 {
     fuera,
@@ -25,11 +28,13 @@ public enum SonarZones
 
 public class SonarPuzzleManager : MonoBehaviour
 {
-    [Header("La fuera y duración de la vibración")]
+    [Header("<Atributos de la vibración")]
+    [Tooltip("la potencia de la vibración, en rango [0,1]")]
     public float vibrationStrengh = 0.5f;
+    [Tooltip("El tiempo en milisegundos que está activa la vibración. En el radio céntrico la duración está fijada a 2000")]
     public long vibrationDuration = 333;
     [Header("El tiempo que pasa entre vibraciones en cada zona")]
-    public long vibrationRestCerca = 50;
+    public long vibrationRestCerca = 0;
     public long vibrationRestMedio = 333;
     public long vibrationRestLejos = 666;
 
@@ -37,7 +42,7 @@ public class SonarPuzzleManager : MonoBehaviour
 
     //si en vez de querer buscar un solo item se quiere buscar varios objetos o similiar 
     //  se puede cambiar este atributo por una lista de índices
-    [Header("Índice solución")]
+    [Header("Atributos de juego")]
     [Tooltip("El índice dentro del array de centros el cual es solución al minijuego")]
     public int solutionIndex = 0;
 
@@ -45,37 +50,35 @@ public class SonarPuzzleManager : MonoBehaviour
     [SerializeField]
     public List<Transform> centros;
 
-    [Tooltip("Los radios de vibración de los distintos focos de vibración")]
+    [Tooltip("Los radios de vibración de los distintos focos de vibración, asociados en el mismo orden a la lista de centros")]
     [SerializeField]
     public List<SonarRadios> radios;
 
-    //controla si el raton esta pulsado o no
-    private bool click = false;
-    //auxiliar que detecta los cambios de zona para evitar repetir llamadas a funciones
-    private SonarZones lastZone = SonarZones.fuera;
-    //su propio componente para reproducir sonidos
-    private AudioSource src;
+    private bool click = false;                     //controla si el raton esta pulsado o no
+    private SonarZones lastZone = SonarZones.fuera; //auxiliar que detecta los cambios de zona para evitar repetir llamadas a funciones
+    [Header("Atributos de audio")]
+    private AudioSource src;                        //su propio componente para reproducir los sonidos al clickar
+    [Tooltip("Audio que se reproducirá mientras se está haciendo drag")]
     public AudioSource tapSound;
-    //auxiliar que indica si hay que poner el sonido de ir tapeando
-    private bool tapPlay = true;
+    private bool tapPlay = true;                    //auxiliar que indica si hay que reproducir el audio tapSound
 
-    public AudioClip looseSound;
-    public AudioClip winSound;
-    public AudioClip winTTS;
-
-    public AudioClip introTTS;
+    public AudioClip looseSound;                    //se reproduce al hacer doble click en un punto no solución
+    public AudioClip winSound;                      //se reproduce al hacer doble click en un punto solución
+    public AudioClip winTTS;                        //se reproduce al ganar, justo después de winSound
+    public AudioClip introTTS;                      //se reproduce antes de empezar el juego, nada más cargar la escena
 
     ScreenInput screenInput;
 
     private void OnValidate()
     {
-        //nos aseguramos de valores de vibracion validos
+        //control de valores de vibración válidos
         if (vibrationStrengh < 0)
             vibrationStrengh = 0;
         else if (vibrationStrengh > 1)
             vibrationStrengh = 1;
         if (vibrationDuration < 0)
             vibrationDuration = 0;
+
         //nos aseguramos que la lista de radios tiene el mismo tamaño que la de centros
         if(radios.Count != centros.Count)
         {
@@ -94,7 +97,7 @@ public class SonarPuzzleManager : MonoBehaviour
                     radios.RemoveAt(radios.Count - 1);
             }
         }
-        //ahora nos aseguramos que todos los radios tienen valores válidos (mayores o iguales a 0)
+        //control de valores de radios válidos (mayores o iguales a 0)
         for(int i = 0; i< radios.Count; i++)
         {
             if (radios[i].cerca < 0)
@@ -105,7 +108,7 @@ public class SonarPuzzleManager : MonoBehaviour
                 radios[i].setLejos(0);
         }
 
-        //nos aseguramos que la solución es un índice válido
+        //control de solución válida (valor dentro del rango de la lista)
         if (solutionIndex < 0)
             solutionIndex = 0;
         else if (solutionIndex >= centros.Count)
@@ -118,36 +121,27 @@ public class SonarPuzzleManager : MonoBehaviour
         src = GetComponent<AudioSource>();
         if (src == null)
             throw new System.Exception("No se encontró el componente Audio Source para reproducir sonido");
-
+        //reproducimos el audio inicial
         src.clip = introTTS;
         src.Play();
-        screenInput.deactivate(introTTS.length);
-    }
-
-    //para ver los radios desde el editor
-    private void OnDrawGizmos()
-    {
-        for(int i = 0; i< centros.Count; i++)
-        {
-            Gizmos.DrawWireSphere(centros[i].position, radios[i].cerca);
-            Gizmos.DrawWireSphere(centros[i].position, radios[i].cerca + radios[i].medio);
-            Gizmos.DrawWireSphere(centros[i].position, radios[i].cerca + radios[i].medio + radios[i].lejos);
-        }
-
-        if(click)
-            Gizmos.DrawWireSphere(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.2f);
+        screenInput.deactivate(introTTS.length);    //desactivamos el input mientras dure el audio
     }
 
     void Update()
     {
-        click = Input.GetMouseButton(0);
-        //move m = ScreenInput.instance.getInput();
-        if (click)
+        //control de diferentes inputs
+        //Estructurado de esta manera en lugar de llamar a ProcessMouse directamente con ScreenInput.instance.getInput() porque
+        //  lo primero que hace el método es calcular el centro más cercano, algo que no hace falta hacer en varios tipos de move
+        if (ScreenInput.instance.getInput() == move.pressing)
+        {
             ProcessMouse(move.pressing);
+            click = true;       //auxiliar para ver la posición del ratón en onGizmosDraw
+        }
         else
         {
             Vibration.Cancel();
             tapSound.Stop();
+            click = false;
         }
         if(ScreenInput.instance.getInput() == move.click)
         {
@@ -182,7 +176,7 @@ public class SonarPuzzleManager : MonoBehaviour
                 index = i;
             }
         }
-
+        //activación de eventos en función del input y la distancia
         switch (m)
         {
             case move.pressing:
@@ -204,18 +198,62 @@ public class SonarPuzzleManager : MonoBehaviour
         }
     }
 
-    //procesa un click desde el centro cIndex más cercano, y si se ha hecho el click en el centro (determinado por dist)
-    //  pasa a generar el sonido correspondiente
+    //calcula la vibración correspondiente dada la distancia dist al centro con indice cIndex dentro de la lista de centros
+    void CalculateVibration(int cIndex, float dist)
+    {
+        //distancia al radio céntrico
+        if (dist <= radios[cIndex].cerca)
+        {
+            //solo realizamos las acciones si es la primera vez que entramos al centro
+            if (lastZone != SonarZones.cerca)
+            {
+                lastZone = SonarZones.cerca;
+                Vibration.Cancel();     //cancelación preventiva de la vibración actual
+                Vibration.SonarVibration(vibrationStrengh, 2000, vibrationRestCerca, true);
+            }
+        }
+        //rango del segundo radio
+        else if (dist <= (radios[cIndex].medio + radios[cIndex].cerca))
+        {
+            if (lastZone != SonarZones.medio)
+            {
+                lastZone = SonarZones.medio;
+                Vibration.Cancel();
+                Vibration.SonarVibration(vibrationStrengh, vibrationDuration, vibrationRestMedio, true);
+            }
+        }
+        //rango del tercer radio
+        else if (dist <= (radios[cIndex].lejos + radios[cIndex].medio + radios[cIndex].cerca))
+        {
+            if (lastZone != SonarZones.lejos)
+            {
+                lastZone = SonarZones.lejos;
+                Vibration.Cancel();
+                Vibration.SonarVibration(vibrationStrengh, vibrationDuration, vibrationRestLejos, true);
+            }
+        }
+        //fuera del rango de los radios
+        else
+        {
+            if (lastZone != SonarZones.fuera)
+            {
+                lastZone = SonarZones.fuera;
+                Vibration.Cancel();
+            }
+        }
+    }
+
+    //procesa un click tomando como centro más cercano cIndex
     void ProcessClick(int cIndex, float dist)
     {
         if (dist <= radios[cIndex].cerca)
         {
-            print("centro clickado, reproduciendo sonido asociado al índice: " + cIndex.ToString());
-            tapSoundStopTime(radios[cIndex].clickSound.length);
+            tapSoundStopTime(radios[cIndex].clickSound.length);     //paramos el sonido tapSound mientras dure el evento actual
             src.PlayOneShot(radios[cIndex].clickSound);
         }
     }
 
+    //procesa un doble click tomando como centro más cercano cIndex, y actúa en consecuencia
     void ProcessDoubleClick(int cIndex, float dist)
     {
         //si el centro más cercano cumple la condición de distancia
@@ -223,43 +261,39 @@ public class SonarPuzzleManager : MonoBehaviour
             //es la solución
             if (cIndex == solutionIndex)
             {
+                //desactivamos elementos activos
                 src.Stop();
                 tapSound.Stop();
                 tapPlay = false;
+                //reproducimos el audio de victoria
                 src.PlayOneShot(winSound);
-                //src.clip = winSound;
-                //src.Play();
-                //indicamos que hemos ganado / conseguido el objeto
-                print("VICTORIA");
                 screenInput.deactivate(winSound.length);
-                //-------------------------------------------------
-                // Hacer lo que sea necesario para seguir el juego
-                //-------------------------------------------------
+                //llamada al método que gestiona los eventos de victoria, cuando termine de reproducirse el audio actual
                 Invoke("onVictory", winSound.length);
-                //onVictory();
             }
-            //condición de derrota
+            //condición de fallo
             else
             {
-                print("una vida menos");
+                //desactivamos elementos activos
                 tapSound.Stop();
                 tapPlay = false;
                 src.Stop();
                 src.PlayOneShot(looseSound);
-                //src.clip =looseSound;
-                //src.Play();
+                //eliminamos del juego el punto clickado
                 ChangeRadius(cIndex, 0, 0, 0);
             }
         }
     }
 
+    //método simple que reproduce el TTS antes de invocar a los eventos de victoria
     void onVictory()
     {
         src.PlayOneShot(winTTS);
-        Invoke("onVictory2", winTTS.length);
+        Invoke("onVictoryEvents", winTTS.length);
     }
 
-    void onVictory2()
+    //método que gestiona los eventos que ocurren tras la victoria
+    void onVictoryEvents()
     {
         int progress = GameManager.instance.room;
         switch (progress)
@@ -275,49 +309,7 @@ public class SonarPuzzleManager : MonoBehaviour
         }
     }
 
-    //calcula la vibración correspondiente dada la distancia dist al centro con indice cIndex dentro de la lista de centros
-    void CalculateVibration(int cIndex, float dist)
-    {
-        if(dist <= radios[cIndex].cerca)
-        {
-            if (lastZone != SonarZones.cerca)
-            {
-                print("cerca");
-                lastZone = SonarZones.cerca;
-                Vibration.Cancel();
-                Vibration.SonarVibration(vibrationStrengh, 2000, vibrationRestCerca, true);
-            }
-        }
-        else if(dist <= (radios[cIndex].medio + radios[cIndex].cerca) )
-        {
-            if(lastZone != SonarZones.medio)
-            {
-                print("medio");
-                lastZone = SonarZones.medio;
-                Vibration.Cancel();
-                Vibration.SonarVibration(vibrationStrengh, vibrationDuration, vibrationRestMedio, true);
-            }
-        }
-        else if(dist <= (radios[cIndex].lejos + radios[cIndex].medio + radios[cIndex].cerca) )
-        {
-            if(lastZone != SonarZones.lejos)
-            {
-                print("lejos");
-                lastZone = SonarZones.lejos;
-                Vibration.Cancel();
-                Vibration.SonarVibration(vibrationStrengh, vibrationDuration, vibrationRestLejos, true);
-            }
-        }
-        else
-        {
-            if(lastZone != SonarZones.fuera)
-            {
-                lastZone = SonarZones.fuera;
-                Vibration.Cancel();
-            }
-        }
-    }
-
+    //bloquea que se reproduzca el sonido tapSound durante un tiempo time
     private void tapSoundStopTime(float time)
     {
         tapSound.Stop();
@@ -325,11 +317,27 @@ public class SonarPuzzleManager : MonoBehaviour
         Invoke("tapSoundReady", time);
     }
 
+    //método auxiliar del superior para dejar de bloquar el sonido tapSound
     private void tapSoundReady()
     {
         tapPlay = true;
     }
 
+    //para ver los radios desde el editor
+    private void OnDrawGizmos()
+    {
+        for (int i = 0; i < centros.Count; i++)
+        {
+            Gizmos.DrawWireSphere(centros[i].position, radios[i].cerca);
+            Gizmos.DrawWireSphere(centros[i].position, radios[i].cerca + radios[i].medio);
+            Gizmos.DrawWireSphere(centros[i].position, radios[i].cerca + radios[i].medio + radios[i].lejos);
+        }
+
+        if (click)
+            Gizmos.DrawWireSphere(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.2f);
+    }
+
+    //cambia los radios del centro index dentro de la lista de radios según los parámetros recibidos
     private void ChangeRadius(int index, float nCerca, float nMedio, float nLejos)
     {
         SonarRadios auxRad = new SonarRadios();
