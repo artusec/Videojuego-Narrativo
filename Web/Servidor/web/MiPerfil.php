@@ -41,16 +41,16 @@
 	<p>&nbsp</p>
 	<p>&nbsp</p>
 		<div class="row">
-		<div class="col-sm-4"><img class="animation" id="animation1"src="./imagenes/animation.gif"></div>
-				<div class="col-sm-4">
+		<div class="col-sm-3"><img class="animation" id="animation1"src="./imagenes/animation.gif"></div>
+				<div class="col-sm-6">
 					<h1><p class="text-center">Estadisticas</p></h1>
 					<p>&nbsp</p>
 					<table class="table">
 						<thead class="thead-dark">
 							<tr>
-								<th>Partida</th>
+								<th><img src="./imagenes/save.png" alt="">&nbsp Partida</th>
 								<th>Ultima vez jugado</th>
-								<th>Tiempo</th>
+								<th><img src="./imagenes/clock.png" alt="">&nbsp Tiempo</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -80,7 +80,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-sm-4"></div>
+				<div class="col-sm-3"></div>
 			
 		</div>
 		<p>&nbsp</p>
@@ -89,13 +89,14 @@
 			<p>&nbsp</p>
 
 			<div class="row">
-				<div class="col-sm-4"></div>
-				<div class="col-sm-4">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
 					<h1><p class="text-center">Objetos de la partida actual</p></h1>
 					<p>&nbsp</p>
 					<table class="table">
 						<thead class="thead-dark">
 							<tr>
+								<th></th>
 								<th>Objeto</th>
 								<th>Descripción</th>
 							</tr>
@@ -108,6 +109,31 @@
 								if($numobjetos > 0) {
 									for ($i=0; $i < $numobjetos; $i++) {
 										$html .= '<tr>';
+										switch ($objetos[$i]['real_name']) {
+											case "Carpeta chamuscada":
+												$html .= '<td><img src="./imagenes/directory.png" alt=""></td>';
+												break;
+											case "Llave oxidada":
+												$html .= '<td><img src="./imagenes/oldkey.png" alt=""></td>';
+												break;	
+											case "Llave pequeña":
+												$html .= '<td><img src="./imagenes/key.png" alt=""></td>';
+												break;	
+											case "Juego Simón":
+												$html .= '<td><img src="./imagenes/game.png" alt=""></td>';
+												break;	
+											case "Ganzúa":
+												$html .= '<td><img src="./imagenes/lockpick.png" alt=""></td>';
+												break;
+											case "Osito de peluche":
+												$html .= '<td><img src="./imagenes/doll.png" alt=""></td>';
+												break;
+											case "Pomo":
+												$html .= '<td><img src="./imagenes/door-handle.png" alt=""></td>';
+												break;
+											default:
+											$html .= '<td><img src="./imagenes/info.png" alt=""></td>';;
+										} 
 										$html .= '<td>' . $objetos[$i]['real_name'] . '</td>';
 										$html .= '<td>' . $objetos[$i]['description'] . '<p>&nbsp</p></td>';
 										$html .= '</tr>';                          
@@ -128,7 +154,7 @@
 			<p>&nbsp</p>
 			<p>&nbsp</p>
 				</div>
-				<div class="col-sm-4"><img class="animation2" id="animation2" src="./imagenes/animation-obj.gif"></div>
+				<div class="col-sm-3"><img class="animation2" id="animation2" src="./imagenes/animation-obj.gif"></div>
 			</div>
 		</div>
 
