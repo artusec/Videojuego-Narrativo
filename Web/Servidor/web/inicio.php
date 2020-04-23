@@ -96,7 +96,7 @@
                         <div class="card-body">
                             <p class="card-text">NUBE</p>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                            <a class="card-text" href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
+                            <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
                         </div>
                     </div>
             </div>
