@@ -19,6 +19,22 @@
 
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
+    <!--- FUENTES -->
+    <link href='https://fonts.googleapis.com/css?family=Girassol' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Covered By Your Grace' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Reenie Beanie' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Viaoda Libre' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Love Ya Like A Sister' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Megrim' rel='stylesheet'>    
+    <link href='https://fonts.googleapis.com/css?family=Waiting for the Sunrise' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lacquer' rel='stylesheet'>    
+    <link href='https://fonts.googleapis.com/css?family=East Sea Dokdo' rel='stylesheet'>    
+    <link href='https://fonts.googleapis.com/css?family=Nanum Pen Script' rel='stylesheet'>    
+    <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>   
+    <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>   
+    <link href='https://fonts.googleapis.com/css?family=Long Cang' rel='stylesheet'>   
+    
+
     <script src="./js/cookies.js"></script>
 
 
