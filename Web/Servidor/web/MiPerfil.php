@@ -194,6 +194,10 @@
         $(".page-footer").css({"background-color": "black","color":"yellow"});
         $(".list-group-item").css({"background-color": "black","color":"yellow"});
 
+		$('.table .thead-dark th').css({"color": "yellow"});
+		$('.table').css({"color": "yellow"});
+
+		$('#mode').prop('checked', false);
 		
 		$('.nav-link').css({"background-color": "black"})
 
@@ -220,7 +224,13 @@
 
 		$('.nav-link').css({"background-color": "#591D77"})
 
+		$('.table').css({"color": "#F2F1EF"})
+		$('.table .thead-dark th').css({"color": "#F2F1EF"});
+
 		removeCookie("accesibility");
+		
+		$('#mode').prop('checked', true);
+
 		$('.nav-link').hover(function(){
                 $(this).css({"background-color": "#9932CC"});
             }, function(){
