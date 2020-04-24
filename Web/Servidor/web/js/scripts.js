@@ -74,20 +74,25 @@
   
 
         function increaseSize(){
-           var size = $("*").css('font-size');
-           currentSize = parseFloat(size);
-           newFontSize = (currentSize + 10) + 'px';
-           console.log(newFontSize);
-           $("*").css({"font-size":newFontSize})
+
+
+           var sizeBody = $(".container-fluid").css('font-size');
+           currentSize = parseFloat(sizeBody);
+           newFontSize = (currentSize + 1) + 'px';
+           $("*").css({"font-size":newFontSize});
+
+           $(".Name-font").css({"font-size":"50px"})
+           $("h1").css({"font-size":" 2em"})
         }
 
         function decreaseSize(){
              var size = $("*").css('font-size');
              currentSize = parseFloat(size);
-             newFontSize = (currentSize - 10) + 'px';
-             console.log(newFontSize);
-             $("*").css({"font-size":newFontSize})
+             newFontSize = (currentSize - 1) + 'px';
 
+             $("*").css({"font-size":newFontSize})
+            $(".Name-font").css({"font-size":"50px"})
+            $("h1").css({"font-size":" 2em"})
         }
 
         $('#mode').change(function() {
