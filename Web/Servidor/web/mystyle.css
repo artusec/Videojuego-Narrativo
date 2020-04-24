@@ -223,6 +223,8 @@ a:active {
 }
 
 .btn-secondary{
+    background-color: #fefefe;
+    color: black;
     height: 100%;
     width: 120%;
 }
