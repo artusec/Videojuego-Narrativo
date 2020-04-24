@@ -41,9 +41,9 @@
 	<p>&nbsp</p>
 	<p>&nbsp</p>
 		<div class="row">
-		<div class="col-sm-3"><img class="animation" id="animation1"src="./imagenes/animation.gif"></div>
+		<div class="col-sm-3"></div>
 				<div class="col-sm-6">
-					<h1><p class="text-center">Estadisticas</p></h1>
+					<h1><p class="text-center"><img class="animation" id="animation1"src="./imagenes/animation.gif">Estadisticas</p></h1>
 					<p>&nbsp</p>
 					<table class="table">
 						<thead class="thead-dark">
@@ -91,7 +91,7 @@
 			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
-					<h1><p class="text-center">Objetos de la partida actual</p></h1>
+					<h1><p class="text-center">Objetos de la partida actual<img class="animation2" id="animation2" src="./imagenes/animation-obj.gif"></p></h1>
 					<p>&nbsp</p>
 					<table class="table">
 						<thead class="thead-dark">
@@ -154,7 +154,7 @@
 			<p>&nbsp</p>
 			<p>&nbsp</p>
 				</div>
-				<div class="col-sm-3"><img class="animation2" id="animation2" src="./imagenes/animation-obj.gif"></div>
+				<div class="col-sm-3"></div>
 			</div>
 		</div>
 
