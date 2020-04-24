@@ -20,7 +20,7 @@
 
             //Poner ela pagina a alto contraste 
             $(".container-fluid").css({"background-color": "black","color":"yellow"});
-            $(".leer-mas").css({"color": "yellow"});
+            $(".leer-mas").css({"color": "blue"});
             $("#descarga").css({"color": "white"});
 
             //Poner el footer a alto contraste 
