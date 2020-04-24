@@ -228,3 +228,7 @@ a:active {
     height: 100%;
     width: 120%;
 }
+.btn-secondary:hover{
+    background-color: #c82333;
+    border-color: #dc3545;
+}
