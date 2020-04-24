@@ -14,9 +14,11 @@ html{
 }
 .Name{
     color:#fefefe;
-    font-size: 45px;
     margin-top: 25%;
-    font-family: Papyrus, fantasy
+}
+.Name-font{
+    font-size: 45px;
+    font-family: "Julee", fantasy
 }
 .container-fluid{
     height: 15%;
@@ -46,9 +48,7 @@ html{
     color:#fefefe;
 }
 
-#left-pad2{
-    margin-left:10%;
-}
+
 a{
     color:#fefefe;
 }
@@ -108,7 +108,7 @@ a:active {
 }
 .minijuegosOut{
     padding-left: 10%;
-    
+    height: 100%;
 }
 
 .minijuegosIn{
@@ -123,6 +123,7 @@ a:active {
 }
 
 .card{
+    height: 100%;
     width: 90%;
     color:#591D77;
     border-radius: 5%;
@@ -209,3 +210,19 @@ a:active {
     border-radius: 50%;
   }
   
+#left-pad2{
+    margin-left:10%;
+}
+
+#minus-button{
+    padding-left:1%;
+}
+
+#plus-button{
+    margin-left:0.5%;
+}
+
+.btn-secondary{
+    height: 100%;
+    width: 120%;
+}

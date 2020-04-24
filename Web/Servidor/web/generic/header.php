@@ -39,11 +39,11 @@
             <li class="nav-item">
                 <a class="nav-link"  onclick="modoNormal()">Modo Normal</a>
             </li>
-            <li class="nav-item">
-                <button type="button" class="btn btn-secondary" onclick="decreaseSize()">-</button>              
+            <li class="nav-item" id="minus-button">
+                <button type="button" class="btn btn-secondary" onclick="decreaseSize()">-</button>             
             </li>
-            <li class="nav-item">
-                <button type="button" class="btn btn-secondary" onclick="increaseSize()">+</button>              
+            <li class="nav-item" id="plus-button">
+                <button type="button" class="btn btn-secondary" onclick="increaseSize()">+</button>                
             </li>
     </ul>
 </nav>
