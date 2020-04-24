@@ -1,3 +1,4 @@
+
 <script>
 
         $( document ).ready(function() {
@@ -54,6 +55,9 @@
             $('.nav-link').css({"background-color": "#591D77"})
 
             $(".leer-mas").css({"color": "#9932CC"});
+
+            $("#reg").css({"color": "black"});
+            $("#a-login").css({"color": "black"});
 
             $('.nav-link').hover(function(){
                 $(this).css({"background-color": "#9932CC"});

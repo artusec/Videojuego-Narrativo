@@ -11,7 +11,7 @@ class FormLogin extends Form {
         $html = '<form class="form-inline">
                     <fieldset>
                         <legend><h1>Login</h1></legend>
-				        <p>Identifícate o <a href="Register.php" id = "reg" aria-labe="Página de registro" >regístrate</a></p>
+				        <p>Identifícate o <a href="Register.php" id ="reg" aria-labe="Página de registro" >REGÍSTRATE</a></p>
                         <div class="form-group">
                             <label for="username" >Usuario</label>
                             <input type="text" name="username" class="form-control" id="username" value=""  placeholder="Username">
