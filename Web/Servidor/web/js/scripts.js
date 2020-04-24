@@ -71,16 +71,33 @@
             removeCookie("accesibility");
         }
 
+  
+
+        function increaseSize(){
+           var size = $("*").css('font-size');
+           currentSize = parseFloat(size);
+           newFontSize = (currentSize + 10) + 'px';
+           console.log(newFontSize);
+           $("*").css({"font-size":newFontSize})
+        }
+
+        function decreaseSize(){
+             var size = $("*").css('font-size');
+             currentSize = parseFloat(size);
+             newFontSize = (currentSize - 10) + 'px';
+             console.log(newFontSize);
+             $("*").css({"font-size":newFontSize})
+
+        }
+
         $('#mode').change(function() {
-            if(this.checked) { 
-                console.log("change");
-                modoNormal();
-            }
-            else{
-                modoAltoContraste();
-            }
-        });
-
-
+                    if(this.checked) { 
+                        console.log("change");
+                        modoNormal();
+                    }
+                    else{
+                        modoAltoContraste();
+                    }
+                });
 
 </script>
