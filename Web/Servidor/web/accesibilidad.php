@@ -74,12 +74,22 @@
             <p>Las secciones de minijuegos tendrían controles propios, que se explicarían en cada uno.</p>
 
             <p>&nbsp</p>
-            <img src="./imagenes/accesibilidad1.png"/>
-            <img src="./imagenes/accesibilidad2.png"/>
             </div>
             <div class="col-md-2">
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-4">
+                <img src="./imagenes/accesibilidad1.png"/>
+            </div>
+            <div class="col-md-4">
+                <img src="./imagenes/accesibilidad2.png"/>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>    
     </div>
 <?php
     require_once './generic/footer.html';
