@@ -37,6 +37,13 @@
                 $(this).css({"background-color": "black"});
             });
 
+            $('.nav-link').focus(function(){
+                $(this).css({"background-color": "dimgray"});
+            });
+            $('.nav-link').focusout(function(){
+                $(this).css({"background-color": "black"}); 
+            });
+
             setCookie("accesibility", 1, 1);
   
         }
@@ -59,10 +66,18 @@
             $("#reg").css({"color": "black"});
             $("#a-login").css({"color": "black"});
 
+
             $('.nav-link').hover(function(){
                 $(this).css({"background-color": "#9932CC"});
             }, function(){
                 $(this).css({"background-color": "#591D77"});
+            });
+
+            $('.nav-link').focus(function(){
+                $(this).css({"background-color": "#9932CC"});
+            });
+            $('.nav-link').focusout(function(){
+                $(this).css({"background-color": "#591D77"}); 
             });
 
             $('#mode').prop('checked', true);
