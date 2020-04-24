@@ -128,7 +128,9 @@
 
 </script>
 
-
+<?php
+    require_once './js/scripts.js';
+?>
 
 
 </html>
