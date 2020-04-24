@@ -88,57 +88,12 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 <?php
     require_once './generic/footer.html';
 ?>
- 
 
 </body>
-<script>
-
-    $( document ).ready(function() {
-            if (detectCookie("accesibility")){
-            modoAltoContraste();
-        }
-        else{
-            modoNormal();
-        }
-        });
-
-
-    function modoAltoContraste(){
-        //Poner el menu a contraste alto
-        $(".nav").css({"background-color": "black"});
-        $("a").css({"color": "yellow"});
-
-
-        //Poner ela pagina a alto contraste 
-        $(".container-fluid").css({"background-color": "black","color":"yellow"});
-
-        //Poner el footer a alto contraste 
-        $(".page-footer").css({"background-color": "black","color":"yellow"});
-        $(".list-group-item").css({"background-color": "black","color":"yellow"});
-    }
-
-    function modoNormal(){
-    //Volver a modo normal 
-        $(".nav").css({"background-color": "#591D77"});
-        $("a").css({"color": "#F2F1EF"});
-
-        $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
-
-        $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
-        $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
-    }
-
-</script>
-
-
-
-
+<?php
+    require_once './js/scripts.js';
+?>
 </html>

@@ -55,9 +55,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    
-    
+    </div> 
 
     <div class="container-fluid">
         <div class="row">
@@ -83,19 +81,9 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
 <?php
     require_once './generic/footer.html';
 ?>
-
-
 </body>
 <?php
     require_once './js/scripts.js';
