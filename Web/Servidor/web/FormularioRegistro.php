@@ -31,11 +31,7 @@ class FormRegistro extends Form {
                             <label for="pass2" >Repite la contraseña</label>
                             <input type="password" name="pass2" class="form-control" id="pass2" value=""  placeholder="Repite la contraseña">
                         </div>
-                        <div class="col text-center">
-                            <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
-                        </div> 
-                    </fieldset>     
-                </form>';
+                        ';
         return $html;
     }
     
