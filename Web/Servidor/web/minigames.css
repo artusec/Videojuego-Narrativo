@@ -14,10 +14,13 @@ html{
 }
 .Name{
     color:#fefefe;
-    font-size: 45px;
-    margin-top: 25%;
-    font-family: Papyrus, fantasy
+    margin-top: 20%;
 }
+.Name-font{
+    font-size: 75px;
+    font-family: "Julee", fantasy
+}
+
 .container-fluid{
     height: 15%;
     background-color: #9932CC;

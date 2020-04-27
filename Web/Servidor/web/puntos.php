@@ -19,6 +19,9 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+ <!--- FUENTES DEL TITULO-->
+ <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>   
+
 <link rel="stylesheet" type="text/css" href="minigames.css">
 
 <script src="./js/cookies.js"></script>
@@ -44,7 +47,7 @@
         <div class="row logo">
             <div class="col-lg-4 col-md-12">
                 <div class="Name">
-                <p class="text-center">ASHED</p>
+                <p class="text-center Name-font">ASHED</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
@@ -52,7 +55,7 @@
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="Name">
-                <p class="text-center">MEMORIES</p>
+                <p class="text-center Name-font">MEMORIES</p>
                 </div>
             </div>
         </div>
