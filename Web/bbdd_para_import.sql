@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `games` (
   `id` int(11) NOT NULL,
   `user` int(11) NOT NULL,
-  `date_start` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `date_start` timestamp NOT NULL DEFAULT current_timestamp(),
   `time_played` bigint(20) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
