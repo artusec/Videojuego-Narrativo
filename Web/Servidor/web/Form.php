@@ -139,7 +139,7 @@ abstract class Form
         
         $html .= '<p>&nbsp</p>
                     <div class="col text-center">
-                    <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
+                    <button class="btn btn-danger btn-lg" id="button-red" type="submit" value="Aceptar">Aceptar</button>
                     </div>
                 </fieldset>       
                 </form> 

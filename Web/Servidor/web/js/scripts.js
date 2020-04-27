@@ -20,6 +20,9 @@
             $("#donwload-button").css({"background-color": "yellow","border-color":"yellow"});
             $("#descarga").css({"color": "black"});
 
+            $("#button-red").css({"background-color": "yellow","border-color":"yellow"});
+            $("#button-red").css({"color": "black"});
+
             //Poner ela pagina a alto contraste 
             $(".container-fluid").css({"background-color": "black","color":"yellow"});
             $(".leer-mas").css({"color": "blue"});
@@ -57,6 +60,8 @@
             $("#descarga").css({"color": "#fefefe"});
             $("#donwload-button").css({"background-color": "#c82333","border-color":"#bd2130"});
             
+            $("#button-red").css({"background-color": "#c82333","border-color":"#bd2130"});
+            $("#button-red").css({"color": "#fefefe"});
 
             $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
 
@@ -67,7 +72,7 @@
 
             $(".leer-mas").css({"color": "#9932CC"});
 
-            $("#reg").css({"color": "black"});
+            $("#reg").css({"color": "#fefefe"});
             $("#a-login").css({"color": "black"});
 
 
