@@ -62,7 +62,7 @@
     <div class="container-fluid">
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg"><a id="descarga" download="AshenMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
+            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" download="AshenMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>
         <?php

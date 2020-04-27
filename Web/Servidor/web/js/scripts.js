@@ -17,11 +17,12 @@
             $(".nav").css({"background-color": "black"});
             $("a").css({"color": "yellow"});
         
+            $("#donwload-button").css({"background-color": "yellow","border-color":"yellow"});
+            $("#descarga").css({"color": "black"});
 
             //Poner ela pagina a alto contraste 
             $(".container-fluid").css({"background-color": "black","color":"yellow"});
             $(".leer-mas").css({"color": "blue"});
-            $("#descarga").css({"color": "white"});
 
             //Poner el footer a alto contraste 
             $(".page-footer").css({"background-color": "black","color":"yellow"});
@@ -52,7 +53,10 @@
             //Volver a modo normal 
             $(".nav").css({"background-color": "#591D77"});
             $("a").css({"color": "#F2F1EF"});
+
             $("#descarga").css({"color": "#fefefe"});
+            $("#donwload-button").css({"background-color": "#c82333","border-color":"#bd2130"});
+            
 
             $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
 
