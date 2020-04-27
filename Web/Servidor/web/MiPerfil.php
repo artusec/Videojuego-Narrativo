@@ -26,7 +26,7 @@
 
 <head>
 <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
-	<title>Registrar</title>
+	<title>Mi perfil</title>
 	<meta charset="utf-8" /></title>
 </head>
 
