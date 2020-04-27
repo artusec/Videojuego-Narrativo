@@ -20,12 +20,6 @@ class FormLogin extends Form {
                             <label for="pass" >Contraseña</label>
                             <input type="password"  name="pass" class="form-control" id="pass" value=""  placeholder="Contraseña">
                         </div>
-                        <p>&nbsp</p>
-                        <div class="col text-center">
-                            <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
-                        </div>  
-                    </fieldset>       
-                </form> 
                 ';
         return $html;
     }

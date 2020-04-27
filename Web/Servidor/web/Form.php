@@ -129,14 +129,22 @@ abstract class Form
     private function generaFormulario($errores = array(), &$datos = array())
     {
         $html = "";
-        $html  .= $this->generaListaErrores($errores);
+        
 	  
         $html .= '<form method="POST" action="'.$this->action.'" id="'.$this->formId.'" >';
         $html .= '<input type="hidden" name="action" value="'.$this->formId.'" />';
 
         $html .= $this->generaCamposFormulario($datos);
-        $html .= '</form>';
-
+        $html .= $this->generaListaErrores($errores);
+        
+        $html .= '<p>&nbsp</p>
+                    <div class="col text-center">
+                    <button class="btn btn-danger btn-lg" type="submit" value="Aceptar">Aceptar</button>
+                    </div>
+                </fieldset>       
+                </form> 
+            </form>';
+        
         return $html;
     }
 
@@ -152,9 +160,9 @@ abstract class Form
         $html='';
         $numErrores = count($errores);
         if (  $numErrores == 1 ) {
-            $html .= "<ul class='colorLetra'><li>".$errores[0]."</li></ul>";
+            $html .= "<ul ><li>".$errores[0]."</li></ul>";
         } else if ( $numErrores > 1 ) {
-            $html .= "<ul class='colorLetra'><li>";
+            $html .= "<ul ><li>";
             $html .= implode("</li><li >", $errores);
             $html .= "</li></ul>";
         }
