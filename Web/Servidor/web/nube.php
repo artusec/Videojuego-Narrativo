@@ -43,16 +43,16 @@
 	
 	
     <div class="img-container">
-        <div class="row logo">
-            <div class="col-lg-4 col-md-12">
+    <div class="row logo">
+            <div class="col-md-4">
                 <div class="Name">
                 <p class="text-center Name-font">ASHED</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
                 <p class="text-center Name-font">MEMORIES</p>
                 </div>

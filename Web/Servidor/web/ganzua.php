@@ -41,15 +41,15 @@
 	
     <div class="img-container">
         <div class="row logo">
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
                 <p class="text-center Name-font">ASHED</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
                 <p class="text-center Name-font">MEMORIES</p>
                 </div>
@@ -78,17 +78,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
+  
+        <div class="row">
+            <div class="col-lg-2 order-lg-1 col-md-2 order-md-1">
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 order-lg-2 col-md-10 order-md-2">
                 <img src="./imagenes/ganzua1.png"/>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 order-lg-3 col-md-10 order-md-4">
                 <img src="./imagenes/ganzua2.png"/>
             </div>
-            <div class="col-md-2">
+            <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
             </div>
-        </div>  
+        </div> 
     </div>
 <?php
     require_once './generic/footer.html';
