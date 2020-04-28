@@ -72,7 +72,7 @@
 
             $(".leer-mas").css({"color": "#9932CC"});
 
-            $("#reg").css({"color": "#fefefe"});
+            $("#reg").css({"color": "black"});
             $("#a-login").css({"color": "black"});
 
 
