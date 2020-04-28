@@ -105,7 +105,7 @@
            newFontSize = (currentSize + 1) + 'px';
            $("*").css({"font-size":newFontSize});
 
-           $(".Name-font").css({"font-size":"50px"})
+           $(".Name-font").css({"font-size":"4.5vw"})
            $("h1").css({"font-size":" 2em"})
         }
 
@@ -115,7 +115,7 @@
              newFontSize = (currentSize - 1) + 'px';
 
              $("*").css({"font-size":newFontSize})
-            $(".Name-font").css({"font-size":"50px"})
+            $(".Name-font").css({"font-size":"4.5vw"})
             $("h1").css({"font-size":" 2em"})
         }
 

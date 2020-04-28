@@ -17,7 +17,7 @@ html{
     margin-top: 20%;
 }
 .Name-font{
-    font-size: 75px;
+    font-size: 4.5vw;
     font-family: "Julee", fantasy
 }
 
@@ -229,4 +229,8 @@ a:active {
 .btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
     background-color: #c82333;
     border-color: #dc3545;
+}
+
+.img-accesibilidad{
+    margin-left: 10%;
 }

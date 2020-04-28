@@ -82,15 +82,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-lg-2 order-lg-1 col-md-2 order-md-1">
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 order-lg-2 col-md-10 order-md-2">
                 <img src="./imagenes/accesibilidad1.png"/>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 order-lg-3 col-md-10 order-md-4">
                 <img src="./imagenes/accesibilidad2.png"/>
             </div>
-            <div class="col-md-2">
+            <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
             </div>
         </div>    
     </div>

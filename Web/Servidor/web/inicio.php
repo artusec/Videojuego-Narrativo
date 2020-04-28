@@ -43,15 +43,15 @@
 
     <div class="img-container">
         <div class="row logo">
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
                 <p class="text-center Name-font">ASHED</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
                 <p class="text-center Name-font">MEMORIES</p>
                 </div>
@@ -62,7 +62,7 @@
     <div class="container-fluid">
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" download="AshedMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
+            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" download="AshenMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>
         <?php
