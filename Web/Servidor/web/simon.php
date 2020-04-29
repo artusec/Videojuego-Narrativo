@@ -19,6 +19,9 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+ <!--- FUENTES DEL TITULO-->
+ <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>   
+
 <link rel="stylesheet" type="text/css" href="minigames.css">
 
 <script src="./js/cookies.js"></script>
@@ -41,18 +44,18 @@
 	
 
     <div class="img-container">
-        <div class="row logo">
-            <div class="col-lg-4 col-md-12">
+    <div class="row logo">
+            <div class="col-md-4">
                 <div class="Name">
-                <p class="text-center">ASHED</p>
+                <p class="text-center Name-font">ASHED</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
-                <p class="text-center">MEMORIES</p>
+                <p class="text-center Name-font">MEMORIES</p>
                 </div>
             </div>
         </div>
@@ -66,9 +69,13 @@
             <p>&nbsp</p>
             <h1><p class="text-center">SIMON DICE</p></h1>
             <p>&nbsp</p>
-            <h3>Concepto</h3>
+            <h2>Concepto</h2>
+                <p>El desarrollo de este videojuego se basó en el juego tradicional Simon Dice. El juego de mesa consiste en un dispositivo con forma de disco, dividido en cuatro cuadrantes de diferentes colores, que se van iluminando de manera aleatoria y emitiendo a la vez un sonido propio, distinto al de los demás. Tras terminar una serie de estas activaciones, se espera que el usuario repita la misma secuencia en el orden correcto. Si el jugador acierta correctamente la secuencia, se comienza de nuevo pero añadiendo una activación adicional al final de la secuencia previa. </p>
+                <p>Basandose en eso, se sustituyó los elementos visuales del juego por sonido 3D inmersivo del cual el usuario pudiera adivinar la procedencia espacial. El minijuego tiene tres posibles sonidos que se ubican a la derecha, a la izquierda y al frente del jugador. Cada uno de estos puntos reproduce un sonido distinto a los demás con el fin de facilitar la tarea de recordar la secuencia.</p>
                 <p>&nbsp</p>
-                <h3>¿Como se juega?</h3>
+            <h2>¿Como se juega?</h2>
+            <p>El juego comienza  con una única activación de sonido procedente de una de las fuentes y esperando posteriormente a que el usuario la repita correctamente, y aumentando el tamaño de la secuencia dado el caso.</p>
+            <p>Los controles para seleccionar las posibles opciones son deslizamientos en la dirección de la que se cree que proviene el sonido, minimizando la carga de trabajo al usuario y haciendo que focalice la atención en recordar la secuencia más que en el cómo introducirla a posteriori.</p>
             <p>&nbsp</p>
             </div>
             <div class="col-md-2">
@@ -85,46 +92,7 @@
  
 
 </body>
-<script>
-
-    $( document ).ready(function() {
-            if (detectCookie("accesibility")){
-            modoAltoContraste();
-        }
-        else{
-            modoNormal();
-        }
-        });
-
-
-    function modoAltoContraste(){
-        //Poner el menu a contraste alto
-        $(".nav").css({"background-color": "black"});
-        $("a").css({"color": "yellow"});
-
-
-        //Poner ela pagina a alto contraste 
-        $(".container-fluid").css({"background-color": "black","color":"yellow"});
-
-        //Poner el footer a alto contraste 
-        $(".page-footer").css({"background-color": "black","color":"yellow"});
-        $(".list-group-item").css({"background-color": "black","color":"yellow"});
-    }
-
-    function modoNormal(){
-    //Volver a modo normal 
-        $(".nav").css({"background-color": "#591D77"});
-        $("a").css({"color": "#F2F1EF"});
-
-        $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
-
-        $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
-        $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
-    }
-
-</script>
-
-
-
-
+<?php
+    require_once './js/scripts.js';
+?>
 </html>

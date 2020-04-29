@@ -19,6 +19,11 @@
 
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
+    <!--- FUENTES DEL TITULO-->
+    <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>   
+ 
+    
+
     <script src="./js/cookies.js"></script>
 
 
@@ -30,44 +35,47 @@
 
 <body>
 
-
+<header>
 <?php
     require_once './generic/header.php';
 ?>
-
+</header>
 
     <div class="img-container">
         <div class="row logo">
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
-                <p class="text-center">ASHED</p>
+                <p class="text-center Name-font">ASHED</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
-                <p class="text-center">MEMORIES</p>
+                <p class="text-center Name-font">MEMORIES</p>
                 </div>
             </div>
         </div>
     </div>
 
+
+<main role="main">
+
     <div class="container-fluid">
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg"><a id="descarga" download="AshenMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
+            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" download="AshenMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>
         <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
         ?>
-        <h1 class="Title-1" id='1'>¡Te damos la bienvenida a ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
+        <h1 class="Title-1" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
         <p>&nbsp</p>  
         <?php
             }else{  ?>
-                <h1 class="Title-1" id='1'>¡Te damos la bienvenida a ASHED MEMORIES!</h1>
+                <h1 class="Title-1" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES!</h1>
                 <p>&nbsp</p>  
         <?php    }
         ?>
@@ -80,9 +88,9 @@
         <div class="col-sm-3">    
             <div class="minijuegosOut">
                     <div class="card">
-                        <img src="./imagenes/accesibility.png"  class="card-img-top "alt="">
+                        <a href="./accesibilidad.php"><img src="./imagenes/accesibility.png"  class="card-img-top" alt="" aria-label="Leer mas sobre accesibilidad"></a>
                         <div class="card-body">
-                            <p class="card-text">ACCESIBILIDAD</p>
+                            <p class="card-text"><h2>ACCESIBILIDAD</h2></p>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
                             <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
@@ -92,11 +100,11 @@
         <div class="col-sm-3">    
             <div class="minijuegosOut">
                     <div class="card">
-                        <img src="./imagenes/nube.png"  class="card-img-top" alt="">
+                        <a href="./nube.php"> <img src="./imagenes/nube.png"  class="card-img-top "alt="" ria-label="Leer mas sobre la nube"> </a>
                         <div class="card-body">
-                            <p class="card-text">NUBE</p>
+                            <p class="card-text"><h2>NUBE</h2></p>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                            <a class="card-text" href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
+                            <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
                         </div>
                     </div>
             </div>
@@ -117,9 +125,9 @@
                 <div class="col-sm-4">
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./imagenes/safe_box.png" alt="">
+                                <a href="./ganzua.php"><img class="card-img-top" src="./imagenes/safe_box.png" alt="" aria-label="Leer mas sobre el minijuego ganzua"></a>
                                 <div class="card-body">
-                                  <p class="card-text">GANZUA</p>
+                                  <p class="card-text"><h2>GANZUA</h2></p>
                                   <p class="card-text">Hacer circulos con el dedo sobre la pantalla hasta oir el desbloqueo de la caja fuerte.</p>
                                   <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                                 </div>
@@ -129,9 +137,9 @@
                 <div class="col-sm-4">   
                     <div class="minijuegosOut">
                         <div class="card">
-                            <img class="card-img-top" src="./imagenes/earphone.png" alt="">
+                            <a href="./voces.php"><img class="card-img-top" src="./imagenes/earphone.png" alt="" aria-label="Leer mas sobre el minijuego voces a lo lejos"></a>
                             <div class="card-body">
-                            <p class="card-text">VOCES A LO LEJOS</p>
+                            <p class="card-text"><h2>VOCES A LO LEJOS</h2></p>
                             <p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
                               <a href="./voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                             </div>
@@ -141,9 +149,9 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./imagenes/geometry.png" alt="">
+                                <a href="./formas.php"><img class="card-img-top" src="./imagenes/geometry.png" alt="" aria-label="Leer mas sobre el minijuego formas"></a>
                                 <div class="card-body">
-                                <p class="card-text">FORMAS</p>
+                                <p class="card-text"><h2>FORMAS</h2></p>
                                 <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
                                 <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
@@ -159,9 +167,9 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./imagenes/diana.png" alt="">
+                                <a href="./puntos.php"><img class="card-img-top" src="./imagenes/diana.png" alt="" aria-label="Leer mas sobre el minijuego puntos calientes"></a>
                                 <div class="card-body">
-                                <p class="card-text">PUNTOS CALIENTES</p>
+                                <p class="card-text"><h2>PUNTOS CALIENTES</h2></p>
                                 <p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>
                                 <a href="./puntos.php" class="leer-mas" aria-label="Leer mas sobre el minijuego puntos calientes">Leer mas</a>
                                 </div>
@@ -171,9 +179,9 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <img class="card-img-top" src="./imagenes/simondice.png" alt="">
+                                <a href="./simon.php"><img class="card-img-top" src="./imagenes/simondice.png" alt="" aria-label="Leer mas sobre el minijuego formas"></a>
                                 <div class="card-body">
-                                <p class="card-text">SIMON SAYS</p>
+                                <p class="card-text"><h2>SIMON SAYS</h2></p>
                                 <p class="card-text">Pasar el dedo por la pantalla y jugar al simon dice de toda la vida que hemos jugado todos de pequeños.</p>
                                 <a href="./simon.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
@@ -186,90 +194,14 @@
         <p>&nbsp</p>
         &nbsp
     </div>
+
+</main>
+
 <?php
     require_once './generic/footer.html';
 ?>
 </body>
-<script>
-
-        $( document ).ready(function() {
-            if (detectCookie("accesibility")){
-            modoAltoContraste();
-        }
-        else{
-            modoNormal();
-        }
-        });
-
-
-        function modoAltoContraste(){
-
-            //Poner el menu a contraste alto
-            $(".nav").css({"background-color": "black"});
-            $("a").css({"color": "yellow"});
-        
-
-            //Poner ela pagina a alto contraste 
-            $(".container-fluid").css({"background-color": "black","color":"yellow"});
-            $(".leer-mas").css({"color": "yellow"});
-            $("#descarga").css({"color": "white"});
-
-            //Poner el footer a alto contraste 
-            $(".page-footer").css({"background-color": "black","color":"yellow"});
-            $(".list-group-item").css({"background-color": "black","color":"yellow"});
-
-            $('#mode').prop('checked', false);
-        
-            $('.nav-link').css({"background-color": "black"})
-
-            $('.nav-link').hover(function(){
-                $(this).css({"background-color": "dimgray"});
-            }, function(){
-                $(this).css({"background-color": "black"});
-            });
-
-            setCookie("accesibility", 1, 1);
-  
-        }
-
-        function modoNormal(){
-            //Volver a modo normal 
-            $(".nav").css({"background-color": "#591D77"});
-            $("a").css({"color": "#F2F1EF"});
-            $("#descarga").css({"color": "#fefefe"});
-
-            $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
-
-            $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
-            $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
-
-            $('.nav-link').css({"background-color": "#591D77"})
-
-            $(".leer-mas").css({"color": "#9932CC"});
-
-            $('.nav-link').hover(function(){
-                $(this).css({"background-color": "#9932CC"});
-            }, function(){
-                $(this).css({"background-color": "#591D77"});
-            });
-
-            $('#mode').prop('checked', true);
-
-
-            removeCookie("accesibility");
-        }
-
-        $('#mode').change(function() {
-            if(this.checked) { 
-                console.log("change");
-                modoNormal();
-            }
-            else{
-                modoAltoContraste();
-            }
-        });
-
-
-
-</script>
+<?php
+    require_once './js/scripts.js';
+?>
 </html>

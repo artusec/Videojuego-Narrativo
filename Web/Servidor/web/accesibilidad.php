@@ -19,6 +19,9 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+ <!--- FUENTES DEL TITULO-->
+ <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>   
+
 <link rel="stylesheet" type="text/css" href="minigames.css">
 
 <script src="./js/cookies.js"></script>
@@ -41,23 +44,21 @@
 
     <div class="img-container">
         <div class="row logo">
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
-                <p class="text-center">ASHED</p>
+                <p class="text-center Name-font">ASHED</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-md-4">
                 <div class="Name">
-                <p class="text-center">MEMORIES</p>
+                <p class="text-center Name-font">MEMORIES</p>
                 </div>
             </div>
         </div>
-    </div>
-    
-    
+    </div> 
 
     <div class="container-fluid">
         <div class="row">
@@ -67,85 +68,37 @@
             <p>&nbsp</p>
             <h1><p class="text-center">ACCESIBLIDAD</p></h1>
             <p>&nbsp</p>
-            <p>Actualmente lo más habitual al desarrollar aplicaciones con accesibilidad para personas invidentes son los lectores de pantalla. Estos sistemas se ejecutan a nivel de dispositivo y capturan el input del usuario, traduciéndolo en acciones que envía al sistema en cuestión. De esta forma facilitan la navegación por los elementos en pantalla en base a unos gestos simples. Existen muchos programas de este tipo, tanto en dispositivos de sobremesa como en móvil. Algunos ejemplos son JAWS para sobremesas, VoiceOver en dispositivos iOS y TalkBack en dispositivos Android. </p>
+            <p>Lo más habitual al desarrollar aplicaciones accesibles para personas invidentes son los lectores de pantalla. Estos sistemas capturan ciertos gestos simples del usuario facilitando la navegación por los elementos en pantalla. Algunos ejemplos son <a href="https://www.freedomscientific.com/products/software/jaws/"><strong>JAWS</strong></a> para sobremesas, <a href="https://www.apple.com/es/accessibility/iphone/vision/"><strong>Voice Over</strong></a> en dispositivos iOS y <a href="https://support.google.com/accessibility/android/answer/6283677?hl=es"><strong>TalkBack</strong></a> en dispositivos Android. </p>
 
-            <p>En el caso que nos atañe, las aplicaciones móviles, estos gestos suelen ser deslizamientos rápidos y pulsaciones dobles en la pantalla. Con los deslizamientos laterales se avanza o retrocede en la lista de elementos mostrados (esta lista no suele ser cíclica, para que principio y final estén bien marcados), la doble pulsación suele equivaler a pulsar sobre el elemento seleccionado actualmente. Los distintos programas tienen también otros gestos más específicos, formados a veces por combinaciones de gestos, por ejemplo, en TalkBack deslizar hacia arriba y luego a la izquierda rápidamente lleva al primer elemento de la lista.</p>
+            <p>En el juego estos gestos son deslizamientos rápidos horizontales para moverte entre los elementos y pulsaciones dobles en la pantalla para acceder o interactuar con el objeto actual.</p>
 
-            <p>Cuando se optó por hacer el desarrollo en Unity los directores del TFG nos indicaron la importancia de estos programas, y que se debía investigar si este motor proporcionaba compatibilidad con alguno de estos.</p>
+            <p>Esto requiere que al lanzar la aplicación se indique al usuario que apague su lector de pantalla. Es decir, el juego ya está implementado con los controles accesibles por defecto.</p>
 
-            <p>Efectivamente, después de investigar, se descubrió que Unity no proporcionaba soporte para ninguna de estas herramientas de forma oficial, pese a que miembros de su equipo de desarrollo habían mostrado en ocasiones interés por implementar funciones en este campo (Hammilton, 2019) (Llu, 2019). Se observó que las únicas herramientas que daban soporte eran desarrolladas por terceros, que las publicaban en la Asset Store de Unity (tienda en la que se permite publicar para su venta elementos creados para su uso en Unity) a variados precios.</p>
+            <p>Las secciones de minijuegos tendrían controles propios, que se explicarían en cada uno.</p>
 
-            <p>La cosa no acababa ahí, sino que, al no dar soporte al lector de pantalla, ejecutar la aplicación con uno activo causaría comportamientos no esperados que dificultasen o imposibilitarían su uso normal. Esto requiere que al lanzar la aplicación se indique al usuario que apague su lector de pantalla.</p>
-
-            <p>El juego había sido diseñado desde un principio para ser usado con un lector de pantalla o alguna herramienta similar. Básicamente se trataba de una variación en el género de las aventuras gráficas, con elementos sacados de juegos de puzles basados en avanzar de sala en sala y añadiendo minijuegos adaptados para personas invidentes.</p>
-
-            <p>Las secciones de minijuegos tendrían controles propios, que se explicarían en cada uno, mientras que las secciones en habitaciones estaban pensadas para usarse con un lector: Consistían en inspeccionar elementos en un escenario e interactuar con ellos.</p>
-
-            <p>Mientras se pensaba que elección tomar frente a este problema se buscaron antecedentes de desarrolladores que se habían visto en situaciones similares, encontramos el caso de FREEQ, desarrollado por PsychicBunny (caso de estudio en Estado del Arte). (Hughes, 2013) </p>
-
-            <p>Tras conocer este caso y los buenos resultados obtenidos con el enfoque de imitar un lector de pantalla, se llegó a la conclusión de que encajaría en nuestra aplicación. Finalmente, se optó por seguir su ejemplo e implementar dentro de Unity los sistemas y funcionalidades necesarias para imitar un lector de pantalla, de modo que en las secciones que lo necesitan un usuario acostumbrado a su uso pudiera navegarlos de forma intuitiva y fácil.</p>
-            
             <p>&nbsp</p>
             </div>
             <div class="col-md-2">
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-2 order-lg-1 col-md-2 order-md-1">
+            </div>
+            <div class="col-lg-4 order-lg-2 col-md-10 order-md-2">
+                <img src="./imagenes/accesibilidad1.png"/>
+            </div>
+            <div class="col-lg-4 order-lg-3 col-md-10 order-md-4">
+                <img src="./imagenes/accesibilidad2.png"/>
+            </div>
+            <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
+            </div>
+        </div>    
     </div>
-
-
-
-
-
-
-
-
 <?php
     require_once './generic/footer.html';
 ?>
- 
- 
-
 </body>
-<script>
-
-    $( document ).ready(function() {
-            if (detectCookie("accesibility")){
-            modoAltoContraste();
-        }
-        else{
-            modoNormal();
-        }
-        });
-
-
-    function modoAltoContraste(){
-        //Poner el menu a contraste alto
-        $(".nav").css({"background-color": "black"});
-        $("a").css({"color": "yellow"});
-
-
-        //Poner ela pagina a alto contraste 
-        $(".container-fluid").css({"background-color": "black","color":"yellow"});
-
-        //Poner el footer a alto contraste 
-        $(".page-footer").css({"background-color": "black","color":"yellow"});
-        $(".list-group-item").css({"background-color": "black","color":"yellow"});
-    }
-
-    function modoNormal(){
-    //Volver a modo normal 
-        $(".nav").css({"background-color": "#591D77"});
-        $("a").css({"color": "#F2F1EF"});
-
-        $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
-
-        $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
-        $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
-    }
-
-</script>
-
-
-
-
+<?php
+    require_once './js/scripts.js';
+?>
 </html>

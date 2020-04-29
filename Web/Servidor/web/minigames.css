@@ -14,10 +14,14 @@ html{
 }
 .Name{
     color:#fefefe;
-    font-size: 45px;
-    margin-top: 25%;
-    font-family: Papyrus, fantasy
+    margin-top: 20%;
+    margin-bottom: 20%;
 }
+.Name-font{
+    font-size: 4.5vw;
+    font-family: "Julee", fantasy
+}
+
 .container-fluid{
     height: 15%;
     background-color: #9932CC;
@@ -48,6 +52,8 @@ html{
 
 #left-pad2{
     margin-left:10%;
+    display: flex;
+    justify-content:center;
 }
 a{
     color:#fefefe;
@@ -205,4 +211,29 @@ a:active {
   .slider.round:before {
     border-radius: 50%;
   }
-  
+  #left-pad2{
+    margin-left:10%;
+}
+
+#minus-button{
+    padding-left:1%;
+}
+
+#plus-button{
+    margin-left:0.5%;
+}
+
+.btn-secondary{
+    background-color: #fefefe;
+    color: black;
+    height: 100%;
+    width: 120%;
+}
+.btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
+    background-color: #c82333;
+    border-color: #dc3545;
+}
+
+.img-accesibilidad{
+    margin-left: 10%;
+}

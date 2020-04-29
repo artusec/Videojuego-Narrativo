@@ -14,9 +14,12 @@ html{
 }
 .Name{
     color:#fefefe;
-    font-size: 45px;
-    margin-top: 25%;
-    font-family: Papyrus, fantasy
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+.Name-font{
+    font-size: 4.5vw;
+    font-family: "Julee", fantasy
 }
 .container-fluid{
     height: 15%;
@@ -46,9 +49,7 @@ html{
     color:#fefefe;
 }
 
-#left-pad2{
-    margin-left:10%;
-}
+
 a{
     color:#fefefe;
 }
@@ -76,12 +77,12 @@ a:active {
     background-color: black;
     max-width: 100%;
 }
-
 #Logo{
     width: 100%;
     height: 100%;
    
 }
+
 .page-footer{
     background-color:#591D77;
     color:#fefefe;
@@ -108,7 +109,7 @@ a:active {
 }
 .minijuegosOut{
     padding-left: 10%;
-    
+    height: 100%;
 }
 
 .minijuegosIn{
@@ -123,6 +124,7 @@ a:active {
 }
 
 .card{
+    height: 100%;
     width: 90%;
     color:#591D77;
     border-radius: 5%;
@@ -209,3 +211,27 @@ a:active {
     border-radius: 50%;
   }
   
+#left-pad2{
+    margin-left:10%;
+    display: flex;
+    justify-content:center;
+}
+
+#minus-button{
+    padding-left:1%;
+}
+
+#plus-button{
+    margin-left:0.5%;
+}
+
+.btn-secondary{
+    background-color: #fefefe;
+    color: black;
+    height: 100%;
+    width: 120%;
+}
+.btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
+    background-color: #c82333;
+    border-color: #dc3545;
+}

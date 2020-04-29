@@ -68,7 +68,10 @@ html{
     justify-items: center;
     display: flex;
 }
-
+#a-login{
+    color:black;
+    font-size: x-large;
+}
 
 .switch {
     position: relative;
@@ -129,4 +132,25 @@ html{
   .slider.round:before {
     border-radius: 50%;
   }
-  
+  #left-pad2{
+    margin-left:10%;
+}
+
+#minus-button{
+    padding-left:1%;
+}
+
+#plus-button{
+    margin-left:0.5%;
+}
+
+.btn-secondary{
+    background-color: #fefefe;
+    color: black;
+    height: 100%;
+    width: 120%;
+}
+.btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
+    background-color: #c82333;
+    border-color: #dc3545;
+}
