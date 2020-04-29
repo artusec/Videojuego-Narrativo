@@ -67,10 +67,10 @@
                 <p>&nbsp</p>
                 <h1><p class="text-center">FORMAS</p></h1>
                 <p>&nbsp</p>
-                <h3>Concepto</h3>
+                <h2>Concepto</h2>
                 <p>El objetivo de este minijuego es diseñar un sistema de reconocimiento de objetos por medio del tacto, similar a cuando intentamos coger algo en una habitación oscura o rebuscamos en un cajón, que no nos queda más remedio que ir palpando los objetos hasta reconocer el objeto que queremos. Con este objetivo se implementó un minijuego en el que se presenta una forma en la pantalla solamente reconocible por medio de la vibración, que el usuario debe identificar o reconocer para poder continuar. El minijuego engloba el reconocimiento en serie de tres formas distintas.</p>
                 <p>&nbsp</p>
-                <h3>¿Como se juega?</h3>
+                <h2>¿Como se juega?</h2>
                 <p>El jugador deberá ir moviendo el dedo por la pantalla del dispositivo móvil para encontrar las zonas en las que se activa la vibración y las zonas en las que esto no ocurre. Con estos trazados se espera que el jugador se vaya haciendo una idea de la forma estimada que se le ha presentado. Una vez se tenga una idea más o menos clara de qué forma podría ser, el usuario tendrá que hacer doble clic sobre cualquier lado de la pantalla para pasar de la fase de reconocimiento a la fase de selección.</p>
                 <p>En esta nueva fase se desactivan por completo las vibraciones del móvil y se le ofrecen al jugador varias opciones de selección para la forma presentada de las cuales sólo una de ellas es correcta. Además en la fase de selección también se da la opción de volver a la fase de reconocimiento. Por medio de deslizamientos, el jugador irá moviéndose por las opciones, para finalmente elegir la opción que crea que coincide con la forma que ha reconocido previamente. En el caso de acertar, se avanza al siguiente nivel con una nueva forma a reconocer.</p>
                 <p>&nbsp</p>

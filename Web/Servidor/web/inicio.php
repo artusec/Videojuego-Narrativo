@@ -35,11 +35,11 @@
 
 <body>
 
-
+<header>
 <?php
     require_once './generic/header.php';
 ?>
-
+</header>
 
     <div class="img-container">
         <div class="row logo">
@@ -59,6 +59,9 @@
         </div>
     </div>
 
+
+<main role="main">
+
     <div class="container-fluid">
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
@@ -68,11 +71,11 @@
         <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
         ?>
-        <h1 class="Title-1" id='1'>¡Te damos la bienvenida a ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
+        <h1 class="Title-1" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
         <p>&nbsp</p>  
         <?php
             }else{  ?>
-                <h1 class="Title-1" id='1'>¡Te damos la bienvenida a ASHED MEMORIES!</h1>
+                <h1 class="Title-1" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES!</h1>
                 <p>&nbsp</p>  
         <?php    }
         ?>
@@ -85,9 +88,9 @@
         <div class="col-sm-3">    
             <div class="minijuegosOut">
                     <div class="card">
-                        <a href="./accesibilidad.php"> <img src="./imagenes/accesibility.png"  class="card-img-top "alt=""> </a>
+                        <a href="./accesibilidad.php"><img src="./imagenes/accesibility.png"  class="card-img-top" alt="" aria-label="Leer mas sobre accesibilidad"></a>
                         <div class="card-body">
-                            <p class="card-text">ACCESIBILIDAD</p>
+                            <p class="card-text"><h2>ACCESIBILIDAD</h2></p>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
                             <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
@@ -97,9 +100,9 @@
         <div class="col-sm-3">    
             <div class="minijuegosOut">
                     <div class="card">
-                        <a href="./nube.php"> <img src="./imagenes/nube.png"  class="card-img-top "alt=""> </a>
+                        <a href="./nube.php"> <img src="./imagenes/nube.png"  class="card-img-top "alt="" ria-label="Leer mas sobre la nube"> </a>
                         <div class="card-body">
-                            <p class="card-text">NUBE</p>
+                            <p class="card-text"><h2>NUBE</h2></p>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
                             <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
                         </div>
@@ -122,9 +125,9 @@
                 <div class="col-sm-4">
                     <div class="minijuegosOut">
                             <div class="card">
-                                <a href="./ganzua.php"><img class="card-img-top" src="./imagenes/safe_box.png" alt=""></a>
+                                <a href="./ganzua.php"><img class="card-img-top" src="./imagenes/safe_box.png" alt="" aria-label="Leer mas sobre el minijuego ganzua"></a>
                                 <div class="card-body">
-                                  <p class="card-text">GANZUA</p>
+                                  <p class="card-text"><h2>GANZUA</h2></p>
                                   <p class="card-text">Hacer circulos con el dedo sobre la pantalla hasta oir el desbloqueo de la caja fuerte.</p>
                                   <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                                 </div>
@@ -134,9 +137,9 @@
                 <div class="col-sm-4">   
                     <div class="minijuegosOut">
                         <div class="card">
-                            <a href="./voces.php"><img class="card-img-top" src="./imagenes/earphone.png" alt=""></a>
+                            <a href="./voces.php"><img class="card-img-top" src="./imagenes/earphone.png" alt="" aria-label="Leer mas sobre el minijuego voces a lo lejos"></a>
                             <div class="card-body">
-                            <p class="card-text">VOCES A LO LEJOS</p>
+                            <p class="card-text"><h2>VOCES A LO LEJOS</h2></p>
                             <p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
                               <a href="./voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                             </div>
@@ -146,9 +149,9 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <a href="./formas.php"><img class="card-img-top" src="./imagenes/geometry.png" alt=""></a>
+                                <a href="./formas.php"><img class="card-img-top" src="./imagenes/geometry.png" alt="" aria-label="Leer mas sobre el minijuego formas"></a>
                                 <div class="card-body">
-                                <p class="card-text">FORMAS</p>
+                                <p class="card-text"><h2>FORMAS</h2></p>
                                 <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
                                 <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
@@ -164,9 +167,9 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <a href="./puntos.php"><img class="card-img-top" src="./imagenes/diana.png" alt=""></a>
+                                <a href="./puntos.php"><img class="card-img-top" src="./imagenes/diana.png" alt="" aria-label="Leer mas sobre el minijuego puntos calientes"></a>
                                 <div class="card-body">
-                                <p class="card-text">PUNTOS CALIENTES</p>
+                                <p class="card-text"><h2>PUNTOS CALIENTES</h2></p>
                                 <p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>
                                 <a href="./puntos.php" class="leer-mas" aria-label="Leer mas sobre el minijuego puntos calientes">Leer mas</a>
                                 </div>
@@ -176,9 +179,9 @@
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
                             <div class="card">
-                                <a href="./simon.php"><img class="card-img-top" src="./imagenes/simondice.png" alt=""></a>
+                                <a href="./simon.php"><img class="card-img-top" src="./imagenes/simondice.png" alt="" aria-label="Leer mas sobre el minijuego formas"></a>
                                 <div class="card-body">
-                                <p class="card-text">SIMON SAYS</p>
+                                <p class="card-text"><h2>SIMON SAYS</h2></p>
                                 <p class="card-text">Pasar el dedo por la pantalla y jugar al simon dice de toda la vida que hemos jugado todos de pequeños.</p>
                                 <a href="./simon.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
@@ -191,6 +194,9 @@
         <p>&nbsp</p>
         &nbsp
     </div>
+
+</main>
+
 <?php
     require_once './generic/footer.html';
 ?>

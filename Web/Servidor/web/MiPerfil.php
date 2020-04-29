@@ -43,7 +43,7 @@
 		<div class="row">
 		<div class="col-sm-3"></div>
 				<div class="col-sm-6">
-					<h1><p class="text-center"><img class="animation" id="animation1"src="./imagenes/animation.gif">Estadisticas</p></h1>
+					<h1><p class="text-center"><img class="animation" id="animation1"src="./imagenes/animation.gif">ESTADISTICAS</p></h1>
 					<p>&nbsp</p>
 					<table class="table">
 						<thead class="thead-dark">
@@ -91,7 +91,7 @@
 			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
-					<h1><p class="text-center">Objetos de la partida actual<img class="animation2" id="animation2" src="./imagenes/animation-obj.gif"></p></h1>
+					<h1><p class="text-center">OBJECTOS DE LA PARTIDA</p></h1>
 					<p>&nbsp</p>
 					<table class="table">
 						<thead class="thead-dark">

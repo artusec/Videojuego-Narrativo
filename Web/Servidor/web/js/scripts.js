@@ -32,7 +32,12 @@
             $(".list-group-item").css({"background-color": "black","color":"yellow"});
 
             $('#mode').prop('checked', false);
-        
+            $('.table').css({"color":"yellow"});
+            $('.table .thead-dark th').css({"color":"yellow"});
+
+            $('#animation1').attr("src","./imagenes/animation2.gif");
+
+            
             $('.nav-link').css({"background-color": "black"})
 
             $('.nav-link').hover(function(){
@@ -75,6 +80,10 @@
             $("#reg").css({"color": "black"});
             $("#a-login").css({"color": "black"});
 
+            $('.table').css({"color":"#fefefe"});
+            $('.table .thead-dark th').css({"color":"#fefefe"});
+
+            $('#animation1').attr("src","./imagenes/animation.gif");
 
             $('.nav-link').hover(function(){
                 $(this).css({"background-color": "#9932CC"});
@@ -121,7 +130,6 @@
 
         $('#mode').change(function() {
                     if(this.checked) { 
-                        console.log("change");
                         modoNormal();
                     }
                     else{

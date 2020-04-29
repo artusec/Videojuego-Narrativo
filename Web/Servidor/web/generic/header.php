@@ -1,4 +1,4 @@
-<nav title="Menu horizontal">
+<nav title="Menu horizontal" role="navigation">
     <ul class="nav justify-content-center">
         <li class="nav-item" id="">
             <a class="nav-link" href="./inicio.php">Introduccion</a>

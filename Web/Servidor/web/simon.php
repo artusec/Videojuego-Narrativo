@@ -69,11 +69,11 @@
             <p>&nbsp</p>
             <h1><p class="text-center">SIMON DICE</p></h1>
             <p>&nbsp</p>
-            <h3>Concepto</h3>
-            <p>El desarrollo de este videojuego se basó en el juego tradicional Simon Dice. El juego de mesa consiste en un dispositivo con forma de disco, dividido en cuatro cuadrantes de diferentes colores, que se van iluminando de manera aleatoria y emitiendo a la vez un sonido propio, distinto al de los demás. Tras terminar una serie de estas activaciones, se espera que el usuario repita la misma secuencia en el orden correcto. Si el jugador acierta correctamente la secuencia, se comienza de nuevo pero añadiendo una activación adicional al final de la secuencia previa. </p>
-            <p>Basandose en eso, se sustituyó los elementos visuales del juego por sonido 3D inmersivo del cual el usuario pudiera adivinar la procedencia espacial. El minijuego tiene tres posibles sonidos que se ubican a la derecha, a la izquierda y al frente del jugador. Cada uno de estos puntos reproduce un sonido distinto a los demás con el fin de facilitar la tarea de recordar la secuencia.</p>
-            <p>&nbsp</p>
-            <h3>¿Como se juega?</h3>
+            <h2>Concepto</h2>
+                <p>El desarrollo de este videojuego se basó en el juego tradicional Simon Dice. El juego de mesa consiste en un dispositivo con forma de disco, dividido en cuatro cuadrantes de diferentes colores, que se van iluminando de manera aleatoria y emitiendo a la vez un sonido propio, distinto al de los demás. Tras terminar una serie de estas activaciones, se espera que el usuario repita la misma secuencia en el orden correcto. Si el jugador acierta correctamente la secuencia, se comienza de nuevo pero añadiendo una activación adicional al final de la secuencia previa. </p>
+                <p>Basandose en eso, se sustituyó los elementos visuales del juego por sonido 3D inmersivo del cual el usuario pudiera adivinar la procedencia espacial. El minijuego tiene tres posibles sonidos que se ubican a la derecha, a la izquierda y al frente del jugador. Cada uno de estos puntos reproduce un sonido distinto a los demás con el fin de facilitar la tarea de recordar la secuencia.</p>
+                <p>&nbsp</p>
+            <h2>¿Como se juega?</h2>
             <p>El juego comienza  con una única activación de sonido procedente de una de las fuentes y esperando posteriormente a que el usuario la repita correctamente, y aumentando el tamaño de la secuencia dado el caso.</p>
             <p>Los controles para seleccionar las posibles opciones son deslizamientos en la dirección de la que se cree que proviene el sonido, minimizando la carga de trabajo al usuario y haciendo que focalice la atención en recordar la secuencia más que en el cómo introducirla a posteriori.</p>
             <p>&nbsp</p>
