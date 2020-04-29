@@ -213,6 +213,8 @@ a:active {
   
 #left-pad2{
     margin-left:10%;
+    display: flex;
+    justify-content:center;
 }
 
 #minus-button{

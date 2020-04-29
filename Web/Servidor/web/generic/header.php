@@ -29,14 +29,10 @@
 ?>             
             <li class="nav-item" id="left-pad2">
                 <a class="nav-link"  aria-label="Poner la página con colores en alto contraste" onclick="modoAltoContraste()">Modo Alto Contraste</a>
-            </li>
-            <li class="nav-item">
                  <label class="switch" for="mode">
                     <input type="checkbox" id="mode" checked> 
                         <span class="slider round"></span>
                 </label>               
-            </li>
-            <li class="nav-item">
                 <a class="nav-link"  aria-label="Poner la página con colones sin alto contraste" onclick="modoNormal()">Modo Normal</a>
             </li>
             <li class="nav-item" id="minus-button">
