@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends UnityPlayerActivity {
     private static final int REQ_CODE_SPEECH_INPUT = 100;
     private static String lang = "es-ES";
-    private ArrayList<String> resultData = new ArrayList<>();
+    private ArrayList<String> result = new ArrayList<>();
 
 
     @Override
@@ -22,9 +22,7 @@ public class MainActivity extends UnityPlayerActivity {
         super.onCreate(savedInstanceState);
     }
 
-    public void changeLang(String s) {
-        this.lang = s;
-    }
+    public void changeLang(String s) { this.lang = s;}
 
     public void StartListening() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -44,9 +42,8 @@ public class MainActivity extends UnityPlayerActivity {
         if (requestCode == REQ_CODE_SPEECH_INPUT) {
             if (resultCode == RESULT_OK) {
                 if (data != null) {
-                    resultData = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    String finalText =resultData.get(0);
-                    Log.i("UnityTag", "AHORA SE DEBERIA ENVIAR EL PUTO MENSAJE");
+                    result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    String finalText =result.get(0);
                     UnityPlayer.UnitySendMessage("STTUnity", "OnResult", finalText);
                 }
             }
