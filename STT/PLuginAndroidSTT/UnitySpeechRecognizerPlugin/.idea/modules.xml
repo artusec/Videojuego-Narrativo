@@ -3,10 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PLuginAndroidSTT-UnitySpeechRecognizerPlugin.iml" filepath="$PROJECT_DIR$/PLuginAndroidSTT-UnitySpeechRecognizerPlugin.iml" group="UnitySpeechRecognizerPlugin" />
+      <module fileurl="file://$PROJECT_DIR$/app/PLuginAndroidSTT-UnitySpeechRecognizerPlugin-app.iml" filepath="$PROJECT_DIR$/app/PLuginAndroidSTT-UnitySpeechRecognizerPlugin-app.iml" group="UnitySpeechRecognizerPlugin/app" />
+      <module fileurl="file://$PROJECT_DIR$/STT-PLuginAndroidSTT-UnitySpeechRecognizerPlugin.iml" filepath="$PROJECT_DIR$/STT-PLuginAndroidSTT-UnitySpeechRecognizerPlugin.iml" group="UnitySpeechRecognizerPlugin" />
       <module fileurl="file://$PROJECT_DIR$/UnitySpeechRecognizerPlugin.iml" filepath="$PROJECT_DIR$/UnitySpeechRecognizerPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/UnitySpeechRecognizerPlugin-app.iml" filepath="$PROJECT_DIR$/app/UnitySpeechRecognizerPlugin-app.iml" group="UnitySpeechRecognizerPlugin/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/sttlib/app-sttlib.iml" filepath="$PROJECT_DIR$/app/sttlib/app-sttlib.iml" group="UnitySpeechRecognizerPlugin/app/sttlib" />
+      <module fileurl="file://$PROJECT_DIR$/app/sttlib/sttlib.iml" filepath="$PROJECT_DIR$/app/sttlib/sttlib.iml" group="UnitySpeechRecognizerPlugin/app/sttlib" />
     </modules>
   </component>
 </project>
