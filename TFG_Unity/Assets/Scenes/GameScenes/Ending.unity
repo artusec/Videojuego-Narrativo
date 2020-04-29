@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 9e99beaa946ab484c80b079c8cd2b8e8, type: 3}
   label: "Videojuego desarrollado como Trabajo Final de Grado por estudiantes del
     Grado de Ingenier\xEDa Inform\xE1tica y el Grado de Desarrollo de Videojuegos"
   actBehaviour: {fileID: 301807481}
@@ -310,13 +310,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 336467968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80864248a3d21eb46b880e94aef3a9d3, type: 3}
+  m_Script: {fileID: 11500000, guid: cefc7c9d6c6d7c3468f43cc174a2fd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 8300000, guid: 126ee56bf16adc844874ef7c72945209, type: 3}
-  oneUse: 0
-  usedDescriptionClip: {fileID: 0}
 --- !u!114 &336467971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,9 +326,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 87360d010a4196b4e8b06df50b9685c1, type: 3}
   label: "Diego Mart\xEDnez Simarro"
-  actBehaviour: {fileID: 336467970}
+  actBehaviour: {fileID: 0}
+  state: 1
+  parentList: {fileID: 0}
+--- !u!1 &467635949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 467635950}
+  - component: {fileID: 467635952}
+  - component: {fileID: 467635951}
+  m_Layer: 0
+  m_Name: Joaquin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &467635950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467635949}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8105664, y: 3.2541385, z: -0.5019531}
+  m_LocalScale: {x: 0.64827, y: 0.64827, z: 0.64827}
+  m_Children: []
+  m_Father: {fileID: 617185286}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &467635951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467635949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefc7c9d6c6d7c3468f43cc174a2fd35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: {fileID: 0}
+--- !u!114 &467635952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467635949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLabel: {fileID: 8300000, guid: 7ef7c500ec106b84195af368f6f898ef, type: 3}
+  label: "Agradecimientos a nuestros directores por asesorarnos en el proyecto y a
+    la ONCE por su colaboraci\xF3n en las pruebas."
+  actBehaviour: {fileID: 467635951}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &501887159
@@ -364,7 +424,7 @@ Transform:
   m_LocalScale: {x: 0.64827, y: 0.64827, z: 0.64827}
   m_Children: []
   m_Father: {fileID: 617185286}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &501887161
 MonoBehaviour:
@@ -391,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 9c212867806d3a5499c847fd2fadaf5c, type: 3}
   label: "Agradecimientos a nuestros directores por asesorarnos en el proyecto y a
     la ONCE por su colaboraci\xF3n en las pruebas."
   actBehaviour: {fileID: 501887161}
@@ -523,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 57c7f51bf4dff2847b823e23ac06e8ba, type: 3}
   label: 'Estudiantes participantes:'
   actBehaviour: {fileID: 591996117}
   state: 1
@@ -565,6 +625,9 @@ Transform:
   - {fileID: 1205110785}
   - {fileID: 1597854504}
   - {fileID: 1260813165}
+  - {fileID: 1355470230}
+  - {fileID: 1503948844}
+  - {fileID: 467635950}
   - {fileID: 501887160}
   - {fileID: 1153832736}
   m_Father: {fileID: 1614197040}
@@ -592,6 +655,9 @@ MonoBehaviour:
   - {fileID: 1205110787}
   - {fileID: 1597854506}
   - {fileID: 1260813167}
+  - {fileID: 1355470232}
+  - {fileID: 1503948846}
+  - {fileID: 467635952}
   - {fileID: 501887162}
   - {fileID: 1153832738}
   prevList: {fileID: 0}
@@ -613,7 +679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &775294259
 Transform:
   m_ObjectHideFlags: 0
@@ -638,11 +704,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cb01d23a7c5c1e2429413bde6bd739c3, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 84e58cdd4552f5149a3a8971a20e604b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -765,13 +831,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1137741441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80864248a3d21eb46b880e94aef3a9d3, type: 3}
+  m_Script: {fileID: 11500000, guid: cefc7c9d6c6d7c3468f43cc174a2fd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 8300000, guid: 126ee56bf16adc844874ef7c72945209, type: 3}
-  oneUse: 0
-  usedDescriptionClip: {fileID: 0}
 --- !u!114 &1137741444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,9 +847,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 692815970bde56c4d9522639c405e13c, type: 3}
   label: Arturo Aguirre Calvo
-  actBehaviour: {fileID: 1137741443}
+  actBehaviour: {fileID: 0}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &1153832735
@@ -819,7 +882,7 @@ Transform:
   m_LocalScale: {x: 0.64827, y: 0.64827, z: 0.64827}
   m_Children: []
   m_Father: {fileID: 617185286}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1153832737
 MonoBehaviour:
@@ -849,7 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 8848801a19ae4284289c1293267781f2, type: 3}
   label: Volver al Menu
   actBehaviour: {fileID: 1153832737}
   state: 1
@@ -895,13 +958,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1205110784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80864248a3d21eb46b880e94aef3a9d3, type: 3}
+  m_Script: {fileID: 11500000, guid: cefc7c9d6c6d7c3468f43cc174a2fd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 8300000, guid: 126ee56bf16adc844874ef7c72945209, type: 3}
-  oneUse: 0
-  usedDescriptionClip: {fileID: 0}
 --- !u!114 &1205110787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,9 +974,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 7ada5f2f6e56c4b44ad1ab7b3627026c, type: 3}
   label: "Eduardo Andr\xE9s Morais"
-  actBehaviour: {fileID: 1205110786}
+  actBehaviour: {fileID: 0}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &1260813164
@@ -960,13 +1020,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260813164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80864248a3d21eb46b880e94aef3a9d3, type: 3}
+  m_Script: {fileID: 11500000, guid: cefc7c9d6c6d7c3468f43cc174a2fd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 8300000, guid: 126ee56bf16adc844874ef7c72945209, type: 3}
-  oneUse: 0
-  usedDescriptionClip: {fileID: 0}
 --- !u!114 &1260813167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,9 +1036,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: f75f0a13bb08c5e48ae6ebb4d6d353ad, type: 3}
   label: "H\xE9ctor Marcos Rabad\xE1n"
-  actBehaviour: {fileID: 1260813166}
+  actBehaviour: {fileID: 0}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &1328814274
@@ -1041,9 +1098,135 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 1072066aa63a05248bab83470a81cbdd, type: 3}
   label: "Nombre de juego. Cr\xE9ditos."
   actBehaviour: {fileID: 1328814276}
+  state: 1
+  parentList: {fileID: 0}
+--- !u!1 &1355470229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1355470230}
+  - component: {fileID: 1355470232}
+  - component: {fileID: 1355470231}
+  m_Layer: 0
+  m_Name: Directores
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1355470230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355470229}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8105664, y: 3.2541385, z: -0.5019531}
+  m_LocalScale: {x: 0.64827, y: 0.64827, z: 0.64827}
+  m_Children: []
+  m_Father: {fileID: 617185286}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355470231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355470229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefc7c9d6c6d7c3468f43cc174a2fd35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: {fileID: 0}
+--- !u!114 &1355470232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355470229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLabel: {fileID: 8300000, guid: 8d8526406d993d444860607db7ddede4, type: 3}
+  label: "Agradecimientos a nuestros directores por asesorarnos en el proyecto y a
+    la ONCE por su colaboraci\xF3n en las pruebas."
+  actBehaviour: {fileID: 1355470231}
+  state: 1
+  parentList: {fileID: 0}
+--- !u!1 &1503948843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1503948844}
+  - component: {fileID: 1503948846}
+  - component: {fileID: 1503948845}
+  m_Layer: 0
+  m_Name: Maria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1503948844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503948843}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8105664, y: 3.2541385, z: -0.5019531}
+  m_LocalScale: {x: 0.64827, y: 0.64827, z: 0.64827}
+  m_Children: []
+  m_Father: {fileID: 617185286}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503948845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503948843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefc7c9d6c6d7c3468f43cc174a2fd35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: {fileID: 0}
+--- !u!114 &1503948846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503948843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLabel: {fileID: 8300000, guid: 51caddd57ade4c844b00cc16ce13a443, type: 3}
+  label: "Agradecimientos a nuestros directores por asesorarnos en el proyecto y a
+    la ONCE por su colaboraci\xF3n en las pruebas."
+  actBehaviour: {fileID: 1503948845}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &1535312671
@@ -1113,6 +1296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5795de63e38e64dbc618d57d40c880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  src: {fileID: 775294260}
+  loop: {fileID: 8300000, guid: f28c4fd74d50c014aaecf54f2a28b3e6, type: 3}
 --- !u!1 &1597854503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,13 +1339,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1597854503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80864248a3d21eb46b880e94aef3a9d3, type: 3}
+  m_Script: {fileID: 11500000, guid: cefc7c9d6c6d7c3468f43cc174a2fd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 8300000, guid: 126ee56bf16adc844874ef7c72945209, type: 3}
-  oneUse: 0
-  usedDescriptionClip: {fileID: 0}
 --- !u!114 &1597854506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,9 +1355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 33819cbc70d3d1d44a378a677334f696, type: 3}
   label: "Fernando Cort\xE9s Sancho"
-  actBehaviour: {fileID: 1597854505}
+  actBehaviour: {fileID: 0}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &1614197039
@@ -1223,7 +1405,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1714,13 +1896,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2015489190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80864248a3d21eb46b880e94aef3a9d3, type: 3}
+  m_Script: {fileID: 11500000, guid: cefc7c9d6c6d7c3468f43cc174a2fd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 0}
-  descriptionClip: {fileID: 8300000, guid: 126ee56bf16adc844874ef7c72945209, type: 3}
-  oneUse: 0
-  usedDescriptionClip: {fileID: 0}
 --- !u!114 &2015489193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,9 +1912,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d90344d4c88c4481e284e117f3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLabel: {fileID: 0}
+  audioLabel: {fileID: 8300000, guid: 7b142606153242b4ab67ff997beb1dd1, type: 3}
   label: Alberto Casado Trapote
-  actBehaviour: {fileID: 2015489192}
+  actBehaviour: {fileID: 0}
   state: 1
   parentList: {fileID: 0}
 --- !u!1 &2071857690
