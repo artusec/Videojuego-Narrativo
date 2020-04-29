@@ -81,6 +81,18 @@
             <div class="col-md-2">
             </div>
         </div>
+
+        <div class="row logo">
+            <div class="col-lg-4 col-md-3">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="./imagenes/vib.gif" alt=""/>
+            </div>
+            <div class="col-lg-4 col-md-3">
+            </div>
+            <p>&nbsp</p>
+        </div>
+        
     </div>
 
 
