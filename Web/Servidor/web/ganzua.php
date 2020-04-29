@@ -28,9 +28,9 @@
 
 
 <head>
-<link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
     <title>Ganzua</title>
-		<meta charset="utf-8" />
+	<meta charset="utf-8"/>
 </head>
 
 <body>
@@ -77,25 +77,26 @@
             <div class="col-md-2">
             </div>
         </div>
-        <div class="row">
   
         <div class="row">
             <div class="col-lg-2 order-lg-1 col-md-2 order-md-1">
             </div>
-            <div class="col-lg-4 order-lg-2 col-md-10 order-md-2">
+            <div class="col-lg-5 order-lg-2 col-md-10 order-md-2">
                 <img src="./imagenes/ganzua1.png"/>
             </div>
-            <div class="col-lg-4 order-lg-3 col-md-10 order-md-4">
+            <div class="col-lg-5 order-lg-3 col-md-10 order-md-4">
                 <img src="./imagenes/ganzua2.png"/>
             </div>
             <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
             </div>
         </div> 
     </div>
+
+
 <?php
     require_once './generic/footer.html';
 ?>
-</body>
+
 <?php
     require_once './js/scripts.js';
 ?>
