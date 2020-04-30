@@ -82,10 +82,10 @@
             <div class="col-lg-2 order-lg-1 col-md-2 order-md-1">
             </div>
             <div class="col-lg-5 order-lg-2 col-md-10 order-md-2">
-                <img src="./imagenes/ganzua1.png"/>
+                <img src="./imagenes/ganzua1.png"  alt=""/>
             </div>
             <div class="col-lg-5 order-lg-3 col-md-10 order-md-4">
-                <img src="./imagenes/ganzua2.png"/>
+                <img src="./imagenes/ganzua2.png"  alt=""/>
             </div>
             <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
             </div>

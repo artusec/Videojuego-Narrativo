@@ -84,7 +84,7 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-4">
-                <img src="./imagenes/guardado_nube.png"/>
+                <img src="./imagenes/guardado_nube.png"  alt=""/>
             </div>
             <div class="col-md-2">
             </div>
