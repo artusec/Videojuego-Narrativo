@@ -85,10 +85,16 @@ public class FormasManager : MonoBehaviour
     void Start()
     {
         srm = SRManager.instance;
-        setLevel(level);    //activamos la primera forma a reconocer
         srm.playTTS(introTTS);
         //se desactiva el input del usuario mientras dure el sonido inicial
         ScreenInput.instance.deactivate(introTTS.length);
+        //esperamos a que termine el audio para arrancar la lógica del juego
+        Invoke("startGame", introTTS.length);  
+    }
+
+    public void startGame()
+    {
+        setLevel(1); //activamos la primera forma a reconocer
     }
 
     void Update()
@@ -125,6 +131,7 @@ public class FormasManager : MonoBehaviour
             formas[i].SetActive(false);
         formas[nLevel].SetActive(true);
         setUpForms();   //ajuste de información de la lista del srm
+        StartCoroutine("sayPossibleOptions");
     }
 
     void auxAddLevel()
@@ -137,7 +144,8 @@ public class FormasManager : MonoBehaviour
         //válido para nLevel negativo y seguro para no pasarse del límite del array
         level = (level + nLevel) % formas.Count;
         setLevel(level);
-        ReturnToRecognition();
+        //StartCoroutine("sayPossibleOptions");
+        //ReturnToRecognition();
     }
 
     //método que ajusta la lista del srm para que tenga la información del nivel actual
@@ -153,6 +161,20 @@ public class FormasManager : MonoBehaviour
             list[i].audioLabel = formAudios[(int)f];
             ((FormaMinigame)list[i].actBehaviour).form = f;
         }
+    }
+
+    //metodo que indica por audio las posibles opciones al comenzar cada nivel
+    //  también activa automáticamente la fase de reconocimiento
+    public IEnumerator sayPossibleOptions()
+    {
+        int i = 0;
+        while (i < SRManager.instance.currentList.sreList.Count - 1)
+        {
+            srm.playTTS(SRManager.instance.currentList.sreList[i].audioLabel);
+            i++;
+            yield return new WaitForSeconds(SRManager.instance.currentList.sreList[i].audioLabel.length + 0.25f);
+        }
+        ReturnToRecognition();
     }
 
     //método que recibe la forma seleccionada, determina si es la correcta, y actúa en consecuencia
