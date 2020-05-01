@@ -170,6 +170,33 @@
             </div>
             <p>&nbsp</p>
             <p>&nbsp</p>
+            <section>
+<div class="container-fluid">
+<p>&nbsp</p>
+    <p>&nbsp</p>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="ojo">
+                <div class="shut">
+                    <span></span>
+                </div>
+                <div class="ball">
+                    <div class='eye'>
+                        <div class='luz'></div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+</div>
+</section>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
             <p>&nbsp</p>
             <div class="row">
             <div class="col-sm-2"></div>
@@ -216,7 +243,24 @@
   <?php  
     require_once './js/scripts.js';
 ?>
+$("body").mousemove(function(event) {
 
+var eye = $(".eye");
+
+
+var eyex = (eye.offset().left) + (eye.width() / 2);
+var eyey = (eye.offset().top) + (eye.height() / 2);
+var radeye = Math.atan2(event.pageX - eyex, event.pageY - eyey);
+var eyerot = (radeye * (180 / Math.PI) * -1) + 180;
+
+
+eye.css({
+  '-webkit-transform': 'rotate(' + eyerot + 'deg)',
+  '-moz-transform': 'rotate(' + eyerot + 'deg)',
+  '-ms-transform': 'rotate(' + eyerot + 'deg)',
+  'transform': 'rotate(' + eyerot + 'deg)'
+});
+});
 </script>
 
 </html>

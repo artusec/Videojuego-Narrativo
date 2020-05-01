@@ -12,7 +12,6 @@ body {
     overflow-x: hidden; 
     
   }
-
 html{
     scroll-behavior: smooth; 
 }
@@ -23,6 +22,9 @@ header{
     max-width: 100%;
 }
 
+a{
+    color: #fefefe;
+}
 
 .navbar{
     width: 100%;
@@ -230,6 +232,7 @@ list-group-item{
     color:#591D77;
     border-radius: 5%;
     border: 1% solid #591D77;
+
 }
 
 .card-img-top{
@@ -256,15 +259,110 @@ list-group-item{
 }
 
 /*ANIMACIONES*/
-.hidden{
-    
+#donwload-button {
+    color: #fefefe;
+    animation: bounceIn 2s;
+    animation-duration: 4s;
 }
+  
+@keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
-@keyframes fade-in {
-    from {opacity: 0; transform: scale(.7,.7)}
-    to {opacity: 1;}
-}
-.fade-in-element {
-  animation: fade-in 1.4s;
-}
 
+  .ojo{
+      width:200px;
+      height: 200px;
+      background : white;
+      position:absolute;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%,-50%) rotate(45deg);
+      border-radius: 75% 0;
+      overflow: hidden;
+  }
+
+  .ball{
+        border-radius:50%;
+        border: 80px solid #576574;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        position: relative;
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+        background: #CCC;
+  }
+
+
+  .shut{
+      width: 300px;
+      height: 160px;
+      position: absolute;
+      top : 50%;
+      left: 50%;
+      transform: translate(-50%,-50%) rotate(-45deg);
+      z-index:999;
+     
+  }
+  @keyframes blink {
+   
+    100% {
+        height:100%;
+    }
+  }
+
+  .shut span{
+      display: block;
+      width:100%;
+      height: 20%;
+      background: #591D77;
+      border-radius: 0 0 60% 50%;
+      transition: 0.4s all;
+      animation: blink, blink, blink, blink, blink, blink;
+      animation-delay: 5s, 15s, 25s,35s,45s;
+      animation-duration: 0.2s;
+      animation-timing-function: linear;
+  }
+
+  .ojo:hover > .shut span{
+      height:100%;
+  }
+
+
+
+  
+  .eye:after { /*pupil*/
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    border-radius: 50%;
+    content: " ";
+  }
+
+  .luz { /*pupil*/
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    content: " ";
+    z-index:1;
+  }
