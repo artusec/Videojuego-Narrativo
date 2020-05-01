@@ -78,7 +78,7 @@
         <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
         ?>
-        <h1 class="Title-1" id='1' >¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
+        <h1 class="text-center" id='1' >¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
         <p>&nbsp</p>  
         <?php
             }else{  ?>
