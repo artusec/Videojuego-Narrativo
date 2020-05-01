@@ -12,14 +12,29 @@ body{
 html{
     scroll-behavior: smooth; 
 }
+
+header{
+    font-size: large;
+    width: 100%;
+    max-width: 100%;
+}
+
 .Name{
     color:#fefefe;
     margin-top: 20%;
     margin-bottom: 20%;
 }
+.Name-font1{
+    font-family: "Julee", fantasy
+}
 .Name-font{
     font-size: 4.5vw;
     font-family: "Julee", fantasy
+}
+@media only screen and (max-width:  992px) {
+    .Name-font{
+        font-size: 65px;
+    }
 }
 
 .container-fluid{
@@ -35,20 +50,54 @@ html{
     margin-bottom: 0;
 }
 
-.nav{
-    background-color:#591D77;
-    
-}
-.nav-link{
-    font-size: large;
-}
-.nav-link:hover,.nav-link:focus {
-    background-color: #9932CC;
-    text-decoration: underline;
-}   
-.nav-item{
+.navbar{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.83);
     color:#fefefe;
+    max-width: 100%;
 }
+
+.display-movil{
+    display:none;
+    list-style: none;
+}
+
+/*Para telefonos y tablets*/
+@media only screen and (max-width:  992px) {
+    .navbar {
+        background-color: black;
+    }
+    /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  .no-display-movil{
+    display:none;
+    }
+    .display-movil{
+        display:block;
+    }
+}
+
+.nav img{
+    margin-top: 10%;
+}
+
+#icono-cambiante{
+    margin-top: 30%;
+}
+
+.navitem:active{
+    color:#9932CC;
+}
+
+#cabecera {
+    width: 100%;
+    background: black;
+    position: relative;
+    padding: 120px 0 0 0;
+  }
+  
 
 #left-pad2{
     margin-left:10%;

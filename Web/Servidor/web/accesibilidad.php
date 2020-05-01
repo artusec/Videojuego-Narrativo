@@ -101,7 +101,9 @@
     require_once './generic/footer.html';
 ?>
 </body>
+<script>
 <?php
     require_once './js/scripts.js';
 ?>
+</script>
 </html>

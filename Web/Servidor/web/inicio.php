@@ -22,7 +22,10 @@
     <!--- FUENTES DEL TITULO-->
     <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>   
  
-    
+    <script
+			  src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+			  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+			  crossorigin="anonymous"></script>
 
     <script src="./js/cookies.js"></script>
 
@@ -54,7 +57,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
-                <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
+                <img src="./imagenes/eyebeat.gif" id="Logo" class="hidden" alt="Imagen del logo del juego">
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="Name">
@@ -63,18 +66,19 @@
             </div></div>
     </section>
 
+
     
     <section id="">
     <div class="container-fluid">
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga"  aria-label="Descarga Ashed Memories" download="AshenMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
+            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" aria-label="Descarga Ashed Memories" download="AshenMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>
         <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
         ?>
-        <h1 class="Title-1" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
+        <h1 class="Title-1" id='1' >¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
         <p>&nbsp</p>  
         <?php
             }else{  ?>
@@ -88,9 +92,9 @@
 
         <div class="row">
         <div class="col-sm-3"></div>
-        <div class="col-sm-3">    
-            <div class="minijuegosOut">
-                    <div class="card">
+        <div class="col-sm-3 ">    
+            <div class="minijuegosOut ">
+                    <div class="card ">
                         <a href="./accesibilidad.php"><img src="./imagenes/accesibility.png"  class="card-img-top" alt="" aria-label="Leer mas sobre accesibilidad"></a>
                         <div class="card-body">
                             <p class="card-text"><h2>ACCESIBILIDAD</h2></p>
@@ -122,7 +126,7 @@
     <div class="container-fluid">
         <p>&nbsp</p>
         <p>&nbsp</p>
-        <h1><p class="text-center">¡Conoce los minijuegos!</p></h1>
+        <h1 class="hidden fade-in" id="minijuegos-title"><p class="text-center">¡Conoce los minijuegos!</p></h1>
         <p class="text-center"><img src="./imagenes/jigsaw.png" alt=""></p>
         <p>&nbsp</p>
         <p>&nbsp</p>
@@ -200,9 +204,7 @@
         &nbsp
     </div>
 </section>
-
-  </main>
-
+</main>
 
 
 <?php
