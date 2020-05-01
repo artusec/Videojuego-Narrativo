@@ -69,9 +69,9 @@
             </div>
             <div class="col-md-8">
             <p>&nbsp</p>
-            <h1><p class="text-center">ACCESIBLIDAD</p></h1>
+            <h1><p class="text-center">ACCESIBILIDAD</p></h1>
             <p>&nbsp</p>
-            <p>Lo más habitual al desarrollar aplicaciones accesibles para personas invidentes son los lectores de pantalla. Estos sistemas capturan ciertos gestos simples del usuario facilitando la navegación por los elementos en pantalla. Algunos ejemplos son <a href="https://www.freedomscientific.com/products/software/jaws/"><strong>JAWS</strong></a> para sobremesas, <a href="https://www.apple.com/es/accessibility/iphone/vision/"><strong>Voice Over</strong></a> en dispositivos iOS y <a href="https://support.google.com/accessibility/android/answer/6283677?hl=es"><strong>TalkBack</strong></a> en dispositivos Android. </p>
+            <p>Lo más habitual es que las personas invidentes utilicen lectores de pantalla cuando interactuan con dispositivos móviles. Estos sistemas capturan ciertos gestos simples del usuario facilitando la navegación por los elementos en pantalla. Algunos ejemplos son <a href="https://www.freedomscientific.com/products/software/jaws/"><strong>JAWS</strong></a> para sobremesas, <a href="https://www.apple.com/es/accessibility/iphone/vision/"><strong>Voice Over</strong></a> en dispositivos iOS y <a href="https://support.google.com/accessibility/android/answer/6283677?hl=es"><strong>TalkBack</strong></a> en dispositivos Android. </p>
 
             <p>En el juego estos gestos son deslizamientos rápidos horizontales para moverte entre los elementos y pulsaciones dobles en la pantalla para acceder o interactuar con el objeto actual.</p>
 

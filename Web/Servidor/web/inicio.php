@@ -94,7 +94,7 @@
                         <a href="./accesibilidad.php"><img src="./imagenes/accesibility.png"  class="card-img-top" alt="" aria-label="Leer mas sobre accesibilidad"></a>
                         <div class="card-body">
                             <p class="card-text"><h2>ACCESIBILIDAD</h2></p>
-                            <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                            <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.</p>
                             <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                         <a href="./nube.php"> <img src="./imagenes/nube.png"  class="card-img-top "alt="" aria-label="Leer mas sobre la nube"> </a>
                         <div class="card-body">
                             <p class="card-text"><h2>NUBE</h2></p>
-                            <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                            <p class="card-text">El juego tiene implementado dos sistemas de guardado de tus datos y partidas. Local y en la nube.</p>
                             <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                                 <a href="./ganzua.php"><img class="card-img-top" src="./imagenes/safe_box.png" alt="" aria-label="Leer mas sobre el minijuego ganzua"></a>
                                 <div class="card-body">
                                   <p class="card-text"><h2>GANZUA</h2></p>
-                                  <p class="card-text">Hacer circulos con el dedo sobre la pantalla hasta oir el desbloqueo de la caja fuerte.</p>
+                                  <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
                                   <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                             <a href="./voces.php"><img class="card-img-top" src="./imagenes/earphone.png" alt="" aria-label="Leer mas sobre el minijuego voces a lo lejos"></a>
                             <div class="card-body">
                             <p class="card-text"><h2>VOCES A LO LEJOS</h2></p>
-                            <p class="card-text">Mover el dedo por la pantalla en la siguiendo unas voces que podrás oir en alguna dirección.</p>
+                            <p class="card-text">Mover el dedo por la pantalla siguiendo unas voces que podrás oír en alguna dirección.</p>
                               <a href="./voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                                 <a href="./simon.php"><img class="card-img-top" src="./imagenes/simondice.png" alt="" aria-label="Leer mas sobre el minijuego formas"></a>
                                 <div class="card-body">
                                 <p class="card-text"><h2>SIMON SAYS</h2></p>
-                                <p class="card-text">Pasar el dedo por la pantalla y jugar al simon dice de toda la vida que hemos jugado todos de pequeños.</p>
+                                <p class="card-text">Pasar el dedo por la pantalla y jugar al "Simon says" de toda la vida que hemos jugado todos de pequeños.</p>
                                 <a href="./simon.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
                             </div>

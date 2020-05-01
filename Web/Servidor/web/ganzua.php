@@ -63,7 +63,7 @@
             </div>
             <div class="col-md-8">
                 <p>&nbsp</p>
-                <h1><p class="text-center">GANZUA</p></h1>
+                <h1><p class="text-center">GANZÚA</p></h1>
                 <p>&nbsp</p>
                 <h2>Concepto</h2>
                 <p>La idea de este minijuego surgió de las clásicas películas de ladrones, en las que alguien intenta abrir una caja fuerte encontrando la combinación del candado únicamente por sonido. El ladrón coloca la oreja en la puerta y escucha los pequeños “clicks” que hace el candado al ser girado, y cuando el sonido es ligeramente distinto, es que ha encontrado la posición de la combinación. </p>
