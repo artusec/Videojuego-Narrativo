@@ -1,12 +1,18 @@
 
 
+        
         $( document ).ready(function() {
+
+
             if (detectCookie("accesibility")){
             modoAltoContraste();
         }
         else{
             modoNormal();
         }
+
+ 
+    
 
         var scroll_start = 0;
         var startchange = $('#donwload-button');
@@ -16,6 +22,10 @@
     
                     scroll_start = $(this).scrollTop();
                     if(scroll_start > offset.top) {
+
+                        /*$("#minijuegos-title").addClass('fade-in-element');
+                        $("#minijuegos-title").removeClass('hidden');*/
+
                         if (detectCookie("accesibility")){
                             $('.navbar').css('background-color', 'black');
                         }
@@ -23,6 +33,9 @@
                         $(".navbar").css('background-color', '#591D77');
                        }
                     } else {
+                        /*$("#minijuegos-title").removeClass('fade-in-element');
+                        $("#minijuegos-title").addClass('hidden');*/
+
                         if (detectCookie("accesibility")){
                             $('.navbar').css('background-color', 'black');
                         }
