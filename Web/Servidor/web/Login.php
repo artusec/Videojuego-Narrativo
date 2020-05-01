@@ -1,6 +1,7 @@
 <?php
 	require_once '../DB_data.php';
-	require_once 'FormularioLogin.php';
+    require_once 'FormularioLogin.php';
+    ob_start();
 ?>
 
 <!DOCTYPE HTML>
@@ -24,39 +25,43 @@
     <script src="./js/cookies.js"></script>
 
 
-<head>
-<link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
-	<title>Login</title>
-		<meta charset="utf-8" />
-</head>
+    <head>
+        <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
+        <title>Login</title>
+        <meta charset="utf-8" />
+    </head>
 
 <body>
 		
 
+<header>
+
 <?php
     require_once './generic/header.php';
 ?>
-	
+</header>
 
 
-	
+<main id="main">
 	<div class="container-fluid">
+    <p>&nbsp</p>
+    <p>&nbsp</p>
     <p>&nbsp</p>
 		<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">    
-				<?php	
-				$form = new FormLogin();
-				$form->gestiona();
-                ?>
+<?php	
+        $form = new FormLogin();
+        $form->gestiona();
+?>
                 <p>&nbsp</p>
                 <p>&nbsp</p>
-		</div>
-		<div class="col-sm-4"></div>
+		        </div>
+		        <div class="col-sm-4"></div>
         </div>
         
 	</div>
-
+</main>
 
 
 <?php
@@ -65,7 +70,10 @@
  
 
 </body>
+<script>
 <?php
     require_once './js/scripts.js';
-?>
+    ob_end_flush();
+?> 
+</script>
 </html>

@@ -29,13 +29,16 @@
 	<title>Mi perfil</title>
 	<meta charset="utf-8" /></title>
 </head>
-
-		<body>
+<body>
 			
+<header>
 <?php
     require_once './generic/header.php';
 ?>
+</header>
 
+
+<main>
 	<div class="container-fluid">
 	
 	<p>&nbsp</p>
@@ -157,7 +160,7 @@
 				<div class="col-sm-3"></div>
 			</div>
 		</div>
-
+</main>
 
 
 	
@@ -167,8 +170,9 @@
 ?>
  
 </body>
+<script>
 <?php
     require_once './js/scripts.js';
 ?>
-
+</script>
 </html>

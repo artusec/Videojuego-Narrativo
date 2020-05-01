@@ -1,5 +1,4 @@
 
-<script>
 
         $( document ).ready(function() {
             if (detectCookie("accesibility")){
@@ -8,13 +7,66 @@
         else{
             modoNormal();
         }
+
+        var scroll_start = 0;
+        var startchange = $('#donwload-button');
+        var offset = startchange.offset();
+            if (startchange.length){
+        $(document).scroll(function() { 
+    
+                    scroll_start = $(this).scrollTop();
+                    if(scroll_start > offset.top) {
+                        if (detectCookie("accesibility")){
+                            $('.navbar').css('background-color', 'black');
+                        }
+                       else{
+                        $(".navbar").css('background-color', '#591D77');
+                       }
+                    } else {
+                        if (detectCookie("accesibility")){
+                            $('.navbar').css('background-color', 'black');
+                        }
+                       else{
+                        $('.navbar').css('background-color', 'transparent');
+                       }
+                       
+                    }
+                });
+            }
         });
+
+
+        $('#mode').change(function() {
+            if(this.checked) { 
+                modoNormal();
+            }
+            else{
+                modoAltoContraste();
+            }
+});
+
+
+
+
+        
+        function cambioContraste(){
+            if (detectCookie("accesibility")){
+                modoNormal();
+                $('#icono-cambiante').attr("src","./imagenes/hcontrast.png");
+            }
+            else{
+                modoAltoContraste();
+                $('#icono-cambiante').attr("src","./imagenes/ncontrast.png");
+            }
+        }
 
 
         function modoAltoContraste(){
 
+
+
             //Poner el menu a contraste alto
-            $(".nav").css({"background-color": "black"});
+            $(".navbar").css({"background-color": "black"});
             $("a").css({"color": "yellow"});
         
             $("#donwload-button").css({"background-color": "yellow","border-color":"yellow"});
@@ -38,19 +90,17 @@
             $('#animation1').attr("src","./imagenes/animation2.gif");
 
             
-            $('.nav-link').css({"background-color": "black"})
 
             $('.nav-link').hover(function(){
-                $(this).css({"background-color": "dimgray"});
+                $(this).css({"color": "dimgray"});
             }, function(){
-                $(this).css({"background-color": "black"});
+                $(this).css({"color": "yellow"});
             });
 
             $('.nav-link').focus(function(){
-                $(this).css({"background-color": "dimgray"});
-            });
-            $('.nav-link').focusout(function(){
-                $(this).css({"background-color": "black"}); 
+                $(this).css({"color": "dimgray"});
+            }, function(){
+                $(this).css({"color": "yellow"});
             });
 
             setCookie("accesibility", 1, 1);
@@ -59,7 +109,7 @@
 
         function modoNormal(){
             //Volver a modo normal 
-            $(".nav").css({"background-color": "#591D77"});
+            $(".navbar").css({"background-color": "rgba(0, 0, 0, 0.83)"});
             $("a").css({"color": "#F2F1EF"});
 
             $("#descarga").css({"color": "#fefefe"});
@@ -73,7 +123,6 @@
             $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
             $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
 
-            $('.nav-link').css({"background-color": "#591D77"})
 
             $(".leer-mas").css({"color": "#9932CC"});
 
@@ -86,16 +135,16 @@
             $('#animation1').attr("src","./imagenes/animation.gif");
 
             $('.nav-link').hover(function(){
-                $(this).css({"background-color": "#9932CC"});
+                $(this).css({"color": "#9932CC"});
             }, function(){
-                $(this).css({"background-color": "#591D77"});
+                $(this).css({"color": "#fefefe"});
             });
 
             $('.nav-link').focus(function(){
-                $(this).css({"background-color": "#9932CC"});
+                $(this).css({"color": "#9932CC"});
             });
             $('.nav-link').focusout(function(){
-                $(this).css({"background-color": "#591D77"}); 
+                $(this).css({"color": "#fefefe"}); 
             });
 
             $('#mode').prop('checked', true);
@@ -108,33 +157,36 @@
 
         function increaseSize(){
 
+           var sizeBody = $("#descarga").css('font-size');
+            
+        
+           console.log(sizeBody); 
 
-           var sizeBody = $(".container-fluid").css('font-size');
-           currentSize = parseFloat(sizeBody);
-           newFontSize = (currentSize + 1) + 'px';
-           $("*").css({"font-size":newFontSize});
+           switch(sizeBody){
+            case '20px':
+                sizeBody = 40;
+                console.log(sizeBody);
+              break;
+            case '40px':
+                alert("no se puede mas");
+              break;
+              case '10px':
+                sizeBody = 32;
+                break;
+            default:
+          } 
+          console.log(sizeBody); 
 
-           $(".Name-font").css({"font-size":"4.5vw"})
-           $("h1").css({"font-size":" 2em"})
+           $("#descarga").css({"font-size":sizeBody});
+    
         }
 
         function decreaseSize(){
-             var size = $("*").css('font-size');
+             
+            var size = $("#1").css('font-size');
              currentSize = parseFloat(size);
              newFontSize = (currentSize - 1) + 'px';
 
-             $("*").css({"font-size":newFontSize})
-            $(".Name-font").css({"font-size":"4.5vw"})
-            $("h1").css({"font-size":" 2em"})
         }
 
-        $('#mode').change(function() {
-                    if(this.checked) { 
-                        modoNormal();
-                    }
-                    else{
-                        modoAltoContraste();
-                    }
-                });
-
-</script>
+    

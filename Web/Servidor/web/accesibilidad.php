@@ -37,9 +37,12 @@
 		
 
 		
+<header>
 <?php
     require_once './generic/header.php';
 ?>
+</header>
+
 	
 
     <div class="img-container">

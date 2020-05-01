@@ -1,26 +1,108 @@
+
 *{
     margin:0;
     padding:0;
 }
 
-body{
-    width:100%;
+body {
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    max-width: 100%;
     height: 100%;
     overflow-x: hidden; 
-}
+    
+  }
 
 html{
     scroll-behavior: smooth; 
+}
+
+header{
+    font-size: large;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+.navbar{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.83);
+    color:#fefefe;
+    max-width: 100%;
+}
+
+.display-movil{
+    display:none;
+    list-style: none;
+}
+
+/*Para telefonos y tablets*/
+@media only screen and (max-width:  992px) {
+    .navbar {
+        background-color: black;
+    }
+    /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  .no-display-movil{
+    display:none;
+    }
+    .display-movil{
+        display:block;
+    }
+}
+
+.nav img{
+    margin-top: 10%;
+}
+
+#icono-cambiante{
+    margin-top: 30%;
+}
+
+.navitem:active{
+    color:#9932CC;
+}
+
+#cabecera {
+    width: 100%;
+    background: black;
+    position: relative;
+    padding: 120px 0 0 0;
+  }
+  
+
+  
+.img-container{
+    background-color: black;
+    max-width: 100%;
+}
+
+#Logo{
+    width: 100%;
+    height: 100%;
+   
 }
 .Name{
     color:#fefefe;
     margin-top: 20%;
     margin-bottom: 20%;
 }
+.Name-font1{
+    font-family: "Julee", fantasy
+}
 .Name-font{
     font-size: 4.5vw;
     font-family: "Julee", fantasy
 }
+@media only screen and (max-width:  992px) {
+    .Name-font{
+        font-size: 65px;
+    }
+}
+
+
 .container-fluid{
     height: 15%;
     background-color: #9932CC;
@@ -34,123 +116,7 @@ html{
     margin-bottom: 0;
 }
 
-.nav{
-    background-color:#591D77;
-    
-}
-.nav-link{
-    font-size: large;
-}
-.nav-link:hover,.nav-link:focus {
-    background-color: #9932CC;
-    text-decoration: underline;
-}   
-.nav-item{
-    color:#fefefe;
-}
-
-
-a{
-    color:#fefefe;
-}
-
-a:link {
-    color:#fefefe;
-}
-/* A link that has been visited */
-a:visited {
-    color:#fefefe;
-}
-/* A link that is hovered on */
-a:hover {
-    color:#fefefe;
-}
-/* A link that is selected */
-a:active {
-    color:#fefefe;
-}
-
-.rounded{
-    width: 100%;
-}
-.img-container{
-    background-color: black;
-    max-width: 100%;
-}
-#Logo{
-    width: 100%;
-    height: 100%;
-   
-}
-
-.page-footer{
-    background-color:#591D77;
-    color:#fefefe;
-    width: 100%;
-    max-width: 100%;
-}
-
-.footers{
-    padding-left: 7%;
-    padding-top:7%;
-}
-
-.col-sm-4{
-    max-width: 100%;
-}
-
-.list-group-item{
-    background-color: #9932CC;
-    color:#fefefe;
-}
-
-.leer-mas{
-    color:#9932CC;
-}
-.minijuegosOut{
-    padding-left: 10%;
-    height: 100%;
-}
-
-.minijuegosIn{
-    background-color:#fefefe;
-    border-radius: 5%;
-    border: 1% solid #591D77;
-    padding: 1%;
-}
-
-.img-minijuegos{
-    width: 100%;
-}
-
-.card{
-    height: 100%;
-    width: 90%;
-    color:#591D77;
-    border-radius: 5%;
-    border: 1% solid #591D77;
-}
-
-.card-img-top{
-    border-radius: 5%;
-    border: 1% solid #591D77;
-}
-
-#minijuegos-title{
-    font-size: large;
-}
-
-.Title-1{
-    text-align: center;
-}
-
-.breadcrumb{
-    background-color: #9932CC;
-}
-.footer-div{
-    justify-items: center;
-    display: flex;
-}
+/*Boton de contraste*/
 .switch {
     position: relative;
     display: inline-block;
@@ -158,7 +124,7 @@ a:active {
     height: 34px;
   }
   
-  /* Hide default HTML checkbox */
+
   .switch input {
     opacity: 0;
     width: 0;
@@ -211,13 +177,10 @@ a:active {
     border-radius: 50%;
   }
   
-#left-pad2{
-    margin-left:10%;
-    display: flex;
-    justify-content:center;
-}
 
-#minus-button{
+
+/*Botones de texto + y - */
+  #minus-button{
     padding-left:1%;
 }
 
@@ -229,9 +192,65 @@ a:active {
     background-color: #fefefe;
     color: black;
     height: 100%;
-    width: 120%;
+    width: 100%;
 }
 .btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
-    background-color: #c82333;
-    border-color: #dc3545;
+    background-color: #9932CC;
+    border-color: #591D77;
 }
+
+list-group-item{
+    background-color: #9932CC;
+    color:#fefefe;
+}
+
+.leer-mas{
+    color:#9932CC;
+}
+.minijuegosOut{
+    padding-left: 10%;
+    height: 100%;
+}
+
+.minijuegosIn{
+    background-color:#fefefe;
+    border-radius: 5%;
+    border: 1% solid #591D77;
+    padding: 1%;
+}
+
+.img-minijuegos{
+    width: 100%;
+}
+
+.card{
+    height: 100%;
+    width: 90%;
+    color:#591D77;
+    border-radius: 5%;
+    border: 1% solid #591D77;
+}
+
+.card-img-top{
+    border-radius: 5%;
+    border: 1% solid #591D77;
+}
+
+
+/*Footer*/
+.footer-div{
+    justify-items: center;
+    display: flex;
+}
+.page-footer{
+    background-color:#591D77;
+    color:#fefefe;
+    width: 100%;
+    max-width: 100%;
+}
+
+.footers{
+    padding-left: 7%;
+    padding-top:7%;
+}
+

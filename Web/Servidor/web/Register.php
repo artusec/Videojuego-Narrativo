@@ -1,6 +1,7 @@
 <?php
 	require_once '../DB_data.php';
 	require_once 'FormularioRegistro.php';
+	ob_start();
 ?>
 
 <!DOCTYPE HTML>
@@ -27,23 +28,27 @@
 	<title>Registrar</title>
 	<meta charset="utf-8" />
 </head>
-	<body>
+<body>
 
 		
+<header>
 <?php
     require_once './generic/header.php';
 ?>
+</header>
+
 	
 
 	<div class="container-fluid">
 	<p>&nbsp</p>
+	<p>&nbsp</p>
 		<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-				<?php	
-				$form = new FormRegistro();
-				$form->gestiona();
-				?>
+<?php	
+		$form = new FormRegistro();
+		$form->gestiona();
+?>
 				</div>
 				<div class="col-sm-4"></div>
 				<p>&nbsp</p>
@@ -58,7 +63,10 @@
 ?>
 
 </body>
+<script>
 <?php
     require_once './js/scripts.js';
 ?>
+ob_end_flush();
+</script>
 </html>

@@ -13,7 +13,7 @@ class FormRegistro extends Form {
         $html = '<form class="form-inline">
                     <fieldset>
                         <legend><h1>Registrar</h1></legend>
-                        <a id="a-login"  href="Login.php" aria-labe="Página de inicio de sesión" /> ¿Ya tienes cuenta? Accede haciendo clic aquí</a>
+                        <a id="a-login"  href="Login.php" aria-labe="Ir a la página para identificarte y acceder a mi perfil" /> ¿Ya tienes cuenta? Accede haciendo clic aquí</a>
                         <p>&nbsp</p>
                         <div class="form-group">
                             <label for="username" >Usuario</label>

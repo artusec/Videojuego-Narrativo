@@ -35,37 +35,40 @@
 
 <body>
 
+
 <header>
 <?php
     require_once './generic/header.php';
 ?>
 </header>
 
-    <div class="img-container">
+
+  
+  <main id="main">
+
+    <section id="cabecera">
         <div class="row logo">
-            <div class="col-md-4">
+        <div class="col-lg-4 col-md-12">
                 <div class="Name">
                 <p class="text-center Name-font">ASHED</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-12">
                 <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-12">
                 <div class="Name">
                 <p class="text-center Name-font">MEMORIES</p>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div></div>
+    </section>
 
-
-<main role="main">
-
+    
+    <section id="">
     <div class="container-fluid">
         <p>&nbsp</p>
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" download="AshenMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
+            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga"  aria-label="Descarga Ashed Memories" download="AshenMemories" href="./apk/EscapeRoom_0.64.apk" alt="">Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>
         <?php
@@ -75,7 +78,7 @@
         <p>&nbsp</p>  
         <?php
             }else{  ?>
-                <h1 class="Title-1" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES!</h1>
+                <h1><p class="text-center" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES!</p></h1>
                 <p>&nbsp</p>  
         <?php    }
         ?>
@@ -112,12 +115,14 @@
         </div>
         <div class="col-sm-3"></div>
     </div>
+</section>
 
 
+<section id="minijuegos">
     <div class="container-fluid">
         <p>&nbsp</p>
         <p>&nbsp</p>
-        <h1 class="Title-1" id="3">¡Conoce los minijuegos!</h1>
+        <h1><p class="text-center">¡Conoce los minijuegos!</p></h1>
         <p class="text-center"><img src="./imagenes/jigsaw.png" alt=""></p>
         <p>&nbsp</p>
         <p>&nbsp</p>
@@ -194,14 +199,22 @@
         <p>&nbsp</p>
         &nbsp
     </div>
+</section>
 
-</main>
+  </main>
+
+
 
 <?php
     require_once './generic/footer.html';
 ?>
 </body>
-<?php
+
+<script>
+  <?php  
     require_once './js/scripts.js';
 ?>
+
+</script>
+
 </html>
