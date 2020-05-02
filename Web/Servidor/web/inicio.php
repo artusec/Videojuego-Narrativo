@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -31,6 +32,7 @@
 
 
 <head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
     <title>ASHED MEMORIES - Inicio</title>
     <meta charset="UTF-8"/>
@@ -43,31 +45,33 @@
 <?php
     require_once './generic/header.php';
 ?>
+
+
+<section id="cabecera">
+        <div class="row logo">
+            <div class="col-lg-4 col-md-12">
+                    <div class="Name">
+                    <p class="text-center Name-font">ASHED</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <img src="./imagenes/eyebeat.gif" id="Logo" class="hidden" alt="Imagen del logo del juego">
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="Name">
+                    <p class="text-center Name-font">MEMORIES</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
 </header>
 
 
-  
+
+
   <main id="main">
 
-    <section id="cabecera">
-        <div class="row logo">
-        <div class="col-lg-4 col-md-12">
-                <div class="Name">
-                <p class="text-center Name-font">ASHED</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <img src="./imagenes/eyebeat.gif" id="Logo" class="hidden" alt="Imagen del logo del juego">
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="Name">
-                <p class="text-center Name-font">MEMORIES</p>
-                </div>
-            </div></div>
-    </section>
-
-
-    
     <section id="">
     <div class="container-fluid">
         <p>&nbsp</p>
@@ -94,7 +98,7 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-3 ">    
             <div class="minijuegosOut ">
-                    <div class="card ">
+                    <div class="card cartas-prop">
                         <a href="./accesibilidad.php"><img src="./imagenes/accesibility.png"  class="card-img-top" alt="" aria-label="Leer mas sobre accesibilidad"></a>
                         <div class="card-body">
                             <p class="card-text"><h2>ACCESIBILIDAD</h2></p>
@@ -106,7 +110,7 @@
         </div>
         <div class="col-sm-3">    
             <div class="minijuegosOut">
-                    <div class="card">
+                    <div class="card cartas-prop">
                         <a href="./nube.php"> <img src="./imagenes/nube.png"  class="card-img-top "alt="" aria-label="Leer mas sobre la nube"> </a>
                         <div class="card-body">
                             <p class="card-text"><h2>NUBE</h2></p>
@@ -133,7 +137,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="minijuegosOut">
-                            <div class="card">
+                            <div class="card cartas-minijuegos">
                                 <a href="./ganzua.php"><img class="card-img-top" src="./imagenes/safe_box.png" alt="" aria-label="Leer mas sobre el minijuego ganzua"></a>
                                 <div class="card-body">
                                   <p class="card-text"><h2>GANZUA</h2></p>
@@ -145,7 +149,7 @@
                 </div>
                 <div class="col-sm-4">   
                     <div class="minijuegosOut">
-                        <div class="card">
+                        <div class="card cartas-minijuegos">
                             <a href="./voces.php"><img class="card-img-top" src="./imagenes/earphone.png" alt="" aria-label="Leer mas sobre el minijuego voces a lo lejos"></a>
                             <div class="card-body">
                             <p class="card-text"><h2>VOCES A LO LEJOS</h2></p>
@@ -157,7 +161,7 @@
                 </div>
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
-                            <div class="card">
+                            <div class="card cartas-minijuegos">
                                 <a href="./formas.php"><img class="card-img-top" src="./imagenes/geometry.png" alt="" aria-label="Leer mas sobre el minijuego formas"></a>
                                 <div class="card-body">
                                 <p class="card-text"><h2>FORMAS</h2></p>
@@ -202,7 +206,7 @@
             <div class="col-sm-2"></div>
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
-                            <div class="card">
+                            <div class="card cartas-minijuegos">
                                 <a href="./puntos.php"><img class="card-img-top" src="./imagenes/diana.png" alt="" aria-label="Leer mas sobre el minijuego puntos calientes"></a>
                                 <div class="card-body">
                                 <p class="card-text"><h2>PUNTOS CALIENTES</h2></p>
@@ -214,7 +218,7 @@
                 </div>
                 <div class="col-sm-4">    
                     <div class="minijuegosOut">
-                            <div class="card">
+                            <div class="card cartas-minijuegos">
                                 <a href="./simon.php"><img class="card-img-top" src="./imagenes/simondice.png" alt="" aria-label="Leer mas sobre el minijuego formas"></a>
                                 <div class="card-body">
                                 <p class="card-text"><h2>SIMON SAYS</h2></p>
@@ -237,30 +241,77 @@
 <?php
     require_once './generic/footer.html';
 ?>
+
+<a href="#" class="back-to-top"><img src="./imagenes/top.png"></a>
+
 </body>
 
 <script>
-  <?php  
+
+<?php  
     require_once './js/scripts.js';
 ?>
+ // Back to top button
+ $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
+
+  $('.back-to-top').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1500, 'easeInOutExpo');
+    return false;
+  });
+
 $("body").mousemove(function(event) {
-
-var eye = $(".eye");
-
-
-var eyex = (eye.offset().left) + (eye.width() / 2);
-var eyey = (eye.offset().top) + (eye.height() / 2);
-var radeye = Math.atan2(event.pageX - eyex, event.pageY - eyey);
-var eyerot = (radeye * (180 / Math.PI) * -1) + 180;
-
-
-eye.css({
-  '-webkit-transform': 'rotate(' + eyerot + 'deg)',
-  '-moz-transform': 'rotate(' + eyerot + 'deg)',
-  '-ms-transform': 'rotate(' + eyerot + 'deg)',
-  'transform': 'rotate(' + eyerot + 'deg)'
+    var eye = $(".eye");
+    var eyex = (eye.offset().left) + (eye.width() / 2);
+    var eyey = (eye.offset().top) + (eye.height() / 2);
+    var radeye = Math.atan2(event.pageX - eyex, event.pageY - eyey);
+    var eyerot = (radeye * (180 / Math.PI) * -1) + 180;
+    eye.css({
+    '-webkit-transform': 'rotate(' + eyerot + 'deg)',
+    '-moz-transform': 'rotate(' + eyerot + 'deg)',
+    '-ms-transform': 'rotate(' + eyerot + 'deg)',
+    'transform': 'rotate(' + eyerot + 'deg)'
+    });
 });
-});
+
+
+var scroll_start = 0;
+        var startchange = $('#donwload-button');
+        var offset = startchange.offset();
+        if (startchange.length){
+        $(document).scroll(function() { 
+
+            scroll_start = $(this).scrollTop();
+            if(scroll_start > offset.top) {
+
+                $(".cartas-minijuegos").show( "fold", 1000 );
+
+                if (detectCookie("accesibility")){
+                    $('.navbar').css('background-color', 'black');
+                }
+                else{
+                $(".navbar").css('background-color', '#591D77');
+                }
+            } else {
+
+
+                if (detectCookie("accesibility")){
+                    $('.navbar').css('background-color', 'black');
+                }
+                else{
+                $('.navbar').css('background-color', 'transparent');
+                }
+                
+            }
+        });
+            }
 </script>
 
 </html>

@@ -1,52 +1,24 @@
 
 
         
-        $( document ).ready(function() {
+        $(document).ready(function() {
 
+            
+
+            $("#cabecera").show( "drop", {direction: "up"}, 2000 );
+            
+            $(".cartas-prop").show( "fold", 1000 );
 
             if (detectCookie("accesibility")){
             modoAltoContraste();
-        }
-        else{
-            modoNormal();
-        }
-
- 
-    
-
-        var scroll_start = 0;
-        var startchange = $('#donwload-button');
-        var offset = startchange.offset();
-            if (startchange.length){
-        $(document).scroll(function() { 
-    
-                    scroll_start = $(this).scrollTop();
-                    if(scroll_start > offset.top) {
-
-                        /*$("#minijuegos-title").addClass('fade-in-element');
-                        $("#minijuegos-title").removeClass('hidden');*/
-
-                        if (detectCookie("accesibility")){
-                            $('.navbar').css('background-color', 'black');
-                        }
-                       else{
-                        $(".navbar").css('background-color', '#591D77');
-                       }
-                    } else {
-                        /*$("#minijuegos-title").removeClass('fade-in-element');
-                        $("#minijuegos-title").addClass('hidden');*/
-
-                        if (detectCookie("accesibility")){
-                            $('.navbar').css('background-color', 'black');
-                        }
-                       else{
-                        $('.navbar').css('background-color', 'transparent');
-                       }
-                       
-                    }
-                });
             }
+            else{
+                modoNormal();
+            }
+ 
+
         });
+
 
 
         $('#mode').change(function() {
@@ -55,11 +27,7 @@
             }
             else{
                 modoAltoContraste();
-            }
-});
-
-
-
+            }});
 
         
         function cambioContraste(){
@@ -105,13 +73,13 @@
             
 
             $('.nav-link').hover(function(){
-                $(this).css({"color": "dimgray"});
+                $(this).css({"color": "yellow"});
             }, function(){
                 $(this).css({"color": "yellow"});
             });
 
             $('.nav-link').focus(function(){
-                $(this).css({"color": "dimgray"});
+                $(this).css({"color": "yellow"});
             }, function(){
                 $(this).css({"color": "yellow"});
             });
@@ -122,7 +90,8 @@
 
         function modoNormal(){
             //Volver a modo normal 
-            $(".navbar").css({"background-color": "rgba(0, 0, 0, 0.83)"});
+            $(".navbar").css({"background-color": "transparent"});
+         
             $("a").css({"color": "#F2F1EF"});
 
             $("#descarga").css({"color": "#fefefe"});
@@ -148,13 +117,13 @@
             $('#animation1').attr("src","./imagenes/animation.gif");
 
             $('.nav-link').hover(function(){
-                $(this).css({"color": "#9932CC"});
+                $(this).css({"color": "black"});
             }, function(){
                 $(this).css({"color": "#fefefe"});
             });
 
             $('.nav-link').focus(function(){
-                $(this).css({"color": "#9932CC"});
+                $(this).css({"color": "black"});
             });
             $('.nav-link').focusout(function(){
                 $(this).css({"color": "#fefefe"}); 

@@ -28,6 +28,7 @@
 
 
 <head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Formas</title>
 	<meta charset="utf-8" />
@@ -35,12 +36,13 @@
 
 <body>
 		
-		
+<header>		
 <?php
     require_once './generic/header.php';
 ?>
-	
-	
+</header>
+
+<main>	
     <div class="img-container">
     <div class="row logo">
             <div class="col-md-4">
@@ -90,7 +92,7 @@
             <p>&nbsp</p>
         </div>
     </div>
-	
+</main>
 
 
 
@@ -100,7 +102,38 @@
 ?>
 
 </body>
+<script>
 <?php
     require_once './js/scripts.js';
 ?>
+var scroll_start = 0;
+        var startchange = $('main');
+        var offset = startchange.offset();
+            if (startchange.length){
+        $(document).scroll(function() { 
+
+            scroll_start = $(this).scrollTop();
+            if(scroll_start > offset.top) {
+
+
+                if (detectCookie("accesibility")){
+                    $('.navbar').css('background-color', 'black');
+                }
+                else{
+                $(".navbar").css('background-color', '#591D77');
+                }
+            } else {
+
+
+                if (detectCookie("accesibility")){
+                    $('.navbar').css('background-color', 'black');
+                }
+                else{
+                $('.navbar').css('background-color', 'transparent');
+                }
+                
+            }
+        });
+            }
+</script>
 </html>

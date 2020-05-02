@@ -28,17 +28,21 @@
 
 
 <head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
     <title>Ganzua</title>
 	<meta charset="utf-8"/>
 </head>
 
 <body>
-		
+
+    <header>
 <?php
     require_once './generic/header.php';
 ?>
-	
+	</header>	
+
+<main>
     <div class="img-container">
         <div class="row logo">
             <div class="col-md-4">
@@ -91,13 +95,15 @@
             </div>
         </div> 
     </div>
-
+    </main>
 
 <?php
     require_once './generic/footer.html';
 ?>
 
+<script>
 <?php
     require_once './js/scripts.js';
 ?>
+</script>
 </html>

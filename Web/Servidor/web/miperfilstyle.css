@@ -19,7 +19,7 @@ header{
 
 .navbar{
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.83);
+    background-color: transparent;
     color:#fefefe;
     max-width: 100%;
 }

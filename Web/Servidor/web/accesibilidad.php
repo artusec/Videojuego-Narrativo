@@ -28,6 +28,7 @@
 
 
 <head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Accesibilidad</title>
 		<meta charset="utf-8" />
@@ -44,7 +45,7 @@
 </header>
 
 	
-
+<main>
     <div class="img-container">
         <div class="row logo">
             <div class="col-md-4">
@@ -97,6 +98,8 @@
             </div>
         </div>    
     </div>
+    </main>
+
 <?php
     require_once './generic/footer.html';
 ?>
@@ -105,5 +108,34 @@
 <?php
     require_once './js/scripts.js';
 ?>
+var scroll_start = 0;
+        var startchange = $('main');
+        var offset = startchange.offset();
+            if (startchange.length){
+        $(document).scroll(function() { 
+
+            scroll_start = $(this).scrollTop();
+            if(scroll_start > offset.top) {
+
+
+                if (detectCookie("accesibility")){
+                    $('.navbar').css('background-color', 'black');
+                }
+                else{
+                $(".navbar").css('background-color', '#591D77');
+                }
+            } else {
+
+
+                if (detectCookie("accesibility")){
+                    $('.navbar').css('background-color', 'black');
+                }
+                else{
+                $('.navbar').css('background-color', 'transparent');
+                }
+                
+            }
+        });
+            }
 </script>
 </html>

@@ -10,7 +10,7 @@ class FormLogin extends Form {
     protected function generaCamposFormulario($datos) {
         $html = '<form class="form-inline">
                     <fieldset>
-                        <legend><h1>Login</h1></legend>
+                        <legend><h1 >Login</h1></legend>
 				        <p>Identifícate o <a href="Register.php" id ="reg" aria-label="Página de registro" >REGÍSTRATE</a></p>
                         <div class="form-group">
                             <label for="username" >Usuario</label>

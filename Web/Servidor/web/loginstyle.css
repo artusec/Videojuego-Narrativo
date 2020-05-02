@@ -25,9 +25,12 @@ header{
 
 .navbar{
     width: 100%;
-    background-color: #591D77;
+    background-color: transparent;
     color:#fefefe;
     max-width: 100%;
+}
+.nav-link:hover,.nav-link:focus{
+    text-decoration: underline;
 }
 
 .display-movil{
@@ -100,7 +103,6 @@ header{
         font-size: 65px;
     }
 }
-
 .container-fluid{
     height: 15%;
     background-color: #9932CC;

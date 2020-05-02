@@ -28,6 +28,7 @@
 
 
 <head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Puntos calientes</title>
 		<meta charset="utf-8" />
@@ -45,7 +46,7 @@
 
 	
 	
-
+<main>
     <div class="img-container">
     <div class="row logo">
             <div class="col-md-4">
@@ -98,7 +99,7 @@
         
     </div>
 
-
+    </main>
 
 
 <?php
@@ -109,46 +110,38 @@
 </body>
 <script>
 
-    $( document ).ready(function() {
-            if (detectCookie("accesibility")){
-            modoAltoContraste();
-        }
-        else{
-            modoNormal();
-        }
-        });
-
-
-    function modoAltoContraste(){
-        //Poner el menu a contraste alto
-        $(".nav").css({"background-color": "black"});
-        $("a").css({"color": "yellow"});
-
-
-        //Poner ela pagina a alto contraste 
-        $(".container-fluid").css({"background-color": "black","color":"yellow"});
-
-        //Poner el footer a alto contraste 
-        $(".page-footer").css({"background-color": "black","color":"yellow"});
-        $(".list-group-item").css({"background-color": "black","color":"yellow"});
-    }
-
-    function modoNormal(){
-    //Volver a modo normal 
-        $(".nav").css({"background-color": "#591D77"});
-        $("a").css({"color": "#F2F1EF"});
-
-        $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
-
-        $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
-        $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
-    }
-
-</script>
-
+<script>
 <?php
     require_once './js/scripts.js';
 ?>
+var scroll_start = 0;
+        var startchange = $('main');
+        var offset = startchange.offset();
+            if (startchange.length){
+        $(document).scroll(function() { 
+
+            scroll_start = $(this).scrollTop();
+            if(scroll_start > offset.top) {
 
 
+                if (detectCookie("accesibility")){
+                    $('.navbar').css('background-color', 'black');
+                }
+                else{
+                $(".navbar").css('background-color', '#591D77');
+                }
+            } else {
+
+
+                if (detectCookie("accesibility")){
+                    $('.navbar').css('background-color', 'black');
+                }
+                else{
+                $('.navbar').css('background-color', 'transparent');
+                }
+                
+            }
+        });
+            }
+</script>
 </html>
