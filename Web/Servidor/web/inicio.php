@@ -54,7 +54,7 @@
                     <p class="text-center Name-font">ASHED</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12">
+                <div class="col-lg-4 col-md-12" id="cabecera-logo">
                     <img src="./imagenes/eyebeat.gif" id="Logo" class="hidden" alt="Imagen del logo del juego">
                 </div>
                 <div class="col-lg-4 col-md-12">

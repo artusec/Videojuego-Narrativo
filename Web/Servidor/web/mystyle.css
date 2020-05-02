@@ -73,8 +73,11 @@ a{
     background: black;
     position: relative;
     padding: 100px 0 0 0;
-    display: none;
   }
+  
+#cabecera-logo{
+  display: none;
+}
   
 
   

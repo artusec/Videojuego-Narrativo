@@ -5,7 +5,7 @@
 
             
 
-            $("#cabecera").show( "drop", {direction: "up"}, 2000 );
+            $("#cabecera-logo").show( "drop", {direction: "up"}, 2000 );
             
             $(".cartas-prop").show( "fold", 1000 );
 
