@@ -72,10 +72,8 @@
 
     <section id="">
     <div class="container-fluid">
-        <p>&nbsp</p>
-        <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" aria-label="Descarga Ashed Memories" download="AshenMemories" href="./apk/AshedMemories_1.0.apk" alt="">¡Descarga ya! <img src="./imagenes/download.png" alt=""></a></button>
-        </div>
+
+      
         <p>&nbsp</p>
         <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
@@ -90,8 +88,16 @@
         ?>
         <p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
         <p>&nbsp</p>
+        
+        <div class="col text-center" id='4'>
+            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" aria-label="Descarga Ashed Memories"
+             download="AshenMemories" href="./apk/AshedMemories_1.0.apk" alt="">¡Descarga ya!<img src="./imagenes/download.png" alt=""></a></button>
+        </div>
         <p>&nbsp</p>
 
+        <div class="text-center " id="agradecimientos"><h2>Muchas gracias por confiar en nostros</h2></div>
+
+        <p>&nbsp</p>
         <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-3 ">    
@@ -281,7 +287,7 @@ $("body").mousemove(function(event) {
 
 
 var scroll_start = 0;
-        var startchange = $('#donwload-button');
+        var startchange = $('main');
         var offset = startchange.offset();
         if (startchange.length){
         $(document).scroll(function() { 
@@ -309,7 +315,13 @@ var scroll_start = 0;
                 
             }
         });
-            }
+            };
+
+            $("#descarga").click(function() {
+                $("#agradecimientos").show( "clip", 1000 );
+            });
+          
+
 </script>
 
 </html>
