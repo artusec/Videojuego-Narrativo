@@ -123,7 +123,14 @@ a{
     width: 50%;
     margin-bottom: 0;
 }
-
+@media only screen and (max-width:  992px) {
+  .text-center{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    margin-bottom: 0;
+}
+}
 /*Boton de contraste*/
 .switch {
     position: relative;
@@ -390,4 +397,4 @@ list-group-item{
     transition: all 0.4s;
   }
   
-  
+

@@ -7,7 +7,7 @@
 
             $("#cabecera-logo").show( "drop", {direction: "up"}, 2000 );
             
-            $(".cartas-prop").show( "fold", 1000 );
+            $(".cartas-prop").show( "slide", 1000 );
 
             if (detectCookie("accesibility")){
             modoAltoContraste();

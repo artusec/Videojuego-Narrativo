@@ -68,8 +68,6 @@
 </header>
 
 
-
-
   <main id="main">
 
     <section id="">
@@ -291,7 +289,7 @@ var scroll_start = 0;
             scroll_start = $(this).scrollTop();
             if(scroll_start > offset.top) {
 
-                $(".cartas-minijuegos").show( "fold", 1000 );
+               $(".cartas-minijuegos").show( "slide", 1000 );
 
                 if (detectCookie("accesibility")){
                     $('.navbar').css('background-color', 'black');

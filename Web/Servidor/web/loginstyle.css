@@ -142,6 +142,8 @@ header{
 #reg{
     color:black;
     font-size: x-large;
+    text-decoration: underline;
+
 }
 .footer-div{
     justify-items: center;

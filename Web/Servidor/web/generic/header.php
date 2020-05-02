@@ -27,10 +27,10 @@
                     <a class="nav-link" href="./inicio.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./inicio.php#minijuegos">Minijuegos</a>
+                    <a class="nav-link" href="./inicio.php#descarga">Descarga</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./inicio.php#descarga">Descarga</a>
+                    <a class="nav-link" href="./inicio.php#minijuegos">Minijuegos</a>
                 </li>
 <?php
         if (isset($_SESSION['login']) && $_SESSION['login'] === true){
