@@ -69,7 +69,8 @@
             $('.table .thead-dark th').css({"color":"yellow"});
 
             $('#animation1').attr("src","./imagenes/animation2.gif");
-
+            $('#top-icon').attr("src","./imagenes/top-yellow.png");
+            
             
 
             $('.nav-link').hover(function(){
@@ -115,6 +116,7 @@
             $('.table .thead-dark th').css({"color":"#fefefe"});
 
             $('#animation1').attr("src","./imagenes/animation.gif");
+            $('#top-icon').attr("src","./imagenes/top.png");
 
             $('.nav-link').hover(function(){
                 $(this).css({"color": "black"});

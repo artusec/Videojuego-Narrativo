@@ -242,7 +242,7 @@
     require_once './generic/footer.html';
 ?>
 
-<a href="#" class="back-to-top"><img src="./imagenes/top.png"></a>
+<a href="#" class="back-to-top"><img id="top-icon" src="./imagenes/top.png"></a>
 
 </body>
 
