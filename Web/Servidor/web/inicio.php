@@ -83,7 +83,12 @@
                 <p>&nbsp</p>  
         <?php    }
         ?>
-        <p class="text-center">Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida y conocer lo que pasó allí tiempo atrás. </p>
+        <p class="text-center">
+            Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida
+             y conocer lo que pasó allí tiempo atrás.</p>
+        <p>&nbsp</p>
+        <p class="text-center">Desarrollado en Unity <img src="./imagenes/unity.png"> para la plataforma Android  <img src="./imagenes/android.png">.</p>
+
         <p>&nbsp</p>
         
         <div class="col text-center" id='4'>
