@@ -19,7 +19,7 @@ header{
 
 .navbar{
     width: 100%;
-    background-color: transparent;
+    background-color: #591D77;
     color:#fefefe;
     max-width: 100%;
 }
@@ -32,7 +32,7 @@ header{
 /*Para telefonos y tablets*/
 @media only screen and (max-width:  992px) {
     .navbar {
-        background-color: black;
+        background-color: #591D77;
     }
     /* For mobile phones: */
   [class*="col-"] {
@@ -58,13 +58,6 @@ header{
     color:#9932CC;
 }
 
-#cabecera {
-    width: 100%;
-    background: black;
-    position: relative;
-    padding: 120px 0 0 0;
-  }
-  
 
   
 .img-container{

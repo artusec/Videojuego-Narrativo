@@ -4,9 +4,12 @@
 }
 
 body{
-    width:100%;
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    max-width: 100%;
     height: 100%;
     overflow-x: hidden; 
+    background-color: black;
 }
 
 html{
@@ -19,36 +22,6 @@ header{
     max-width: 100%;
 }
 
-.Name{
-    color:#fefefe;
-    margin-top: 20%;
-    margin-bottom: 20%;
-}
-.Name-font1{
-    font-family: "Julee", fantasy
-}
-.Name-font{
-    font-size: 4.5vw;
-    font-family: "Julee", fantasy
-}
-@media only screen and (max-width:  992px) {
-    .Name-font{
-        font-size: 65px;
-    }
-}
-
-.container-fluid{
-    height: 15%;
-    background-color: #9932CC;
-    color:#fefefe;
-}
-
-.text-center{
-    margin-left: 25%;
-    margin-right: 25%;
-    width: 50%;
-    margin-bottom: 0;
-}
 
 .navbar{
     width: 100%;
@@ -95,48 +68,60 @@ header{
     width: 100%;
     background: black;
     position: relative;
-    padding: 120px 0 0 0;
+    padding: 100px 0 0 0;
   }
-  
+  #cabecera-logo{
+    display: none;
+  } 
 
-#left-pad2{
-    margin-left:10%;
-    display: flex;
-    justify-content:center;
+  #Logo{
+    
+    width: 100%;
+    height: 100%;
+   
 }
 a{
     color:#fefefe;
 }
 
-a:link {
+.Name{
     color:#fefefe;
+    margin-top: 20%;
+    margin-bottom: 20%;
 }
-/* A link that has been visited */
-a:visited {
-    color:#fefefe;
+.Name-font1{
+    font-family: "Julee", fantasy
 }
-/* A link that is hovered on */
-a:hover {
-    color:#fefefe;
+.Name-font{
+    font-size: 4.5vw;
+    font-family: "Julee", fantasy
 }
-/* A link that is selected */
-a:active {
+@media only screen and (max-width:  992px) {
+    .Name-font{
+        font-size: 65px;
+    }
+}
+.container-fluid{
+    height: 15%;
+    background-color: #9932CC;
     color:#fefefe;
 }
 
-.rounded{
-    width: 100%;
+.text-center{
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    margin-bottom: 0;
 }
-.img-container{
-    background-color: black;
-    max-width: 100%;
+@media only screen and (max-width:  992px) {
+  .text-center{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    margin-bottom: 0;
+}
 }
 
-#Logo{
-    width: 100%;
-    height: 100%;
-   
-}
 .page-footer{
     background-color:#591D77;
     color:#fefefe;
@@ -181,22 +166,7 @@ a:active {
     border: 1% solid #591D77;
 }
 
-.card-img-top{
-    border-radius: 5%;
-    border: 1% solid #591D77;
-}
 
-#minijuegos-title{
-    font-size: large;
-}
-
-.Title-1{
-    text-align: center;
-}
-
-.breadcrumb{
-    background-color: #9932CC;
-}
 .footer-div{
     justify-items: center;
     display: flex;

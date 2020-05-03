@@ -42,27 +42,28 @@
 <?php
     require_once './generic/header.php';
 ?>
+ <section id="cabecera">
+        <div class="row logo">
+            <div class="col-lg-4 col-md-12">
+                    <div class="Name">
+                    <p class="text-center Name-font">ASHED</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12" id="cabecera-logo">
+                    <img src="./imagenes/eyebeat.gif" id="Logo" class="hidden" alt="Imagen del logo del juego">
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="Name">
+                    <p class="text-center Name-font">MEMORIES</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
 </header>
 
 	
 <main>
-    <div class="img-container">
-        <div class="row logo">
-            <div class="col-md-4">
-                <div class="Name">
-                <p class="text-center Name-font">ASHED</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <img src="./imagenes/eyebeat.gif" id="Logo" alt="Imagen del logo del juego">
-            </div>
-            <div class="col-md-4">
-                <div class="Name">
-                <p class="text-center Name-font">MEMORIES</p>
-                </div>
-            </div>
-        </div>
-    </div> 
 
     <div class="container-fluid">
         <div class="row">
@@ -98,44 +99,19 @@
             </div>
         </div>    
     </div>
-    </main>
+</main>
 
 <?php
     require_once './generic/footer.html';
 ?>
 </body>
 <script>
+
 <?php
     require_once './js/scripts.js';
+    require_once './js/contrasteInicio.js';
 ?>
-var scroll_start = 0;
-        var startchange = $('main');
-        var offset = startchange.offset();
-            if (startchange.length){
-        $(document).scroll(function() { 
-
-            scroll_start = $(this).scrollTop();
-            if(scroll_start > offset.top) {
 
 
-                if (detectCookie("accesibility")){
-                    $('.navbar').css('background-color', 'black');
-                }
-                else{
-                $(".navbar").css('background-color', '#591D77');
-                }
-            } else {
-
-
-                if (detectCookie("accesibility")){
-                    $('.navbar').css('background-color', 'black');
-                }
-                else{
-                $('.navbar').css('background-color', 'transparent');
-                }
-                
-            }
-        });
-            }
 </script>
 </html>

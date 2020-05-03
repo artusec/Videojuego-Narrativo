@@ -45,8 +45,6 @@
 <?php
     require_once './generic/header.php';
 ?>
-
-
 <section id="cabecera">
         <div class="row logo">
             <div class="col-lg-4 col-md-12">
@@ -55,7 +53,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12" id="cabecera-logo">
-                    <img src="./imagenes/eyebeat.gif" id="Logo" class="hidden" alt="Imagen del logo del juego">
+                    <img src="./imagenes/eyebeat.gif" id="Logo"  alt="Imagen del logo del juego">
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="Name">
@@ -64,11 +62,10 @@
                 </div>
         </div>
     </section>
-
 </header>
 
 
-  <main id="main">
+<main id="main">
 
     <section id="">
     <div class="container-fluid">
@@ -91,11 +88,11 @@
         
         <div class="col text-center" id='4'>
             <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" aria-label="Descarga Ashed Memories"
-             download="AshenMemories" href="./apk/AshedMemories_1.0.apk" alt="">¡Descarga ya!<img src="./imagenes/download.png" alt=""></a></button>
+             download="AshenMemories.apk" href="./apk/AshedMemories_1.0.apk" alt="">¡Descarga ya!<img src="./imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>
 
-        <div class="text-center " id="agradecimientos"><h2>Muchas gracias por confiar en nostros</h2></div>
+        <div class="text-center " id="agradecimientos"><h2>¡Muchas gracias por confiar en nostros!</h2></div>
 
         <p>&nbsp</p>
         <div class="row">
@@ -134,7 +131,7 @@
     <div class="container-fluid">
         <p>&nbsp</p>
         <p>&nbsp</p>
-        <h1 class="hidden fade-in" id="minijuegos-title"><p class="text-center">¡Conoce los minijuegos!</p></h1>
+        <h1 class="fade-in" id="minijuegos-title"><p class="text-center">¡Conoce los minijuegos!</p></h1>
         <p class="text-center"><img src="./imagenes/jigsaw.png" alt=""></p>
         <p>&nbsp</p>
         <p>&nbsp</p>
@@ -252,10 +249,16 @@
 
 <script>
 
-<?php  
+
+
+<?php
     require_once './js/scripts.js';
+    require_once './js/contrasteInicio.js';
 ?>
- // Back to top button
+
+
+
+ /*BOTON DE IR ARRIBA*/
  $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
@@ -271,6 +274,8 @@
     return false;
   });
 
+
+  /*ANIMACION DEL OJO*/
 $("body").mousemove(function(event) {
     var eye = $(".eye");
     var eyex = (eye.offset().left) + (eye.width() / 2);
@@ -286,41 +291,16 @@ $("body").mousemove(function(event) {
 });
 
 
-var scroll_start = 0;
-        var startchange = $('main');
-        var offset = startchange.offset();
-        if (startchange.length){
-        $(document).scroll(function() { 
-
-            scroll_start = $(this).scrollTop();
-            if(scroll_start > offset.top) {
-
-               $(".cartas-minijuegos").show( "slide", 1000 );
-
-                if (detectCookie("accesibility")){
-                    $('.navbar').css('background-color', 'black');
-                }
-                else{
-                $(".navbar").css('background-color', '#591D77');
-                }
-            } else {
 
 
-                if (detectCookie("accesibility")){
-                    $('.navbar').css('background-color', 'black');
-                }
-                else{
-                $('.navbar').css('background-color', 'transparent');
-                }
-                
-            }
-        });
-            };
+/*DIV DE AGRADECIMIENTOS*/
 
-            $("#descarga").click(function() {
-                $("#agradecimientos").show( "clip", 1000 );
-            });
-          
+    $("#descarga").click(function() {
+        $("#agradecimientos").show( "clip", 1000 );
+    });
+        
+            
+            
 
 </script>
 

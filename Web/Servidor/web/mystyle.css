@@ -79,13 +79,6 @@ a{
   display: none;
 }
   
-
-  
-.img-container{
-    background-color: black;
-    max-width: 100%;
-}
-
 #Logo{
     
     width: 100%;
@@ -214,7 +207,7 @@ a{
     border-color: #591D77;
 }
 
-list-group-item{
+.list-group-item{
     background-color: #9932CC;
     color:#fefefe;
 }
@@ -398,14 +391,6 @@ list-group-item{
   }
   
 
-  .centered {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  
 
   #agradecimientos{
     display:none;

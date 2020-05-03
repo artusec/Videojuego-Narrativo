@@ -77,6 +77,7 @@
 <script>
 <?php
     require_once './js/scripts.js';
+    require_once './js/contrasteResto.js';
     ob_end_flush();
 ?> 
 

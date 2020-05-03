@@ -100,10 +100,12 @@
 <?php
     require_once './generic/footer.html';
 ?>
-
+</body>
 <script>
+
 <?php
     require_once './js/scripts.js';
+    require_once './js/contrasteInicio.js';
 ?>
 </script>
 </html>
