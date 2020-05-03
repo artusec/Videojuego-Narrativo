@@ -65,9 +65,9 @@
 </header>
 
 
-<main id="main">
+<main id="main" >
 
-    <section id="">
+    <section aria-labelledby="Introducción">
     <div class="container-fluid">
 
       
@@ -75,7 +75,7 @@
         <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
         ?>
-        <h1 class="text-center" id='1' >¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES, <?php echo $_SESSION['username'] ?>!</h1>
+        <h1 class="text-center" id='1' >¡TE DAMOS LA BIENVENIDA DE NUEVO, <?php echo $_SESSION['username'] ?>!</h1>
         <p>&nbsp</p>  
         <?php
             }else{  ?>
@@ -96,8 +96,8 @@
 
         <p>&nbsp</p>
         <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-3 ">    
+        <div class="col-md-2"></div>
+        <div class="col-md-4 ">    
             <div class="minijuegosOut ">
                     <div class="card cartas-prop">
                         <a href="./accesibilidad.php"><img src="./imagenes/accesibility.png"  class="card-img-top" alt="" aria-label="Leer mas sobre accesibilidad"></a>
@@ -109,7 +109,7 @@
                     </div>
             </div>
         </div>
-        <div class="col-sm-3">    
+        <div class="col-md-4">    
             <div class="minijuegosOut">
                     <div class="card cartas-prop">
                         <a href="./nube.php"> <img src="./imagenes/nube.png"  class="card-img-top "alt="" aria-label="Leer mas sobre la nube"> </a>
@@ -122,12 +122,12 @@
             </div>
         </div>
         </div>
-        <div class="col-sm-3"></div>
+        <div class="col-smd-2"></div>
     </div>
 </section>
 
 
-<section id="minijuegos">
+<section aria-labelledby="Minijuegos" id="minijuegos">
     <div class="container-fluid">
         <p>&nbsp</p>
         <p>&nbsp</p>
@@ -243,7 +243,7 @@
     require_once './generic/footer.html';
 ?>
 
-<a href="#" class="back-to-top"><img id="top-icon" src="./imagenes/top.png"></a>
+<a href="#"  aria-label="Volver al principio de la página" class="back-to-top"><img id="top-icon" src="./imagenes/top.png"></a>
 
 </body>
 

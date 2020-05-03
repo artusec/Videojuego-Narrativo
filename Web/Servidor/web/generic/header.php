@@ -1,9 +1,9 @@
 <nav title="Menu horizontal" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" role="navigation">
-        <a class="navbar-brand" href="./inicio.php"><span class="Name-font1">ASHED MEMORIES</span></a>
+        <a class="navbar-brand" href="./inicio.php" aria-label="Ir al la página principal"><span class="Name-font1">ASHED MEMORIES</span></a>
         <div class="display-movil">
             <ul class="nav justify-content-center">
                 <li class="nav-item ">
-                    <a  aria-label="Cambiar el contraste de la página" onclick="cambioContraste()"><img id="icono-cambiante" src="./imagenes/hcontrast.png " alt=""></a>
+                    <a  aria-label="Cambiar el contraste de la página" onclick="cambioContraste()" id="link-icono-cambiante"><img id="icono-cambiante" src="./imagenes/hcontrast.png " alt=""></a>
                 </li>
                     &nbsp
                     &nbsp
@@ -11,10 +11,10 @@
                     &nbsp
                     &nbsp
                 <li class="nav-item">
-                    <button type="button" aria-label="Desminuir el tamaño de las letras de la página" class="btn btn-secondary" onclick="decreaseSize()"><img src="./imagenes/Tminus.png " alt=""></button>             
+                    <button type="button" aria-label="Desminuir el tamaño de las letras de la página" class="btn btn-secondary movil" onclick="decreaseSize()"><img src="./imagenes/Tminus.png " alt=""></button>             
                 </li>
                 <li class="nav-item">
-                    <button type="button" aria-label="Aumentar el tamaño de las letras de la página" class="btn btn-secondary" onclick="increaseSize()"><img src="./imagenes/Tplus.png " alt=""></button>                
+                    <button type="button" aria-label="Aumentar el tamaño de las letras de la página" class="btn btn-secondary movil" onclick="increaseSize()"><img src="./imagenes/Tplus.png " alt=""></button>                
                 </li>
             </ul>
         </div>
@@ -23,14 +23,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./inicio.php">Inicio</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="./inicio.php#descarga" aria-label="Ir al la parte de descargar">Descarga</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./inicio.php#descarga">Descarga</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./inicio.php#minijuegos">Minijuegos</a>
+                    <a class="nav-link" href="./inicio.php#minijuegos" aria-label="Ir al la parte de minijuegos">Minijuegos</a>
                 </li>
 <?php
         if (isset($_SESSION['login']) && $_SESSION['login'] === true){
@@ -53,11 +50,11 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 <li class="no-display-movil">
-                <a  aria-label="Poner la página con colores en alto contraste" onclick="modoAltoContraste()"><img src="./imagenes/hcontrast.png" alt=""></a>
-                    <label class="switch" for="mode">
-                        <input type="checkbox" id="mode" checked> 
+                    <a  aria-label="Poner la página con colores en alto contraste" onclick="modoAltoContraste()"><img src="./imagenes/hcontrast.png" alt=""></a>        
+                    <label class="switch" for="mode" aria-labelledby="Modo de contraste de la página">
+                        <input type="checkbox" id="mode" aria-checked="true" checked > 
                             <span class="slider round"></span>
-                    </label>              
+                    </label>      
                     <a  aria-label="Poner la página con colones sin alto contraste" onclick="modoNormal()"><img src="./imagenes/ncontrast.png" alt=""></a>
                 </li>
                 &nbsp

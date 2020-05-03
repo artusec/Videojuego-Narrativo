@@ -62,43 +62,52 @@
 
 </header>
 
-	
+    
+
+<ol class="breadcrumb">
+        <li><a href="./inicio.php">Inicio</a></li>
+        <li class="active">Accesibilidad</li>        
+</ol>
+
 <main>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
+
+    <section  aria-label="Accesibilidad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                <p>&nbsp</p>
+                <h1><p class="text-center">ACCESIBILIDAD</p></h1>
+                <p>&nbsp</p>
+                <p>Lo más habitual es que las personas invidentes utilicen lectores de pantalla cuando interactuan con dispositivos móviles. Estos sistemas capturan ciertos gestos simples del usuario facilitando la navegación por los elementos en pantalla. Algunos ejemplos son <a href="https://www.freedomscientific.com/products/software/jaws/"><strong>JAWS</strong></a> para sobremesas, <a href="https://www.apple.com/es/accessibility/iphone/vision/"><strong>Voice Over</strong></a> en dispositivos iOS y <a href="https://support.google.com/accessibility/android/answer/6283677?hl=es"><strong>TalkBack</strong></a> en dispositivos Android. </p>
+
+                <p>En el juego estos gestos son deslizamientos rápidos horizontales para moverte entre los elementos y pulsaciones dobles en la pantalla para acceder o interactuar con el objeto actual.</p>
+
+                <p>Esto requiere que al lanzar la aplicación se indique al usuario que apague su lector de pantalla. Es decir, el juego ya está implementado con los controles accesibles por defecto.</p>
+
+                <p>Las secciones de minijuegos tendrían controles propios, que se explicarían en cada uno.</p>
+
+                <p>&nbsp</p>
+                </div>
+                <div class="col-md-2">
+                </div>
             </div>
-            <div class="col-md-8">
-            <p>&nbsp</p>
-            <h1><p class="text-center">ACCESIBILIDAD</p></h1>
-            <p>&nbsp</p>
-            <p>Lo más habitual es que las personas invidentes utilicen lectores de pantalla cuando interactuan con dispositivos móviles. Estos sistemas capturan ciertos gestos simples del usuario facilitando la navegación por los elementos en pantalla. Algunos ejemplos son <a href="https://www.freedomscientific.com/products/software/jaws/"><strong>JAWS</strong></a> para sobremesas, <a href="https://www.apple.com/es/accessibility/iphone/vision/"><strong>Voice Over</strong></a> en dispositivos iOS y <a href="https://support.google.com/accessibility/android/answer/6283677?hl=es"><strong>TalkBack</strong></a> en dispositivos Android. </p>
-
-            <p>En el juego estos gestos son deslizamientos rápidos horizontales para moverte entre los elementos y pulsaciones dobles en la pantalla para acceder o interactuar con el objeto actual.</p>
-
-            <p>Esto requiere que al lanzar la aplicación se indique al usuario que apague su lector de pantalla. Es decir, el juego ya está implementado con los controles accesibles por defecto.</p>
-
-            <p>Las secciones de minijuegos tendrían controles propios, que se explicarían en cada uno.</p>
-
-            <p>&nbsp</p>
-            </div>
-            <div class="col-md-2">
-            </div>
+            <div class="row">
+                <div class="col-lg-2 order-lg-1 col-md-2 order-md-1">
+                </div>
+                <div class="col-lg-4 order-lg-2 col-md-10 order-md-2">
+                    <img src="./imagenes/accesibilidad1.png"  alt=""/>
+                </div>
+                <div class="col-lg-4 order-lg-3 col-md-10 order-md-4">
+                    <img src="./imagenes/accesibilidad2.png"  alt=""/>
+                </div>
+                <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
+                </div>
+            </div>    
         </div>
-        <div class="row">
-            <div class="col-lg-2 order-lg-1 col-md-2 order-md-1">
-            </div>
-            <div class="col-lg-4 order-lg-2 col-md-10 order-md-2">
-                <img src="./imagenes/accesibilidad1.png"  alt=""/>
-            </div>
-            <div class="col-lg-4 order-lg-3 col-md-10 order-md-4">
-                <img src="./imagenes/accesibilidad2.png"  alt=""/>
-            </div>
-            <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
-            </div>
-        </div>    
-    </div>
+    </section>
 </main>
 
 <?php

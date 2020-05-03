@@ -29,6 +29,7 @@ header{
     list-style: none;
 }
 
+
 /*Para telefonos y tablets*/
 @media only screen and (max-width:  992px) {
     .navbar {

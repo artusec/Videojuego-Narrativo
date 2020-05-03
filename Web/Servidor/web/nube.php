@@ -68,37 +68,36 @@
 
 
 <main id="main">
-   
-<section>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8">
-                <p>&nbsp</p>
-                <h1><p class="text-center">DESARROLLO EN LA NUBE</p></h1>
-                <p>&nbsp</p>
-                <p>El juego tiene implementado dos sistemas de guardado de tus datos y partidas:</p>
+    <section  aria-label="La Nube">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <p>&nbsp</p>
+                    <h1><p class="text-center">DESARROLLO EN LA NUBE</p></h1>
+                    <p>&nbsp</p>
+                    <p>El juego tiene implementado dos sistemas de guardado de tus datos y partidas:</p>
 
-                <p><strong>- Guardado en local.</strong> Esta opción te permite guardar los datos localmente, de forma que siempre tendrás que jugar en el mismo dispositivo. No tendrás que registrarte y podrás jugar sin conexión a internet.</p>
+                    <p><strong>- Guardado en local.</strong> Esta opción te permite guardar los datos localmente, de forma que siempre tendrás que jugar en el mismo dispositivo. No tendrás que registrarte y podrás jugar sin conexión a internet.</p>
 
-                <p><strong>- Guardado en la nube.</strong> Esta opción requiere una conexión a internet y estar registrado en la aplicación. Te permite cambiar de dispositivo y continuar exactamente en el punto donde lo dejaste.</p>
+                    <p><strong>- Guardado en la nube.</strong> Esta opción requiere una conexión a internet y estar registrado en la aplicación. Te permite cambiar de dispositivo y continuar exactamente en el punto donde lo dejaste.</p>
 
-                <p>&nbsp</p>
+                    <p>&nbsp</p>
+                </div>
+                <div class="col-md-2">
+                </div>
             </div>
-            <div class="col-md-2">
-            </div>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-4">
+                    <img src="./imagenes/guardado_nube.png"  alt=""/>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>  
         </div>
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-4">
-                <img src="./imagenes/guardado_nube.png"  alt=""/>
-            </div>
-            <div class="col-md-2">
-            </div>
-        </div>  
-    </div>
     </section>
 </main>
 
