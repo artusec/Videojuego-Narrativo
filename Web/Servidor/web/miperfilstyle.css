@@ -29,6 +29,9 @@ header{
     list-style: none;
 }
 
+.nav-link:hover,.nav-link:focus{
+    text-decoration: underline;
+}
 
 /*Para telefonos y tablets*/
 @media only screen and (max-width:  992px) {
