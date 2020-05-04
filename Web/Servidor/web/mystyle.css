@@ -201,7 +201,7 @@ a{
     
 }
 
-.btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
+.btn-primary,.btn-primary:hover,.btn-primary:active {
     background-color: #9932CC;
     border-color: #591D77;
 }

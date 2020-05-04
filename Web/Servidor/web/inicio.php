@@ -65,6 +65,37 @@
 </header>
 
 
+<div class="modal fade in" id="myModal" role="dialog" aria-labelledby="Utilización de cookies en la web" aria-describedby="modal-dialog">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+      <div class="modal-content">
+          
+        <div class="modal-header d-flex justify-content-center align-items-center">
+          <h4 class="modal-title">POLITICA DE COOKIES</h4>
+        </div>
+        
+        <div class="modal-body">
+            <div class="row d-flex justify-content-center align-items-center">
+                <p class="pt-3 pr-2 ">Utilizamos cookies para mejorar la experiencia en la web.</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <a type="button" class="btn btn-primary waves-effect" aria-label="Leer mas sobre cookies">Leer mas </a>
+                &nbsp
+                &nbsp
+                <a type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Vale, gracias">Ok, gracias</a>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
 <main id="main" >
 
     <section aria-labelledby="Introducción">
@@ -92,7 +123,7 @@
         <p>&nbsp</p>
         
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" aria-label="Descarga Ashed Memories"
+            <button class="btn btn-danger btn-lg " id="donwload-button"><a id="descarga" aria-label="Descarga Ashed Memories"
              download="AshedMemories.apk" href="./apk/AshedMemories_1.0.apk" alt="">¡Descarga ya!<img src="./imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>

@@ -6,6 +6,7 @@
             
             $("#cabecera-logo").show( "drop", {direction: "up"}, 2000 );
             $(".cartas-prop").show( "slide", 1000 );
+            $('.modal').modal('show');
 
             if (detectCookie("accesibility")){
             modoAltoContraste();

@@ -70,9 +70,9 @@
 
     
 
-<ol class="breadcrumb">
+<ol class="breadcrumb" aria-label="breadcrumb">
         <li><a href="./inicio.php">Inicio</a></li>
-        <li class="active">Accesibilidad</li>        
+        <li class="active" aria-current="page">Accesibilidad</li>        
 </ol>
 
 <main>
