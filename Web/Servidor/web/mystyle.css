@@ -69,6 +69,10 @@ a{
     color:#9932CC;
 }
 
+.nav-link:hover,.nav-link:focus{
+  text-decoration: underline;
+}
+
 #cabecera {
     width: 100%;
     background: black;

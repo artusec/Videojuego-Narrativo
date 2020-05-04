@@ -16,15 +16,16 @@
                 }
                 else{
                 $(".navbar").css('background-color', '#591D77');
+                $(".nav-link").css('background-color', '#591D77');
                 }
             } else {
-
 
                 if (detectCookie("accesibility")){
                     $('.navbar').css('background-color', 'black');
                 }
                 else{
-                $('.navbar').css('background-color', 'transparent');
+                    $('.navbar').css('background-color', 'transparent');
+                    $(".nav-link").css('background-color', 'transparent');
                 }
                 
             }
@@ -61,17 +62,18 @@
             $('#top-icon').attr("src","./imagenes/top-yellow.png");
             
             
+            $(".nav-link").css('background-color', 'black');
 
             $('.nav-link').hover(function(){
-                $(this).css({"color": "yellow"});
+                $(this).css({"color": "yellow","background-color": "black"});
             }, function(){
-                $(this).css({"color": "yellow"});
+                $(this).css({"color": "yellow","background-color": "black"});
             });
 
             $('.nav-link').focus(function(){
-                $(this).css({"color": "yellow"});
+                $(this).css({"color": "yellow","background-color": "black"});
             }, function(){
-                $(this).css({"color": "yellow"});
+                $(this).css({"color": "yellow","background-color": "black"});
             });
 
             setCookie("accesibility", 1, 1);
@@ -107,17 +109,19 @@
             
             $('#top-icon').attr("src","./imagenes/top.png");
 
+            $(".nav-link").css('background-color', $(".navbar").css('background-color'));
+
             $('.nav-link').hover(function(){
-                $(this).css({"color": "black"});
+                $(this).css({"color": "#fefefe","background-color": "#9932CC"});
             }, function(){
-                $(this).css({"color": "#fefefe"});
+                $(this).css({"color": "#fefefe","background-color": $(".navbar").css('background-color')});
             });
 
             $('.nav-link').focus(function(){
-                $(this).css({"color": "black"});
+                $(this).css({"color": "#fefefe","background-color": "#9932CC"});
             });
             $('.nav-link').focusout(function(){
-                $(this).css({"color": "#fefefe"}); 
+                $(this).css({"color": "#fefefe","background-color": $(".navbar").css('background-color')});
             });
 
             $('#mode').prop('checked', true);

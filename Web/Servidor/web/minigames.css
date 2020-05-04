@@ -21,7 +21,9 @@ header{
     width: 100%;
     max-width: 100%;
 }
-
+a{
+    color: #fefefe;
+}
 
 .navbar{
     width: 100%;
@@ -56,6 +58,11 @@ header{
 .nav img{
     margin-top: 10%;
 }
+
+.nav-link:hover,.nav-link:focus{
+    text-decoration: underline;
+  }
+  
 
 #icono-cambiante{
     margin-top: 30%;
