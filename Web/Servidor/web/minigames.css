@@ -257,10 +257,9 @@ a{
     width: 120%;
 }
 .btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
-    background-color: #c82333;
-    border-color: #dc3545;
+    background-color: #9932CC;
+    border-color: #591D77;
 }
-
 .img-accesibilidad{
     margin-left: 10%;
 }

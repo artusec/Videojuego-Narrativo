@@ -87,13 +87,13 @@
             Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida
              y conocer lo que pasó allí tiempo atrás.</p>
         <p>&nbsp</p>
-        <p class="text-center">Desarrollado en Unity <img src="./imagenes/unity.png"> para la plataforma Android  <img src="./imagenes/android.png">.</p>
+        <p class="text-center">Desarrollado en Unity <img id="unity" alt="" src="./imagenes/unity.png"> para la plataforma Android  <img src="./imagenes/android.png">.</p>
 
         <p>&nbsp</p>
         
         <div class="col text-center" id='4'>
             <button class="btn btn-danger btn-lg" id="donwload-button"><a id="descarga" aria-label="Descarga Ashed Memories"
-             download="AshenMemories.apk" href="./apk/AshedMemories_1.0.apk" alt="">¡Descarga ya!<img src="./imagenes/download.png" alt=""></a></button>
+             download="AshedMemories.apk" href="./apk/AshedMemories_1.0.apk" alt="">¡Descarga ya!<img src="./imagenes/download.png" alt=""></a></button>
         </div>
         <p>&nbsp</p>
 

@@ -10,12 +10,6 @@
                     &nbsp
                     &nbsp
                     &nbsp
-                <li class="nav-item">
-                    <button type="button" aria-label="Desminuir el tamaño de las letras de la página" class="btn btn-secondary movil" onclick="decreaseSize()"><img src="./imagenes/Tminus.png " alt=""></button>             
-                </li>
-                <li class="nav-item">
-                    <button type="button" aria-label="Aumentar el tamaño de las letras de la página" class="btn btn-secondary movil" onclick="increaseSize()"><img src="./imagenes/Tplus.png " alt=""></button>                
-                </li>
             </ul>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,20 +53,6 @@
                 </li>
                 &nbsp
                 &nbsp
-                &nbsp
-                &nbsp
-                &nbsp
-                &nbsp
-                &nbsp
-                &nbsp
-                <li class="no-display-movil">
-                    <button type="button" aria-label="Desminuir el tamaño de las letras de la página" class="btn btn-secondary" onclick="decreaseSize()"><img src="./imagenes/Tminus.png " alt=""></button>             
-                
-                </li>
-                &nbsp
-                <li class="no-display-movil" >
-                    <button type="button" aria-label="Aumentar el tamaño de las letras de la página" class="btn btn-secondary" onclick="increaseSize()"><img src="./imagenes/Tplus.png " alt=""></button>                
-                </li>
                 &nbsp
                 &nbsp
                 &nbsp

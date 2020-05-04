@@ -60,7 +60,7 @@
             $('.table .thead-dark th').css({"color":"yellow"});
 
             $('#top-icon').attr("src","./imagenes/top-yellow.png");
-            
+            $('#unity').attr("src","./imagenes/unity2.png");
             
             $(".nav-link").css('background-color', 'black');
 
@@ -108,6 +108,8 @@
 
             
             $('#top-icon').attr("src","./imagenes/top.png");
+
+            $('#unity').attr("src","./imagenes/unity.png");
 
             $(".nav-link").css('background-color', $(".navbar").css('background-color'));
 
