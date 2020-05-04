@@ -46,7 +46,7 @@
                 <li class="no-display-movil">
                     <a  aria-label="Poner la página con colores en alto contraste" onclick="modoAltoContraste()"><img src="./imagenes/hcontrast.png" alt=""></a>        
                     <label class="switch" for="mode" aria-labelledby="Modo de contraste de la página">
-                        <input type="checkbox" id="mode" aria-checked="true" checked > 
+                        <input type="checkbox" id="mode" aria-checked="true" checked role="checkbox"> 
                             <span class="slider round"></span>
                     </label>      
                     <a  aria-label="Poner la página con colones sin alto contraste" onclick="modoNormal()"><img src="./imagenes/ncontrast.png" alt=""></a>

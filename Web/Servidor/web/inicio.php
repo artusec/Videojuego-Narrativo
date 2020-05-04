@@ -80,10 +80,10 @@
                 <p>&nbsp</p>
                 <p>&nbsp</p>
                 <p>&nbsp</p>
-                <a type="button" class="btn btn-primary waves-effect" aria-label="Leer mas sobre cookies">Leer mas </a>
+                <a type="button" class="btn btn-cookies " aria-label="Leer mas sobre cookies">Leer mas </a>
                 &nbsp
                 &nbsp
-                <a type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Vale, gracias">Ok, gracias</a>
+                <a type="button" class="btn btn-cookies" data-dismiss="modal" aria-label="Vale, gracias">Ok, gracias</a>
                 <p>&nbsp</p>
                 <p>&nbsp</p>
                 <p>&nbsp</p>
@@ -306,7 +306,7 @@
   $('.back-to-top').click(function() {
     $('html, body').animate({
       scrollTop: 0
-    }, 1500, 'easeInOutExpo');
+    }, 1000, 'linear');
     return false;
   });
 
