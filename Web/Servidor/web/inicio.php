@@ -71,6 +71,8 @@
 
 <main id="main" >
 
+    <?php if(!isset($_COOKIE["cookie"])) { ?>
+
     <div class="modal fade in" id="myModal" role="dialog" aria-describedby="modal-dialog" aria-labelledby="titulo-modal">
         <div class="modal-dialog modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -88,7 +90,7 @@
                     <a type="button" class="btn btn-cookies " aria-label="Leer mas sobre cookies" href="./Cookies.html">Leer mas </a>
                     &nbsp
                     &nbsp
-                    <a type="button" class="btn btn-cookies" data-dismiss="modal" aria-label="Vale, gracias" href="">Ok, gracias</a>
+                    <a type="button" class="btn btn-cookies" data-dismiss="modal" aria-label="Vale, gracias" href="" onclick='activarCookie();'>Ok, gracias</a>
                     <p>&nbsp</p>
                     <p>&nbsp</p>
                     <p>&nbsp</p>
@@ -99,6 +101,8 @@
         </div>
         </div>
     </div>
+
+    <?php } ?>
 
     <section aria-labely="Introducción">
     <div class="container-fluid">
@@ -291,6 +295,10 @@
     require_once './js/scripts.js';
     require_once './js/contrasteInicio.js';
 ?>
+
+function activarCookie() {
+    setCookie("cookie", 1, 1);
+}
 
 
 
