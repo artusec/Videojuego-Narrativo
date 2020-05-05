@@ -4,7 +4,9 @@
 
 <!DOCTYPE html>
 <html lang="es">
-
+    
+    <head>
+        <meta charset="UTF-8"/>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -22,20 +24,18 @@
 
     <!--- FUENTES DEL TITULO-->
     <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>   
- 
+
     <script
-			  src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-			  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-			  crossorigin="anonymous"></script>
+            src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+            integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+            crossorigin="anonymous"></script>
 
     <script src="./js/cookies.js"></script>
 
-
-<head>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
     <title>ASHED MEMORIES - Inicio</title>
-    <meta charset="UTF-8"/>
+    
 </head>
 
 <body>
@@ -45,6 +45,7 @@
 <?php
     require_once './generic/header.php';
 ?>
+
 <section id="cabecera">
         <div class="row logo">
             <div class="col-lg-4 col-md-12">
@@ -65,40 +66,41 @@
 </header>
 
 
-<div class="modal fade in" id="myModal" role="dialog" aria-labelledby="Utilización de cookies en la web" aria-describedby="modal-dialog">
-    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-      <div class="modal-content">
-          
-        <div class="modal-header d-flex justify-content-center align-items-center">
-          <h4 class="modal-title">POLITICA DE COOKIES</h4>
-        </div>
-        
-        <div class="modal-body">
-            <div class="row d-flex justify-content-center align-items-center">
-                <p class="pt-3 pr-2 ">Utilizamos cookies para mejorar la experiencia en la web.</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <a type="button" class="btn btn-cookies " aria-label="Leer mas sobre cookies">Leer mas </a>
-                &nbsp
-                &nbsp
-                <a type="button" class="btn btn-cookies" data-dismiss="modal" aria-label="Vale, gracias">Ok, gracias</a>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-            </div>
-        </div>
 
-      </div>
-    </div>
-  </div>
 
 
 <main id="main" >
 
-    <section aria-labelledby="Introducción">
+    <div class="modal fade in" id="myModal" role="dialog" aria-describedby="modal-dialog" aria-labelledby="titulo-modal">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center align-items-center">
+            <h4 class="modal-title" id="titulo-modal">POLITICA DE COOKIES</h4>
+            </div>
+            
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <p class="pt-3 pr-2 ">Utilizamos cookies para mejorar la experiencia en la web.</p>
+                    <p>&nbsp</p>
+                    <p>&nbsp</p>
+                    <p>&nbsp</p>
+                    <p>&nbsp</p>
+                    <a type="button" class="btn btn-cookies " aria-label="Leer mas sobre cookies" href="./Cookies.html">Leer mas </a>
+                    &nbsp
+                    &nbsp
+                    <a type="button" class="btn btn-cookies" data-dismiss="modal" aria-label="Vale, gracias" href="">Ok, gracias</a>
+                    <p>&nbsp</p>
+                    <p>&nbsp</p>
+                    <p>&nbsp</p>
+                    <p>&nbsp</p>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+    <section aria-labely="Introducción">
     <div class="container-fluid">
 
       
@@ -110,7 +112,7 @@
         <p>&nbsp</p>  
         <?php
             }else{  ?>
-                <h1><p class="text-center" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES!</p></h1>
+                <h1 class="text-center" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES!</p></h1>
                 <p>&nbsp</p>  
         <?php    }
         ?>
@@ -118,13 +120,13 @@
             Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida
              y conocer lo que pasó allí tiempo atrás.</p>
         <p>&nbsp</p>
-        <p class="text-center">Desarrollado en Unity <img id="unity" alt="" src="./imagenes/unity.png"> para la plataforma Android  <img src="./imagenes/android.png">.</p>
+        <p class="text-center">Desarrollado en Unity <img id="unity" alt="" src="./imagenes/unity.png"> para la plataforma Android  <img src="./imagenes/android.png" alt="">.</p>
 
         <p>&nbsp</p>
         
         <div class="col text-center" id='4'>
-            <button class="btn btn-danger btn-lg " id="donwload-button"><a id="descarga" aria-label="Descarga Ashed Memories"
-             download="AshedMemories.apk" href="./apk/AshedMemories_1.0.apk" alt="">¡Descarga ya!<img src="./imagenes/download.png" alt=""></a></button>
+            <a  type="button" class="btn btn-danger btn-lg" id="descarga" aria-label="Descarga Ashed Memories"
+             download="AshedMemories.apk" href="./apk/AshedMemories_1.0.apk" >¡Descarga ya!<img src="./imagenes/download.png" alt=""></a>
         </div>
         <p>&nbsp</p>
 
@@ -138,7 +140,7 @@
                     <div class="card cartas-prop">
                         <a href="./accesibilidad.php"><img src="./imagenes/accesibility.png"  class="card-img-top" alt="" aria-label="Leer mas sobre accesibilidad"></a>
                         <div class="card-body">
-                            <p class="card-text"><h2>ACCESIBILIDAD</h2></p>
+                            <h2 class="card-text">ACCESIBILIDAD</h2>
                             <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.</p>
                             <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
@@ -150,7 +152,7 @@
                     <div class="card cartas-prop">
                         <a href="./nube.php"> <img src="./imagenes/nube.png"  class="card-img-top "alt="" aria-label="Leer mas sobre la nube"> </a>
                         <div class="card-body">
-                            <p class="card-text"><h2>NUBE</h2></p>
+                            <h2 class="card-text">NUBE</h2>
                             <p class="card-text">El juego tiene implementado dos sistemas de guardado de tus datos y partidas. Local y en la nube.</p>
                             <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
                         </div>
@@ -163,11 +165,11 @@
 </section>
 
 
-<section aria-labelledby="Minijuegos" id="minijuegos">
+<section aria-label="Minijuegos" id="minijuegos">
     <div class="container-fluid">
         <p>&nbsp</p>
         <p>&nbsp</p>
-        <h1 class="fade-in" id="minijuegos-title"><p class="text-center">¡Conoce los minijuegos!</p></h1>
+        <p><h1 class=" text-center fade-in" id="minijuegos-title">¡Conoce los minijuegos!</h1></p>
         <p class="text-center"><img src="./imagenes/jigsaw.png" alt=""></p>
         <p>&nbsp</p>
         <p>&nbsp</p>
@@ -177,7 +179,7 @@
                             <div class="card cartas-minijuegos">
                                 <a href="./ganzua.php"><img class="card-img-top" src="./imagenes/safe_box.png" alt="" aria-label="Leer mas sobre el minijuego ganzua"></a>
                                 <div class="card-body">
-                                  <p class="card-text"><h2>GANZUA</h2></p>
+                                  <h2 class="card-text">GANZUA</h2>
                                   <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
                                   <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                                 </div>
@@ -189,7 +191,7 @@
                         <div class="card cartas-minijuegos">
                             <a href="./voces.php"><img class="card-img-top" src="./imagenes/earphone.png" alt="" aria-label="Leer mas sobre el minijuego voces a lo lejos"></a>
                             <div class="card-body">
-                            <p class="card-text"><h2>VOCES A LO LEJOS</h2></p>
+                            <h2 class="card-text">VOCES A LO LEJOS</h2>
                             <p class="card-text">Mover el dedo por la pantalla siguiendo unas voces que podrás oír en alguna dirección.</p>
                               <a href="./voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                             </div>
@@ -201,7 +203,7 @@
                             <div class="card cartas-minijuegos">
                                 <a href="./formas.php"><img class="card-img-top" src="./imagenes/geometry.png" alt="" aria-label="Leer mas sobre el minijuego formas"></a>
                                 <div class="card-body">
-                                <p class="card-text"><h2>FORMAS</h2></p>
+                                <h2 class="card-text">FORMAS</h2>
                                 <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
                                 <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                                 </div>
@@ -211,31 +213,29 @@
             </div>
             <p>&nbsp</p>
             <p>&nbsp</p>
-            <section>
-<div class="container-fluid">
-<p>&nbsp</p>
-    <p>&nbsp</p>
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <div class="ojo">
-                <div class="shut">
-                    <span></span>
+            <div class="container-fluid">
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <div class="ojo">
+                            <div class="shut">
+                                <span></span>
+                            </div>
+                            <div class="ball">
+                                <div class='eye'>
+                                    <div class='luz'></div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-sm-4"></div>
                 </div>
-                <div class="ball">
-                    <div class='eye'>
-                        <div class='luz'></div>
-                    </div>
-                </div>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
             </div>
-        <div class="col-sm-4"></div>
-    </div>
-    <p>&nbsp</p>
-    <p>&nbsp</p>
-    <p>&nbsp</p>
-    <p>&nbsp</p>
-</div>
-</section>
             <p>&nbsp</p>
             <p>&nbsp</p>
             <p>&nbsp</p>
@@ -279,7 +279,7 @@
     require_once './generic/footer.html';
 ?>
 
-<a href="#"  aria-label="Volver al principio de la página" class="back-to-top"><img id="top-icon" src="./imagenes/top.png"></a>
+<a href="#"  aria-label="Volver al principio de la página" class="back-to-top"><img id="top-icon" src="./imagenes/top.png" alt=""></a>
 
 </body>
 
