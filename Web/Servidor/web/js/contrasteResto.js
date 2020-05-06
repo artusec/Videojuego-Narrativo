@@ -6,15 +6,17 @@
             $('#mode').prop('checked', false);
 
             $(".navbar").addClass("body-oscuro");
+            $(".Name-font1").addClass("color-yellow");
             $("#button-red").addClass("btn-oscuro");
             $(".container-fluid").addClass("body-oscuro");
             $(".page-footer").addClass("body-oscuro");
             $(".list-group-item").addClass("body-oscuro");
             $('.table').addClass("color-yellow");
             $('th').addClass("color-yellow");
-            $('.nav-link').addClass("nav-link-oscuro");
+            $(".nav-link-new").addClass("nav-link-oscuro");
             $(".reg").addClass("link-yellow-underline");
             $("footer a").addClass("link-yellow");
+            
 
             $('#animation1').attr("src","./imagenes/animation2.gif");
 
@@ -27,13 +29,14 @@
             //Volver a modo normal 
   
             $(".navbar").removeClass("body-oscuro");
+            $(".Name-font1").removeClass("color-yellow");
             $("#button-red").removeClass("btn-oscuro");
             $(".container-fluid").removeClass("body-oscuro");
             $(".page-footer").removeClass("body-oscuro");
             $(".list-group-item").removeClass("body-oscuro");
             $('.table').removeClass("color-yellow");
             $('th').removeClass("color-yellow");
-            $('.nav-link').removeClass("nav-link-oscuro");
+            $('.nav-link-new').removeClass("nav-link-oscuro");
             $(".reg").removeClass("link-yellow-underline");
             $("footer a").removeClass("link-yellow");
 

@@ -34,10 +34,18 @@ header{
     background-color:#9932CC;
 }
 
-.nav-link:hover,.nav-link:focus{
+.nav-link-new{
+    display:block;
+    padding: .5rem 1rem;
+    color: #fefefe;
+  }
+  
+  .nav-link-new:hover,.nav-link-new:focus{
+    color: #fefefe;
     text-decoration: underline;
-}
-
+    background-color: #9932CC;
+    border-radius: 10%;
+  }
 .display-movil{
     display:none;
     list-style: none;
@@ -204,35 +212,36 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background-color:#9932CC;
+background-color:yellow;
 -webkit-transition: .4s;
 transition: .4s;
 margin-top: 10%
 }
 
 .slider:before {
-position: absolute;
-content: "";
-height: 26px;
-width: 26px;
-left: 4px;
-bottom: 1px;
-background-color: white;
--webkit-transition: .4s;
-transition: .4s;
-}
-
-input:checked + .slider {
-background-color: black;
-}
-
-
-input:checked + .slider:before {
--webkit-transform: translateX(26px);
--ms-transform: translateX(26px);
-transform: translateX(26px);
-}
-
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 1px;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #9932CC;
+  }
+  
+  
+  input:checked + .slider:before {
+    background-color: white;
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
 /* Rounded sliders */
 .slider.round {
 border-radius: 34px;
@@ -336,6 +345,7 @@ border-radius: 80%;
   }
   
   .nav-link-oscuro:hover,.nav-link-oscuro:focus{
+    color: yellow;
     text-decoration: underline;
     background-color: black;
   }

@@ -73,11 +73,14 @@ a{
     color:#9932CC;
 }
 
-.nav-link{
+.nav-link-new{
+  display:block;
+  padding: .5rem 1rem;
   color: #fefefe;
 }
 
-.nav-link:hover,.nav-link:focus{
+.nav-link-new:hover,.nav-link-new:focus{
+  color: #fefefe;
   text-decoration: underline;
   background-color: #9932CC;
   border-radius: 10%;
@@ -162,7 +165,7 @@ a{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:#CCCC00;
+    background-color:yellow;
     -webkit-transition: .4s;
     transition: .4s;
     margin-top: 10%
@@ -175,7 +178,7 @@ a{
     width: 26px;
     left: 4px;
     bottom: 1px;
-    background-color: whitesmoke;
+    background-color: black;
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -186,6 +189,7 @@ a{
   
   
   input:checked + .slider:before {
+    background-color: white;
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -339,6 +343,7 @@ a{
 }
 
 .nav-link-oscuro:hover,.nav-link-oscuro:focus{
+  color: yellow;
   text-decoration: underline;
   background-color: black;
 }

@@ -43,7 +43,7 @@
             $("#descarga").addClass("btn-oscuro");
             $(".card").addClass("color-black");
             $("footer a").addClass("link-yellow");
-            $('.nav-link').addClass("nav-link-oscuro");
+            $(".nav-link-new").addClass("nav-link-oscuro");
             $(".Name-font1").addClass("color-yellow");
             $(".breadcrumb").addClass("body-oscuro");
             $("body").addClass("body-oscuro");
@@ -69,7 +69,7 @@
             $("#descarga").removeClass("btn-oscuro");
             $(".card").removeClass("color-black");
             $("footer a").removeClass("link-yellow");
-            $('.nav-link').removeClass("nav-link-oscuro");
+            $(".nav-link-new").removeClass("nav-link-oscuro");
             $(".Name-font1").removeClass("color-yellow");
             $(".breadcrumb").removeClass("body-oscuro");
             $("body").removeClass("body-oscuro");

@@ -18,25 +18,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" role="button" href="./inicio.php#descarga" aria-label="Ir al la parte de descargar">Descarga</a>
+                    <a class="nav-link-new" role="button" id="descargabutton" href="./inicio.php#descarga" aria-label="Ir al la parte de descargar">Descarga</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" role="button" href="./inicio.php#minijuegos" aria-label="Ir al la parte de minijuegos">Minijuegos</a>
+                    <a class="nav-link-new" role="button" href="./inicio.php#minijuegos" aria-label="Ir al la parte de minijuegos">Minijuegos</a>
                 </li>
 <?php
         if (isset($_SESSION['login']) && $_SESSION['login'] === true){
 ?>
                 <li class="nav-item">
-                    <a class="nav-link" role="button" aria-label="Ver tus datos del juego" href="./MiPerfil.php">Mi perfil</a>
+                    <a class="nav-link-new" role="button" aria-label="Ver tus datos del juego" href="./MiPerfil.php">Mi perfil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" role="button" aria-label="Cerrar sesión y volver a la página principal" href="./Logout.php">Cerrar Sesion</a>
+                    <a class="nav-link-new" role="button" aria-label="Cerrar sesión y volver a la página principal" href="./Logout.php">Cerrar Sesion</a>
                 </li>
 <?php
         } else {
 ?>
                 <li class="nav-item">
-                    <a class="nav-link" role="button" aria-label="Ir a la página para identificarte y acceder a mi perfil" href="./Login.php">Acceder</a>
+                    <a class="nav-link-new" role="button" aria-label="Ir a la página para identificarte y acceder a mi perfil" href="./Login.php">Acceder</a>
                 </li>
 <?php
         }
