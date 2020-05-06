@@ -1,4 +1,14 @@
 <?php
+
+# -----------------------------------------------------------------------------
+#								User.php 									  |
+# -----------------------------------------------------------------------------
+#																			  |
+# Clase con toda la lógica y las operaciones relacionadas con usuarios.		  |
+# Contiene las sentencias SQL para la base de datos.						  |
+#																			  |
+# -----------------------------------------------------------------------------
+
 require_once __DIR__ . '/Aplication.php';
 require_once __DIR__ . '/DB_data.php';
 
@@ -9,13 +19,17 @@ class User
     private $username;
     private $pass;
 
+    # Funcion constructora
     private function __construct($array)
     {
         $this->username= $array[0];
         $this->pass = $array[1];
     }
 
-
+    # Funcion para login. Recibe nombre de usuario y contraseña y comprueba si
+    # existe en la base de datos y si el hash de la contraseña coincide con el
+    # hash almacenado en la base de datos.
+    # Devuelve el usuario si existe y false si no.
     public static function login($username, $password)
     {
         $user = self::find_user_by_username($username);
@@ -26,7 +40,8 @@ class User
         return false;
     }
 
-
+    # Funcion para buscar un usuario en la base de datos por su username.
+    # Devuelve el usuario si existe y false si no.
     public static function find_user_by_username($username)
     {
         $app = Aplication::getSingleton();
@@ -49,7 +64,8 @@ class User
         return $result;
     }
 
-
+    # Funcion para insertar un usuario en la base de datos.
+    # Devuelve el usuario si todo ha ido bien y false si no.
     public static function insert_user($username, $email, $pass)
     {
         $app = Aplication::getSingleton();
@@ -71,7 +87,9 @@ class User
         return $user;
     }
     
-    // Funciona
+    # Funcion para borrar un usuario de la base de datos y todos los datos
+    # asociados a el.
+    # Devuelve true si todo ha ido bien y false si no.
     public function borrar_usuario($username){
 
         $app = Aplication::getSingleton();
@@ -121,11 +139,14 @@ class User
         return true;
     }
 
-
+    # Funcion que guarda las estadísticas de un usuario en la tabla
+    # de estadisticas.
+    # Devuelve true si ha ido bien y false si no.
     public function guardar_estadisticas($username){
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
 
+        # Se coge el id del ususario
 		$query = sprintf("SELECT id FROM Users U WHERE U.username = '%s'", $conn->real_escape_string($username));
         $rs = $conn->query($query);
         if ($rs->num_rows == 0) {
@@ -134,6 +155,7 @@ class User
         $fila = $rs->fetch_assoc();
         $id_user = $fila["id"];
 
+        # Se cogen los datos de la partida actual que tenga.
 		$query = sprintf("SELECT id, date_start, time_played FROM Games G WHERE user = '%d'", $id_user);
         $rs = $conn->query($query);
 
@@ -146,6 +168,7 @@ class User
         $date_start = $fila["date_start"];
         $time_played = $fila["time_played"];
 
+        # Se insertan los datos en la tabla estadísticas.
         $query = sprintf("INSERT INTO Statistics (id_user, id_game, timed, date_start) VALUES ('%d', '%d', '%f', '%s')",
             $id_user,
             $id_game,
@@ -160,6 +183,8 @@ class User
         return true;
     }
 
+    # Funcion que devuelve las estadisticas de un usuario.
+    # Devuelve los datos si todo ha ido bien y false si no.
     public function cargar_estadisticas($username){
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
@@ -187,6 +212,7 @@ class User
     }
 
 
+    # Funcion que devuelve los objetos de un usuario.
     public function cargar_objetos($id_user){
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();

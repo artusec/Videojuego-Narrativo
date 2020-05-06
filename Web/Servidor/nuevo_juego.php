@@ -1,4 +1,16 @@
 <?php
+
+# -----------------------------------------------------------------------------
+#								nuevo_juego.php 							  |
+# -----------------------------------------------------------------------------
+#																			  |
+# Clase que recibe por POST un nombre de usuario y crea una partida nueva.	  |
+#																			  |
+# 0 -> Success																  |
+# 1 -> Failed																  |
+#																			  |
+# -----------------------------------------------------------------------------
+
 require_once __DIR__ . '/DB_data.php';
 require_once __DIR__ . '/Game.php';
 
@@ -14,6 +26,3 @@ else{
 	print(1);
 }
 exit();
-
-# 0 -> Success
-# 1 -> Failed

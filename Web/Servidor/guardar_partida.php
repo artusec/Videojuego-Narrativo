@@ -1,4 +1,23 @@
 <?php
+
+# -----------------------------------------------------------------------------
+#								guardar_partida.php 						  |
+# -----------------------------------------------------------------------------
+#																			  |
+# Clase que recibe por POST los siguientes datos en un diccionario:			  |
+#																			  |
+# "username" 		-> <username>											  |
+# "nombre_objeto" 	-> <tipo>:<estado>										  |
+# "time"			-> <tiempo>												  |
+#																			  |
+# Se pueden pasar todos los objetos que se quieran siempre con el mismo       |
+# formato.																	  |
+#																			  |
+# 0 -> Success																  |
+# 1 -> Failed																  |
+#																			  |
+# -----------------------------------------------------------------------------
+
 require_once __DIR__ . '/DB_data.php';
 require_once __DIR__ . '/Game.php';
 
@@ -8,9 +27,7 @@ $datos = array();
 
 # Pisar la lista entera de objetos con los que nos pasan
 
-# "username" 		-> <username>
-# "nombre_objeto" 	-> <tipo>:<estado>
-# "time"			-> <tiempo>
+
 
 
 header("Content-type: text/html");
@@ -32,5 +49,3 @@ if (Game::guardar_partida_individual($_POST)){
 print(1);
 exit();
 
-# 0 -> Success
-# 1 -> Failed

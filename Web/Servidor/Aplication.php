@@ -1,8 +1,13 @@
 <?php
 
-/**
- * Clase que mantiene el estado global de la aplicación.
- */
+# -----------------------------------------------------------------------------
+#								Aplication.php 								  |
+# -----------------------------------------------------------------------------
+#																			  |
+# Clase que mantiene el estado global de la aplicación.						  |
+#																			  |
+# -----------------------------------------------------------------------------
+
 class Aplication
 {
 	private static $instancia;

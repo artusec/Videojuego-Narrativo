@@ -1,4 +1,15 @@
 <?php
+
+# -----------------------------------------------------------------------------
+#								Game.php 									  |
+# -----------------------------------------------------------------------------
+#																			  |
+# Clase con toda la lógica y las operaciones relacionadas con las partidas.	  |
+# Contiene las sentencias SQL para la base de datos.						  |
+#																			  |
+# -----------------------------------------------------------------------------
+
+
 require_once __DIR__ . '/Aplication.php';
 
 

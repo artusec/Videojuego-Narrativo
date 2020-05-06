@@ -1,4 +1,17 @@
 <?php
+
+# -----------------------------------------------------------------------------
+#							    	login_user.php 							  |
+# -----------------------------------------------------------------------------
+#																			  |
+# Clase que recibe por POST un nombre de usuario y una contraseña y comprueba |
+# si son correctos para identificar al usuario.								  |
+#																			  |
+# 0	-> Success																  |
+# 1	-> Failed														  		  |
+#																			  |
+# -----------------------------------------------------------------------------
+
 require_once __DIR__ . '/DB_data.php';
 require_once __DIR__ . '/User.php';
 
