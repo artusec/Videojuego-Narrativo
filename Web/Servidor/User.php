@@ -227,7 +227,6 @@ class User
 
     public function getId()
     {
-        echo ("Hola");
         return $this->id;
     }
 

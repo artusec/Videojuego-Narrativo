@@ -56,9 +56,7 @@ public class TTS {
         text = s;
         T = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             public void onInit(int status) {
-                Log.e("1","hasta aqui llega 3");
                 if (status == android.speech.tts.TextToSpeech.SUCCESS) {
-                    Log.e("1","hasta aqui llega Sucesssssssssssssss");
                     T.setLanguage(l);
                     T.setSpeechRate(V);
                     T.speak(text,T.QUEUE_FLUSH,null);

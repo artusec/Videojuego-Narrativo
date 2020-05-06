@@ -15,22 +15,102 @@ html{
     background-color:#9932CC;
     color:#fefefe;
 }
-.nav{
-    background-color:#591D77;
-    
+ 
+header{
+    font-size: large;
+    width: 100%;
+    max-width: 100%;
 }
-.nav-link:hover,.nav-link:focus {
+
+
+.navbar{
+    width: 100%;
+    background-color: #591D77;
+    color:#fefefe;
+    max-width: 100%;
+}
+
+.navbar-morado-claro{
+    background-color:#9932CC;
+}
+
+.nav-link:hover,.nav-link:focus{
+    text-decoration: underline;
+}
+
+.display-movil{
+    display:none;
+    list-style: none;
+}
+
+/*Para telefonos y tablets*/
+@media only screen and (max-width:  992px) {
+    /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  .no-display-movil{
+    display:none;
+    }
+    .display-movil{
+        display:block;
+    }
+}
+
+.nav img{
+    margin-top: 10%;
+}
+
+#icono-cambiante{
+    margin-top: 30%;
+}
+
+.navitem:active{
+    color:#9932CC;
+}
+
+#cabecera {
+    width: 100%;
+    background: black;
+    position: relative;
+    padding: 120px 0 0 0;
+  }
+  
+
+  
+.img-container{
+    background-color: black;
+    max-width: 100%;
+}
+
+#Logo{
+    width: 100%;
+    height: 100%;
+   
+}
+.Name{
+    color:#fefefe;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+.Name-font1{
+    font-family: "Julee", fantasy
+}
+.Name-font{
+    font-size: 4.5vw;
+    font-family: "Julee", fantasy
+}
+@media only screen and (max-width:  992px) {
+    .Name-font{
+        font-size: 65px;
+    }
+}
+.container-fluid{
+    height: 15%;
     background-color: #9932CC;
     color:#fefefe;
-    text-decoration: underline;
-}   
-.nav-item{
-    color:#fefefe;
 }
-.nav-link{
-    font-size: large;
-    color:#fefefe;
-}
+
   
 .img-container{
     background-color: black;
@@ -47,12 +127,36 @@ html{
     width: 100%;
     max-width: 100%;
 }
-
+.animation{
+    height: 50%;
+    width:30%;
+}
+.animation2{
+    width:50%;
+    width:30%;
+}
 .footers{
     padding-left: 7%;
     padding-top:7%;
 }
 
+.table{
+    color:#fefefe;
+}
+
+.thead{
+    background-color: #343a40;
+    border-color: #454d55;
+}
+footer a{
+    color: #fefefe;
+  }
+  
+  footer a:hover,footer a:focus{
+    color: #fefefe;
+    text-decoration: underline;
+  }
+  
 .col-sm-4{
     max-width: 100%;
 }
@@ -61,10 +165,17 @@ html{
     background-color: #9932CC;
     color:#fefefe;
 }
-#reg{
+.reg{
     color:black;
     font-size: x-large;
+    text-decoration: underline;
 }
+
+.reg:hover,.reg:focus{
+    color:black;
+    text-decoration: none;
+}
+
 .footer-div{
     justify-items: center;
     display: flex;
@@ -133,6 +244,8 @@ border-radius: 80%;
 
 #left-pad2{
     margin-left:10%;
+    display: flex;
+    justify-content:center;
 }
 
 #minus-button{
@@ -150,6 +263,79 @@ border-radius: 80%;
     width: 120%;
 }
 .btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
-    background-color: #c82333;
-    border-color: #dc3545;
+    background-color: #9932CC;
+    border-color: #591D77;
 }
+
+.errors{
+    margin-left:5%;
+    list-style-type: square;
+}
+
+
+.btn{
+    color: #fefefe;
+  }
+  
+  .btn-oscuro{
+    background-color: yellow;
+    border-color: yellow;
+    color:black;
+  }
+  
+  .btn-oscuro:hover,.btn-oscuro:focus{
+    text-decoration: underline;
+    background-color: yellow;
+    color:black;
+  }
+  
+  .body-oscuro{
+    background-color: black;
+    color: yellow;
+  }
+  
+  .link-yellow{
+    color:yellow;
+  }
+  
+  .color-yellow{
+    color:yellow;
+  }
+  
+  .link-yellow:hover,.link-yellow:focus{
+    text-decoration: underline;
+    color:yellow;
+  }
+  
+  .link-yellow-underline{
+    color:yellow;
+    text-decoration: underline;
+  }
+
+  .link-yellow-underline:hover,.link-yellow-underline:focus{
+    
+    color:yellow;
+  }
+  
+  .color-black{
+    color:black;
+  }
+  
+  .link-black{
+    color:black;
+  }
+  
+  .link-black:hover,.link-black:focus{
+    text-decoration: underline;
+    color:black;
+  }
+  
+  .nav-link-oscuro{
+    color: yellow;
+    background-color: black;
+  }
+  
+  .nav-link-oscuro:hover,.nav-link-oscuro:focus{
+    text-decoration: underline;
+    background-color: black;
+  }

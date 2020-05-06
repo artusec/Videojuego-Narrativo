@@ -73,8 +73,15 @@ abstract class Form
             if ( is_array($result) ) {
                 echo $this->generaFormulario($result, $_POST);
             } else {
-                header('Location: '.$result);
-                exit();
+                if (headers_sent()) {
+                    echo 'hola';
+                }else {
+                    header('Location: '.$result);
+                    exit();
+                }
+                /*echo '<script type="text/javascript">
+				        location.replace("./Miperfil.php");
+			        </script>';*/
             }
         }  
     }
@@ -139,7 +146,7 @@ abstract class Form
         
         $html .= '<p>&nbsp</p>
                     <div class="col text-center">
-                    <button class="btn btn-danger btn-lg" id="button-red" type="submit" value="Aceptar">Aceptar</button>
+                        <button class="btn btn-danger btn-lg" id="button-red" type="submit" value="Aceptar">Aceptar</button>
                     </div>
                 </fieldset>       
                 </form> 
@@ -160,10 +167,10 @@ abstract class Form
         $html='';
         $numErrores = count($errores);
         if (  $numErrores == 1 ) {
-            $html .= "<ul ><li>".$errores[0]."</li></ul>";
+            $html .= "<ul class='errors'>&nbsp<li>&nbsp*".$errores[0]."</li></ul>";
         } else if ( $numErrores > 1 ) {
-            $html .= "<ul ><li>";
-            $html .= implode("</li><li >", $errores);
+            $html .= "<ul class='errors'><li>*";
+            $html .= implode("</li><li>*", $errores);
             $html .= "</li></ul>";
         }
         return $html;

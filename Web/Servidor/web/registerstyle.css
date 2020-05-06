@@ -15,22 +15,101 @@ html{
     background-color:#9932CC;
     color:#fefefe;
 }
-.nav{
-    background-color:#591D77;
-    
-}
-.nav-link:hover,.nav-link:focus {
-    background-color: #9932CC;
-    text-decoration: underline;
-    color:#fefefe;
-}   
-.nav-item{
-    color:#fefefe;
-}
-.nav-link{
+header{
     font-size: large;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+.navbar{
+    width: 100%;
+    background-color: #591D77;
+    color:#fefefe;
+    max-width: 100%;
+}
+
+.display-movil{
+    display:none;
+    list-style: none;
+}
+.nav-link:hover,.nav-link:focus{
+    text-decoration: underline;
+}
+
+/*Para telefonos y tablets*/
+@media only screen and (max-width:  992px) {
+    .navbar {
+        background-color: #591D77;
+    }
+    /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  .no-display-movil{
+    display:none;
+    }
+    .display-movil{
+        display:block;
+    }
+}
+
+.nav img{
+    margin-top: 10%;
+}
+
+#icono-cambiante{
+    margin-top: 30%;
+}
+
+.navitem:active{
+    color:#9932CC;
+}
+
+#cabecera {
+    width: 100%;
+    background: black;
+    position: relative;
+    padding: 120px 0 0 0;
+  }
+  
+
+  
+.img-container{
+    background-color: black;
+    max-width: 100%;
+}
+
+#Logo{
+    width: 100%;
+    height: 100%;
+   
+}
+.Name{
+    color:#fefefe;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+.Name-font1{
+    font-family: "Julee", fantasy
+}
+.Name-font{
+    font-size: 4.5vw;
+    font-family: "Julee", fantasy
+}
+@media only screen and (max-width:  992px) {
+    .Name-font{
+        font-size: 65px;
+    }
+}
+
+
+.container-fluid{
+    height: 15%;
+    background-color: #9932CC;
     color:#fefefe;
 }
+
 .img-container{
     background-color: black;
     max-width: 100%;
@@ -63,6 +142,8 @@ html{
 
 #a-login{
     color:black;
+    font-size: x-large;
+    text-decoration: underline;
 }
 .footer-div{
     justify-items: center;
@@ -132,8 +213,11 @@ html{
   .slider.round:before {
     border-radius: 50%;
   }
+  
   #left-pad2{
     margin-left:10%;
+    display: flex;
+    justify-content:center;
 }
 
 #minus-button{
@@ -151,6 +235,10 @@ html{
     width: 120%;
 }
 .btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
-    background-color: #c82333;
-    border-color: #dc3545;
+    background-color: #9932CC;
+    border-color: #591D77;
+}
+
+.errors{
+    list-style-type: none;
 }

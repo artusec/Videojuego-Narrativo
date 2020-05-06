@@ -10,10 +10,10 @@ class FormRegistro extends Form {
 
     protected function generaCamposFormulario($datosIniciales) {
 
-        $html = '<form class="form-inline">
+        $html = '<form class="form-inline" aria-labelledby="Registrarse">
                     <fieldset>
-                        <legend><h1>Registrar</h1></legend>
-                        <a id="a-login"  href="Login.php" aria-labe="Página de inicio de sesión" /> ¿Ya tienes cuenta? Accede haciendo clic aquí</a>
+                        <legend id="Registrarse"><h1>Registrar</h1></legend>
+                        <a class="reg"  href="Login.php" aria-labe="Ir a la página para identificarte y acceder a mi perfil" /> ¿Ya tienes cuenta? Accede haciendo clic aquí</a>
                         <p>&nbsp</p>
                         <div class="form-group">
                             <label for="username" >Usuario</label>
@@ -70,7 +70,7 @@ class FormRegistro extends Form {
                     $_SESSION['email'] = $email;
                     $_SESSION['username'] = $user->getUsername();
                     $_SESSION['id'] = $user->getId();
-                    return '../inicio.php';
+                    return './inicio.php';
                 }
             }
         }
