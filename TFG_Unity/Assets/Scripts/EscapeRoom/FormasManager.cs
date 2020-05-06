@@ -45,10 +45,11 @@ public class FormasManager : MonoBehaviour
     [Space(10)]
 
     //audios del juego
-    public AudioClip introTTS;  //suena nada más comienza la escena
-    public AudioClip success;   //suena al elegir la forma correcta
-    public AudioClip wrong;     //suena al equivocarse en la selección
-    public AudioClip ttsFin;    //suena al terminar el minijuego
+    public AudioClip introTTS;          //suena nada más comienza la escena
+    public AudioClip introOptionns;     //audio de posibles opciones, antes de decirlas
+    public AudioClip success;           //suena al elegir la forma correcta
+    public AudioClip wrong;             //suena al equivocarse en la selección
+    public AudioClip ttsFin;            //suena al terminar el minijuego
 
     public AudioClip[] nextFormClips;
 
@@ -131,8 +132,11 @@ public class FormasManager : MonoBehaviour
             formas[i].SetActive(false);
         formas[nLevel].SetActive(true);
         setUpForms();   //ajuste de información de la lista del srm
-        StartCoroutine("sayPossibleOptions");
-    }
+        //ponemos el audio de posibles opciones
+        srm.playTTS(introOptionns);
+        //y esperamos a que termine antes de decir las formas como tal
+        Invoke("startPossibleOptions", introOptionns.length + 0.25f); 
+    } 
 
     void auxAddLevel()
     {
@@ -163,9 +167,14 @@ public class FormasManager : MonoBehaviour
         }
     }
 
+    private void startPossibleOptions()
+    {
+        StartCoroutine(sayPossibleOptions());
+    }
+
     //metodo que indica por audio las posibles opciones al comenzar cada nivel
     //  también activa automáticamente la fase de reconocimiento
-    public IEnumerator sayPossibleOptions()
+    private IEnumerator sayPossibleOptions()
     {
         int i = 0;
         while (i < SRManager.instance.currentList.sreList.Count - 1)
