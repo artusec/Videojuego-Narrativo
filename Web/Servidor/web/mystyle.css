@@ -205,20 +205,24 @@ a{
   }
   
   
-/*Botones de texto + y - */
 
-.btn-secondary{
-    background-color: #fefefe;
-    color: black;
-    height: 100%;
-    width: 100%;
-    
+.btn-purple:active,.btn-purple {
+  color: #fff;
+  border-color:#6224d6;
+  text-shadow: 0 -1px 1px #6224d6;
+  background-color: #6224d6;
+  background-image: linear-gradient(to bottom, #6224d6,#6224d6);
 }
 
-.btn-cookies,.btn-cookies:hover,.btn-cookies:active {
-    background-color: #9932CC;
-    border-color: #591D77;
+.btn-purple:hover{
+  color: #fff;
 }
+
+.btn-danger{
+  background-color: #A80E00;
+  border-color: #B11B1B;
+}
+
 
 .list-group-item{
     background-color: #9932CC;
@@ -477,8 +481,7 @@ footer a:hover,footer a:focus{
     transition: all 0.4s;
   }
   
-
-
   #agradecimientos{
     display:none;
   }
+
