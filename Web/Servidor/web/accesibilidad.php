@@ -70,13 +70,14 @@
 
     
 
-<ol class="breadcrumb" aria-label="breadcrumb">
-        <li><a href="./inicio.php">Inicio</a></li>
-        <li class="active" aria-current="page">Accesibilidad</li>        
-</ol>
+
 
 <main>
 
+<ol class="breadcrumb" aria-label="breadcrumb">
+        <li><a href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
+        <li class="active" aria-current="page">Accesibilidad</li>        
+</ol>
 
     <section  aria-label="Accesibilidad">
         <div class="container-fluid">
@@ -87,7 +88,7 @@
                 <p>&nbsp</p>
                 <h1><p class="text-center">ACCESIBILIDAD</p></h1>
                 <p>&nbsp</p>
-                <p>Lo más habitual es que las personas invidentes utilicen lectores de pantalla cuando interactuan con dispositivos móviles. Estos sistemas capturan ciertos gestos simples del usuario facilitando la navegación por los elementos en pantalla. Algunos ejemplos son <a href="https://www.freedomscientific.com/products/software/jaws/"><strong>JAWS</strong></a> para sobremesas, <a href="https://www.apple.com/es/accessibility/iphone/vision/"><strong>Voice Over</strong></a> en dispositivos iOS y <a href="https://support.google.com/accessibility/android/answer/6283677?hl=es"><strong>TalkBack</strong></a> en dispositivos Android. </p>
+                <p>Lo más habitual es que las personas invidentes utilicen lectores de pantalla cuando interactuan con dispositivos móviles. Estos sistemas capturan ciertos gestos simples del usuario facilitando la navegación por los elementos en pantalla. Algunos ejemplos son <a class="links" href="https://www.freedomscientific.com/products/software/jaws/"><strong>JAWS</strong></a> para sobremesas, <a  class="links" href="https://www.apple.com/es/accessibility/iphone/vision/"><strong>Voice Over</strong></a> en dispositivos iOS y <a href="https://support.google.com/accessibility/android/answer/6283677?hl=es"  class="links"><strong>TalkBack</strong></a> en dispositivos Android. </p>
 
                 <p>En el juego estos gestos son deslizamientos rápidos horizontales para moverte entre los elementos y pulsaciones dobles en la pantalla para acceder o interactuar con el objeto actual.</p>
 

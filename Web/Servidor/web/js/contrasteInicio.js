@@ -5,133 +5,84 @@
         var startchange = $('main');
         var offset = startchange.offset();
         if (startchange.length){
-        $(document).scroll(function() { 
-            scroll_start = $(this).scrollTop();
-            if(scroll_start > offset.top) {
+            $(document).scroll(function() { 
+                scroll_start = $(this).scrollTop();
+                if(scroll_start > offset.top){
+                    $(".cartas-minijuegos").show( "slide", 1000 );
+                    if (detectCookie("accesibility")){
+                        $(".navbar").addClass("body-oscuro");
+                    }
+                    else{
+                        $(".navbar").addClass("navbar-morado");
+                    }
+                }  else{
 
-               $(".cartas-minijuegos").show( "slide", 1000 );
+                    if (detectCookie("accesibility")){
+                        $(".navbar").addClass("body-oscuro");
+                    }
+                    else{
+                        $(".navbar").removeClass("navbar-morado");
+                    }
 
-                if (detectCookie("accesibility")){
-                    $('.navbar').css('background-color', 'black');
-                }
-                else{
-                $(".navbar").css('background-color', '#591D77');
-                $(".nav-link").css('background-color', '#591D77');
-                }
-            } else {
-
-                if (detectCookie("accesibility")){
-                    $('.navbar').css('background-color', 'black');
-                }
-                else{
-                    $('.navbar').css('background-color', 'transparent');
-                    $(".nav-link").css('background-color', 'transparent');
-                }
-                
-            }
-        });
-            };
+                } 
+          
+            });
+        };
 
 
         function modoAltoContraste(){
 
 
-
-            //Poner el menu a contraste alto
-            $(".navbar").css({"background-color": "black"});
-            $("a").css({"color": "yellow"});
-        
-            $("#donwload-button").css({"background-color": "yellow","border-color":"yellow"});
-            $("#descarga").css({"color": "black"});
-
-            $("#button-red").css({"background-color": "yellow","border-color":"yellow"});
-            $("#button-red").css({"color": "black"});
-
-            //Poner ela pagina a alto contraste 
-            $(".container-fluid").css({"background-color": "black","color":"yellow"});
-            $(".leer-mas").css({"color": "blue"});
-
-            //Poner el footer a alto contraste 
-            $(".page-footer").css({"background-color": "black","color":"yellow"});
-            $(".list-group-item").css({"background-color": "black","color":"yellow"});
-
             $('#mode').prop('checked', false);
-            $('.table').css({"color":"yellow"});
-            $('.table .thead-dark th').css({"color":"yellow"});
+     
+            $(".navbar").addClass("body-oscuro");
+            $(".container-fluid").addClass("body-oscuro");
+            $(".page-footer").addClass("body-oscuro");
+            $(".list-group-item").addClass("body-oscuro");
+            $(".leer-mas").addClass("link-black");
+            $("#descarga").addClass("btn-oscuro");
+            $(".card").addClass("color-black");
+            $("footer a").addClass("link-yellow");
+            $('.nav-link').addClass("nav-link-oscuro");
+            $(".Name-font1").addClass("color-yellow");
+            $(".breadcrumb").addClass("body-oscuro");
+            $("body").addClass("body-oscuro");
+            $(".breadcrumb a").addClass("link-yellow");
+            $(".links").addClass("link-yellow-underline");
 
             $('#top-icon').attr("src","./imagenes/top-yellow.png");
             $('#unity').attr("src","./imagenes/unity2.png");
             
-            $(".nav-link").css('background-color', 'black');
-
-            $('.nav-link').hover(function(){
-                $(this).css({"color": "yellow","background-color": "black"});
-            }, function(){
-                $(this).css({"color": "yellow","background-color": "black"});
-            });
-
-            $('.nav-link').focus(function(){
-                $(this).css({"color": "yellow","background-color": "black"});
-            }, function(){
-                $(this).css({"color": "yellow","background-color": "black"});
-            });
+           
 
             setCookie("accesibility", 1, 1);
   
         }
 
         function modoNormal(){
-            //Volver a modo normal 
-            $(".navbar").css({"background-color": "transparent"});
-         
-            $("a").css({"color": "#F2F1EF"});
-
-            $("#descarga").css({"color": "#fefefe"});
-            $("#donwload-button").css({"background-color": "#c82333","border-color":"#bd2130"});
             
-            $("#button-red").css({"background-color": "#c82333","border-color":"#bd2130"});
-            $("#button-red").css({"color": "#fefefe"});
-
-            $(".container-fluid").css({"background-color": "#9932CC","color":"#fefefe"});
-
-            $(".page-footer").css({"background-color": "#591D77","color":"#fefefe"});
-            $(".list-group-item").css({"background-color": "#9932CC","color":"#fefefe"});
-
-
-            $(".leer-mas").css({"color": "#9932CC"});
-
-            $("#reg").css({"color": "black"});
-            $("#a-login").css({"color": "black"});
-
-            $('.table').css({"color":"#fefefe"});
-            $('.table .thead-dark th').css({"color":"#fefefe"});
+            $(".navbar").removeClass("body-oscuro");
+            $(".container-fluid").removeClass("body-oscuro");
+            $(".page-footer").removeClass("body-oscuro");
+            $(".list-group-item").removeClass("body-oscuro");
+            $(".leer-mas").removeClass("link-black");
+            $("#descarga").removeClass("btn-oscuro");
+            $(".card").removeClass("color-black");
+            $("footer a").removeClass("link-yellow");
+            $('.nav-link').removeClass("nav-link-oscuro");
+            $(".Name-font1").removeClass("color-yellow");
+            $(".breadcrumb").removeClass("body-oscuro");
+            $("body").removeClass("body-oscuro");
+            $(".breadcrumb a").removeClass("link-yellow");
+            $(".links").removeClass("link-yellow-underline");
 
             
             $('#top-icon').attr("src","./imagenes/top.png");
-
             $('#unity').attr("src","./imagenes/unity.png");
 
-            $(".nav-link").css('background-color', $(".navbar").css('background-color'));
-
-            $('.nav-link').hover(function(){
-                $(this).css({"color": "#fefefe","background-color": "#9932CC"});
-            }, function(){
-                $(this).css({"color": "#fefefe","background-color": $(".navbar").css('background-color')});
-            });
-
-            $('.nav-link').focus(function(){
-                $(this).css({"color": "#fefefe","background-color": "#9932CC"});
-            });
-            $('.nav-link').focusout(function(){
-                $(this).css({"color": "#fefefe","background-color": $(".navbar").css('background-color')});
-            });
 
             $('#mode').prop('checked', true);
 
 
             removeCookie("accesibility");
         }
-
-  
-
-  

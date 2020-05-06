@@ -24,14 +24,20 @@ header{
 a{
     color: #fefefe;
 }
-
 .navbar{
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.83);
+    background-color:transparent;
     color:#fefefe;
     max-width: 100%;
 }
 
+.navbar-morado{
+  background-color: #591D77;
+}
+.navbar-morado-claro{
+  background-color: #9932CC;
+}
+  
 .display-movil{
     display:none;
     list-style: none;
@@ -59,8 +65,15 @@ a{
     margin-top: 10%;
 }
 
+
+.nav-link{
+    color: #fefefe;
+  }
+
 .nav-link:hover,.nav-link:focus{
     text-decoration: underline;
+    background-color: #9932CC;
+    border-radius: 10%;
   }
   
 
@@ -174,11 +187,104 @@ a{
     border: 1% solid #591D77;
 }
 
+.breadcrumb{
+    border-radius: 0%;
+    width: 100%;
+    padding-left: 1%;
+    font-size: large;
+    background-color:#9932CC;
+    color:black;
+}
+
+.breadcrumb a:hover{
+    color:black;
+}
+
+.breadcrumb li+li:before{
+    padding: 8px;
+    color:#fefefe;
+    content:"  >>";
+}
+.btn-oscuro{
+    background-color: yellow;
+    border-color: yellow;
+    color:black;
+  }
+  
+  .btn-oscuro:hover,.btn-oscuro:focus{
+    text-decoration: underline;
+    background-color: yellow;
+    color:black;
+  }
+  
+  .body-oscuro{
+    background-color: black;
+    color: yellow;
+  }
+  
+  .link-yellow{
+    color:yellow;
+  }
+  
+  .color-yellow{
+    color:yellow;
+  }
+  
+  .link-yellow:hover,.link-yellow:focus{
+    text-decoration: underline;
+    color:yellow;
+  }
+
+  .link-yellow-underline{
+    color:yellow;
+    text-decoration: underline;
+  }
+
+  .link-yellow-underline:hover,.link-yellow-underline:focus{
+    
+    color:yellow;
+  }
+  
+  .color-black{
+    color:black;
+  }
+  
+  .link-black{
+    color:black;
+  }
+  
+  .link-black:hover,.link-black:focus{
+    text-decoration: underline;
+    color:black;
+  }
+  
+  .nav-link-oscuro{
+    color: yellow;
+    background-color: black;
+  }
+  
+  .nav-link-oscuro:hover,.nav-link-oscuro:focus{
+    text-decoration: underline;
+    background-color: black;
+  }
+  
+
+  footer a{
+    color: #fefefe;
+  }
+  
+  footer a:hover,footer a:focus{
+    color: #fefefe;
+    text-decoration: underline;
+  }
+  
 
 .footer-div{
     justify-items: center;
     display: flex;
 }
+
+
 .switch {
     position: relative;
     display: inline-block;
@@ -237,18 +343,8 @@ a{
   
   .slider.round:before {
     border-radius: 50%;
-  }
-  #left-pad2{
-    margin-left:10%;
 }
 
-#minus-button{
-    padding-left:1%;
-}
-
-#plus-button{
-    margin-left:0.5%;
-}
 
 .btn-secondary{
     background-color: #fefefe;
@@ -264,17 +360,3 @@ a{
     margin-left: 10%;
 }
 
-.breadcrumb{
-    margin-left: 1%;
-    font-size: large;
-    background-color:#9932CC;
-}
-
-.breadcrumb a:hover{
-    color:black;
-}
-.breadcrumb li+li:before{
-    padding: 8px;
-    color:#fefefe;
-    content:"  >>";
-}

@@ -6,7 +6,8 @@
 <html lang="es">
     
     <head>
-        <meta charset="UTF-8"/>
+       
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1.0" name="viewport">   
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -32,7 +33,7 @@
 
     <script src="./js/cookies.js"></script>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
     <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
     <title>ASHED MEMORIES - Inicio</title>
     
@@ -83,18 +84,12 @@
             <div class="modal-body">
                 <div class="row d-flex justify-content-center align-items-center">
                     <p class="pt-3 pr-2 ">Utilizamos cookies para mejorar la experiencia en la web.</p>
-                    <p>&nbsp</p>
-                    <p>&nbsp</p>
-                    <p>&nbsp</p>
-                    <p>&nbsp</p>
+                    <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true">
                     <a type="button" class="btn btn-cookies " aria-label="Leer mas sobre cookies" href="./Cookies.html">Leer mas </a>
                     &nbsp
                     &nbsp
                     <a type="button" class="btn btn-cookies" data-dismiss="modal" aria-label="Vale, gracias" href="" onclick='activarCookie();'>Ok, gracias</a>
-                    <p>&nbsp</p>
-                    <p>&nbsp</p>
-                    <p>&nbsp</p>
-                    <p>&nbsp</p>
+                    <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true">
                 </div>
             </div>
 
@@ -108,35 +103,35 @@
     <div class="container-fluid">
 
       
-        <p>&nbsp</p>
+    <br aria-hidden="true">
         <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] === true){
         ?>
         <h1 class="text-center" id='1' >¡TE DAMOS LA BIENVENIDA DE NUEVO, <?php echo $_SESSION['username'] ?>!</h1>
-        <p>&nbsp</p>  
+        <br aria-hidden="true"> 
         <?php
             }else{  ?>
                 <h1 class="text-center" id='1'>¡TE DAMOS LA BIENVENIDA A ASHED MEMORIES!</p></h1>
-                <p>&nbsp</p>  
+                <br aria-hidden="true"> 
         <?php    }
         ?>
         <p class="text-center">
             Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida
              y conocer lo que pasó allí tiempo atrás.</p>
-        <p>&nbsp</p>
+        <br aria-hidden="true">
         <p class="text-center">Desarrollado en Unity <img id="unity" alt="" src="./imagenes/unity.png"> para la plataforma Android  <img src="./imagenes/android.png" alt="">.</p>
 
-        <p>&nbsp</p>
-        
+        <br aria-hidden="true">
         <div class="col text-center" id='4'>
             <a  type="button" class="btn btn-danger btn-lg" id="descarga" aria-label="Descarga Ashed Memories"
              download="AshedMemories.apk" href="./apk/AshedMemories_1.0.apk" >¡Descarga ya!<img src="./imagenes/download.png" alt=""></a>
         </div>
-        <p>&nbsp</p>
+        <br aria-hidden="true">
 
         <div class="text-center " id="agradecimientos"><h2>¡Muchas gracias por confiar en nostros!</h2></div>
 
-        <p>&nbsp</p>
+        <br aria-hidden="true">
+
         <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4 ">    
@@ -146,6 +141,7 @@
                         <div class="card-body">
                             <h2 class="card-text">ACCESIBILIDAD</h2>
                             <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.</p>
+                            <br aria-hidden="true">
                             <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
                     </div>
@@ -171,12 +167,11 @@
 
 <section aria-label="Minijuegos" id="minijuegos">
     <div class="container-fluid">
-        <p>&nbsp</p>
-        <p>&nbsp</p>
+        <br aria-hidden="true">
+        <br aria-hidden="true">
         <p><h1 class=" text-center fade-in" id="minijuegos-title">¡Conoce los minijuegos!</h1></p>
         <p class="text-center"><img src="./imagenes/jigsaw.png" alt=""></p>
-        <p>&nbsp</p>
-        <p>&nbsp</p>
+        <br aria-hidden="true">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="minijuegosOut">
@@ -185,6 +180,7 @@
                                 <div class="card-body">
                                   <h2 class="card-text">GANZUA</h2>
                                   <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
+                                  <br aria-hidden="true">
                                   <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                                 </div>
                             </div>
@@ -197,6 +193,7 @@
                             <div class="card-body">
                             <h2 class="card-text">VOCES A LO LEJOS</h2>
                             <p class="card-text">Mover el dedo por la pantalla siguiendo unas voces que podrás oír en alguna dirección.</p>
+                            <br aria-hidden="true">
                               <a href="./voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                             </div>
                         </div>
@@ -215,11 +212,12 @@
                     </div>
                 </div>
             </div>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
+            <br aria-hidden="true">
+            <br aria-hidden="true">
+            <br aria-hidden="true">
+            <br aria-hidden="true">
             <div class="container-fluid">
-                <p>&nbsp</p>
-                <p>&nbsp</p>
+            <br aria-hidden="true">
                 <div class="row">
                     <div class="col-sm-4"></div>
                     <div class="col-sm-4">
@@ -235,14 +233,17 @@
                         </div>
                     <div class="col-sm-4"></div>
                 </div>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
+                <br aria-hidden="true">
+                <br aria-hidden="true">
+                <br aria-hidden="true">
+                <br aria-hidden="true">
+            <br aria-hidden="true">
             </div>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
+            <br aria-hidden="true">
+            <br aria-hidden="true">
+            <br aria-hidden="true">
+            <br aria-hidden="true">
+            <br aria-hidden="true">
             <div class="row">
             <div class="col-sm-2"></div>
                 <div class="col-sm-4">    
@@ -271,9 +272,9 @@
                 </div>
             </div>
             <div class="col-sm-2"></div>
-        <p>&nbsp</p>
-        <p>&nbsp</p>
-        &nbsp
+        <br aria-hidden="true">
+        <br aria-hidden="true">
+        <br aria-hidden="true">
     </div>
 </section>
 </main>
@@ -284,6 +285,7 @@
 ?>
 
 <a href="#"  aria-label="Volver al principio de la página" class="back-to-top"><img id="top-icon" src="./imagenes/top.png" alt=""></a>
+
 
 </body>
 
@@ -343,8 +345,6 @@ $("body").mousemove(function(event) {
         $("#agradecimientos").show( "clip", 1000 );
     });
         
-            
-            
 
 </script>
 

@@ -22,7 +22,7 @@
 	 <!--- FUENTES DEL TITULO-->
 	 <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>   
 
-    <link rel="stylesheet" type="text/css" href="registerstyle.css">
+    <link rel="stylesheet" type="text/css" href="loginstyle.css">
 
     <script src="./js/cookies.js"></script>
 

@@ -22,7 +22,7 @@
  <!--- FUENTES DEL TITULO-->
  <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>   
  
-<link rel="stylesheet" type="text/css" href="miperfilstyle.css">
+<link rel="stylesheet" type="text/css" href="loginstyle.css">
 
 <script src="./js/cookies.js"></script>
 
@@ -58,7 +58,7 @@
 						<h1><p class="text-center"><img class="animation" id="animation1" src="./imagenes/animation.gif"  alt="">ESTADISTICAS</p></h1>
 						<p>&nbsp</p>
 						<table class="table">
-							<thead class="thead-dark">
+							<thead class="thead">
 								<tr>
 									<th><img src="./imagenes/save.png" alt="">&nbsp Partida</th>
 									<th>Ultima vez jugado</th>
@@ -107,7 +107,7 @@
 						<h1><p class="text-center">OBJETOS DE LA PARTIDA</p></h1>
 						<p>&nbsp</p>
 						<table class="table">
-							<thead class="thead-dark">
+							<thead class="thead">
 								<tr>
 									<th></th>
 									<th>Objeto</th>

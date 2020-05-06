@@ -29,11 +29,17 @@ a{
 
 .navbar{
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.83);
+    background-color:transparent;
     color:#fefefe;
     max-width: 100%;
 }
 
+.navbar-morado{
+  background-color: #591D77;
+}
+.navbar-morado-claro{
+  background-color: #9932CC;
+}
 
 .display-movil{
     display:none;
@@ -42,9 +48,7 @@ a{
 
 /*Para telefonos y tablets*/
 @media only screen and (max-width:  992px) {
-    .navbar {
-        background-color: black;
-    }
+
     /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
@@ -69,8 +73,14 @@ a{
     color:#9932CC;
 }
 
+.nav-link{
+  color: #fefefe;
+}
+
 .nav-link:hover,.nav-link:focus{
   text-decoration: underline;
+  background-color: #9932CC;
+  border-radius: 10%;
 }
 
 #cabecera {
@@ -214,6 +224,10 @@ a{
 .leer-mas{
     color:#9932CC;
 }
+.leer-mas:hover,.leer-mas:focus{
+  color:#9932CC;
+  text-decoration: underline;
+}
 .minijuegosOut{
     padding-left: 10%;
     height: 100%;
@@ -264,13 +278,78 @@ a{
 
 /*ANIMACIONES*/
 #descarga{
-    color: #fefefe;
     animation: bounceIn 2s;
     animation-duration: 4s;
 }
 
 #descarga:hover,#descarga:focus{
-  
+  text-decoration: underline;
+}
+
+.btn{
+  color: #fefefe;
+}
+
+.btn-oscuro{
+  background-color: yellow;
+  border-color: yellow;
+  color:black;
+}
+
+.btn-oscuro:hover,.btn-oscuro:focus{
+  text-decoration: underline;
+  background-color: yellow;
+  color:black;
+}
+
+.body-oscuro{
+  background-color: black;
+  color: yellow;
+}
+
+.link-yellow{
+  color:yellow;
+}
+
+.color-yellow{
+  color:yellow;
+}
+
+.link-yellow:hover,.link-yellow:focus{
+  text-decoration: underline;
+  color:yellow;
+}
+
+.color-black{
+  color:black;
+}
+
+.link-black{
+  color:black;
+}
+
+.link-black:hover,.link-black:focus{
+  text-decoration: underline;
+  color:black;
+}
+
+.nav-link-oscuro{
+  color: yellow;
+  background-color: black;
+}
+
+.nav-link-oscuro:hover,.nav-link-oscuro:focus{
+  text-decoration: underline;
+  background-color: black;
+}
+
+footer a{
+  color: #fefefe;
+}
+
+footer a:hover,footer a:focus{
+  color: #fefefe;
+  text-decoration: underline;
 }
 
 @keyframes bounceIn {

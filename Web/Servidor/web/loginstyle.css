@@ -29,6 +29,11 @@ header{
     color:#fefefe;
     max-width: 100%;
 }
+
+.navbar-morado-claro{
+    background-color:#9932CC;
+}
+
 .nav-link:hover,.nav-link:focus{
     text-decoration: underline;
 }
@@ -40,9 +45,6 @@ header{
 
 /*Para telefonos y tablets*/
 @media only screen and (max-width:  992px) {
-    .navbar {
-        background-color: #591D77;
-    }
     /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
@@ -125,12 +127,36 @@ header{
     width: 100%;
     max-width: 100%;
 }
-
+.animation{
+    height: 50%;
+    width:30%;
+}
+.animation2{
+    width:50%;
+    width:30%;
+}
 .footers{
     padding-left: 7%;
     padding-top:7%;
 }
 
+.table{
+    color:#fefefe;
+}
+
+.thead{
+    background-color: #343a40;
+    border-color: #454d55;
+}
+footer a{
+    color: #fefefe;
+  }
+  
+  footer a:hover,footer a:focus{
+    color: #fefefe;
+    text-decoration: underline;
+  }
+  
 .col-sm-4{
     max-width: 100%;
 }
@@ -139,12 +165,17 @@ header{
     background-color: #9932CC;
     color:#fefefe;
 }
-#reg{
+.reg{
     color:black;
     font-size: x-large;
     text-decoration: underline;
-
 }
+
+.reg:hover,.reg:focus{
+    color:black;
+    text-decoration: none;
+}
+
 .footer-div{
     justify-items: center;
     display: flex;
@@ -237,5 +268,74 @@ border-radius: 80%;
 }
 
 .errors{
-    list-style-type: none;
+    margin-left:5%;
+    list-style-type: square;
 }
+
+
+.btn{
+    color: #fefefe;
+  }
+  
+  .btn-oscuro{
+    background-color: yellow;
+    border-color: yellow;
+    color:black;
+  }
+  
+  .btn-oscuro:hover,.btn-oscuro:focus{
+    text-decoration: underline;
+    background-color: yellow;
+    color:black;
+  }
+  
+  .body-oscuro{
+    background-color: black;
+    color: yellow;
+  }
+  
+  .link-yellow{
+    color:yellow;
+  }
+  
+  .color-yellow{
+    color:yellow;
+  }
+  
+  .link-yellow:hover,.link-yellow:focus{
+    text-decoration: underline;
+    color:yellow;
+  }
+  
+  .link-yellow-underline{
+    color:yellow;
+    text-decoration: underline;
+  }
+
+  .link-yellow-underline:hover,.link-yellow-underline:focus{
+    
+    color:yellow;
+  }
+  
+  .color-black{
+    color:black;
+  }
+  
+  .link-black{
+    color:black;
+  }
+  
+  .link-black:hover,.link-black:focus{
+    text-decoration: underline;
+    color:black;
+  }
+  
+  .nav-link-oscuro{
+    color: yellow;
+    background-color: black;
+  }
+  
+  .nav-link-oscuro:hover,.nav-link-oscuro:focus{
+    text-decoration: underline;
+    background-color: black;
+  }
