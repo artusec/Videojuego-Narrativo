@@ -106,10 +106,10 @@
                 <div class="col-lg-2 order-lg-1 col-sm-2 order-sm-1">
                 </div>
                 <div class="col-lg-4 order-lg-2 col-sm-12 order-sm-2">
-                    <img class="minijuegos-img" src="./imagenes/accesibilidad1.png"  alt=""/>
+                    <img class="minijuegos-img" src="./imagenes/accesibilidad1.png"  alt="Pantalla de movil con una mano tocándola de izquierda a derecha"/>
                 </div>
                 <div class="col-lg-4 order-lg-3 col-sm-12 order-sm-4">
-                    <img class="minijuegos-img" src="./imagenes/accesibilidad2.png"  alt=""/>
+                    <img class="minijuegos-img" src="./imagenes/accesibilidad2.png"  alt="Pantalla de móvil con una mano tocandola en el centro"/>
                 </div>
                 <div class="col-lg-2 order-lg-4 col-sm-2 order-sm-3">
                 </div>

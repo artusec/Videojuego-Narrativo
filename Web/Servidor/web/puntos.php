@@ -107,7 +107,7 @@
                 <div class="col-lg-4 col-md-3">
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <img src="./imagenes/vib.gif" alt=""/>
+                    <img src="./imagenes/vib.gif" alt="Móvil vibrando"/>
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>
