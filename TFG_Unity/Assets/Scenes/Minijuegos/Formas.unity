@@ -695,6 +695,7 @@ MonoBehaviour:
   - solution: 3
     formas: 010000000400000003000000
   introTTS: {fileID: 8300000, guid: 905aadf5fa2a0f6459bed616d4de1f4e, type: 3}
+  introOptionns: {fileID: 8300000, guid: cee12922da7ffce41bf0853d6608a47c, type: 3}
   success: {fileID: 8300000, guid: 7b962a1bacd92a7469dd7978edb64b46, type: 3}
   wrong: {fileID: 8300000, guid: 85ad983387ec9b04ea4fdd44b856ac03, type: 3}
   ttsFin: {fileID: 8300000, guid: 39cb7be6e17b36f48b5d89cf5970e8bc, type: 3}
