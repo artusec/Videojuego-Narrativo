@@ -7,6 +7,11 @@
 <html lang="ES">
 
 
+<meta charset="UTF-8">
+<meta name="description" content="ASHED MEMORIES - JUEGO ACCESIBLE - MINIJUEGO PUNTOS CALIENTES" >
+<meta name="keywords" content="ACCESIBILIDAD, JUEGO, ASHED, MEMORIES, PUNTOS, CALIENTES">
+<meta  name="viewport" content="width=device-width, initial-scale=1.0">  
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -34,7 +39,7 @@
 
 
 <head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
 <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Puntos calientes</title>
 		<meta charset="utf-8" />
@@ -72,22 +77,27 @@
 	
 	
 <main>
+    <ol class="breadcrumb" aria-label="breadcrumb">
+        <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
+        <li class="active" aria-current="page">Minijuego - Puntos calientes</li>        
+    </ol>
+
     <section aria-label="Minijuego de simón dice">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
-                <p>&nbsp</p>
-                <h1><p class="text-center">PUNTOS CALIENTES</p></h1>
-                <p>&nbsp</p>
+                <br aria-hidden="true">
+                <h1 class="text-center">PUNTOS CALIENTES</h1>
+                <br aria-hidden="true">
                 <h2>Concepto</h2>
                     <p>La idea principal para este minijuego fue la utilización de la vibración en los dispositivos móviles Android. Tras manejar varias ideas en las que se podía emplear dicha técnica, se acabó diseñando un  minijuego en el cual hay varios focos de vibración por la pantalla, de los cuales sólo uno es la solución del minijuego. Las vibraciones guiarán al jugador a los focos. Y cuando el jugador llegue alcance el foco correcto llegará al final del minijuego.</p>
-                    <p>&nbsp</p>
+                    <br aria-hidden="true">
                 <h2>¿Como se juega?</h2>
                     <p>El usuario cuenta con tres gestos distintos para desenvolverse en este minijuego: el propio movimiento del dedo sobre la superficie del móvil, el toque en la pantalla y doble toque sobre los focos de vibración. </p>
                     <p>El usuario debe ir recorriendo con el dedo la superficie del dispositivo. Cuando se acerque a uno de los focos, el móvil comenzará a vibrar con una cierta frecuencia. La frecuencia de estas vibraciones irá aumentando según el jugador se acerque al centro del foco de vibración. En ese momento, el usuario deberá intentar reconocer si el foco al que ha llegado es la solución del minijuego haciendo un solo clic sobre el punto de máxima vibración. Esto provocará que suene un sonido que le ofrecerá al jugador una pista sobre si dicho foco es o no la solución. Para seleccionar el foco el usuario deberá hacer doble toque en la pantalla sobre el mismo punto. En caso de fallar, salta un sonido indicando el fallo en el intento y se procede a eliminar el foco de vibración, reduciendo las opciones al quedar menos focos activos con cada fallo. Por el contrario, si se acierta, se consigue completar exitosamente el minijuego</p>
-                <p>&nbsp</p>
+                    <br aria-hidden="true">
                 </div>
                 <div class="col-md-2">
                 </div>
@@ -101,9 +111,11 @@
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>
-                <p>&nbsp</p>
+                <br aria-hidden="true">
             </div>
-            
+            <br aria-hidden="true">
+            <br aria-hidden="true">
+            <br aria-hidden="true">
         </div>
     </section>
 </main>
@@ -113,14 +125,14 @@
     require_once './generic/footer.html';
     ?>
  
-
-</body>
-
-<script>
+ <script>
 
 <?php
     require_once './js/scripts.js';
     require_once './js/contrasteInicio.js';
 ?>
 </script>
+</body>
+
+
 </html>

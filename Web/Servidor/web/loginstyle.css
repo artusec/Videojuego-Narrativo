@@ -84,7 +84,28 @@ header{
     padding: 120px 0 0 0;
   }
   
+  .breadcrumb{
+    border-radius: 0%;
+    width: 100%;
+    padding-left: 1%;
+    font-size: large;
+    background-color:#9932CC;
+    color:black;
+}
 
+.bread-link{
+  color:#FEFEFE;
+}
+
+.bread-link:hover{
+    color:black;
+}
+
+.breadcrumb li+li:before{
+    padding: 8px;
+    color:#fefefe;
+    content:"  >>";
+}
   
 .img-container{
     background-color: black;

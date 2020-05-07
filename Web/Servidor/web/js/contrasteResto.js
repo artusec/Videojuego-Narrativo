@@ -16,6 +16,8 @@
             $(".nav-link-new").addClass("nav-link-oscuro");
             $(".reg").addClass("link-yellow-underline");
             $("footer a").addClass("link-yellow");
+            $(".breadcrumb").addClass("body-oscuro");
+            $(".breadcrumb a").addClass("link-yellow");
             
 
             $('#animation1').attr("src","./imagenes/animation2.gif");
@@ -39,6 +41,8 @@
             $('.nav-link-new').removeClass("nav-link-oscuro");
             $(".reg").removeClass("link-yellow-underline");
             $("footer a").removeClass("link-yellow");
+            $(".breadcrumb").removeClass("body-oscuro");
+            $(".breadcrumb a").removeClass("link-yellow");
 
             $('#animation1').attr("src","./imagenes/animation.gif");
 

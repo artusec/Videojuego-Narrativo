@@ -6,6 +6,10 @@
 <!DOCTYPE HTML>
 <html lang="ES">
 
+<meta charset="UTF-8">
+<meta name="description" content="ASHED MEMORIES - JUEGO ACCESIBLE - ACCESIBILIDAD" >
+<meta name="keywords" content="ACCESIBILIDAD, JUEGO, ASHED, MEMORIES">
+<meta  name="viewport" content="width=device-width, initial-scale=1.0">  
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -34,7 +38,7 @@
 
 
 <head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
 <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Accesibilidad</title>
 		<meta charset="utf-8" />
@@ -69,9 +73,6 @@
 </header>
 
     
-
-
-
 <main>
 
     <ol class="breadcrumb" aria-label="breadcrumb">
@@ -85,9 +86,9 @@
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
-                <p>&nbsp</p>
-                <h1><p class="text-center">ACCESIBILIDAD</p></h1>
-                <p>&nbsp</p>
+                <br aria-hidden="true">
+                <h1 class="text-center">ACCESIBILIDAD</h1>
+                <br aria-hidden="true">
                 <p>Lo más habitual es que las personas invidentes utilicen lectores de pantalla cuando interactuan con dispositivos móviles. Estos sistemas capturan ciertos gestos simples del usuario facilitando la navegación por los elementos en pantalla. Algunos ejemplos son <a class="links" href="https://www.freedomscientific.com/products/software/jaws/"><strong>JAWS</strong></a> para sobremesas, <a  class="links" href="https://www.apple.com/es/accessibility/iphone/vision/"><strong>Voice Over</strong></a> en dispositivos iOS y <a href="https://support.google.com/accessibility/android/answer/6283677?hl=es"  class="links"><strong>TalkBack</strong></a> en dispositivos Android. </p>
 
                 <p>En el juego estos gestos son deslizamientos rápidos horizontales para moverte entre los elementos y pulsaciones dobles en la pantalla para acceder o interactuar con el objeto actual.</p>
@@ -96,21 +97,21 @@
 
                 <p>Las secciones de minijuegos tendrían controles propios, que se explicarían en cada uno.</p>
 
-                <p>&nbsp</p>
+                <br aria-hidden="true">
                 </div>
                 <div class="col-md-2">
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-2 order-lg-1 col-md-2 order-md-1">
+                <div class="col-lg-2 order-lg-1 col-sm-2 order-sm-1">
                 </div>
-                <div class="col-lg-4 order-lg-2 col-md-10 order-md-2">
-                    <img src="./imagenes/accesibilidad1.png"  alt=""/>
+                <div class="col-lg-4 order-lg-2 col-sm-12 order-sm-2">
+                    <img class="minijuegos-img" src="./imagenes/accesibilidad1.png"  alt=""/>
                 </div>
-                <div class="col-lg-4 order-lg-3 col-md-10 order-md-4">
-                    <img src="./imagenes/accesibilidad2.png"  alt=""/>
+                <div class="col-lg-4 order-lg-3 col-sm-12 order-sm-4">
+                    <img class="minijuegos-img" src="./imagenes/accesibilidad2.png"  alt=""/>
                 </div>
-                <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
+                <div class="col-lg-2 order-lg-4 col-sm-2 order-sm-3">
                 </div>
             </div>    
         </div>
@@ -120,7 +121,6 @@
 <?php
     require_once './generic/footer.html';
 ?>
-</body>
 <script>
 
 <?php
@@ -130,4 +130,5 @@
 
 
 </script>
+</body>
 </html>

@@ -7,6 +7,11 @@
 <html lang="ES">
 
 
+<meta charset="UTF-8">
+<meta name="description" content="ASHED MEMORIES - JUEGO ACCESIBLE - MINIJUEGO SIMON DICE" >
+<meta name="keywords" content="ACCESIBILIDAD, JUEGO, ASHED, MEMORIES, SIMON, DICE">
+<meta  name="viewport" content="width=device-width, initial-scale=1.0">  
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -34,7 +39,6 @@
 
 
 <head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Simon dice</title>
 		<meta charset="utf-8" />
@@ -70,23 +74,28 @@
 
 	
 <main>
+    <ol class="breadcrumb" aria-label="breadcrumb">
+        <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
+        <li class="active" aria-current="page">Accesibilidad</li>        
+    </ol>
+
     <section aria-label="Minijuego de simón dice">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
-                <p>&nbsp</p>
-                <h1><p class="text-center">SIMON SAYS</p></h1>
-                <p>&nbsp</p>
+                <br aria-hidden="true">
+                <h1 class="text-center">SIMON SAYS</h1>
+                <br aria-hidden="true">
                 <h2>Concepto</h2>
                     <p>El desarrollo de este videojuego se basó en el juego tradicional Simon says. El juego de mesa consiste en un dispositivo con forma de disco, dividido en cuatro cuadrantes de diferentes colores, que se van iluminando de manera aleatoria y emitiendo a la vez un sonido propio, distinto al de los demás. Tras terminar una serie de estas activaciones, se espera que el usuario repita la misma secuencia en el orden correcto. Si el jugador acierta correctamente la secuencia, se comienza de nuevo pero añadiendo una activación adicional al final de la secuencia previa. </p>
                     <p>Basándose en eso, se sustituyeron los elementos visuales del juego por sonido 3D inmersivo del cual el usuario pudiera adivinar la procedencia espacial. El minijuego tiene tres posibles sonidos que se ubican a la derecha, a la izquierda y al frente del jugador. Cada uno de estos puntos reproduce un sonido distinto a los demás con el fin de facilitar la tarea de recordar la secuencia.</p>
-                    <p>&nbsp</p>
+                    <br aria-hidden="true">
                 <h2>¿Como se juega?</h2>
                 <p>El juego comienza  con una única activación de sonido procedente de una de las fuentes y esperando posteriormente a que el usuario la repita correctamente, y aumentando el tamaño de la secuencia dado el caso.</p>
                 <p>Los controles para seleccionar las posibles opciones son deslizamientos en la dirección de la que se cree que proviene el sonido, minimizando la carga de trabajo al usuario y haciendo que focalice la atención en recordar la secuencia más que en el cómo introducirla a posteriori.</p>
-                <p>&nbsp</p>
+                <br aria-hidden="true">
                 </div>
                 <div class="col-md-2">
                 </div>
@@ -100,10 +109,9 @@
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>
-                <p>&nbsp</p>
+                <br aria-hidden="true">
             </div>
-    
-
+            <br aria-hidden="true">
         </div>
     </section>
 </main>
@@ -113,13 +121,13 @@
     require_once './generic/footer.html';
     ?>
  
-
-</body>
-<script>
+ <script>
 
 <?php
     require_once './js/scripts.js';
     require_once './js/contrasteInicio.js';
 ?>
 </script>
+</body>
+
 </html>

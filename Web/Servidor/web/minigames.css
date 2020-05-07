@@ -46,9 +46,6 @@ a{
 
 /*Para telefonos y tablets*/
 @media only screen and (max-width:  992px) {
-    .navbar {
-        background-color: black;
-    }
     /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
@@ -178,6 +175,10 @@ a{
 
 .img-minijuegos{
     width: 100%;
+}
+
+.minijuegos-img{
+  width: 100%;
 }
 
 .card{

@@ -7,8 +7,13 @@
 <html>
 	
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<meta name="description" content="ASHED MEMORIES - JUEGO ACCESIBLE - MI PERFIL" >
+<meta name="keywords" content="ACCESIBILIDAD, JUEGO, ASHED, MEMORIES,PERFIL, ESTADISTICAS">
+<meta  name="viewport" content="width=device-width, initial-scale=1.0">  
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -48,15 +53,19 @@
 
 
 	<section aria-label="Estadisticas de tus partidas">
-		<p>&nbsp</p>
-		<p>&nbsp</p>
-		<p>&nbsp</p>
-		<p>&nbsp</p>
+	<br aria-hidden="true">
+	<br aria-hidden="true">
+	<br aria-hidden="true">
+	<ol class="breadcrumb" aria-label="breadcrumb">
+        <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
+        <li class="active" aria-current="page">Mi perfil</li>        
+    </ol>
+	<br aria-hidden="true">
 			<div class="row">
 				<div class="col-sm-3"></div>
 					<div class="col-sm-6">
 						<h1><p class="text-center"><img class="animation" id="animation1" src="./imagenes/animation.gif"  alt="">ESTADISTICAS</p></h1>
-						<p>&nbsp</p>
+						<br aria-hidden="true">
 						<table class="table">
 							<thead class="thead">
 								<tr>
@@ -95,17 +104,17 @@
 					<div class="col-sm-3"></div>
 				
 			</div>
-			<p>&nbsp</p>
-				<p>&nbsp</p>
-				<p>&nbsp</p>
-				<p>&nbsp</p>
+			<br aria-hidden="true">
+			<br aria-hidden="true">
+			<br aria-hidden="true">
+			<br aria-hidden="true">
 		</section>
 		<section aria-label="Objetos de tu partida">
 				<div class="row">
 					<div class="col-sm-3"></div>
 					<div class="col-sm-6">
 						<h1><p class="text-center">OBJETOS DE LA PARTIDA</p></h1>
-						<p>&nbsp</p>
+						<br aria-hidden="true">
 						<table class="table">
 							<thead class="thead">
 								<tr>
@@ -163,9 +172,9 @@
 								?>
 							</tbody>
 						</table>
-						<p>&nbsp</p>
-						<p>&nbsp</p>
-						<p>&nbsp</p>
+						<br aria-hidden="true">
+						<br aria-hidden="true">
+						<br aria-hidden="true">
 					</div>
 					<div class="col-sm-3"></div>
 				</div>
@@ -173,21 +182,17 @@
 		</div>		
 </main>
 
-
-	
-
 <?php
     require_once __DIR__ . './generic/footer.html';
 ?>
  
-</body>
 <script>
 <?php
     require_once './js/scripts.js';
     require_once './js/contrasteResto.js';
     ob_end_flush();
 ?> 
-
-
 </script>
+</body>
+
 </html>

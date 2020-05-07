@@ -6,9 +6,13 @@
 <!DOCTYPE HTML>
 <html lang="ES">
 
+<meta charset="UTF-8">
+<meta name="description" content="ASHED MEMORIES - JUEGO ACCESIBLE - MINIJUEGO FORMAS" >
+<meta name="keywords" content="ACCESIBILIDAD, JUEGO, ASHED, MEMORIES, FORMAS">
+<meta  name="viewport" content="width=device-width, initial-scale=1.0">  
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -34,7 +38,7 @@
 
 
 <head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
 <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Formas</title>
 	<meta charset="utf-8" />
@@ -66,23 +70,28 @@
 </header>
 
 <main>	
+    <ol class="breadcrumb" aria-label="breadcrumb">
+        <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
+        <li class="active" aria-current="page">Minijuego - Formas</li>        
+    </ol>
+
     <section  aria-label="Minijuego de formas">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
-                    <p>&nbsp</p>
-                    <h1><p class="text-center">FORMAS</p></h1>
-                    <p>&nbsp</p>
+                    <br aria-hidden="true">
+                    <h1 class="text-center">FORMAS</h1>
+                    <br aria-hidden="true">
                     <h2>Concepto</h2>
                     <p>El objetivo de este minijuego es distinguir objetos por medio del tacto, similar a cuando intentamos coger algo en una habitación oscura o rebuscamos en un cajón. No nos queda más remedio que ir palpando los objetos hasta reconocer el que queremos. Con este objetivo se implementó el minijuego, en el cual se presenta una forma en la pantalla solamente reconocible por medio de la vibración. El usuario debe reconocer tres formas distintas para poder continuar. .</p>
-                    <p>&nbsp</p>
+                    <br aria-hidden="true">
                     <h2>¿Como se juega?</h2>
                     <p>El jugador deberá ir moviendo el dedo por la pantalla del dispositivo móvil para encontrar las zonas en las que se activa la vibración y las zonas en las que esto no ocurre. Con estos trazados se espera que el jugador se vaya haciendo una idea de la forma estimada que se le ha presentado. Una vez se tenga una idea más o menos clara de qué forma podría ser, el usuario tendrá que hacer doble clic sobre cualquier lado de la pantalla para pasar de la fase de reconocimiento a la fase de selección.</p>
                     <p>En esta nueva fase se desactivan por completo las vibraciones del móvil y se le ofrecen al jugador varias opciones de selección para la forma presentada de las cuales sólo una de ellas es correcta. Además, en la fase de selección también se da la opción de volver a la fase de reconocimiento. Por medio de deslizamientos, el jugador irá moviéndose por las opciones, para finalmente elegir la opción que crea que coincide con la forma que ha reconocido previamente. En el caso de acertar, se avanza al siguiente nivel con una nueva forma a reconocer.</p>
-                    <p>&nbsp</p>
-                    <p>&nbsp</p>
+                    <br aria-hidden="true">
+                    <br aria-hidden="true">
                 </div>
                 <div class="col-md-2">
                 </div>
@@ -91,12 +100,12 @@
                 <div class="col-lg-4 col-md-3">
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <img src="./imagenes/formas.gif" alt=""/>
+                    <img class="minijuegos-img" src="./imagenes/formas.gif" alt=""/>
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>
-                <p>&nbsp</p>
             </div>
+            <br aria-hidden="true">
         </div>
     </section>
 </main>
@@ -107,13 +116,11 @@
     <?php
     require_once './generic/footer.html';
 ?>
-
-</body>
 <script>
-
 <?php
     require_once './js/scripts.js';
     require_once './js/contrasteInicio.js';
 ?>
 </script>
+</body>
 </html>

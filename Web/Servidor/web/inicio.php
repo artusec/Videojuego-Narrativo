@@ -50,7 +50,7 @@
     require_once './generic/header.php';
 ?>
 
-<section aria-label="Cabecera">
+<section aria-label="Cabecera" id="cabecera">
         <div class="row logo">
             <div class="col-lg-4 col-md-12">
                     <div class="Name">
@@ -88,10 +88,10 @@
                 <div class="row d-flex justify-content-center align-items-center">
                     <p class="pt-3 pr-2 ">Utilizamos cookies para mejorar la experiencia en la web.</p>
                     <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true">
-                    <a role="button" class="btn btn-cookies " aria-label="Leer mas sobre cookies" href="./Cookies.html">Leer mas </a>
+                    <a role="button" class="btn btn-purple " aria-label="Leer mas sobre cookies" href="./Cookies.html">Leer mas </a>
                     &nbsp
                     &nbsp
-                    <a role="button" class="btn btn-cookies" data-dismiss="modal" aria-label="Vale, gracias" href="" onclick='activarCookie();'>Ok, gracias</a>
+                    <a role="button" class="btn btn-purple" data-dismiss="modal" aria-label="Vale, gracias" href="" onclick='activarCookie();'>Ok, gracias</a>
                     <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true">
                 </div>
             </div>

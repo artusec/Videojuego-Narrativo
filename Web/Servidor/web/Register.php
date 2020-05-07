@@ -7,6 +7,10 @@
 <!DOCTYPE HTML>
 <html lang="ES">
 	
+	<meta charset="UTF-8">
+	<meta name="description" content="ASHED MEMORIES - JUEGO ACCESIBLE - REGISTRAR" >
+	<meta name="keywords" content="ACCESIBILIDAD, JUEGO, ASHED, MEMORIES, REGISTAR">
+	<meta  name="viewport" content="width=device-width, initial-scale=1.0">  
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -27,7 +31,6 @@
     <script src="./js/cookies.js"></script>
 
 <head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
 	<title>Registrar</title>
 	<meta charset="utf-8" />
@@ -44,8 +47,15 @@
 	
 <main id="main">
 	<div class="container-fluid">
-	<p>&nbsp</p>
-	<p>&nbsp</p>
+	<br aria-hidden="true">
+	<br aria-hidden="true">
+	<br aria-hidden="true">
+	<ol class="breadcrumb" aria-label="breadcrumb">
+        <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
+        <li><a class="bread-link" href="./inicio.php" aira-label="Ir a la página para identificarte y acceder a mi perfil">Acceder</a></li>
+        <li class="active" aria-current="page">Minijuego - Simon says</li>        
+    </ol>
+	<br aria-hidden="true">
 		<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
@@ -55,18 +65,17 @@
 ?>
 				</div>
 				<div class="col-sm-4"></div>
-				<p>&nbsp</p>
-				<p>&nbsp</p>
+				<br aria-hidden="true">
+				<br aria-hidden="true">
 		</div>
-	
+		<br aria-hidden="true">
+		<br aria-hidden="true">
 	</div>
 </main>
 	
 <?php
     require_once  './generic/footer.html';
 ?>
-
-</body>
 <script>
 <?php
     require_once './js/scripts.js';
@@ -75,4 +84,5 @@
 ?>
 
 </script>
+</body>
 </html>
