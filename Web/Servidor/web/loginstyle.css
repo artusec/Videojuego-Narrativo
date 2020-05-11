@@ -370,3 +370,27 @@ border-radius: 80%;
     text-decoration: underline;
     background-color: black;
   }
+
+.btn-delete{
+  margin-left:35%;
+  margin-right:0;
+  display: inline-block;
+  font-weight: 400;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+}
+.btn-delete:active,.btn-delete:focus{
+outline:none;
+border-color:black;
+}
+
+.hover-yellow:active,.hover-yellow:focus{
+  border-color:yellow;
+}
+
+ 

@@ -29,7 +29,8 @@
  
 <link rel="stylesheet" type="text/css" href="loginstyle.css">
 
-<script src="./js/cookies.js"></script>
+<script type="text/javascript" src="./js/cookies.js"></script>
+<script type="text/javascript" src = "js/borrarPartida.js"></script>
 
 
 <head>
@@ -64,14 +65,15 @@
 			<div class="row">
 				<div class="col-sm-3"></div>
 					<div class="col-sm-6">
-						<h1><p class="text-center"><img class="animation" id="animation1" src="./imagenes/animation.gif"  alt="">ESTADISTICAS</p></h1>
+						<h1 class="text-center"><img class="animation" id="animation1" src="./imagenes/animation.gif"  alt="">ESTADISTICAS</h1>
 						<br aria-hidden="true">
 						<table class="table">
 							<thead class="thead">
 								<tr>
-									<th><img src="./imagenes/save.png" alt="">&nbsp Partida</th>
-									<th>Ultima vez jugado</th>
-									<th><img src="./imagenes/clock.png" alt="">&nbsp Tiempo</th>
+									<th scope="col"><img src="./imagenes/save.png" alt="">&nbsp Partida</th>
+									<th scope="col"><img src="./imagenes/sand.png" alt="">&nbsp Ultima vez jugado</th>
+									<th scope="col"><img src="./imagenes/clock.png" alt="">&nbsp Tiempo</th>
+									<th scope="col"><img src="./imagenes/rubbbish.png" alt="">&nbsp Borrar Partida</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -85,6 +87,11 @@
 											$html .= '<td>' . $juegos[$i]['id_game'] . '</td>';
 											$html .= '<td>' . $juegos[$i]['date_start'] . '</td>';
 											$html .= '<td>' . $juegos[$i]['timed'] . '</td>';
+											$html .= '<td>
+											<button  type="button" class="btn-delete" name="borrar" aria-label="Borrar partida" id="'.$juegos[$i]['id_game'].'" value="">
+												<img  src="./imagenes/delete.png"  alt="">
+											</button>
+											</td>';
 											$html .= '</tr>';                          
 										}
 									}
@@ -113,14 +120,14 @@
 				<div class="row">
 					<div class="col-sm-3"></div>
 					<div class="col-sm-6">
-						<h1><p class="text-center">OBJETOS DE LA PARTIDA</p></h1>
+						<h1 class="text-center">OBJETOS DE LA PARTIDA</h1>
 						<br aria-hidden="true">
 						<table class="table">
 							<thead class="thead">
 								<tr>
-									<th></th>
-									<th>Objeto</th>
-									<th>Descripción</th>
+									<th scope="col">Imagen</th>
+									<th scope="col">Objeto</th>
+									<th scope="col">Descripción</th>
 								</tr>
 							</thead>
 							<tbody>

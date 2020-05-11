@@ -35,12 +35,15 @@
             crossorigin="anonymous"></script>
 
     <script src="./js/cookies.js"></script>
-
+    <script src="./js/contrasteInicio.js"></script>
+    <script src="./js/scripts.js"></script>
    
     <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico" />
     <title>ASHED MEMORIES - Inicio</title>
     
 </head>
+
+
 
 <body>
 
@@ -101,6 +104,8 @@
     </div>
 
     <?php } ?>
+
+ 
 
 <section aria-label="Introducción">
     <div class="container-fluid">
@@ -294,12 +299,6 @@
 
 <script>
 
-
-
-<?php
-    require_once './js/scripts.js';
-    require_once './js/contrasteInicio.js';
-?>
 
 function activarCookie() {
     setCookie("cookie", 1, 1);

@@ -1,33 +1,6 @@
 
 
-          /*CONTROL DEL HEADER*/
-        var scroll_start = 0;
-        var startchange = $('main');
-        var offset = startchange.offset();
-        if (startchange.length){
-            $(document).scroll(function() { 
-                scroll_start = $(this).scrollTop();
-                if(scroll_start > offset.top){
-                    $(".cartas-minijuegos").show( "slide", 1000 );
-                    if (detectCookie("accesibility")){
-                        $(".navbar").addClass("body-oscuro");
-                    }
-                    else{
-                        $(".navbar").addClass("navbar-morado");
-                    }
-                }  else{
-
-                    if (detectCookie("accesibility")){
-                        $(".navbar").addClass("body-oscuro");
-                    }
-                    else{
-                        $(".navbar").removeClass("navbar-morado");
-                    }
-
-                } 
-          
-            });
-        };
+ 
 
 
         function modoAltoContraste(){

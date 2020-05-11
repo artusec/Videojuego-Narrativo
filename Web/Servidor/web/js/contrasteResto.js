@@ -18,8 +18,8 @@
             $("footer a").addClass("link-yellow");
             $(".breadcrumb").addClass("body-oscuro");
             $(".breadcrumb a").addClass("link-yellow");
+            $(".btn-delete").addClass("hover-yellow");
             
-
             $('#animation1').attr("src","./imagenes/animation2.gif");
 
 
@@ -43,6 +43,8 @@
             $("footer a").removeClass("link-yellow");
             $(".breadcrumb").removeClass("body-oscuro");
             $(".breadcrumb a").removeClass("link-yellow");
+            $(".btn-delete").removeClass("hover-yellow");
+
 
             $('#animation1').attr("src","./imagenes/animation.gif");
 

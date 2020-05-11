@@ -12,15 +12,12 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends UnityPlayerActivity {
-    private static final int REQ_CODE_SPEECH_INPUT = 100;
+
     private static String lang = "es-ES";
     private ArrayList<String> result = new ArrayList<>();
+    private static final int ActivityCode = 14;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     public void changeLang(String s) { this.lang = s;}
 
@@ -30,7 +27,7 @@ public class MainActivity extends UnityPlayerActivity {
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, lang);
         intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 0);
         try {
-            this.startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+            this.startActivityForResult(intent, ActivityCode);
         } catch (ActivityNotFoundException a) {
             Log.d("ERROR", a.toString());
         }
@@ -39,7 +36,7 @@ public class MainActivity extends UnityPlayerActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQ_CODE_SPEECH_INPUT) {
+        if (requestCode == ActivityCode) {
             if (resultCode == RESULT_OK) {
                 if (data != null) {
                     result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
@@ -50,4 +47,10 @@ public class MainActivity extends UnityPlayerActivity {
         }
 
     }
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+    }
+
 }

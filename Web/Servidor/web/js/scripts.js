@@ -1,6 +1,5 @@
 
-
-        
+    
         $(document).ready(function() {
 
             
@@ -14,22 +13,48 @@
             else{
                 modoNormal();
             }
- 
+            /*CONTROL DEL HEADER*/
+            var scroll_start = 0;
+            var startchange = $('main');
+            var offset = startchange.offset();
+            if (startchange.length){
+                $(document).scroll(function() { 
+                    scroll_start = $(this).scrollTop();
+                    if(scroll_start > offset.top){
+                        $(".cartas-minijuegos").show( "slide", 1000 );
+                        if (detectCookie("accesibility")){
+                            $(".navbar").addClass("body-oscuro");
+                        }
+                        else{
+                            $(".navbar").addClass("navbar-morado");
+                        }
+                    }  else{
+                        if (detectCookie("accesibility")){
+                            $(".navbar").addClass("body-oscuro");
+                        }
+                        else{
+                            $(".navbar").removeClass("navbar-morado");
+                        }
+
+                    } 
+                });
+            };
+/* CONTROL DE CONTRASTES*/
+
+$('#mode').change(function() {
+    if(this.checked) { 
+        modoNormal();
+    }
+    else{
+        modoAltoContraste();
+    }
+});
+
+
         });
 
 
 
-/* CONTROL DE CONTRASTES*/
-
-        $('#mode').change(function() {
-            if(this.checked) { 
-                modoNormal();
-            }
-            else{
-                modoAltoContraste();
-            }});
-
-        
         function cambioContraste(){
             if (detectCookie("accesibility")){
                 modoNormal();
@@ -41,43 +66,6 @@
             }
         }
 
-
-/* BOTONES DE TAMAÑO DE TEXTO*/
-      
-
-        function increaseSize(){
-
-           var sizeBody = $("#descarga").css('font-size');
-            
-        
-           console.log(sizeBody); 
-
-           switch(sizeBody){
-            case '20px':
-                sizeBody = 40;
-                console.log(sizeBody);
-              break;
-            case '40px':
-                alert("no se puede mas");
-              break;
-              case '10px':
-                sizeBody = 32;
-                break;
-            default:
-          } 
-          console.log(sizeBody); 
-
-           $("#descarga").css({"font-size":sizeBody});
-    
-        }
-
-        function decreaseSize(){
-             
-            var size = $("#1").css('font-size');
-             currentSize = parseFloat(size);
-             newFontSize = (currentSize - 1) + 'px';
-
-        }
 
     
         
