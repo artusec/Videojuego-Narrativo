@@ -1,21 +1,14 @@
 <?php
-
-require_once __DIR__.'/../include/Advertisement.php';
-require_once __DIR__.'/../include/config.php';
+require_once './../../User.php';
 
 if (isset($_GET['id']))
 {
-    $anuncios = Advertisement::getAnunciosByAuthor($_SESSION['id']);
-    foreach ($anuncios as $anuncio){
-        if($anuncio->getId() === $_GET['id']){
-           if($anuncio->delete())
-                echo $anuncio->getId();
-        }
+    if(User::borrar_estadistica($_GET['id'])){
+        echo $_GET['id'];
+    }else{
+        echo "error";
     }
 }
 else
     echo "error";
-
-
-
 ?>

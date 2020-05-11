@@ -235,6 +235,21 @@ class User
     }
 
 
+    public function borrar_estadistica($id_game){
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+        $query = sprintf("DELETE FROM Statistics WHERE id_game = '%d'",
+        $id_game
+        );
+        if (! $conn->query($query) ) {
+            echo "Error al borrar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+        }
+        else{
+            return true;
+        }
+    }
+
+
     /* Utils ---------------------------------------------------------------------------------*/
 
     private static function hashPassword($password)

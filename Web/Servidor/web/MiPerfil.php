@@ -30,7 +30,7 @@
 <link rel="stylesheet" type="text/css" href="loginstyle.css">
 
 <script type="text/javascript" src="./js/cookies.js"></script>
-<script type="text/javascript" src = "js/borrarPartida.js"></script>
+<script type="text/javascript" src = "./js/borrarPartida.js"></script>
 
 
 <head>
@@ -83,7 +83,7 @@
 									$numjuegos = sizeof($juegos);
 									if($numjuegos > 0) {
 										for ($i=0; $i < $numjuegos; $i++) {
-											$html .= '<tr>';
+											$html .= '<tr id='.$juegos[$i]["id_game"] . '>';
 											$html .= '<td>' . $juegos[$i]['id_game'] . '</td>';
 											$html .= '<td>' . $juegos[$i]['date_start'] . '</td>';
 											$html .= '<td>' . $juegos[$i]['timed'] . '</td>';
