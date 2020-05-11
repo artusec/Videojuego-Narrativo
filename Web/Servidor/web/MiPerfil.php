@@ -65,13 +65,13 @@
 			<div class="row">
 				<div class="col-sm-3"></div>
 					<div class="col-sm-6">
-						<h1 class="text-center"><img class="animation" id="animation1" src="./imagenes/animation.gif"  alt="">ESTADISTICAS</h1>
+						<h1 class="text-center"><img class="animation" id="animation1" src="./imagenes/animation.gif"  alt="">PARTIDAS FINALIZADAS</h1>
 						<br aria-hidden="true">
 						<table class="table">
 							<thead class="thead">
 								<tr>
 									<th scope="col"><img src="./imagenes/save.png" alt="">&nbsp Partida</th>
-									<th scope="col"><img src="./imagenes/sand.png" alt="">&nbsp Ultima vez jugado</th>
+									<th scope="col"><img src="./imagenes/sand.png" alt="">&nbsp Día de inicio</th>
 									<th scope="col"><img src="./imagenes/clock.png" alt="">&nbsp Tiempo</th>
 									<th scope="col"><img src="./imagenes/rubbbish.png" alt="">&nbsp Borrar Partida</th>
 								</tr>
