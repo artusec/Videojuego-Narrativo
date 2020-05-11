@@ -120,7 +120,7 @@
 				<div class="row">
 					<div class="col-sm-3"></div>
 					<div class="col-sm-6">
-						<h1 class="text-center">OBJETOS DE LA PARTIDA</h1>
+						<h1 class="text-center">OBJETOS DE LA PARTIDA ACTUAL</h1>
 						<br aria-hidden="true">
 						<table class="table">
 							<thead class="thead">
