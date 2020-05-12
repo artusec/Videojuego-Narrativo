@@ -187,20 +187,6 @@
                                 <h2 class="card-text">GANZUA</h2>
                                 <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
                                 <br aria-hidden="true">
-                                <?php
-                                    echo '<p><strong>Puntuación media:</strong></p>';
-                                    $fullScore = 5;
-                                    $n = round($fullScore);
-
-                                    for($i=0; $i<$n; $i++) {
-                                        echo '<span>★</span>';
-                                    }
-                                    for($i; $i<5; $i++) {
-                                        echo '<span class>&#9734</span>';
-                                    }
-
-                                    echo '<span> ('.$fullScore.')</span>';
-                                ?>
                                 <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                             </div>
                         </div>
@@ -240,7 +226,7 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <div class="ojo">
+                <div class="ojo" role="presentation">
                     <div class="shut">
                         <span></span>
                     </div>

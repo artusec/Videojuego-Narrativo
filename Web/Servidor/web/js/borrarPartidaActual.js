@@ -11,6 +11,8 @@ $(document).ready(function() {
         if( status === "success"){
             if(data !== "error"){
                 console.log(data);
+                $('#'+data).remove();
+                $('#delete-label').remove();
                 $('#'+data+"_partida").remove();
             }
             else{

@@ -101,6 +101,7 @@
 										$html .= '<td>Nada que mostrar</td>';
 										$html .= '<td>Nada que mostrar</td>';
 										$html .= '<td>Nada que mostrar</td>';
+										$html .= '<td>Nada que mostrar</td>';
 										$html .= '</tr>'; 
 
 									}
@@ -122,11 +123,6 @@
 					<div class="col-sm-3"></div>
 					<div class="col-sm-6">
 						<h1 class="text-center">OBJETOS DE LA PARTIDA ACTUAL</h1>
-						<?php
-							echo '<button  type="button" class="btn-delete-actual" name="borrar" aria-label="Borrar partida actual" id=' . $_SESSION["id"] . ' value="">
-								<img  src="./imagenes/delete.png"  alt="">
-							</button>';
-						?>
 						<br aria-hidden="true">
 						<table class="table">
 							<thead class="thead">
@@ -178,6 +174,7 @@
 										$html .= '<tr>';
 										$html .= '<td>Nada que mostrar</td>';
 										$html .= '<td>Nada que mostrar</td>';
+										$html .= '<td>Nada que mostrar</td>';
 										$html .= '</tr>'; 
 
 									}
@@ -185,6 +182,23 @@
 								?>
 							</tbody>
 						</table>
+						<br aria-hidden="true">
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6">
+						<div class="text-center">
+						<?php
+						if($numobjetos > 0){
+							echo '<label for=' . $_SESSION["id"] . ' id="delete-label">BORRAR PARTIDA ACTUAL
+							<button  type="button" class="btn-delete-actual" name="borrar" aria-label="Borrar partida actual" id=' . $_SESSION["id"] . ' value="">
+								<img  src="./imagenes/delete.png"  alt="">
+							</button></label>
+							';}
+						?>
+						</div>
 						<br aria-hidden="true">
 						<br aria-hidden="true">
 						<br aria-hidden="true">

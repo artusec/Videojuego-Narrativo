@@ -393,4 +393,19 @@ border-color:black;
   border-color:yellow;
 }
 
- 
+.btn-delete-actual{
+  margin-left:0%;
+  display: inline-block;
+  font-weight: 400;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+}
+.btn-delete-actual:active,.btn-delete-actual:focus{
+  outline:none;
+  border-color:black;
+  }
