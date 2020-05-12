@@ -90,6 +90,21 @@ CREATE TABLE `statistics` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `statistics`
+--
+
+CREATE TABLE `puntuaciones` (
+  `minijuego` varchar(20),
+  `times` int(11) NOT NULL,
+  `score` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+ALTER TABLE `puntuaciones`
+  ADD PRIMARY KEY (`minijuego`);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `users`
 --
 

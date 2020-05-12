@@ -31,6 +31,7 @@
 
 <script type="text/javascript" src="./js/cookies.js"></script>
 <script type="text/javascript" src = "./js/borrarPartida.js"></script>
+<script type="text/javascript" src = "./js/borrarPartidaActual.js"></script>
 
 
 <head>
@@ -121,6 +122,11 @@
 					<div class="col-sm-3"></div>
 					<div class="col-sm-6">
 						<h1 class="text-center">OBJETOS DE LA PARTIDA ACTUAL</h1>
+						<?php
+							echo '<button  type="button" class="btn-delete-actual" name="borrar" aria-label="Borrar partida actual" id=' . $_SESSION["id"] . ' value="">
+								<img  src="./imagenes/delete.png"  alt="">
+							</button>';
+						?>
 						<br aria-hidden="true">
 						<table class="table">
 							<thead class="thead">
@@ -137,7 +143,7 @@
 									$numobjetos = sizeof($objetos);
 									if($numobjetos > 0) {
 										for ($i=0; $i < $numobjetos; $i++) {
-											$html .= '<tr>';
+											$html .= '<tr id=' . $_SESSION["id"] . '_partida>';
 											switch ($objetos[$i]['real_name']) {
 												case "Carpeta chamuscada":
 													$html .= '<td><img src="./imagenes/directory.png" alt=""></td>';

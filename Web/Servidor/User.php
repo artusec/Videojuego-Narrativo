@@ -249,6 +249,29 @@ class User
         }
     }
 
+    public function borrar_partida_actual($id_user){
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+        $query = sprintf("DELETE FROM State_Game WHERE id_user = '%d'",
+            $id_user
+        );
+        $rs = $conn->query($query);
+        if ( ! $rs) {
+            echo "Error al borrar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            return false;
+        }
+
+        # Y ademas borramos la partida propiamente de la tabla Games
+        $query = sprintf("DELETE FROM Games WHERE user = '%d'",
+        $id_user
+        );
+        $rs = $conn->query($query);
+        if ( ! $rs ) {
+            echo "Error al borrar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            return false;
+        } 
+        return true;
+    }
 
     /* Utils ---------------------------------------------------------------------------------*/
 
