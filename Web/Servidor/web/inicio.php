@@ -153,7 +153,11 @@
                     </div>
             </div>
         </div>
-        <div class="col-md-4">    
+        <div class="display-movil">
+                    <br aria-hidden="true">
+                    <br aria-hidden="true">
+                </div>
+        <div class="col-md-4">   
             <div class="minijuegosOut">
                     <div class="card cartas-prop">
                         <a href="./nube.php" > <img src="./imagenes/nube.png"   class="card-img-top" alt="Movil y ordenador conectados mediante un acable a una nube" aria-label="Leer mas sobre la nube"> </a>
@@ -166,7 +170,8 @@
             </div>
         </div>
         </div>
-        <div class="col-smd-2"></div>
+        <div class="col-smd-2">
+        </div>
     </div>
 </section>
 
@@ -175,23 +180,31 @@
     <div class="container-fluid">
         <br aria-hidden="true">
         <br aria-hidden="true">
+        <br aria-hidden="true">
+        <br aria-hidden="true">
         <h1 class=" text-center fade-in" id="minijuegos-title">¡Conoce los minijuegos!</h1>
         <p class="text-center"><img src="./imagenes/jigsaw.png" alt=""></p>
+        <br aria-hidden="true">
+        <br aria-hidden="true">
         <br aria-hidden="true">
         <div class="row">
             <div class="col-sm-4">
                 <div class="minijuegosOut">
-                        <div class="card cartas-minijuegos">
-                            <a href="./ganzua.php" ><img class="card-img-top"  src="./imagenes/safe_box.png" alt="Caja fuerte" aria-label="Leer mas sobre el minijuego ganzua"></a>
-                            <div class="card-body">
-                                <h2 class="card-text">GANZUA</h2>
-                                <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
-                                <br aria-hidden="true">
-                                <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
-                            </div>
+                    <div class="card cartas-minijuegos">
+                        <a href="./ganzua.php" ><img class="card-img-top"  src="./imagenes/safe_box.png" alt="Caja fuerte" aria-label="Leer mas sobre el minijuego ganzua"></a>
+                        <div class="card-body">
+                            <h2 class="card-text">GANZUA</h2>
+                            <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
+                            <br aria-hidden="true">
+                            <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                         </div>
+                    </div>
                 </div>
             </div>
+            <div class="display-movil">
+                    <br aria-hidden="true">
+                    <br aria-hidden="true">
+                </div>
             <div class="col-sm-4">   
                 <div class="minijuegosOut">
                     <div class="card cartas-minijuegos">
@@ -205,6 +218,10 @@
                     </div>
                 </div>
             </div>
+            <div class="display-movil">
+                    <br aria-hidden="true">
+                    <br aria-hidden="true">
+                </div>
             <div class="col-sm-4">    
                 <div class="minijuegosOut">
                     <div class="card cartas-minijuegos">
@@ -223,6 +240,7 @@
         <br aria-hidden="true">
         <br aria-hidden="true">
         <br aria-hidden="true">
+             
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
@@ -264,6 +282,10 @@
                     </div>
                 </div>
             </div>
+            <div class="display-movil">
+                    <br aria-hidden="true">
+                    <br aria-hidden="true">
+                </div>
             <div class="col-sm-4">    
                 <div class="minijuegosOut">
                     <div class="card cartas-minijuegos">
@@ -298,6 +320,7 @@
 
 
 <script>
+
 
 
 function activarCookie() {

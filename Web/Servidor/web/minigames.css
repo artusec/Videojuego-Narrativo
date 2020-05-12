@@ -293,6 +293,8 @@ a{
     width: 60px;
     height: 34px;
   }
+
+ 
   
   /* Hide default HTML checkbox */
   .switch input {
@@ -327,6 +329,8 @@ a{
     transition: .4s;
   }
   
+  
+
   input:checked + .slider {
     background-color: #9932CC;
   }
@@ -362,5 +366,68 @@ a{
 }
 .img-accesibilidad{
     margin-left: 10%;
+}
+
+
+#star_rating svg {
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+	stroke: currentColor;
+}
+#star_rating label, #star_rating output {
+	display: block;
+	float: left;
+	font-size: 2em;
+	height: 1.2em;
+	color: orange;
+	cursor: pointer;
+	/* Transparent border-bottom avoids jumping
+	   when a colored border is applied
+		 on :hover/:focus */
+	border-bottom: 2px solid transparent;
+}
+#star_rating output {
+  font-size: 1.5em;
+  margin-top: 1%;
+	padding: 0 1em;
+}
+#star_rating input:checked ~ label {
+	color: black;
+}
+#star_rating input:checked + label {
+  color: orange;
+  border-bottom-style: none;
+}
+#star_rating input:focus + label {
+	border-bottom-style: none;
+}
+#star_rating:hover input + label {
+	color: orange;
+}
+#star_rating input:hover ~ label,
+#star_rating input:focus ~ label,
+#star_rating input[id="star0"] + label {
+  color: black;
+  border-bottom-style: none;
+}
+#star_rating input:hover + label,
+#star_rating input:focus + label {
+  color: orange;
+  border-bottom-style: none;
+}
+
+#star_rating [type="submit"] {
+	float: none;
+}
+
+.visuallyhidden{
+  position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
 }
 

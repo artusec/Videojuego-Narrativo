@@ -39,6 +39,13 @@
                     } 
                 
                 });
+
+                $('input:checkbox').keypress(function(e){
+                    if((e.keyCode ? e.keyCode : e.which) == 13){
+                        $(this).trigger('click');
+                    }
+                });
+
             };
 /* CONTROL DE CONTRASTES*/
 
@@ -51,8 +58,8 @@ $('#mode').change(function() {
     }
 });
 
+});
 
-        });
 
 
 

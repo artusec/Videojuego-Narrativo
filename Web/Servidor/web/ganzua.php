@@ -109,6 +109,58 @@
                 <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
                 </div>
             </div> 
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <form  id="star_rating" class="rating">
+                        <legend><h2>Puntúa el minijuego</h2></legend>
+                            <input value="1" id="star1"
+                                type="radio" name="rating" class="visuallyhidden">
+                            <label for="star1">
+                                <span class="visuallyhidden">1 Estrella</span>
+                                <svg viewBox="0 0 512 512"><path d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>
+                            </label>
+
+                            <input value="2" id="star2"
+                                type="radio" name="rating" class="visuallyhidden">
+                            <label for="star2">
+                                <span class="visuallyhidden">2 Estrellas</span>
+                                <svg viewBox="0 0 512 512"><path d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>
+                            </label>
+
+                            <input value="3" id="star3"
+                                type="radio" name="rating" class="visuallyhidden">
+                            <label for="star3">
+                                <span class="visuallyhidden">3 Estrellas</span>
+                                <svg viewBox="0 0 512 512"><path d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>
+                            </label>
+
+                            <input value="4" id="star4"
+                                type="radio" name="rating" class="visuallyhidden">
+                            <label for="star4">
+                                <span class="visuallyhidden">4 Estrellas</span>
+                                <svg viewBox="0 0 512 512"><path d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>
+                            </label>
+
+                            <input value="5" id="star5"
+                                type="radio" name="rating" class="visuallyhidden">
+                            <label for="star5">
+                                <span class="visuallyhidden">5 Estrellas</span>
+                                <svg viewBox="0 0 512 512"><path d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>
+                            </label>
+
+                            <button type="submit" class="btn-small visuallyhidden focusable">Submit rating</button>
+
+                            <output></output>
+                    </form>            
+                    
+                </div>
+                 
+                <div class="col-md-2"></div>
+            </div>
+            <br aria-hidden="true">  
+                <br aria-hidden="true"> 
             <br aria-hidden="true">
         </div>
     </section>
@@ -123,6 +175,32 @@
     require_once './js/scripts.js';
     require_once './js/contrasteInicio.js';
 ?>
+
+
+var radios = document.querySelectorAll('#star_rating input[type=radio]');
+var output = document.querySelector('#star_rating output');
+
+var do_something = function(stars) {
+	// An AJAX request could send the data to the server
+	output.textContent = stars;
+};
+
+// Iterate through all radio buttons and add a click
+// event listener to the labels
+Array.prototype.forEach.call(radios, function(el, i){
+	var label = el.nextSibling.nextSibling;
+	label.addEventListener("click", function(event){
+		do_something(label.querySelector('span').textContent);
+	});
+});
+
+// If the form gets submitted, do_something
+document.querySelector('#star_rating').addEventListener('submit', function(event){
+	do_something(document.querySelector('#star_rating :checked ~ label span').textContent);
+	event.preventDefault();
+	event.stopImmediatePropagation();
+});
+
 </script>
 </body>
 
