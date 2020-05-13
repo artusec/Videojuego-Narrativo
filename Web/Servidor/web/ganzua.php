@@ -150,8 +150,6 @@
                                 <svg viewBox="0 0 512 512"><path d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>
                             </label>
 
-                            <button type="submit" class="btn-small visuallyhidden focusable">Submit rating</button>
-
                             <output></output>
                     </form>            
                     
@@ -194,12 +192,6 @@ Array.prototype.forEach.call(radios, function(el, i){
 	});
 });
 
-// If the form gets submitted, do_something
-document.querySelector('#star_rating').addEventListener('submit', function(event){
-	do_something(document.querySelector('#star_rating :checked ~ label span').textContent);
-	event.preventDefault();
-	event.stopImmediatePropagation();
-});
 
 </script>
 </body>

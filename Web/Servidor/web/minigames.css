@@ -382,9 +382,6 @@ a{
 	height: 1.2em;
 	color: orange;
 	cursor: pointer;
-	/* Transparent border-bottom avoids jumping
-	   when a colored border is applied
-		 on :hover/:focus */
 	border-bottom: 2px solid transparent;
 }
 #star_rating output {
@@ -415,11 +412,10 @@ a{
 #star_rating input:focus + label {
   color: orange;
   border-bottom-style: none;
+  
 }
 
-#star_rating [type="submit"] {
-	float: none;
-}
+
 
 .visuallyhidden{
   position: absolute !important;

@@ -139,38 +139,39 @@
         <br aria-hidden="true">
 
         <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-4 ">    
+        <div class="col-lg-2 col-md-0"></div>
+        <div class=" col-lg-4 col-md-6">    
             <div class="minijuegosOut ">
                     <div class="card cartas-prop">
                         <a href="./accesibilidad.php" ><img src="./imagenes/accesibility.png"  class="card-img-top" alt="Pantalla de ordenador con un  simbolo de tick" aria-label="Leer mas sobre accesibilidad"></a>
                         <div class="card-body">
                             <h2 class="card-text">ACCESIBILIDAD</h2>
                             <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.</p>
-                            <br aria-hidden="true">
-                            <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
+                            
+                        </div>
+                        <div class="card-footer">
+                                <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
                     </div>
             </div>
         </div>
-        <div class="display-movil">
-                    <br aria-hidden="true">
-                    <br aria-hidden="true">
-                </div>
-        <div class="col-md-4">   
+     
+        <div class="col-lg-4 col-md-6">   
             <div class="minijuegosOut">
                     <div class="card cartas-prop">
                         <a href="./nube.php" > <img src="./imagenes/nube.png"   class="card-img-top" alt="Movil y ordenador conectados mediante un acable a una nube" aria-label="Leer mas sobre la nube"> </a>
                         <div class="card-body">
                             <h2 class="card-text">NUBE</h2>
                             <p class="card-text">El juego tiene implementado dos sistemas de guardado de tus datos y partidas. Local y en la nube.</p>
-                            <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
                         </div>
+                        <div class="card-footer">
+                                <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
+                            </div>
                     </div>
             </div>
         </div>
         </div>
-        <div class="col-smd-2">
+        <div class="col-lg-2 col-md-0">
         </div>
     </div>
 </section>
@@ -197,14 +198,17 @@
                             <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
                             <br aria-hidden="true">
                             <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
+                            <div  class="puntuacion">
+                            &nbsp Puntuación
+                                <div class="rating">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="display-movil">
-                    <br aria-hidden="true">
-                    <br aria-hidden="true">
-                </div>
+        
             <div class="col-sm-4">   
                 <div class="minijuegosOut">
                     <div class="card cartas-minijuegos">
@@ -218,10 +222,7 @@
                     </div>
                 </div>
             </div>
-            <div class="display-movil">
-                    <br aria-hidden="true">
-                    <br aria-hidden="true">
-                </div>
+        
             <div class="col-sm-4">    
                 <div class="minijuegosOut">
                     <div class="card cartas-minijuegos">
@@ -269,8 +270,8 @@
         <br aria-hidden="true">
 
         <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">    
+            <div class="col-lg-2 col-md-1 col-sm-2"></div>
+            <div class="col-lg-4 col-md-5 col-sm-4">    
                 <div class="minijuegosOut">
                     <div class="card cartas-minijuegos">
                         <a href="./puntos.php" ><img class="card-img-top"  src="./imagenes/diana.png" alt="Diana con una flecha clavada en el centro" aria-label="Leer mas sobre el minijuego puntos calientes"></a>
@@ -282,11 +283,8 @@
                     </div>
                 </div>
             </div>
-            <div class="display-movil">
-                    <br aria-hidden="true">
-                    <br aria-hidden="true">
-                </div>
-            <div class="col-sm-4">    
+
+            <div class="col-lg-4 col-md-5 col-sm-4">    
                 <div class="minijuegosOut">
                     <div class="card cartas-minijuegos">
                         <a href="./simon.php" ><img class="card-img-top" src="./imagenes/simondice.png" alt="Circunferencia con cuatro divisiones que representas los colores rojo, azul amarillo y verde" aria-label="Leer mas sobre el minijuego formas"></a>
@@ -298,7 +296,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-2"></div>
+            <div class="col-lg-2 col-md- col-sm-2"></div>
         </div>
         <br aria-hidden="true">
         <br aria-hidden="true">
