@@ -183,11 +183,22 @@ var do_something = function(stars) {
 	output.textContent = stars;
     // stars contiene "<numero> Estrellas"
     var puntuacion = stars[0];
-    var url = "ajax/actualizarPuntuacion.php?minijuego=" + ganzua + "puntuacion=" + puntuacion;
+    var url = "ajax/actualizarPuntuacion.php?minijuego=ganzua&puntuacion=" + puntuacion;
             $.get(url,borrar);
     console.log(puntuacion);
 
 };
+
+function borrar(data,status){
+        if( status === "success"){
+            if(data !== "error"){
+                console.log(data);
+            }
+            else{
+                console.log(data);
+            }
+        }
+    }
 
 // Iterate through all radio buttons and add a click
 // event listener to the labels

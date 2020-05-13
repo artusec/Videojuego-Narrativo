@@ -1,14 +1,15 @@
 <?php
-require_once './../../User.php';
+require_once '../../Minijuego.php';
 
 if (isset($_GET['minijuego']) && isset($_GET['puntuacion']))
 {
-    if(User::borrar_partida_actual($_GET["id"])){
-        echo $_GET["id"];
+
+    if(Minijuego::actualizar_puntuacion($_GET['minijuego'],$_GET['puntuacion'])){
+        echo $_GET["minijuego"];
     }
-    else{
+    /*else{
         echo "error";
-    }
+    }*/
 }
 else{
     echo "error";
