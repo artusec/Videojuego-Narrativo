@@ -181,6 +181,12 @@ var output = document.querySelector('#star_rating output');
 var do_something = function(stars) {
 	// An AJAX request could send the data to the server
 	output.textContent = stars;
+    // stars contiene "<numero> Estrellas"
+    var puntuacion = stars[0];
+    var url = "ajax/actualizarPuntuacion.php?minijuego=" + ganzua + "puntuacion=" + puntuacion;
+            $.get(url,borrar);
+    console.log(puntuacion);
+
 };
 
 // Iterate through all radio buttons and add a click

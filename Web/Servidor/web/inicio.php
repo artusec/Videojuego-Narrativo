@@ -227,7 +227,6 @@
                         <div class="card-body">
                             <h2 class="card-text">FORMAS</h2>
                             <p class="card-text">Usando el dedo deberas detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                            <br>
                             <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                         </div>
                     </div>
