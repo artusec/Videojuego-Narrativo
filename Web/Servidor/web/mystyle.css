@@ -228,6 +228,8 @@ a{
 
 .leer-mas{
     color:#9932CC;
+    position:absolute; bottom:0;
+    margin-bottom: 2%;
 }
 .leer-mas:hover,.leer-mas:focus{
   color:#9932CC;

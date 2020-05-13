@@ -147,6 +147,7 @@
                         <div class="card-body">
                             <h2 class="card-text">ACCESIBILIDAD</h2>
                             <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.No es necesario software extra.</p>
+                            <br>
                             <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
                     </div>
@@ -160,7 +161,8 @@
                         <div class="card-body">
                             <h2 class="card-text">NUBE</h2>
                             <p class="card-text">El juego tiene implementado dos sistemas de guardado de tus datos y partidas.En Local (tu teléfono móvil) y en la Nube.</p>
-                                <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
+                            <br>
+                            <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
                         </div>
                     </div>
             </div>
@@ -191,7 +193,7 @@
                         <div class="card-body">
                             <h2 class="card-text">GANZUA</h2>
                             <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
-                            <br aria-hidden="true">
+                            <br>
                             <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                             <div  class="puntuacion">
                             &nbsp Puntuación
@@ -211,6 +213,7 @@
                         <div class="card-body">
                             <h2 class="card-text">VOCES A LO LEJOS</h2>
                             <p class="card-text">Mover el dedo por la pantalla siguiendo unas voces que podrás oír en alguna dirección.</p>
+                            <br>
                             <a href="./voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                         </div>
                     </div>
@@ -224,7 +227,7 @@
                         <div class="card-body">
                             <h2 class="card-text">FORMAS</h2>
                             <p class="card-text">Usando el dedo deberas detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                            <br aria-hidden="true">
+                            <br>
                             <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                         </div>
                     </div>
@@ -236,7 +239,6 @@
         <br aria-hidden="true">
         <br aria-hidden="true">
         <br aria-hidden="true">
-             
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
@@ -273,6 +275,7 @@
                         <div class="card-body">
                             <h2 class="card-text">PUNTOS CALIENTES</h2>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>
+                            <br>
                             <a href="./puntos.php" class="leer-mas" aria-label="Leer mas sobre el minijuego puntos calientes">Leer mas</a>
                         </div>
                     </div>
@@ -286,6 +289,7 @@
                         <div class="card-body">
                             <h2 class="card-text">SIMON SAYS</h2>
                             <p class="card-text">Pasar el dedo por la pantalla y jugar al "Simon says" de toda la vida que hemos jugado todos de pequeños.</p>
+                            <br>
                             <a href="./simon.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                         </div>
                     </div>
