@@ -146,7 +146,7 @@
                         <a href="./accesibilidad.php" ><img src="./imagenes/accesibility.png"  class="card-img-top" alt="Pantalla de ordenador con un  simbolo de tick" aria-label="Leer mas sobre accesibilidad"></a>
                         <div class="card-body">
                             <h2 class="card-text">ACCESIBILIDAD</h2>
-                            <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.No hace falta fotfware extra de ningún tipo.</p>
+                            <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.No es necesario software extra.</p>
                             <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
                     </div>
@@ -159,7 +159,7 @@
                         <a href="./nube.php" > <img src="./imagenes/nube.png"   class="card-img-top" alt="Movil y ordenador conectados mediante un acable a una nube" aria-label="Leer mas sobre la nube"> </a>
                         <div class="card-body">
                             <h2 class="card-text">NUBE</h2>
-                            <p class="card-text">El juego tiene implementado dos sistemas de guardado de tus datos y partidas. Local y en la nube.</p>
+                            <p class="card-text">El juego tiene implementado dos sistemas de guardado de tus datos y partidas.En Local (tu teléfono móvil) y en la Nube.</p>
                                 <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
                         </div>
                     </div>
