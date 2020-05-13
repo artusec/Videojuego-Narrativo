@@ -146,11 +146,8 @@
                         <a href="./accesibilidad.php" ><img src="./imagenes/accesibility.png"  class="card-img-top" alt="Pantalla de ordenador con un  simbolo de tick" aria-label="Leer mas sobre accesibilidad"></a>
                         <div class="card-body">
                             <h2 class="card-text">ACCESIBILIDAD</h2>
-                            <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.</p>
-                            
-                        </div>
-                        <div class="card-footer">
-                                <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
+                            <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.No hace falta fotfware extra de ningún tipo.</p>
+                            <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
                         </div>
                     </div>
             </div>
@@ -163,10 +160,8 @@
                         <div class="card-body">
                             <h2 class="card-text">NUBE</h2>
                             <p class="card-text">El juego tiene implementado dos sistemas de guardado de tus datos y partidas. Local y en la nube.</p>
-                        </div>
-                        <div class="card-footer">
                                 <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
-                            </div>
+                        </div>
                     </div>
             </div>
         </div>
@@ -229,7 +224,8 @@
                         <a href="./formas.php" ><img class="card-img-top"  src="./imagenes/geometry.png" alt="Froma de un cubo, un cono y una esfera" aria-label="Leer mas sobre el minijuego formas"></a>
                         <div class="card-body">
                             <h2 class="card-text">FORMAS</h2>
-                            <p class="card-text">Pasar el dedo por la pantalla y detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                            <p class="card-text">Usando el dedo deberas detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                            <br aria-hidden="true">
                             <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                         </div>
                     </div>
