@@ -24,12 +24,12 @@ header{
 }
 
 a{
-    color: #fefefe;
+  color: #fefefe;
 }
 
 .navbar{
     width: 100%;
-    background-color:transparent;
+    background-color:black;
     color:#fefefe;
     max-width: 100%;
 }

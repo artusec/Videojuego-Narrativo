@@ -211,7 +211,6 @@
                         <div class="card-body">
                             <h2 class="card-text">VOCES A LO LEJOS</h2>
                             <p class="card-text">Mover el dedo por la pantalla siguiendo unas voces que podrás oír en alguna dirección.</p>
-                            <br aria-hidden="true">
                             <a href="./voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
                         </div>
                     </div>
