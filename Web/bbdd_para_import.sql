@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-05-2020 a las 19:28:41
+-- Tiempo de generación: 14-05-2020 a las 19:08:35
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -72,6 +72,17 @@ CREATE TABLE `puntuaciones` (
   `score` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `puntuaciones`
+--
+
+INSERT INTO `puntuaciones` (`minijuego`, `times`, `score`) VALUES
+('formas', 0, 0),
+('ganzua', 0, 0),
+('puntos', 0, 0),
+('simon', 0, 0),
+('voces', 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -121,7 +132,8 @@ CREATE TABLE `users` (
 
 CREATE TABLE `user_pun` (
   `user` int(11) NOT NULL,
-  `minijuego` varchar(20) COLLATE utf8_spanish_ci NOT NULL
+  `minijuego` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `score` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -195,7 +207,7 @@ ALTER TABLE `statistics`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas

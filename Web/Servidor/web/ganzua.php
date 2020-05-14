@@ -1,6 +1,7 @@
 <?php
 	require_once '../DB_data.php';
 	require_once 'FormularioLogin.php';
+    require_once '../Minijuego.php';
 ?>
 
 <!DOCTYPE HTML>
@@ -114,46 +115,61 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                 <?php  if (isset($_SESSION['login']) && $_SESSION['login'] === true){
-                    echo "
-                    <form  id='star_rating' class='rating'>
-                        <legend><h2>Puntúa el minijuego</h2></legend>
-                            <input value='1' id='star1'
-                                type='radio' name='rating' class='visuallyhidden'>
-                            <label for='star1'>
-                                <span class='visuallyhidden'>1 Estrella</span>
-                                <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
-                            </label>
+                            $score = Minijuego::get_puntUM($_SESSION['id'], 'ganzua');
+                            if($score == 0) {
+                                echo "
+                                <form  id='star_rating' class='rating'>
+                                    <legend><h2>Puntúa el minijuego</h2></legend>
+                                        <input value='1' id='star1'
+                                            type='radio' name='rating' class='visuallyhidden'>
+                                        <label for='star1'>
+                                            <span class='visuallyhidden'>1 Estrella</span>
+                                            <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
+                                        </label>
 
-                            <input value='2' id='star2'
-                                type='radio' name='rating' class='visuallyhidden'>
-                            <label for='star2'>
-                                <span class='visuallyhidden'>2 Estrellas</span>
-                                <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
-                            </label>
+                                        <input value='2' id='star2'
+                                            type='radio' name='rating' class='visuallyhidden'>
+                                        <label for='star2'>
+                                            <span class='visuallyhidden'>2 Estrellas</span>
+                                            <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
+                                        </label>
 
-                            <input value='3' id='star3'
-                                type='radio' name='rating' class='visuallyhidden'>
-                            <label for='star3'>
-                                <span class='visuallyhidden'>3 Estrellas</span>
-                                <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
-                            </label>
+                                        <input value='3' id='star3'
+                                            type='radio' name='rating' class='visuallyhidden'>
+                                        <label for='star3'>
+                                            <span class='visuallyhidden'>3 Estrellas</span>
+                                            <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
+                                        </label>
 
-                            <input value='4' id='star4'
-                                type='radio' name='rating' class='visuallyhidden'>
-                            <label for='star4'>
-                                <span class='visuallyhidden'>4 Estrellas</span>
-                                <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
-                            </label>
+                                        <input value='4' id='star4'
+                                            type='radio' name='rating' class='visuallyhidden'>
+                                        <label for='star4'>
+                                            <span class='visuallyhidden'>4 Estrellas</span>
+                                            <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
+                                        </label>
 
-                            <input value='5' id='star5'
-                                type='radio' name='rating' class='visuallyhidden'>
-                            <label for='star5'>
-                                <span class='visuallyhidden'>5 Estrellas</span>
-                                <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
-                            </label>
+                                        <input value='5' id='star5'
+                                            type='radio' name='rating' class='visuallyhidden'>
+                                        <label for='star5'>
+                                            <span class='visuallyhidden'>5 Estrellas</span>
+                                            <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
+                                        </label>
 
-                            <output></output>
-                    </form>  ";
+                                        <output></output>
+                                </form>  ";
+                            }
+                            else {
+                                echo "TU PUNTUACION";
+                                echo "<div class='rating'>";
+                                for($i=1;$i<=$score;$i++){
+                                    echo '<span>★</span>';
+                                }
+                                while($i<=5){
+                                    echo '<span>☆</span>';
+                                    $i++;
+                                }  
+                                echo '</div>';
+                            }
                 }          
                 ?>
                 </div>

@@ -63,17 +63,20 @@ class Minijuego
             );
         if ( !$conn->query($query) ) {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
             return false;
         }
 
         /*MIRAR SI YA HA VOTADO Y HACER UPDATE O INSERT EN FUNCION DE ESO*/
 
-        $query = sprintf("UPDATE user_pun U SET U.minijuego = ('%s') WHERE U.user = ('%d')",
+        $query = sprintf("INSERT INTO user_pun (user, minijuego, score) VALUES ('%d','%s','%d')",
+            $_SESSION['id'], 
             $conn->real_escape_string($minijuego),
-            $_SESSION['id'],
+            $puntuacion
             );
         if ( !$conn->query($query) ) {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
             return false;
         }
 
@@ -106,6 +109,31 @@ class Minijuego
         
 
         return $score;
+    }
+
+    public function get_puntUM($usuario, $minijuego) {
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
+
+        $query = sprintf("SELECT score FROM user_pun WHERE minijuego = '%s' and user = %d",
+            $minijuego,
+            $usuario
+        );
+
+        $rs = $conn->query($query);
+        
+        if ($rs) {
+            if ($rs->num_rows == 0) {
+                return 0;
+            }
+            $fila = $rs->fetch_assoc();
+            $score = $fila['score'];
+            $rs->free();
+            return $score;
+        } else {
+            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
     }
 
     /* Getters and Setters -------------------------------------------------------------------*/
