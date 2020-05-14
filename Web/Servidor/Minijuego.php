@@ -82,7 +82,31 @@ class Minijuego
     }
 
     ///GET PUNTUACION///////////
+    public function get_puntuacion($minijuego){
+        $app = Aplication::getSingleton();
+        $conn = $app->conexionBd();
 
+        $query = sprintf("SELECT score FROM puntuaciones WHERE minijuego = '%s'",
+            $minijuego
+        );
+
+        $rs = $conn->query($query);
+        $result = false;
+        if ($rs) {
+            $result = array();
+            while ($fila = $rs->fetch_assoc()) {
+                $score = $fila['score'];
+            }
+            $rs->free();
+        } else {
+            echo "Error al consultar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
+            exit();
+        }
+
+        
+
+        return $score;
+    }
 
     /* Getters and Setters -------------------------------------------------------------------*/
 

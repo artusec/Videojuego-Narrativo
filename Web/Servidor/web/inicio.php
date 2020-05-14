@@ -1,5 +1,6 @@
 <?php
     require_once '../DB_data.php';
+    require_once '../Minijuego.php';
 ?>
 
 <!DOCTYPE html>
@@ -197,9 +198,20 @@
                             <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                             <div  class="puntuacion">
                             &nbsp Puntuación
-                                <div class="rating">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
+                                <?php 
+
+                                $puntuacion = Minijuego::get_puntuacion("ganzua");
+                                $html ="<div class='rating'>";
+                                for($i=1;$i<=$puntuacion;$i++){
+                                    $html .= '<span>★</span>';
+                                }
+                                while($i<=5){
+                                    $html .= '<span>☆</span>';
+                                    $i++;
+                                }    
+                                $html .= '</div>';
+                                echo $html;
+                                ?>
                             </div>
                         </div>
                     </div>
