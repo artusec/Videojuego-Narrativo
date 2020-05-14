@@ -31,8 +31,7 @@ class Minijuego
         $app = Aplication::getSingleton();
         $conn = $app->conexionBd();
 
-        header("Location:./web/inicio.php");
-        $query = sprintf("SELECT times, score FROM puntuaciones WHERE minijuego = '%s'",
+        $query = sprintf("SELECT times,score FROM puntuaciones WHERE minijuego = '%s'",
             $minijuego
         );
 
@@ -41,7 +40,8 @@ class Minijuego
         if ($rs) {
             $result = array();
             while ($fila = $rs->fetch_assoc()) {
-                $result[] = $fila;
+                $times = $fila['times'];
+                $score = $fila['score'];
             }
             $rs->free();
         } else {
@@ -49,28 +49,28 @@ class Minijuego
             exit();
         }
 
-
-        $times = $result[0];
-        $score = $result[1];
+        
 
         $scoreA = $score * $times;
         $scoreN = $scoreA + $puntuacion;
         $times = $times + 1;
         $score = $scoreN/$times;
 
-        $query = sprintf("INSERT INTO puntuaciones (minijuego, times, score) VALUES ('%s', '%d', '%d')",
-            $conn->real_escape_string($minijuego),
+        $query = sprintf("UPDATE puntuaciones P SET P.times = ('%d'), P.score = ('%d') WHERE (P.minijuego = '%s') ",
             $times,
-            round($score)
+            round($score),
+            $conn->real_escape_string($minijuego)
             );
         if ( !$conn->query($query) ) {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             return false;
         }
 
-        $query = sprintf("INSERT INTO user_pun (user, minijuego) VALUES ('%d', '%s')",
+        /*MIRAR SI YA HA VOTADO Y HACER UPDATE O INSERT EN FUNCION DE ESO*/
+
+        $query = sprintf("UPDATE user_pun U SET U.minijuego = ('%s') WHERE U.user = ('%d')",
+            $conn->real_escape_string($minijuego),
             $_SESSION['id'],
-            $conn->real_escape_string($minijuego)
             );
         if ( !$conn->query($query) ) {
             echo "Error al insertar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
