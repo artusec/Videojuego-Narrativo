@@ -188,25 +188,24 @@
         <br aria-hidden="true">
         <div class="row">
             <div class="col-sm-4">
-                <div class="minijuegosOut">
-                    <div class="card cartas-minijuegos">
+                <div class="minijuegosOut special-row"">
+                    <div class="card cartas-minijuegos >
                         <a href="./ganzua.php" ><img class="card-img-top"  src="./imagenes/safe_box.png" alt="Caja fuerte" aria-label="Leer mas sobre el minijuego ganzua"></a>
                         <div class="card-body">
-                            <h2 class="card-text">GANZUA</h2>
+                            <h2 class="card-text">GANZUA EN CAJA FUERTE</h2>
                             <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
-                            <br>
                             <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                             <div  class="puntuacion">
                             &nbsp Puntuación
                                 <?php 
 
                                 $puntuacion = Minijuego::get_puntuacion("ganzua");
-                                $html ="<div class='rating'>";
+                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
                                 for($i=1;$i<=$puntuacion;$i++){
                                     $html .= '<span>★</span>';
                                 }
                                 while($i<=5){
-                                    $html .= '<span>☆</span>';
+                                    $html .= '<span class="black-star">★</span>';
                                     $i++;
                                 }    
                                 $html .= '</div>';
@@ -219,27 +218,61 @@
             </div>
         
             <div class="col-sm-4">   
-                <div class="minijuegosOut">
-                    <div class="card cartas-minijuegos">
+                <div class="minijuegosOut special-row">
+                    <div class="card cartas-minijuegos ">
                         <a href="./voces.php"><img class="card-img-top"  src="./imagenes/earphone.png" alt="auriculares emitiendo audio" aria-label="Leer mas sobre el minijuego voces a lo lejos"></a>
                         <div class="card-body">
-                            <h2 class="card-text">VOCES A LO LEJOS</h2>
+                            <h2 class="card-text">VOCES EN LA DISTANCIA</h2>
                             <p class="card-text">Mover el dedo por la pantalla siguiendo unas voces que podrás oír en alguna dirección.</p>
-                            <br>
                             <a href="./voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
+
+                            <div  class="puntuacion">
+                            &nbsp Puntuación
+                                <?php 
+
+                                $puntuacion = Minijuego::get_puntuacion("voces");
+                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
+                                for($i=1;$i<=$puntuacion;$i++){
+                                    $html .= '<span>★</span>';
+                                }
+                                while($i<=5){
+                                    $html .= '<span class="black-star">★</span>';
+                                    $i++;
+                                }    
+                                $html .= '</div>';
+                                echo $html;
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         
             <div class="col-sm-4">    
-                <div class="minijuegosOut">
-                    <div class="card cartas-minijuegos">
+                <div class="minijuegosOut special-row">
+                    <div class="card cartas-minijuegos ">
                         <a href="./formas.php" ><img class="card-img-top"  src="./imagenes/geometry.png" alt="Froma de un cubo, un cono y una esfera" aria-label="Leer mas sobre el minijuego formas"></a>
                         <div class="card-body">
-                            <h2 class="card-text">FORMAS</h2>
+                            <h2 class="card-text">FORMAS DE OBJECTOS</h2>
                             <p class="card-text">Usando el dedo deberas detectar vibraciones para adivinar la forma del objeto escondido.</p>
                             <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+                            <div  class="puntuacion">
+                            &nbsp Puntuación
+                                <?php 
+
+                                $puntuacion = Minijuego::get_puntuacion("formas");
+                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
+                                for($i=1;$i<=$puntuacion;$i++){
+                                    $html .= '<span>★</span>';
+                                }
+                                while($i<=5){
+                                    $html .= '<span class="black-star">★</span>';
+                                    $i++;
+                                }    
+                                $html .= '</div>';
+                                echo $html;
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -286,8 +319,25 @@
                         <div class="card-body">
                             <h2 class="card-text">PUNTOS CALIENTES</h2>
                             <p class="card-text">Pasar el dedo por la pantalla y detectar zonas de vibración más intensa para encontrar el punto exacto.</p>
-                            <br>
+                            
                             <a href="./puntos.php" class="leer-mas" aria-label="Leer mas sobre el minijuego puntos calientes">Leer mas</a>
+                            <div  class="puntuacion">
+                            &nbsp Puntuación
+                                <?php 
+
+                                $puntuacion = Minijuego::get_puntuacion("puntos");
+                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
+                                for($i=1;$i<=$puntuacion;$i++){
+                                    $html .= '<span>★</span>';
+                                }
+                                while($i<=5){
+                                    $html .= '<span class="black-star">★</span>';
+                                    $i++;
+                                }    
+                                $html .= '</div>';
+                                echo $html;
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -300,8 +350,25 @@
                         <div class="card-body">
                             <h2 class="card-text">SIMON SAYS</h2>
                             <p class="card-text">Pasar el dedo por la pantalla y jugar al "Simon says" de toda la vida que hemos jugado todos de pequeños.</p>
-                            <br>
+                            
                             <a href="./simon.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+                            <div  class="puntuacion">
+                            &nbsp Puntuación
+                                <?php 
+
+                                $puntuacion = Minijuego::get_puntuacion("simon");
+                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
+                                for($i=1;$i<=$puntuacion;$i++){
+                                    $html .= '<span>★</span>';
+                                }
+                                while($i<=5){
+                                    $html .= '<span class="black-star">★</span>';
+                                    $i++;
+                                }    
+                                $html .= '</div>';
+                                echo $html;
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>

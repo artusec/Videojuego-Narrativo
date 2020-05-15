@@ -46,7 +46,7 @@ a{
     list-style: none;
 }
 
-/*Para telefonos y tablets*/
+/*Para telefonos*/
 @media only screen and (max-width:  768px) {
 
     /* For mobile phones: */
@@ -56,9 +56,35 @@ a{
   .no-display-movil{
     display:none;
     }
-    .display-movil{
-        display:block;
-    }
+  .display-movil{
+      display:block;
+  }
+
+
+}
+
+.minijuegosOut{
+  padding-left: 10%;
+  height: 100%;
+}
+.card{
+  height: 100%;
+  width: 90%;
+  color:#591D77;
+  border-radius: 5%;
+  border: 0px  solid #591D77;
+  display:none;
+}
+
+
+/*Para tablets*/
+@media (min-width: 767px) and (max-width: 1024px) {
+  
+  .special-row{
+    width: 110%;
+    padding-left: 0%;
+  }
+  
 }
 
 .nav img{
@@ -235,30 +261,11 @@ a{
   color:#9932CC;
   text-decoration: underline;
 }
-.minijuegosOut{
-    padding-left: 10%;
-    height: 100%;
-}
-
-.minijuegosIn{
-    background-color:#fefefe;
-    border-radius: 5%;
-    border: 0px solid #591D77;
-    padding: 1%;
-}
 
 .img-minijuegos{
     width: 100%;
 }
 
-.card{
-    height: 100%;
-    width: 90%;
-    color:#591D77;
-    border-radius: 5%;
-    border: 0px  solid #591D77;
-    display:none;
-}
 
 
 
@@ -486,13 +493,16 @@ footer a:hover,footer a:focus{
     display:none;
   }
 
+
+  .puntuacion{
+    float: right;
+ 
+  }
   .rating{
     color:orange;
     font-size: 25px;
 
   }
-
-
-  .puntuacion{
-    float: right;
+  .black-star{
+    color:black;
   }

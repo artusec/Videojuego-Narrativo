@@ -36,6 +36,7 @@
 <link rel="stylesheet" type="text/css" href="minigames.css">
 
 <script src="./js/cookies.js"></script>
+<script src="./js/starRating.js"></script>
 
 
 <head>
@@ -119,7 +120,8 @@
                             if($score == 0) {
                                 echo "
                                 <form  id='star_rating' class='rating'>
-                                    <legend><h2>Puntúa el minijuego</h2></legend>
+                                    <legend><h2>Puntúa el minijuego:</h2></legend>
+                                        <div id='estrellas'>
                                         <input value='1' id='star1'
                                             type='radio' name='rating' class='visuallyhidden'>
                                         <label for='star1'>
@@ -154,21 +156,22 @@
                                             <span class='visuallyhidden'>5 Estrellas</span>
                                             <svg viewBox='0 0 512 512'><path d='M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z'></path></svg>
                                         </label>
-
-                                        <output></output>
+                                        </div>
+                                        <output></output><img id='sent-img' src='./imagenes/sent.png' alt=''>
                                 </form>  ";
                             }
                             else {
-                                echo "TU PUNTUACION";
-                                echo "<div class='rating'>";
+                                $html = "<h2>TU PUNTUACION</h2>";
+                                $html .= "<div class='rating-done' aria-label='Puntuacion $score sobre 5 '>";
                                 for($i=1;$i<=$score;$i++){
-                                    echo '<span>★</span>';
+                                    $html .='<span>★</span>';
                                 }
                                 while($i<=5){
-                                    echo '<span>☆</span>';
+                                    $html .='<span>☆</span>';
                                     $i++;
                                 }  
-                                echo '</div>';
+                                $html .='</div>';
+                                echo $html;
                             }
                 }          
                 ?>
@@ -193,14 +196,14 @@
     require_once './js/contrasteInicio.js';
 ?>
 
-
 var radios = document.querySelectorAll('#star_rating input[type=radio]');
 var output = document.querySelector('#star_rating output');
 
+
 var do_something = function(stars) {
-	// An AJAX request could send the data to the server
-	output.textContent = stars;
-    // stars contiene "<numero> Estrellas"
+
+    output.textContent = stars;
+    $('#sent-img').css("display", "block");
     var puntuacion = stars[0];
     var url = "ajax/actualizarPuntuacion.php?minijuego=ganzua&puntuacion=" + puntuacion;
             $.get(url,borrar);
@@ -208,25 +211,7 @@ var do_something = function(stars) {
 
 };
 
-function borrar(data,status){
-        if( status === "success"){
-            if(data !== "error"){
-                console.log(data);
-            }
-            else{
-                console.log(data);
-            }
-        }
-    }
 
-// Iterate through all radio buttons and add a click
-// event listener to the labels
-Array.prototype.forEach.call(radios, function(el, i){
-	var label = el.nextSibling.nextSibling;
-	label.addEventListener("click", function(event){
-		do_something(label.querySelector('span').textContent);
-	});
-});
 
 
 </script>
