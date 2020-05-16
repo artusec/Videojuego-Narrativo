@@ -3,7 +3,9 @@
         <div class="display-movil">
             <ul class="nav justify-content-center">
                 <li class="nav-item ">
-                    <a  aria-label="Cambiar el contraste de la página" onclick="cambioContraste()" id="link-icono-cambiante"><img id="icono-cambiante" src="./imagenes/hcontrast.png " alt=""></a>
+                    <button  type="button" class="btn-contraste" onclick="cambioContraste()" aria-label="Cambiar el contraste de la página" id="link-icono-cambiante">
+                        <img id="icono-cambiante" src="./imagenes/hcontrast.png " alt="">
+                    </button>
                 </li>
             </ul>
         </div>
@@ -39,12 +41,16 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 <li class="no-display-movil">
-                    <a  aria-label="Poner la página con colores en alto contraste" onclick="modoAltoContraste()"><img src="./imagenes/hcontrast.png" alt=""></a>        
+                    <button  type="button" class="btn-contraste2"  onclick="modoAltoContraste()" aria-label="Poner la página con colores en alto contraste" >
+                        <img src="./imagenes/hcontrast.png" alt="">
+                    </button>        
                     <label class="switch" for="mode" id="switch-label" aria-label="Cambio de contraste" title="Cambio de contraste">
                         <input type="checkbox" id="mode"   name="mode" aria-label="Cambiar el contraste de la página" checked role="checkbox" aria-labelledby="switch-label"> 
                         <span class="slider round"></span>
-                    </label>      
-                    <a  aria-label="Poner la página con colones sin alto contraste" onclick="modoNormal()"><img src="./imagenes/ncontrast.png" alt=""></a>
+                    </label>    
+                    <button  type="button" class="btn-contraste2"  onclick="modoNormal()"  aria-label="Poner la página con colones sin alto contraste">
+                        <img src="./imagenes/ncontrast.png" alt="">
+                    </button>   
                 </li>
             </ul>
     </div>
