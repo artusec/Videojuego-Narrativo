@@ -73,10 +73,11 @@
 
 <main>
 
-    <ol class="breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb" aria-label="breadcrumb" role="navigation">
         <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
         <li class="active" aria-current="page">Minijuego - Ganzúa</li>        
     </ol>
+
 
     <section  aria-label="Minijuego de ganzúa">
         <div class="container-fluid">
@@ -205,11 +206,11 @@ var do_something = function(stars) {
     output.textContent = stars;
     $('#sent-img').css("display", "block");
     var puntuacion = stars[0];
-    var url = "ajax/actualizarPuntuacion.php?minijuego=ganzua&puntuacion=" + puntuacion;
-            $.get(url,borrar);
     console.log(puntuacion);
-
+    var url = "ajax/actualizarPuntuacion.php?minijuego=ganzua&puntuacion=" + puntuacion;
+    $.get(url,borrar);
 };
+
 
 
 

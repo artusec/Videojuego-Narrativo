@@ -258,10 +258,14 @@ margin-top: 10%
   
   input:checked + .slider:before {
     background-color: white;
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
+
+  input:focus + .slider:before{
+    height: 30px;
+    width: 30px;
+  }
+
   
 /* Rounded sliders */
 .slider.round {
@@ -439,3 +443,7 @@ border-color:black;
     border-radius: .25rem;
   }
   
+  .btn-contraste2:active,.btn-contraste2:focus{
+    outline:none;
+    border-color:white;
+    }

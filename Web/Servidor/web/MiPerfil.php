@@ -58,7 +58,7 @@
 	<br aria-hidden="true">
 	<br aria-hidden="true">
 	<br aria-hidden="true">
-	<ol class="breadcrumb" aria-label="breadcrumb">
+	<ol class="breadcrumb" aria-label="breadcrumb" role="navigation">
         <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
         <li class="active" aria-current="page">Mi perfil</li>        
     </ol>

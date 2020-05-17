@@ -67,6 +67,7 @@ a{
   padding-left: 10%;
   height: 100%;
 }
+
 .card{
   height: 100%;
   width: 90%;
@@ -175,7 +176,7 @@ a{
     width: 60px;
     height: 34px;
   }
-  
+ 
 
   .switch input {
     opacity: 0;
@@ -183,7 +184,7 @@ a{
     height: 0;
   }
   
-  /* The slider */
+
   .slider {
     position: absolute;
     cursor: pointer;
@@ -197,6 +198,7 @@ a{
     margin-top: 10%
   }
   
+
   .slider:before {
     position: absolute;
     content: "";
@@ -218,6 +220,11 @@ a{
     transform: translateX(26px);
   }
   
+  input:focus + .slider:before{
+    height: 30px;
+    width: 30px;
+  }
+
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
@@ -226,7 +233,6 @@ a{
   .slider.round:before {
     border-radius: 50%;
   }
-  
   
 
 .btn-purple:active,.btn-purple {
@@ -419,7 +425,6 @@ footer a:hover,footer a:focus{
       left: 50%;
       transform: translate(-50%,-50%) rotate(-45deg);
       z-index:999;
-     
   }
   @keyframes blink {
    
@@ -534,3 +539,8 @@ footer a:hover,footer a:focus{
   line-height: 1.5;
   border-radius: .25rem;
 }
+
+.btn-contraste2:active,.btn-contraste2:focus{
+  outline:none;
+  border-color:white;
+  }

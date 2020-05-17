@@ -45,7 +45,7 @@
                         <img src="./imagenes/hcontrast.png" alt="">
                     </button>        
                     <label class="switch" for="mode" id="switch-label" aria-label="Cambio de contraste" title="Cambio de contraste">
-                        <input type="checkbox" id="mode"   name="mode" aria-label="Cambiar el contraste de la página" checked role="checkbox" aria-labelledby="switch-label"> 
+                        <input type="checkbox" id="mode"  name="mode" aria-label="Cambiar el contraste de la página" checked role="checkbox" aria-labelledby="switch-label"> 
                         <span class="slider round"></span>
                     </label>    
                     <button  type="button" class="btn-contraste2"  onclick="modoNormal()"  aria-label="Poner la página con colones sin alto contraste">
