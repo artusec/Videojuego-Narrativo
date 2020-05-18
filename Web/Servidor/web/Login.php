@@ -64,7 +64,7 @@
     <br aria-hidden="true">
 
 
-    <ol class="breadcrumb" aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb" aria-label="Migas de pan" role="navigation">
         <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
         <li class="active" aria-current="page">Acceder</li>        
     </ol>
