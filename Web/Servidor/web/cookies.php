@@ -86,7 +86,6 @@
                 <h1 class="text-center">POLITICA DE COOKIES</h1>
                 <br aria-hidden="true">
                 <p>RELLENAR</p>
-
                 <br aria-hidden="true">
                 </div>
                 <div class="col-md-2">

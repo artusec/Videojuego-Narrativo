@@ -104,7 +104,7 @@ header{
 .breadcrumb li+li:before{
     padding: 8px;
     color:#fefefe;
-    content:"  >>";
+    content:"/";
 }
   
 .img-container{

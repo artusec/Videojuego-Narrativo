@@ -72,7 +72,7 @@
 
 
 <main id="main">
-    <ol class="breadcrumb" aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb" aria-label="Migas de pan" role="navigation">
         <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
         <li class="active" aria-current="page">Nube</li>        
     </ol>
@@ -98,12 +98,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-3">
                 </div>
-                <div class="col-md-4">
-                    <img src="./imagenes/guardado_nube.png"  alt="Pantalla de ordenador, pantalla de ordenador portátil, tablet y movil conectados a una nube"/>
+                <div class="col-md-6">
+                    <img src="./imagenes/guardado_nube.png" class="img-width" alt="Pantalla de ordenador, pantalla de ordenador portátil, tablet y movil conectados a una nube"/>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                 </div>
             </div>  
             <br aria-hidden="true">

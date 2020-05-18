@@ -79,7 +79,7 @@
 	
 	
 <main>
-    <ol class="breadcrumb" aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb" aria-label="Migas de pan" role="navigation">
         <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
         <li class="active" aria-current="page">Minijuego - Puntos calientes</li>        
     </ol>
@@ -109,7 +109,7 @@
                 <div class="col-lg-4 col-md-3">
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <img src="./imagenes/vib.gif" alt="Móvil vibrando"/>
+                    <img src="./imagenes/vib.gif"  class="img-width" alt="Móvil vibrando"/>
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>

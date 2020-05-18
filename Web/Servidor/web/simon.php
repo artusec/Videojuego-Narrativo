@@ -76,7 +76,7 @@
 
 	
 <main>
-    <ol class="breadcrumb" aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb" aria-label="Migas de pan" role="navigation">
         <li><a class="bread-link" href="./inicio.php" aira-label="Ir al la página principal">Inicio</a></li>
         <li class="active" aria-current="page">Accesibilidad</li>        
     </ol>
@@ -107,7 +107,7 @@
                 <div class="col-lg-4 col-md-3">
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <img src="./imagenes/simon.gif" alt="Móvil emitiendo un sonido y persona replicándolo"/>
+                    <img src="./imagenes/simon.gif"  class="img-width" alt="Móvil emitiendo un sonido y persona replicándolo"/>
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>
