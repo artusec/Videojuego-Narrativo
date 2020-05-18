@@ -9,7 +9,7 @@
                 </li>
             </ul>
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir navegación">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,7 +39,7 @@
         }
 ?>             
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right no-display-movil">
                 <li class="no-display-movil">
                     <button  type="button" class="btn-contraste2"  onclick="modoAltoContraste()" aria-label="Poner la página con colores en alto contraste" >
                         <img src="./imagenes/hcontrast.png" alt="">

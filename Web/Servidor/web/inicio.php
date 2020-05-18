@@ -390,7 +390,7 @@
     require_once './generic/footer.html';
 ?>
 
-<a href="#"  aria-label="Volver al principio de la página" class="back-to-top"><img id="top-icon" src="./imagenes/top.png" alt=""></a>
+<button aria-label="Volver al principio de la página" class="back-to-top btn-contraste"><img id="top-icon" src="./imagenes/top.png" alt=""></button>
 
 
 
