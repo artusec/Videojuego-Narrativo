@@ -125,51 +125,57 @@
         <p class="text-center">
             Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida
              y conocer lo que pasó allí tiempo atrás.</p>
+
         <br aria-hidden="true">
         <p class="text-center">Desarrollado en Unity <img id="unity" alt="" src="./imagenes/unity.png"> para la plataforma Android  <img src="./imagenes/android.png" alt="">.</p>
 
         <br aria-hidden="true">
+        <br aria-hidden="true">
+
         <div class="col text-center" id='4'>
             <a role="button"  class="btn btn-danger btn-lg" id="descarga" aria-label="Descarga Ashed Memories"
              download="AshedMemories.apk" href="./apk/AshedMemories_1.0.apk" >¡Descarga ya!<img src="./imagenes/download.png" alt=""></a>
         </div>
         <br aria-hidden="true">
+        <br aria-hidden="true">
 
         <div class="text-center " id="agradecimientos"><h2>¡Muchas gracias por confiar en nostros!</h2></div>
-
+        <br aria-hidden="true">
         <br aria-hidden="true">
 
         <div class="row">
-        <div class="col-lg-2 col-md-0"></div>
-        <div class=" col-lg-4 col-md-6">    
-            <div class="minijuegosOut ">
-                    <div class="card cartas-prop">
-                        <a href="./accesibilidad.php"aria-label="Leer mas sobre accesibilidad" ><img src="./imagenes/accesibility.png"  class="card-img-top" alt="Pantalla de ordenador con un  simbolo de tick" ></a>
-                        <div class="card-body">
-                            <h2 class="card-text">ACCESIBILIDAD</h2>
-                            <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.No es necesario software extra.</p>
-                            <br>
-                            <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
+            <div class="col-lg-2 col-md-0"></div>
+            <div class=" col-lg-4 col-md-6">    
+                <div class="minijuegosOut ">
+                        <div class="card cartas-prop">
+                            <a href="./accesibilidad.php"aria-label="Leer mas sobre accesibilidad" ><img src="./imagenes/accesibility.png"  class="card-img-top" alt="Pantalla de ordenador con un  simbolo de tick" ></a>
+                            <div class="card-body">
+                                <h2 class="card-text">ACCESIBILIDAD</h2>
+                                <p class="card-text">El juego es accesible de forma nativa ya que imita los movimientos de un lector de pantalla.No es necesario software extra.</p>
+                                <br>
+                                <a href="./accesibilidad.php" class="leer-mas" aria-label="Leer mas sobre accesibilidad">Leer mas</a>
+                            </div>
                         </div>
-                    </div>
+                </div>
+                <br aria-hidden="true">
+                <br aria-hidden="true">
             </div>
-        </div>
-     
-        <div class="col-lg-4 col-md-6">   
-            <div class="minijuegosOut">
-                    <div class="card cartas-prop">
-                        <a href="./nube.php" aria-label="Leer mas sobre la nube"> <img src="./imagenes/nube.png"   class="card-img-top" alt="Movil y ordenador conectados mediante un acable a una nube" > </a>
-                        <div class="card-body">
-                            <h2 class="card-text">NUBE</h2>
-                            <p class="card-text">El juego tiene implementado dos sistemas de guardado de tus datos y partidas.En Local (tu teléfono móvil) y en la Nube.</p>
-                            <br>
-                            <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
+            <div class="col-lg-4 col-md-6">   
+                <div class="minijuegosOut">
+                        <div class="card cartas-prop">
+                            <a href="./nube.php" aria-label="Leer mas sobre la nube"> <img src="./imagenes/nube.png"   class="card-img-top" alt="Movil y ordenador conectados mediante un acable a una nube" > </a>
+                            <div class="card-body">
+                                <h2 class="card-text">NUBE</h2>
+                                <p class="card-text">El juego tiene implementado dos sistemas de guardado de tus datos y partidas.En Local (tu teléfono móvil) y en la Nube.</p>
+                                <br>
+                                <a href="./nube.php" class="leer-mas" aria-label="Leer mas sobre la nube">Leer mas</a>
+                            </div>
                         </div>
-                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-        <div class="col-lg-2 col-md-0">
+            <div class="col-lg-2 col-md-0">
+            </div>
+            
         </div>
     </div>
 </section>
@@ -181,7 +187,7 @@
         <br aria-hidden="true">
         <br aria-hidden="true">
         <br aria-hidden="true">
-        <h1 class=" text-center fade-in" id="minijuegos-title">¡Conoce los minijuegos!</h1>
+        <h1 class=" text-center " id="minijuegos-title">¡Conoce los minijuegos!</h1>
         <p class="text-center"><img src="./imagenes/jigsaw.png" alt=""></p>
         <br aria-hidden="true">
         <br aria-hidden="true">
@@ -216,7 +222,6 @@
                     </div>
                 </div>
             </div>
-        
             <div class="col-sm-4">   
                 <div class="minijuegosOut special-row">
                     <div class="card cartas-minijuegos ">
@@ -247,7 +252,6 @@
                     </div>
                 </div>
             </div>
-        
             <div class="col-sm-4">    
                 <div class="minijuegosOut special-row">
                     <div class="card cartas-minijuegos ">
@@ -390,7 +394,7 @@
     require_once './generic/footer.html';
 ?>
 
-<button aria-label="Volver al principio de la página" class="back-to-top btn-contraste"><img id="top-icon" src="./imagenes/top.png" alt=""></button>
+<button aria-label="Volver al principio de la página" class="back-to-top btn-contraste" id="back-to-top"><img id="top-icon" src="./imagenes/top.png" alt=""></button>
 
 
 
@@ -406,7 +410,7 @@ function activarCookie() {
 
 /*BOTON DE IR ARRIBA*/
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
+    if ($(this).scrollTop() > 200) {
     $('.back-to-top').fadeIn('slow');
     } else {
     $('.back-to-top').fadeOut('slow');

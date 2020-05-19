@@ -65,7 +65,7 @@ a{
 
 .minijuegosOut{
   padding-left: 10%;
-  height: 100%;
+  height: 97%;
 }
 
 .card{
@@ -93,7 +93,7 @@ a{
 }
 
 #icono-cambiante{
-    margin-top: 30%;
+    margin-top: 20%;
 }
 
 .navitem:active{
@@ -304,6 +304,10 @@ a{
     animation-duration: 4s;
 }
 
+#back-to-top{
+  display:none;
+}
+
 #descarga:hover,#descarga:focus{
   text-decoration: underline;
 }
@@ -498,10 +502,12 @@ footer a:hover,footer a:focus{
     display:none;
   }
 
-
+  #minijuegos-title{
+    display:none;
+  }
   .puntuacion{
     float: right;
- 
+    margin-bottom: 6%;
   }
   .rating{
     color:orange;
