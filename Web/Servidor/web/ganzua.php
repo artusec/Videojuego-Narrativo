@@ -104,10 +104,10 @@
                 <div class="col-lg-2 order-lg-1 col-md-2 order-md-1">
                 </div>
                 <div class="col-lg-4 order-lg-2 col-md-10 order-md-2">
-                    <img class="minijuegos-img" src="./imagenes/ganzua1.png"  alt="Llaves de la caja fuerte"/>
+                    <img class="minijuegos-img" src="./imagenes/ganzua1.png"  alt="Imagen de las llaves de la caja fuerte"/>
                 </div>
                 <div class="col-lg-4 order-lg-3 col-md-10 order-md-4">
-                    <img class="minijuegos-img" src="./imagenes/ganzua2.png"  alt="Caja fuerte entreabierta"/>
+                    <img class="minijuegos-img" src="./imagenes/ganzua2.png"  alt="Imagen de la caja fuerte entreabierta"/>
                 </div>
                 <div class="col-lg-2 order-lg-4 col-md-2 order-md-3">
                 </div>

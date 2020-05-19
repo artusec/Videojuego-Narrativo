@@ -101,7 +101,7 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-6">
-                    <img src="./imagenes/guardado_nube.png" class="img-width" alt="Pantalla de ordenador, pantalla de ordenador portátil, tablet y movil conectados a una nube"/>
+                    <img src="./imagenes/guardado_nube.png" class="img-width" alt="Imagen de una pantalla de ordenador, una pantalla de ordenador portátil, tablet y móvil conectados a una nube"/>
                 </div>
                 <div class="col-md-3">
                 </div>

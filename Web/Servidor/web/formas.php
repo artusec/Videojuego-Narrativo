@@ -102,7 +102,7 @@
                 <div class="col-lg-4 col-md-3">
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <img class="minijuegos-img" src="./imagenes/formas.gif" alt="Esfera, cubo y cono rotando"/>
+                    <img class="minijuegos-img" src="./imagenes/formas.gif" alt="Imagen de una esfera, un cubo y un cono rotando"/>
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>

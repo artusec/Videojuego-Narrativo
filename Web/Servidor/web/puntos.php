@@ -109,7 +109,7 @@
                 <div class="col-lg-4 col-md-3">
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <img src="./imagenes/vib.gif"  class="img-width" alt="Móvil vibrando"/>
+                    <img src="./imagenes/vib.gif"  class="img-width" alt="Imagen de un móvil vibrando"/>
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>

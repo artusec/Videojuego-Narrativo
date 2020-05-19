@@ -107,7 +107,7 @@
                 <div class="col-lg-4 col-md-3">
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <img src="./imagenes/simon.gif"  class="img-width" alt="Móvil emitiendo un sonido y persona replicándolo"/>
+                    <img src="./imagenes/simon.gif"  class="img-width" alt="Imagen de un móvil emitiendo un sonido y persona replicándolo"/>
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>

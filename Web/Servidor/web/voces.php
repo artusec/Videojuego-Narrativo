@@ -110,7 +110,7 @@
                 <div class="col-lg-4 col-md-3">
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <img src="./imagenes/audio.gif"  class="img-width" alt="Cascos auriculares recibiendo sonidos de derecha, izquierda y ambas a la vez"/>
+                    <img src="./imagenes/audio.gif"  class="img-width" alt="Imagen de unos cascos auriculares recibiendo sonidos de derecha, izquierda y ambas a la vez"/>
                 </div>
                 <div class="col-lg-4 col-md-3">
                 </div>
