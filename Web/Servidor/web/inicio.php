@@ -134,7 +134,7 @@
 
         <div class="col text-center" id='4'>
             <a role="button"  class="btn btn-danger btn-lg" id="descarga" aria-label="Descarga Ashed Memories"
-             download="AshedMemories.apk" href="./apk/AshedMemories_1.0.apk" >¡Descarga ya!<img src="./imagenes/download.png" alt=""></a>
+             download="AshedMemories.apk" href="./apk/AshedMemories_1.01.apk" >¡Descarga ya!<img src="./imagenes/download.png" alt=""></a>
         </div>
         <br aria-hidden="true">
         <br aria-hidden="true">
