@@ -84,9 +84,16 @@
                 <div class="col-md-8">
                 <br aria-hidden="true">
                 <h1 class="text-center">POLITICA DE COOKIES</h1>
-                <br aria-hidden="true">
-                <p>RELLENAR</p>
-                <br aria-hidden="true">
+                <br>
+                <h2>¿Qué son las Cookies?</h2>
+                <p>Las Cookies son pequeñas unidades de información que se guardan en tu ordenador u otro dispositvo cuando las páginas web se cargan en tu navegador</p>
+                <h2>¿Cómo utilizamos las Cookies?</h2>
+                <p>Las cookies utilizadas en este sitio web no contienen información de ámbito personal.</p>
+                <p>Se guarda una Cookie de alto contaste, utilizada con el fin de mantener el diseño de alto/bajo contraste elegido entre páginas.</p>
+                <p>También se guarda otra Cookie que controla la aceptación de la política de Cookies, que evita mostar el cuadro de dialogo cuando se vuelva a entrar a la web.</p>
+                <p>Adicionalmente, también se guarda la sesión del usuairo para que peuda navegar libremente por la página con su usuario y contraseña. Al cerrar este sitio web, esta sesión se destruye.</p>
+                <p>Al continuar navegando por la página se entiende que se conoce esta polítca de uso de Cookies.</p>
+                <br>
                 </div>
                 <div class="col-md-2">
                 </div>
