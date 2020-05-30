@@ -34,6 +34,9 @@
 
         function modoNormal(){
             
+
+            $('#mode').prop('checked', true);
+
             $(".navbar").removeClass("body-oscuro");
             $(".container-fluid").removeClass("body-oscuro");
             $(".page-footer").removeClass("body-oscuro");
@@ -48,13 +51,11 @@
             $("body").removeClass("body-oscuro");
             $(".breadcrumb a").removeClass("link-yellow");
             $(".links").removeClass("link-yellow-underline");
-
             
             $('#top-icon').attr("src","./imagenes/top.png");
             $('#unity').attr("src","./imagenes/unity.png");
 
 
-            $('#mode').prop('checked', true);
 
 
             removeCookie("accesibility");

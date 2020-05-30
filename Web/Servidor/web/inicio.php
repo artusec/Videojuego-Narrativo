@@ -382,11 +382,21 @@
         <br aria-hidden="true">
         <br aria-hidden="true">
         <br aria-hidden="true">
-        <br aria-hidden="true">
-        <br aria-hidden="true">
-        <br aria-hidden="true">
     </div>
 </section>
+<section>
+        <div class="container-fluid">
+            <div class="text-center" >
+                <p>NOS SERÍA DE GRAN AYUDAR SI PUDIERAS RESPONDER A ESTOS FORMULARIOS.<p>
+                <p>¡MUCHAS GRACIAS!</p>
+                <br>
+                <p><img src="./imagenes/link.png" alt=""><a id="forms" href="https://docs.google.com/forms/d/e/1FAIpQLSdo6jm8iPkF1bAJ4l2XBVQQvmlVo0uMJnyMuipUg4xXQcUAow/viewform?usp=sf_link" aria-label="Ir a formulario sobre la web">Formulario sobre WEB</a></p>
+                <p><img src="./imagenes/link.png" alt=""><a id="forms" href="https://docs.google.com/forms/d/e/1FAIpQLSct5ncimBsSlaebbkt86KAmjh6gyWU1MKXLEfvp9i8J_ANJJA/viewform?usp=sf_link" aria-label="Ir a formulario sobre el videojuego">Formulario sobre la APP</a></p>
+                <br aria-hidden="true">
+            </div>
+        </div>
+</section>
+
 </main>
 
 
