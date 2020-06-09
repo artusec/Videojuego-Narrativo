@@ -92,7 +92,7 @@
                 <div class="row d-flex justify-content-center align-items-center">
                     <p class="pt-3 pr-2 ">Esta web utiliza cookies para mejorar tu experiencia en la web.</p>
                     <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true">
-                    <a role="button" class="btn btn-purple " aria-label="Leer mas sobre cookies" href="./cookies.php">Leer mas </a>
+                    <a role="button" class="btn btn-purple " aria-label="Ver Polítca de Cookies" href="./cookies.php">Ver Polítca de Cookies</a>
                     &nbsp
                     &nbsp
                     <a role="button" class="btn btn-purple" data-dismiss="modal" aria-label="Vale, gracias" href="" onclick='activarCookie();'>Ok, gracias</a>
