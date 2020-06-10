@@ -1,4 +1,4 @@
-<nav title="Menu horizontal" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" role="navigation">
+<nav title="Menu horizontal" id="menu-horizontal" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" role="navigation">
         <a class="navbar-brand" href="./inicio.php" aria-label="Ir al la página principal"><span class="Name-font1">ASHED MEMORIES</span></a>
         <div class="display-movil">
             <ul class="nav justify-content-center">

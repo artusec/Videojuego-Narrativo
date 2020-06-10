@@ -49,7 +49,7 @@
 <body>
 
 
-<header>
+<header id="header">
 <?php
     require_once './generic/header.php';
 ?>
@@ -81,26 +81,23 @@
 
     <?php if(!isset($_COOKIE["cookie"])) { ?>
 
-    <div class="modal fade in" id="myModal" role="dialog" aria-modal="true" aria-labelledby="titulo-modal" aria-describedby="body-modal" >
+    <div class="modal fade in" id="myModal" role="dialog" aria-modal="true" aria-labelledby="titulo-modal" aria-describedby="body-modal" tabindex="-1" >
         <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header d-flex justify-content-center align-items-center">
-            <p class="modal-title" id="titulo-modal">POLITICA DE COOKIES</p>
-            </div>
-            
-            <div class="modal-body" id="body-modal">
-                <div class="row d-flex justify-content-center align-items-center">
-                    <p class="pt-3 pr-2 ">Esta web utiliza cookies para mejorar tu experiencia en la web.</p>
-                    <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true">
-                    <a role="button" class="btn btn-purple " aria-label="Ver Polítca de Cookies" href="./cookies.php">Ver Polítca de Cookies</a>
-                    &nbsp
-                    &nbsp
-                    <a role="button" class="btn btn-purple" data-dismiss="modal" aria-label="Vale, gracias" href="" onclick='activarCookie();'>Ok, gracias</a>
-                    <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center align-items-center">
+                <p class="modal-title" id="titulo-modal">POLITICA DE COOKIES</p>
+                </div>
+                <div class="modal-body" id="body-modal">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <p class="pt-3 pr-2 ">Esta web utiliza cookies para mejorar tu experiencia en la web.</p>
+                        <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true">
+                        <a role="button" class="btn btn-purple " id="buton-izq-cookies" aria-label="Ver Polítca de Cookies" href="./cookies.php">Ver Polítca de Cookies</a>
+                
+                        <a role="button" class="btn btn-purple" id="buton-dcha-cookies" data-dismiss="modal" aria-label="Vale, gracias" href="" onclick='activarCookie();'>Ok, gracias</a>
+                        <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true"> <br aria-hidden="true">
+                    </div>
                 </div>
             </div>
-
-        </div>
         </div>
     </div>
 
@@ -127,8 +124,8 @@
              y conocer lo que pasó allí tiempo atrás.</p>
 
         <br aria-hidden="true">
-        <p class="text-center">Desarrollado en Unity <img id="unity" alt="" src="./imagenes/unity.png"> para la plataforma Android  <img src="./imagenes/android.png" alt="">.</p>
-
+        <p class="text-center">Desarrollado en Unity  para la plataforma Android .</p>
+        <p class="text-center"> <img id="unity" alt="" src="./imagenes/unity.png"><img src="./imagenes/android.png" alt=""></p>        
         <br aria-hidden="true">
         <br aria-hidden="true">
 
@@ -139,10 +136,10 @@
         <br aria-hidden="true">
         <br aria-hidden="true">
 
-        <div class="text-center " id="agradecimientos"><h2>¡Muchas gracias por confiar en nostros!</h2></div>
+        <div class="text-center " id="agradecimientos"><h2>¡Muchas gracias por confiar en nosotros!</h2></div>
         <br aria-hidden="true">
         <br aria-hidden="true">
-
+                <div aria-label="hola"></div>
         <div class="row">
             <div class="col-lg-2 col-md-0"></div>
             <div class=" col-lg-4 col-md-6">    
@@ -198,7 +195,7 @@
                     <div class="card cartas-minijuegos" >
                         <a href="./ganzua.php" aria-label="Leer mas sobre el minijuego ganzua" ><img class="card-img-top"  src="./imagenes/safe_box.png" alt="Caja fuerte"></a>
                         <div class="card-body">
-                            <h2 class="card-text">GANZUA EN CAJA FUERTE</h2>
+                            <h2 class="card-text">GANZÚA EN CAJA FUERTE</h2>
                             <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
                             <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
                             <div  class="puntuacion">
@@ -206,7 +203,7 @@
                                 <?php 
 
                                 $puntuacion = Minijuego::get_puntuacion("ganzua");
-                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
+                                $html ="<div class='rating' role='img' aria-label='Puntuacion $puntuacion sobre 5'>";
                                 for($i=1;$i<=$puntuacion;$i++){
                                     $html .= '<span>★</span>';
                                 }
@@ -236,7 +233,7 @@
                                 <?php 
 
                                 $puntuacion = Minijuego::get_puntuacion("voces");
-                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
+                                $html ="<div class='rating' role='img' aria-label='Puntuacion $puntuacion sobre 5'>";
                                 for($i=1;$i<=$puntuacion;$i++){
                                     $html .= '<span>★</span>';
                                 }
@@ -265,7 +262,7 @@
                                 <?php 
 
                                 $puntuacion = Minijuego::get_puntuacion("formas");
-                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
+                                $html ="<div class='rating' role='img' aria-label='Puntuacion $puntuacion sobre 5'>";
                                 for($i=1;$i<=$puntuacion;$i++){
                                     $html .= '<span>★</span>';
                                 }
@@ -330,7 +327,7 @@
                                 <?php 
 
                                 $puntuacion = Minijuego::get_puntuacion("puntos");
-                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
+                                $html ="<div class='rating' role='img' aria-label='Puntuacion sobre 5'>";
                                 for($i=1;$i<=$puntuacion;$i++){
                                     $html .= '<span>★</span>';
                                 }
@@ -355,13 +352,13 @@
                             <h2 class="card-text">SIMON SAYS</h2>
                             <p class="card-text">Pasar el dedo por la pantalla y jugar al "Simon says" de toda la vida que hemos jugado todos de pequeños.</p>
                             
-                            <a href="./simon.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
+                            <a href="./simon.php" class="leer-mas" aria-label="Leer mas sobre el minijuego Simon says">Leer mas</a>
                             <div  class="puntuacion">
                             &nbsp Puntuación
                                 <?php 
 
                                 $puntuacion = Minijuego::get_puntuacion("simon");
-                                $html ="<div class='rating' aria-label='Puntuacion $puntuacion sobre 5'>";
+                                $html ="<div class='rating' role='img' aria-label='Puntuacion $puntuacion sobre 5'>";
                                 for($i=1;$i<=$puntuacion;$i++){
                                     $html .= '<span>★</span>';
                                 }
@@ -410,6 +407,10 @@
 
 <script>
 
+
+$(document).on('hidden.bs.modal', function() {
+ $('html').focus();
+});
 
 
 function activarCookie() {

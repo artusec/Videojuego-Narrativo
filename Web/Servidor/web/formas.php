@@ -157,7 +157,7 @@
                             }
                             else {
                                 $html = "<h2>TU PUNTUACION</h2>";
-                                $html .= "<div class='rating-done' aria-label='Puntuacion $score sobre 5 '>";
+                                $html .= "<div class='rating-done' role='img' aria-label='Puntuacion $score sobre 5 '>";
                                 for($i=1;$i<=$score;$i++){
                                     $html .='<span>★</span>';
                                 }

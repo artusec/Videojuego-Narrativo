@@ -235,12 +235,18 @@ a{
   }
   
 
-.btn-purple:active,.btn-purple {
-  color: #fff;
+  .btn-purple ,.btn-purple:active {
+  color: rgb(88, 73, 73);
   border-color:#591D77;
   text-shadow: 0 -1px 1px #591D77;
   background-color: #9932CC;
 
+}
+
+.btn-purple:focus{
+  background-color: #591D77;
+  border-color:#591D77;
+  text-shadow: 0 -1px 1px #591D77;
 }
 
 .btn-purple:hover{
@@ -554,4 +560,12 @@ footer a:hover,footer a:focus{
 .btn-contraste2:active,.btn-contraste2:focus{
   outline:none;
   border-color:white;
+  }
+
+  #buton-izq-cookies{
+    margin-right: 2%;
+  }
+
+  #buton-izq-cookies{
+    margin-left: 2%;
   }
