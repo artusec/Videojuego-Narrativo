@@ -254,7 +254,7 @@
                     <div class="card cartas-minijuegos ">
                         <a href="./formas.php" aria-label="Leer mas sobre el minijuego formas"><img class="card-img-top"  src="./imagenes/geometry.png" alt="Imagen de una forma de un cubo, un cono y una esfera" ></a>
                         <div class="card-body">
-                            <h2 class="card-text">FORMAS DE OBJECTOS</h2>
+                            <h2 class="card-text">FORMAS DE OBJETOS</h2>
                             <p class="card-text">Usando el dedo deberas detectar vibraciones para adivinar la forma del objeto escondido.</p>
                             <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                             <div  class="puntuacion">
@@ -381,6 +381,7 @@
         <br aria-hidden="true">
     </div>
 </section>
+<!--- FORMULARIOS
 <section>
         <div class="container-fluid">
             <div class="text-center" >
@@ -393,7 +394,7 @@
             </div>
         </div>
 </section>
-
+-->
 </main>
 
 

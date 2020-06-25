@@ -441,12 +441,7 @@ footer a:hover,footer a:focus{
       transform: translate(-50%,-50%) rotate(-45deg);
       z-index:999;
   }
-  @keyframes blink {
-   
-    100% {
-        height:100%;
-    }
-  }
+
 
   .shut span{
       display: block;
@@ -461,10 +456,8 @@ footer a:hover,footer a:focus{
       height:100%;
   }
 
-
-
   
-  .eye:after { /*pupil*/
+  .eye:after { 
     position: absolute;
     bottom: 7px;
     right: 7px;
@@ -475,7 +468,7 @@ footer a:hover,footer a:focus{
     content: " ";
   }
 
-  .luz { /*pupil*/
+  .luz { 
     position: absolute;
     bottom: 40px;
     right: 40px;
@@ -487,7 +480,7 @@ footer a:hover,footer a:focus{
     z-index:1;
   }
 
-  /**/
+
   .back-to-top {
     position: fixed;
     display: none;
