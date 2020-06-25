@@ -16,7 +16,7 @@
                 scroll_start = $(this).scrollTop();
                 if(scroll_start > offset.top){
                     $("#minijuegos-title").show( "drop", {direction: "up"},1000 );
-                    $(".cartas-minijuegos").show( "slide", 1000 );
+                    
                     
                     if (detectCookie("accesibility")){
                         $(".navbar").addClass("body-oscuro");
