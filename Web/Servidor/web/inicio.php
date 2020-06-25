@@ -200,6 +200,7 @@
                             <h2 class="card-text">GANZÚA EN CAJA FUERTE</h2>
                             <p class="card-text">Hacer círculos con el dedo sobre la pantalla hasta oír el desbloqueo de la caja fuerte.</p>
                             <a href="./ganzua.php" class="leer-mas" aria-label="Leer mas sobre el minijuego ganzua">Leer mas</a>
+                            <br aria-hidden="true">
                             <div  class="puntuacion">
                             &nbsp Puntuación
                                 <?php 
@@ -229,7 +230,7 @@
                             <h2 class="card-text">VOCES EN LA DISTANCIA</h2>
                             <p class="card-text">Mover el dedo por la pantalla siguiendo unas voces que podrás oír en alguna dirección.</p>
                             <a href="./voces.php" class="leer-mas" aria-label="Leer mas sobre el minijuego voces a lo lejos">Leer mas</a>
-
+                            <br aria-hidden="true">
                             <div  class="puntuacion">
                             &nbsp Puntuación
                                 <?php 
@@ -256,9 +257,8 @@
                     <div class="card cartas-minijuegos ">
                         <a href="./formas.php" aria-label="Leer mas sobre el minijuego formas"><img class="card-img-top"  src="./imagenes/geometry.png" alt="Imagen de una forma de un cubo, un cono y una esfera" ></a>
                         <div class="card-body">
-                            <h2 class="card-text">FORMAS DE OBJETOS</h2>
+                            <h2 class="card-text">ADIVINA LA FORMA DEL OBJETO</h2>
                             <p class="card-text">Usando el dedo deberas detectar vibraciones para adivinar la forma del objeto escondido.</p>
-                            <br aria-hidden="true">
                             <br aria-hidden="true">
                             <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                             <div  class="puntuacion">
