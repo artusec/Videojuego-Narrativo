@@ -74,10 +74,13 @@ a{
   color:#591D77;
   border-radius: 5%;
   border: 0px  solid #591D77;
-  display:none;
+
 }
 
+.cartas-prop{
 
+  
+}
 /*Para tablets*/
 @media (min-width: 767px) and (max-width: 1024px) {
   
@@ -511,7 +514,7 @@ footer a:hover,footer a:focus{
   }
   .puntuacion{
     float: right;
-    margin-bottom: 6%;
+
   }
   .rating{
     color:orange;

@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link-new" role="button" id="descargabutton" href="./inicio.php#descarga" aria-label="Ir al la parte de descargar">Descarga</a>
+                    <a class="nav-link-new" role="button" id="descargabutton" href="./inicio.php#descargar" aria-label="Ir al la parte de descargar">Descarga</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link-new" role="button" href="./inicio.php#minijuegos" aria-label="Ir al la parte de minijuegos">Minijuegos</a>

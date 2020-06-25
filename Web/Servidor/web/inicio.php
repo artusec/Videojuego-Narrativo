@@ -119,16 +119,16 @@
                 <br aria-hidden="true"> 
         <?php    }
         ?>
-        <p class="text-center">
+        <p class="text-center" >
             Un videojuego donde tendrás que agudizar el oido y el tacto para escapar de tu propia casa derruida
              y conocer lo que pasó allí tiempo atrás.</p>
 
         <br aria-hidden="true">
         <p class="text-center">Desarrollado en Unity  para la plataforma Android .</p>
         <p class="text-center"> <img id="unity" alt="" src="./imagenes/unity.png"><img src="./imagenes/android.png" alt=""></p>        
+        <br aria-hidden="true" id="descargar">
         <br aria-hidden="true">
         <br aria-hidden="true">
-
         <div class="col text-center" id='4'>
             <a role="button"  class="btn btn-danger btn-lg" id="descarga" aria-label="Descarga Ashed Memories"
              download="AshedMemories.apk" href="./apk/AshedMemories_1.01.apk" >¡Descarga ya!<img src="./imagenes/download.png" alt=""></a>
@@ -139,7 +139,9 @@
         <div class="text-center " id="agradecimientos"><h2>¡Muchas gracias por confiar en nosotros!</h2></div>
         <br aria-hidden="true">
         <br aria-hidden="true">
-                <div aria-label="hola"></div>
+
+
+
         <div class="row">
             <div class="col-lg-2 col-md-0"></div>
             <div class=" col-lg-4 col-md-6">    
@@ -256,6 +258,8 @@
                         <div class="card-body">
                             <h2 class="card-text">FORMAS DE OBJETOS</h2>
                             <p class="card-text">Usando el dedo deberas detectar vibraciones para adivinar la forma del objeto escondido.</p>
+                            <br aria-hidden="true">
+                            <br aria-hidden="true">
                             <a href="./formas.php" class="leer-mas" aria-label="Leer mas sobre el minijuego formas">Leer mas</a>
                             <div  class="puntuacion">
                             &nbsp Puntuación
