@@ -7,9 +7,14 @@ Videjuego narrativo accesible para personas ciegas, basado en el modo de uso de 
 Al juego lo acompaña una página web también accesible con información sobre este. Añadiremos el enlace cuando su dominio sea estable.
 
 # Colaboradores
+## Estudiantes:
 Arturo Aguirre Calvo  
 Eduardo Andrés Morais  
 Alberto Casado Trapote  
 Fernando Cortés Sancho  
 Héctor Marcos Rabadán  
 Diego Martínez Simarro
+
+## Profesores directores:
+María Guijarro Mata-García  
+Joaquín Recas Piorno
